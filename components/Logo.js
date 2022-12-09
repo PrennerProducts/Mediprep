@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 const Logo = () => {
   return (
     <View style={styles.Logobox}>
-      <View style={styles.LogoFont}>
-        <Text>Zurück</Text>
-      </View>
+      <Text style={styles.LogoFont}>MEDIPREP</Text>
     </View>
   );
 };
@@ -15,16 +14,17 @@ const styles = StyleSheet.create({
     height: 200,
     width: '50%',
     borderWidth: 5,
-    borderColor: 'limegreen',
+    borderColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'darkblue',
-    elevation: 8,
+    elevation: 55,
   },
   LogoFont: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'green',
+    color: 'white',
+    elevation: 42,
   },
 });
 
