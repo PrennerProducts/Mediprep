@@ -4,7 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const Logo = () => {
   return (
     <View style={styles.Logobox}>
-      <Text style={styles.LogoFont}>MEDIPREP</Text>
+      <Text style={styles.LogoFont}>mediprep</Text>
+      <Text style={styles.SloganFont}>Ihre Gesundheit in Ihren Händen</Text>
     </View>
   );
 };
@@ -12,16 +13,23 @@ const Logo = () => {
 const styles = StyleSheet.create({
   Logobox: {
     height: 200,
-    width: '50%',
+    width: '90%',
     borderWidth: 5,
-    borderColor: 'blue',
+    borderColor: 'lightblue',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'darkblue',
+    backgroundColor: '#032e5b',
     elevation: 55,
   },
   LogoFont: {
-    fontSize: 24,
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: 'white',
+    elevation: 42,
+  },
+
+  SloganFont: {
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
