@@ -14,18 +14,37 @@ const styles = StyleSheet.create({
     height: 200,
     width: '50%',
     borderWidth: 5,
-    borderColor: 'blue',
+    borderColor: '#4c44d9',
+    borderRadius: 20,
+    borderEndColor: '#4c44d9',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'darkblue',
+    backgroundColor: '#130f57',
     elevation: 55,
   },
   LogoFont: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
   },
 });
+
+const TouchableWithoutFeedbackExample = () => {
+  const onPress = () => {};
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.countContainer}>
+        <Text style={styles.countText}>Count: {count}</Text>
+      </View>
+      <TouchableWithoutFeedback onPress={onPress}>
+        <View style={styles.button}>
+          <Text>Touch Here</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+  );
+};
 
 export default Logo;
