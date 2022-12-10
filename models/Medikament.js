@@ -5,8 +5,7 @@ export class Medikament {
     boxsize,
     countSize,
     tag,
-    zeitpunkt,
-    menge,
+    zeitpunkt_menge,
     img,
     isReady
   ) {
@@ -15,8 +14,7 @@ export class Medikament {
     this.boxsize = boxsize;
     this.countSize = countSize;
     this.tag = tag;
-    this.zeitpunkt = zeitpunkt;
-    this.menge = menge;
+    this.zeitpunkt_menge = zeitpunkt_menge;
     this.img = img;
     this.isReady = isReady;
   }
