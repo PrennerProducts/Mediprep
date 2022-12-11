@@ -9,6 +9,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Logo />
+      <Logo />
+      <Logo />
     </View>
   );
 }
@@ -21,5 +23,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
