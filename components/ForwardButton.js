@@ -1,9 +1,9 @@
-/* Button navigiert weiter */
+/* Button navigiert weiter Robert*/
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export const DemoButton = (props) => {
+export const ForwardButton = (props) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity onPress={props.onPress}>
@@ -27,5 +27,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DemoButton;
+export default ForwardButton;
 
