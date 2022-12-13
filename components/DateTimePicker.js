@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import {Modal, Text, TouchableHighlight, View, Platform} from 'react-native';
 
 import moment from 'moment';
-import DatePicker from "react-native-date-picker";
-
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 
 const CustomDatePicker = (props) => {
@@ -19,6 +18,7 @@ const CustomDatePicker = (props) => {
         if(selectedDate){
             setDate(moment(selectedDate));
             props.onDateChange(selectedDate);
+
         }
     }
     const onDonePress = () => {
@@ -28,7 +28,7 @@ const CustomDatePicker = (props) => {
 
     const renderDatePicker = () => {
         return(
-            <DatePicker
+            <DateTimePicker
                 timeZoneOffsetInMinutes={0}
                 value={new Date(moment().toDate())}
                 mode="date"
@@ -66,7 +66,7 @@ const CustomDatePicker = (props) => {
                                 visible={show}
                                 onPress={() => setShow(false)}>
                                 <TouchableHighlight
-                                    underlayColor={'#FFFFFF'}
+                                    underlayColor='#FFFFFF'
                                     style={{
                                         flex: 1,
                                         borderTopColor: '#E9E9E9',
@@ -85,7 +85,7 @@ const CustomDatePicker = (props) => {
                                         <TouchableHighlight
                                             underlayColor={'transparent'}
                                             onPress={onDonePress}
-                                            style={[styles.Text, styles.Text]}>
+                                            style={[styles.btnText, styles.Text]}>
                                             <Text>
                                                 Done
                                             </Text>
