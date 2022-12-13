@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export const Tablettenbox = (props) => {
   return (
@@ -73,13 +72,8 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-    shadowRadius: 20,
-    shadowOffset: {
-      width: 0,
-      height: -300,
-    },
-    shadowColor: 'black',
-    //elevation: 4,
+    //backgroundColor: 'yellow',
+    elevation: 14,
   },
 
   tabblettenfachHeading: {
