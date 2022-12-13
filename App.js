@@ -7,7 +7,7 @@ import { Tablettenbox } from './components/Tablettenbox';
 
 import { Backbutton } from './components/Backbutton';
 
-import { DemoButton } from './components/DemoButton';
+import { ForwardButton } from './components/ForwardButton';
 
 
 
@@ -17,7 +17,7 @@ export default function App() {
       <Logo />
       <Tablettenbox />
       <Backbutton />
-      <DemoButton />
+      <ForwardButton />
     </View>
   );
 }
