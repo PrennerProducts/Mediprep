@@ -1,21 +1,17 @@
+import { IDGenerator } from './IDGenerator';  
+import { MedikamentenListe } from './MedikamentenListe';
+
 export class Medikament {
-  constructor(
-    id,
-    name,
-    boxsize,
-    countSize,
-    tag,
-    zeitpunkt_menge,
-    img,
-    isReady
-  ) {
-    this.id = id;
+  constructor(name, inhaltVerpackung, bild, istBereit) {
+    this.id = IDGenerator.Singleton.getInstance().getNextID();
     this.name = name;
-    this.boxsize = boxsize;
-    this.countSize = countSize;
-    this.tag = tag;
-    this.zeitpunkt_menge = zeitpunkt_menge;
-    this.img = img;
-    this.isReady = isReady;
+    this.inhaltVerpackung = inhaltVerpackung;
+    this.bild = bild;
+    this.istBereit = istBereit;
+    MedikamentenListe.MLDummy.medikamentHinzufuegen(this);
+  }
+
+  anzeigen(){
+    console.log(this.name + "\tID: " + this.id + ",\tInhalt Verpackung: " + this.inhaltVerpackung + ",\tBild: " + this.bild + ",\tBereit: " + this.istBereit + ";");
   }
 }

@@ -1,24 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { modelsTests } from './models/ModelsTests';
 
 import Logo from './components/Logo';
 //import { MEDIKAMENTE } from './data/mediList';
-import { Tablettenbox } from './components/Tablettenbox';
 
-import { Backbutton } from './components/Backbutton';
-
-import { ForwardButton } from './components/ForwardButton';
-
-import { modelsTests } from './models/ModelsTests';
 
 export default function App() {
+  
   modelsTests.test();
+
   return (
     <View style={styles.container}>
       <Logo />
-      <Tablettenbox />
-      <Backbutton />
-      <ForwardButton />
     </View>
   );
 }
