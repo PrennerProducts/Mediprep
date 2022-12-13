@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '97%',
     height: '17%',
-    borderColor: 'black',
+    borderColor: 'gray',
     borderWidth: 1,
     backgroundColor: '#E6D3BB',
     elevation: 10,
@@ -72,10 +72,9 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-    //backgroundColor: 'yellow',
-    elevation: 14,
+    borderWidth: 1,
+    borderColor: 'black',
   },
-
   tabblettenfachHeading: {
     fontSize: 13,
     fontWeight: 'bold',
