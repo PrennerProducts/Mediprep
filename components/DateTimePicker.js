@@ -4,31 +4,33 @@ import {Modal, Text, TouchableHighlight, View, Platform} from 'react-native';
 import moment from 'moment';
 import DatePicker from "react-native-date-picker";
 
+
+
 const CustomDatePicker = (props) => {
     const { textStyle } = props;
-    const [datum, setDatum] = useState(moment());
+    const [date, setDate] = useState(moment());
     const [show, setShow] = useState(false);
 
     const onChange = (e, selectedDate) => {
-        setDatum(moment(selectedDate));
+        setDate(moment(selectedDate));
     }
     const onAndroidChange = (e, selectedDate) => {
         setShow(false)
         if(selectedDate){
-            setDatum(moment(selectedDate));
+            setDate(moment(selectedDate));
             props.onDateChange(selectedDate);
         }
     }
     const onDonePress = () => {
-        props.onDateChange(datum);
+        props.onDateChange(date);
         setShow(false);
     }
 
     const renderDatePicker = () => {
         return(
-            <DateTimePicker
+            <DatePicker
                 timeZoneOffsetInMinutes={0}
-                value={new Date(datum)}
+                value={new Date(moment().toDate())}
                 mode="date"
                 minimumDate={new Date(moment().subtract(120, 'years').format('YYYY-MM-DD'))}
                 maximumDate={new Date(moment().format('YYYY-MM-DD'))}
@@ -43,9 +45,9 @@ const CustomDatePicker = (props) => {
             activeOpacity={0}
             onPress={() => setShow(true)}>
             <View>
-                <Text style={textStyle}>{datum.format('MMMM Do, YYYY')} </Text>
+                <Text style={textStyle}>{date.format('MMMM Do, YYYY')} </Text>
 
-                {Platform.OS === 'android' && show && renderDatePicker()}
+                {Platform.OS !== 'ios' && show && renderDatePicker()}
                 {Platform.OS === 'ios' && (
                     <Modal
                         transparent={true}
@@ -83,7 +85,7 @@ const CustomDatePicker = (props) => {
                                         <TouchableHighlight
                                             underlayColor={'transparent'}
                                             onPress={onDonePress}
-                                            style={[styles.btnText, styles.btnDone]}>
+                                            style={[styles.Text, styles.Text]}>
                                             <Text>
                                                 Done
                                             </Text>
@@ -100,7 +102,7 @@ const CustomDatePicker = (props) => {
     )
 };
 
-DatePicker.defaultProps = {
+CustomDatePicker.defaultProps = {
     textStyle: {},
 };
 
