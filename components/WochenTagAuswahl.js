@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
 
-export const WochenTagAuswahl = (props) => {
+export const WochenTagAuswahl = () => {
     return (
         <View style={styles.rahmen}>
             <WochenTag wochenTag={'MO'} id="Montag" />
@@ -24,7 +24,7 @@ const WochenTag = (props) => {
     );
 };
 
-const Farbauswahl = (props) => {
+const Farbauswahl = () => {
     return (
         <View style={styles.tagauswahl}>
             <Text>X</Text>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         height: '17%',
         borderColor: 'gray',
         borderWidth: 1,
-        backgroundColor: '#E6D3BB',
+        backgroundColor: '#FFFFFF',
         elevation: 10,
         margin: 10,
     },
