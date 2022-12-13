@@ -33,7 +33,7 @@ const CustomDatePicker = (props) => {
                 value={new Date(moment().toDate())}
                 mode="date"
                 minimumDate={new Date(moment().subtract(120, 'years').format('YYYY-MM-DD'))}
-                maximumDate={new Date(moment().format('YYYY-MM-DD'))}
+                maximumDate={new Date(moment().add(10,'years').format('YYYY-MM-DD'))}
                 onChange={Platform.OS === 'ios' ? onChange : onAndroidChange}
                 />
 
@@ -85,7 +85,7 @@ const CustomDatePicker = (props) => {
                                         <TouchableHighlight
                                             underlayColor={'transparent'}
                                             onPress={onDonePress}
-                                            style={[styles.btnText, styles.Text]}>
+                                            style={[styles.btnText, styles.btnText]}>
                                             <Text>
                                                 Done
                                             </Text>
