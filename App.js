@@ -5,11 +5,19 @@ import Logo from './components/Logo';
 import { MEDIKAMENTE } from './data/mediList';
 import { Tablettenbox } from './components/Tablettenbox';
 
+import { Backbutton } from './components/Backbutton';
+
+import { DemoButton } from './components/DemoButton';
+
+
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Logo />
       <Tablettenbox />
+      <Backbutton />
+      <DemoButton />
     </View>
   );
 }
