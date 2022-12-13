@@ -1,4 +1,4 @@
-import { Medikament } from '../models/Medikament';
+/*import { Medikament } from '../models/Medikament';
 
 const medikamente = [
   {
@@ -61,3 +61,4 @@ export const MEDIKAMENTE = medikamente.map(
       medikamente.isReady
     )
 );
+*/
