@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
+import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
   return (
@@ -22,8 +23,17 @@ const Tablettenfachcontainer = (props) => {
 };
 
 const Tablettenfach = (props) => {
+  const styleArray = [styles.tablettenfach, styles.tablettenfach_changed]
+
+  const useStateArray = useState(1);
+  const index = useStateArray[0];
+  let mystyle =  styleArray[index]; 
+  const setStyle = useStateArray[1];
+
+  console.log('style = ', mystyle);
+
   return (
-    <View style={styles.tablettenfach}>
+    <View style={mystyle} onPress={() => setStyle((index+1)%styleArray)}>
       <Text>*</Text>
     </View>
   );
@@ -73,6 +83,22 @@ const styles = StyleSheet.create({
     marginBottom: '10%',
     margin: '5%',
     borderWidth: 1,
+    borderColor: 'black',
+  },
+  tablettenfach_changed: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'yellow',
+    width: '84%',
+    height: '10%',
+    borderColor: 'black',
+    elevation: 24,
+    borderWidth: 1.5,
+    marginBottom: '10%',
+    margin: '5%',
+    borderWidth: 4,
     borderColor: 'black',
   },
   tabblettenfachHeading: {
