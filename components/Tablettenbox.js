@@ -3,37 +3,56 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
+  //console.log(props);
+
+  const TablettencontainerArray = [];
+  TablettencontainerArray.push(<Tablettenfachcontainer containerId="morgen" />);
+  TablettencontainerArray.push(<Tablettenfachcontainer containerId="mittag" />);
+  TablettencontainerArray.push(<Tablettenfachcontainer containerId="abend" />);
+  TablettencontainerArray.push(<Tablettenfachcontainer containerId="nacht" />);
+  //console.log(TablettencontainerArray);
   return (
     <View style={styles.tablettenbox}>
-      <Tablettenfachcontainer zeitpunkt={'morgen'} id="morgen1" />
-      <Tablettenfachcontainer zeitpunkt={'mittag'} id="mittag" />
-      <Tablettenfachcontainer zeitpunkt={'abend'} id="abend" />
-      <Tablettenfachcontainer zeitpunkt={'nacht'} id="nacht" />
+      {TablettencontainerArray[0]}
+      {TablettencontainerArray[1]}
+      {TablettencontainerArray[2]}
+      {TablettencontainerArray[3]}
     </View>
   );
 };
 
 const Tablettenfachcontainer = (props) => {
+  //console.log(props)
   return (
     <View style={styles.tablettenfachContainer}>
-      <Text style={styles.tabblettenfachHeading}>{props.zeitpunkt}</Text>
-      <Tablettenfach />
+      <Text style={styles.tabblettenfachHeading}>{props.containerId}</Text>
+      <Tablettenfach fachId={props.containerId} isHighlighted={false} />
     </View>
   );
 };
 
 const Tablettenfach = (props) => {
-  const styleArray = [styles.tablettenfach, styles.tablettenfach_changed]
-
+  // das brauch ich in dem Fall nicht mehr!
+  const styleArray = [styles.tablettenfach, styles.tablettenfach_changed];
   const useStateArray = useState(1);
   const index = useStateArray[0];
-  let mystyle =  styleArray[index]; 
+  let mystyle = styleArray[index];
   const setStyle = useStateArray[1];
 
-  console.log('style = ', mystyle);
+  //console.log(props);
+
+  function setHighlightFach2(fachId) {
+    isHighlighted = true;
+  }
 
   return (
-    <View style={mystyle} onPress={() => setStyle((index+1)%styleArray)}>
+    <View
+      style={
+        props.isHighlighted === false
+          ? styles.tablettenfach
+          : styles.tablettenfach_changed
+      }
+    >
       <Text>*</Text>
     </View>
   );
@@ -60,13 +79,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'blue',
+    // backgroundColor: 'yellow',
     width: '25%',
     height: '100%',
     margin: 4,
     marginBottom: 4,
     marginTop: 4,
-    //borderColor: 'black',
+    // borderColor: 'black',
     // borderWidth: 1,
   },
   tablettenfach: {
