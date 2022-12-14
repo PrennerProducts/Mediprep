@@ -1,82 +1,100 @@
-import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity
+} from 'react-native';
+import moment from "moment";
 
 export const WochenTagAuswahl = () => {
-    return (
+    let currentDate = moment(); //.format('dddd') für WeekDay
+    let currentWeekday = moment().format('dddd')
+    console.log(currentWeekday); //[1] LOG current Date
+    return(
         <View style={styles.rahmen}>
-            <WochenTag wochenTag={'MO'} id="Montag" />
-            <WochenTag wochenTag={'DI'} id="Dienstag" />
-            <WochenTag wochenTag={'MI'} id="Mittwoch" />
-            <WochenTag wochenTag={'DO'} id="Donnerstag" />
-            <WochenTag wochenTag={'FR'} id="Freitag" />
-            <WochenTag wochenTag={'SA'} id="Samstag" />
-            <WochenTag wochenTag={'SO'} id="Sontag" />
+            <WochenTag wochenTag={'MO'} id="Monday"  />
+            <WochenTag wochenTag={'DI'} id="Tuesday" />
+            <WochenTag wochenTag={'MI'} id="Wednesday" />
+            <WochenTag wochenTag={'DO'} id="Thursday" />
+            <WochenTag wochenTag={'FR'} id="Friday" />
+            <WochenTag wochenTag={'SA'} id="Saturday" />
+            <WochenTag wochenTag={'SO'} id="Sunday"/>
         </View>
     );
 };
-
 const WochenTag = (props) => {
+
     return (
         <View style={styles.farblicheauswahl}>
             <Text style={styles.wochentag}>{props.wochenTag}</Text>
-            <Farbauswahl />
+            <TouchableOpacity><Farbauswahl active={0} /></TouchableOpacity>
         </View>
     );
 };
 
-const Farbauswahl = () => {
+const Farbauswahl = (props) => {
+    console.log(props.active)
+    const [active, setActive] = useState(0);
+
     return (
-        <View style={styles.tagauswahl}>
-            <Text>X</Text>
+        <View style={styles.screen}>
+            <TouchableOpacity
+                onPress={active === 0 ? () => [setActive(1)]: () => setActive(0)}
+                style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}>
+            </TouchableOpacity>
         </View>
     );
 };
+
+
+
+
 
 const styles = StyleSheet.create({
     rahmen: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '97%',
-        height: '17%',
-        borderColor: 'gray',
-        borderWidth: 1,
-        backgroundColor: '#FFFFFF',
+        width: '95%',
+        height: '15%',
+        backgroundColor: '#a6aed2',
         elevation: 10,
-        margin: 10,
     },
-    text: {
-        fontSize: 20,
-    },
+
     farblicheauswahl: {
         flexDirection: 'column',
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        width: '25%',
-        height: '100%',
-        margin: 4,
-        marginBottom: 4,
-        marginTop: 4,
+        marginBottom:5,
     },
-    tagauswahl: {
-        flex: 0.5,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        width: '90%',
-        height: '10%',
-        elevation: 24,
-        borderWidth: 1.5,
-        marginBottom: '10%',
-        margin: '5%',
-        borderColor: 'black',
-    },
+
     wochentag: {
-        fontSize: 23,
+        fontSize: 30,
         fontWeight: 'bold',
         color: '#00003B',
+    },
+
+    roundButton1: {
+        width: 40,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: 'white',
+        marginTop:7,
+    },
+    roundButton1active: {
+        width: 40,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: '#ee9a49',
+        marginTop:7,
     },
 });
 
