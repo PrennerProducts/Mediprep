@@ -1,23 +1,42 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { modelsTests } from './models/ModelsTests';
-import Tablettenbox from './components/Tablettenbox';
+
 import Logo from './components/Logo';
-import { useState } from 'react';
+import CustomDatePicker from "./components/DateTimePicker";
+
 import ForwardButton from './components/ForwardButton';
 import { Medikamentvisualisierung } from './components/Medikamentvisualisierung'
 
+
+import MediprepNavigator from './screens/MediprepNavigator';
+
 export default function App() {
+  
   modelsTests.test();
 
   return (
+    /*
     <View style={styles.container}>
       <Logo />
-      <Tablettenbox highlightFach={['morgen', 'nacht']} />
       <ForwardButton />
+<<<<<<< Updated upstream
       {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
       <Medikamentvisualisierung medikamentID={2}/>
     </View>
+=======
+        <CustomDatePicker
+            textStyle={{
+                paddingVertical: 15,
+                paddingHorizontal: 10,
+                borderColor: 'gray',
+                borderWidth: 1,
+                backgroundColor: '#FFFFFF'
+            }}
+        />
+    </View>*/
+    <MediprepNavigator />
+>>>>>>> Stashed changes
   );
 }
 
