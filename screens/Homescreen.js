@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-export const Homescreen = (props) => {
-};
-=======
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { modelsTests } from '../models/ModelsTests';
@@ -16,7 +12,7 @@ const Homescreen = ({navigation}) => {
       
             navigation.navigate('Ladebildschirm');
 }
-    onst pressHandler2 = () => {
+    const pressHandler2 = () => {
       
     navigation.navigate('MedBearbeiten');
 }
@@ -63,4 +59,3 @@ const styles = StyleSheet.create({
 
 export default Homescreen;
 
->>>>>>> Stashed changes

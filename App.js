@@ -20,11 +20,6 @@ export default function App() {
     <View style={styles.container}>
       <Logo />
       <ForwardButton />
-<<<<<<< Updated upstream
-      {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
-      <Medikamentvisualisierung medikamentID={2}/>
-    </View>
-=======
         <CustomDatePicker
             textStyle={{
                 paddingVertical: 15,
@@ -36,7 +31,6 @@ export default function App() {
         />
     </View>*/
     <MediprepNavigator />
->>>>>>> Stashed changes
   );
 }
 
