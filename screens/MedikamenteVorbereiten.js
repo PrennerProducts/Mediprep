@@ -18,12 +18,14 @@ export const MedikamenteVorbereiten = (props) => {
   //DummySchachtel.anzeigenFachMedikament(1, 1);
 
   //DummySchachtel.anzeigen();
-  DummySchachtel.anzeigenFach(1);
+  // DummySchachtel.anzeigenFach(1);
+
+  //diese Funktion zeigt die komplette Schachtel an, geordnet nach Faechern.
 
   return (
     <View style={styles.container}>
       <Text></Text>
-      <Tablettenbox highlightFach={['morgen', 'nacht']} />
+      <Tablettenbox highlightFach={['morgen', 'abend']} />
       <Text>%d müssen sie morgens einnehmen %d am Abned</Text>
     </View>
   );

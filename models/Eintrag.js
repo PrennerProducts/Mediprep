@@ -6,10 +6,12 @@ export class Eintrag{
         this.anzahl = anzahl;
     }
 
+    //Gibt Infos zum Eintrag auf der Console aus.
     anzeigen(){
-        console.log("\t" + MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(this.medikamentId), this.anzahl + ";");
+        console.log("\t" + MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(this.medikamentId).name, this.anzahl + ";");
     }
 
+    //Anzahl wird aktualsiert.
     anzahlAendern(anzahl){
         this.anzahl = anzahl;
     }

@@ -11,6 +11,7 @@ export class Medikament {
     MedikamentenListe.MLDummy.medikamentHinzufuegen(this);
   }
 
+  //Gibt Infos zum Medikament auf der Console aus
   anzeigen(){
     console.log(this.name + "\tID: " + this.id + ",\tInhalt Verpackung: " + this.inhaltVerpackung + ",\tBild: " + this.bild + ",\tBereit: " + this.istBereit + ";");
   }
