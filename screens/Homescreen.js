@@ -16,7 +16,7 @@ const Homescreen = ({navigation}) => {
       
             navigation.navigate('Ladebildschirm');
 }
-const pressHandler2 = () => {
+    onst pressHandler2 = () => {
       
     navigation.navigate('MedBearbeiten');
 }
