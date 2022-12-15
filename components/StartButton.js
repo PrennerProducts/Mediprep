@@ -7,7 +7,7 @@ const StartButton = () => {
   return (
     
     <View style={styles.Startbox}>
-      <Text style={styles.LogoFont}>Befüllung starten</Text>
+      <Text style={styles.LogoFont}>Befüllung starten    </Text>
 
     </View>
 
