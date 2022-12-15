@@ -5,60 +5,52 @@ import Logo from '../components/Logo';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
 
-
-const Homescreen = ({navigation}) => {
-
-    const pressHandler1 = () => {
-      
-            navigation.navigate('Befullungstarten');
-}
-    const pressHandler2 = () => {
-      
+const Homescreen = ({ navigation }) => {
+  const pressHandler1 = () => {
+    navigation.navigate('Befullungstarten');
+  };
+  const pressHandler2 = () => {
     navigation.navigate('Ladebildschirm');
-}
+  };
 
-
-    return (
-<View style={styles.container}>
-        <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
-        <Text style={styles.WelcomeFont}></Text>
-        <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
-        <Text style={styles.WelcomeFont}></Text>
-        <TouchableOpacity onPress={pressHandler1}>
-        <StartButton />	
-        </TouchableOpacity>
-        <TouchableOpacity onPress={pressHandler2}>
+  return (
+    <View style={styles.container}>
+      <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
+      <Text style={styles.WelcomeFont}></Text>
+      <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
+      <Text style={styles.WelcomeFont}></Text>
+      <TouchableOpacity onPress={pressHandler1}>
+        <StartButton />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={pressHandler2}>
         <MedBearbeitenButton />
-        </TouchableOpacity>
-
+      </TouchableOpacity>
     </View>
-    );
-}
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-    WelcomeFont: {
-      
-      fontSize: 40,
-      fontWeight: 'bold',
-      color: 'blue',
-      elevation: 42,
-      textAlign: 'left'
-    },
-    WelcomeSlogan: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: 'blue',
-        elevation: 42,
-        textAlign: 'left'
-      }
-  });
+  WelcomeFont: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: 'blue',
+    elevation: 42,
+    textAlign: 'left',
+  },
+  WelcomeSlogan: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'blue',
+    elevation: 42,
+    textAlign: 'left',
+  },
+});
 
 export default Homescreen;
-

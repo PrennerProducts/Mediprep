@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
 import Tablettenbox from '../components/Tablettenbox';
 import { Schachtel } from '../models/Schachtel';
+import { MedikamentenListe } from '../models/MedikamentenListe';
 
 export const MedikamenteVorbereiten = (props) => {
   let DummySchachtel = new Schachtel('Meine Schachtel', 4);
@@ -17,15 +18,14 @@ export const MedikamenteVorbereiten = (props) => {
 
   //DummySchachtel.anzeigenFachMedikament(1, 1);
 
-  //DummySchachtel.anzeigen();
-  // DummySchachtel.anzeigenFach(1);
-
-  //diese Funktion zeigt die komplette Schachtel an, geordnet nach Faechern.
-
+  DummySchachtel.anzeigen();
+  //DummySchachtel.anzeigenFach(1);
+  MedikamentenListe.MLDummy.anzeigen();
+  DummySchachtel.anzeigenMedikament(2);
   return (
     <View style={styles.container}>
-      <Text></Text>
-      <Tablettenbox highlightFach={['morgen', 'abend']} />
+      <Text>Hallo</Text>
+      <Tablettenbox highlightFach={['morgen', 'mittag']} />
       <Text>%d müssen sie morgens einnehmen %d am Abned</Text>
     </View>
   );
