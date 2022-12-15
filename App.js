@@ -1,28 +1,18 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { modelsTests } from './models/ModelsTests';
+
+import { MEDIKAMENTE } from './data/mediList';
+import { Medikamentvisualisierung } from './components/Medikamentvisualisierung'
 
 import Logo from './components/Logo';
-import CustomDatePicker from "./components/DateTimePicker";
-
-
 
 export default function App() {
   
-  modelsTests.test();
-
   return (
     <View style={styles.container}>
       <Logo />
-        <CustomDatePicker
-            textStyle={{
-                paddingVertical: 15,
-                paddingHorizontal: 10,
-                borderColor: 'gray',
-                borderWidth: 1,
-                backgroundColor: '#FFFFFF'
-            }}
-        />
+      {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
+      <Medikamentvisualisierung medikamentID={1}/>
     </View>
   );
 }

@@ -1,17 +1,16 @@
 import { Medikament } from "./Medikament";
+import { MEDIKAMENTE } from "../data/mediList";
 import { MedikamentenListe } from "./MedikamentenListe";
 import { Schachtel } from "./Schachtel";
 
-export const modelsTests = {
+export const ModelsTests = {
     test: function(){
-    //Simulation: Benutzer*in erfasst Medikamente. Die ID wird von einem Singleton ID-Generator vergeben. (Damit das richtig funktioniert, muss nach jedem Speichern einer Datei mit r die App neugestartet werden)
+
+    //Simulation: Benutzer*in erfasst Medikamente. Die ID wird von einem Singleton ID-Generator vergeben.
     //Jedes neue Medikament wird automatisch in der Dummy Datenbank "MLDummy" abgelegt. Diese Datenbank ist provvisorisch als statische Variable in der Klasse MedikamentenListe angelegt.
     let m1 = new Medikament("Ibuprofen", 20, "bild-Url", false);
-    let m2 = new Medikament("Aspirin", 10, "bild-Url", false);
-    let m3 = new Medikament("Euthyrox", 30, "bild-Url", false);
-    let m4 = new Medikament("Bisoprol", 10, "bild-Url", false);
-    let m5 = new Medikament("Thomapyr", 25, "bild-Url", false);
-    let m6 = new Medikament("Voltaren", 20, "bild-Url", false);
+    let m2 = new Medikament("Thomapyrin", 25, "bild-Url", false);
+    let m3 = new Medikament("Voltaren", 20, "bild-Url", false);
     MedikamentenListe.MLDummy.anzeigen();
 
 
@@ -60,5 +59,7 @@ export const modelsTests = {
     //Simulation: Benutzer*in leert Schachtel
     s1.leeren();
     //s1.anzeigen();
+
+
     }
 }

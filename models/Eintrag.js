@@ -7,7 +7,7 @@ export class Eintrag{
     }
 
     anzeigen(){
-        console.log("\t" + MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(this.medikamentId), this.anzahl + ";");
+        console.log("\t" + MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(this.medikamentId).name, this.anzahl + ";");
     }
 
     anzahlAendern(anzahl){

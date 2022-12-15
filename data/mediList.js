@@ -1,4 +1,4 @@
-/*import { Medikament } from '../models/Medikament';
+import { Medikament } from '../models/Medikament';
 
 const medikamente = [
   {
@@ -48,17 +48,14 @@ const medikamente = [
   },
 ];
 
-export const MEDIKAMENTE = medikamente.map(
-  (medikament) =>
+export const MEDIKAMENTE = medikamente.map( (medikament) =>
     new Medikament(
-      medikamente.id,
-      medikamente.name,
-      medikamente.boxSize,
-      medikamente.countSize,
-      medikamente.tag,
-      medikamente.zeitpunkt_menge,
-      medikamente.img,
-      medikamente.isReady
+      medikament.name,
+      medikament.boxSize,
+      //medikamente.countSize,
+      //medikamente.tag,
+      //medikamente.zeitpunkt_menge,
+      medikament.img,
+      medikament.isReady
     )
 );
-*/
