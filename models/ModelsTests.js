@@ -3,7 +3,7 @@ import { MEDIKAMENTE } from "../data/mediList";
 import { MedikamentenListe } from "./MedikamentenListe";
 import { Schachtel } from "./Schachtel";
 
-export const ModelsTests = {
+export const modelsTests = {
     test: function(){
 
     //Simulation: Benutzer*in erfasst Medikamente. Die ID wird von einem Singleton ID-Generator vergeben.

@@ -22,7 +22,7 @@ export class MedikamentenListe {
     //Gibt aus der Liste das Medikament mit der angegebenen ID zurueck.
     medikamentAnhandIDabrufen(medikamentId){
         for (const m of this.medikamente){
-            if (m.id == medikamentId){
+            if (m.id === medikamentId){
                 return m;
             }
         }

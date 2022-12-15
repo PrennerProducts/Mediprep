@@ -15,12 +15,12 @@ export const Medikamentvisualisierung = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 2,
         position: 'absolute',
-        top: 100,
+        top: 570,
         left: 50,
         width: 300,
-        height: 500,
+        height: 200,
         borderRadius: 25,
         backgroundColor: '#dcdcdc',
         alignItems: 'center',

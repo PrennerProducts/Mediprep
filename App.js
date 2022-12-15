@@ -5,6 +5,7 @@ import Tablettenbox from './components/Tablettenbox';
 import Logo from './components/Logo';
 import { useState } from 'react';
 import ForwardButton from './components/ForwardButton';
+import { Medikamentvisualisierung } from './components/Medikamentvisualisierung'
 
 export default function App() {
   modelsTests.test();
@@ -14,6 +15,8 @@ export default function App() {
       <Logo />
       <Tablettenbox highlightFach={['morgen', 'nacht']} />
       <ForwardButton />
+      {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
+      <Medikamentvisualisierung medikamentID={1}/>
     </View>
   );
 }

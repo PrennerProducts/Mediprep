@@ -19,13 +19,13 @@ export class Schachtel{
         //  28 -> Schachtel fuer eine Woche (4 Faecher pro Tag = Morgen, Mittag, Abend, Nacht)
         //  Je nach Auswahl werden die Faecher automatisch korrekt benannt. Der Index der Faecher beginnt bei 0.
         this.faecher = [];
-        if (anzahlFaecher == 4){
+        if (anzahlFaecher === 4){
             this.faecher.push(new Fach("", "Morgen"));
             this.faecher.push(new Fach("", "Mittag"));
             this.faecher.push(new Fach("", "Abend"));
             this.faecher.push(new Fach("", "Nacht"));
         }
-        else if (anzahlFaecher == 7){
+        else if (anzahlFaecher === 7){
             this.faecher.push(new Fach("Montag", ""));
             this.faecher.push(new Fach("Dienstag", ""));
             this.faecher.push(new Fach("Mittwoch", ""));
@@ -34,7 +34,7 @@ export class Schachtel{
             this.faecher.push(new Fach("Samstag", ""));
             this.faecher.push(new Fach("Sonntag", ""));
         }
-        else if (anzahlFaecher == 14){
+        else if (anzahlFaecher === 14){
             this.faecher.push(new Fach("Montag", "Morgen"));
             this.faecher.push(new Fach("Montag", "Abend"));
             this.faecher.push(new Fach("Dienstag", "Morgen"));
@@ -50,7 +50,7 @@ export class Schachtel{
             this.faecher.push(new Fach("Sonntag", "Morgen"));
             this.faecher.push(new Fach("Sonntag", "Abend"));
         }
-        else if (anzahlFaecher == 28){
+        else if (anzahlFaecher === 28){
             for (let i = 0; i<anzahlFaecher; i++){
                 let tag = "";
                 let zeit = "";
@@ -62,15 +62,15 @@ export class Schachtel{
                 else if (i < 24) tag = "Samstag";
                 else tag = "Sonntag";
                 let rest = i%4;
-                if (rest == 0) zeit = "Morgen";
-                else if (rest == 1) zeit = "Mittag";
-                else if (rest == 2) zeit = "Abend";
+                if (rest === 0) zeit = "Morgen";
+                else if (rest === 1) zeit = "Mittag";
+                else if (rest === 2) zeit = "Abend";
                 else zeit = "Nacht";
                 this.faecher.push(new Fach(tag, zeit));
         }}
     }
     
-    //diese Funktion zeigt die komplette Schachtel an, geordnet nach Faechern.
+    //diese Funktion zeigt die komplette Schachtel auf der Console an, geordnet nach Faechern.
     anzeigen(){ 
         let index = 0;
         console.log("\n" + this.name + ": Erstellt am " + this.erstellungsDatum);
@@ -81,7 +81,7 @@ export class Schachtel{
         }
     }
 
-    //diese Funktion zeigt ein einzelnes Fach an. Der Index des Faches wird als Parameter uebergeben.
+    //diese Funktion zeigt ein einzelnes Fach in der Console an. Der Index des Faches wird als Parameter uebergeben.
     anzeigenFach(fachIndex){
         if (fachIndex >= 0 && fachIndex < this.faecher.length) this.faecher[fachIndex].anzeigen();
     }
@@ -104,11 +104,11 @@ export class Schachtel{
     
     //diese Funktion befuellt mehrere Faecher, moegliche Modi: 1 = taeglich, 2 = alle 2 Tage...
     befuellenZyklisch(modus, startIndex, medikamentId, anzahl){
-        if (this.faecher.length == 4) {
+        if (this.faecher.length === 4) {
             console.log("Schachtel mit 4 Faechern kann nicht zyklisch befuellt werden.");
             return;}
-        else if (this.faecher.length == 14) modus = 2*modus;
-        else if (this.faecher.length == 28) modus = 4*modus;
+        else if (this.faecher.length === 14) modus = 2*modus;
+        else if (this.faecher.length === 28) modus = 4*modus;
         let zaehler = startIndex;
         while (zaehler >= 0 && zaehler < this.faecher.length){
             this.faecher[zaehler].eintragHinzufuegen(medikamentId, anzahl);
