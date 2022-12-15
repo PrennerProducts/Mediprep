@@ -16,7 +16,7 @@ export default function App() {
       <Tablettenbox highlightFach={['morgen', 'nacht']} />
       <ForwardButton />
       {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
-      <Medikamentvisualisierung medikamentID={1}/>
+      <Medikamentvisualisierung medikamentID={2}/>
     </View>
   );
 }

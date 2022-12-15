@@ -2,6 +2,12 @@ import { Medikament } from '../models/Medikament';
 
 const medikamente = [
   {
+    name: 'Test-Medikament',
+    boxSize: 30,
+    img: 'Test-url',
+    isReady: false,
+  },
+  {
     id: 1,
     name: 'Mexalen',
     boxSize: 20,
