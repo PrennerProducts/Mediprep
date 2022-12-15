@@ -10,11 +10,11 @@ const Homescreen = ({navigation}) => {
 
     const pressHandler1 = () => {
       
-            navigation.navigate('Ladebildschirm');
+            navigation.navigate('Befullungstarten');
 }
     const pressHandler2 = () => {
       
-    navigation.navigate('MedBearbeiten');
+    navigation.navigate('Ladebildschirm');
 }
 
 

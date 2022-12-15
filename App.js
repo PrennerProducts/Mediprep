@@ -11,6 +11,7 @@ import { Medikamentvisualisierung } from './components/Medikamentvisualisierung'
 
 
 import MediprepNavigator from './screens/MediprepNavigator';
+import Ladebildschirm from './screens/Ladebildschirm';
 
 export default function App() {
   
@@ -32,6 +33,8 @@ export default function App() {
             }}
         />
     </View>*/
+
+  
     <MediprepNavigator />
   );
 }

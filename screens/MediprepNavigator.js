@@ -7,7 +7,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Homescreen from './Homescreen';
 import Ladebildschirm from './Ladebildschirm';
 
-import MedBearbeiten from './MedikamenteVorbereiten';
+import Befullungstarten from './MedikamenteVorbereiten';
 
 const screens = {
     Homescreen: {
@@ -18,8 +18,8 @@ const screens = {
         screen: Ladebildschirm
     },
 
-    MedBearbeiten: {
-        screen: MedBearbeiten
+    Befullungstarten: {
+        screen: Befullungstarten
 
 }
 }
