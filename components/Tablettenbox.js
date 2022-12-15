@@ -41,8 +41,8 @@ const Tablettenfachcontainer = (props) => {
 };
 
 const Tablettenfach = (props) => {
-  console.log(props);
-  console.log(chechHighlightFach(props.highlightFach, props.fachId));
+  //console.log(props);
+  // console.log(chechHighlightFach(props.highlightFach, props.fachId));
 
   let mystyle;
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '97%',
-    height: '17%',
+    height: '34%',
     borderColor: 'gray',
     borderWidth: 1,
     backgroundColor: '#E6D3BB',

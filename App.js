@@ -5,15 +5,14 @@ import Tablettenbox from './components/Tablettenbox';
 import Logo from './components/Logo';
 import { useState } from 'react';
 import ForwardButton from './components/ForwardButton';
+import MedikamenteVorbereiten from './screens/MedikamenteVorbereiten';
 
 export default function App() {
-  modelsTests.test();
+  // modelsTests.test();
 
   return (
     <View style={styles.container}>
-      <Logo />
-      <Tablettenbox highlightFach={['morgen', 'nacht']} />
-      <ForwardButton />
+      <MedikamenteVorbereiten />
     </View>
   );
 }
