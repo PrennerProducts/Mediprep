@@ -13,7 +13,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Logo />
-      <Tablettenbox highlightMorgen={true} />
+      <Tablettenbox highlightFach={['morgen', 'nacht']} />
       <ForwardButton />
     </View>
   );
