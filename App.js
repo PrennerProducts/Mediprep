@@ -1,11 +1,10 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { modelsTests } from './models/ModelsTests';
 import Tablettenbox from './components/Tablettenbox';
 import Logo from './components/Logo';
 import { useState } from 'react';
 import ForwardButton from './components/ForwardButton';
-//import { MEDIKAMENTE } from './data/mediList';
 
 export default function App() {
   modelsTests.test();
