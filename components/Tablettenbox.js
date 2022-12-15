@@ -86,7 +86,7 @@ const Tablettenfach = (props) => {
 
   return (
     <View style={mystyle}>
-      <Text>1</Text>
+      <Text></Text>
     </View>
   );
 };
