@@ -3,57 +3,90 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
-  //console.log(props);
+  //console.log(props.highlightFach);
 
-  const TablettencontainerArray = [];
-  TablettencontainerArray.push(<Tablettenfachcontainer containerId="morgen" />);
-  TablettencontainerArray.push(<Tablettenfachcontainer containerId="mittag" />);
-  TablettencontainerArray.push(<Tablettenfachcontainer containerId="abend" />);
-  TablettencontainerArray.push(<Tablettenfachcontainer containerId="nacht" />);
-  //console.log(TablettencontainerArray);
   return (
     <View style={styles.tablettenbox}>
-      {TablettencontainerArray[0]}
-      {TablettencontainerArray[1]}
-      {TablettencontainerArray[2]}
-      {TablettencontainerArray[3]}
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="morgen"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="mittag"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="abend"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="nacht"
+      />
     </View>
   );
 };
 
 const Tablettenfachcontainer = (props) => {
-  //console.log(props)
+  //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
       <Text style={styles.tabblettenfachHeading}>{props.containerId}</Text>
-      <Tablettenfach fachId={props.containerId} isHighlighted={false} />
+      <Tablettenfach
+        fachId={props.containerId}
+        highlightFach={props.highlightFach}
+      />
     </View>
   );
 };
 
 const Tablettenfach = (props) => {
-  // das brauch ich in dem Fall nicht mehr!
-  const styleArray = [styles.tablettenfach, styles.tablettenfach_changed];
-  const useStateArray = useState(1);
-  const index = useStateArray[0];
-  let mystyle = styleArray[index];
-  const setStyle = useStateArray[1];
+  console.log(props);
+  console.log(chechHighlightFach(props.highlightFach, props.fachId));
 
-  //console.log(props);
+  let mystyle;
 
-  function setHighlightFach2(fachId) {
-    isHighlighted = true;
+  // for (let i = 0; i < props.highlightFach.length; i++) {
+  //   if (props.highlightFach[i] === props.fachId) {
+  //     mystyle = styles.tablettenfach_changed;
+  //   } else {
+  //     mystyle = styles.tablettenfach;
+  //   }
+  // }
+
+  function chechHighlightFach(highlightFach, fachId) {
+    for (let i = 0; i < highlightFach.length; i++) {
+      if (highlightFach[i] === fachId) {
+        return true;
+      }
+    }
+  }
+
+  // let mystyle;
+  // props.highlightFach.forEach(
+  //   chechHighlightFach(props.highlightFach, props.fachId)
+  // );
+  // {
+  //   mystyle = styles.tablettenfach_changed;
+  // }
+
+  // for (fach in props.highlightFach) {
+  //   if (fach === props.fachId) {
+  //     mystyle = styles.tablettenfach_changed;
+  //   } else {
+  //     mystyle = styles.tablettenfach;
+  //   }
+  // }
+
+  if (chechHighlightFach(props.highlightFach, props.fachId)) {
+    mystyle = styles.tablettenfach_changed;
+  } else {
+    mystyle = styles.tablettenfach;
   }
 
   return (
-    <View
-      style={
-        props.isHighlighted === false
-          ? styles.tablettenfach
-          : styles.tablettenfach_changed
-      }
-    >
-      <Text>*</Text>
+    <View style={mystyle}>
+      <Text>1</Text>
     </View>
   );
 };
