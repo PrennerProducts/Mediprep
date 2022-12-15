@@ -1,30 +1,92 @@
 import React from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
+import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
+  //console.log(props.highlightFach);
+
   return (
     <View style={styles.tablettenbox}>
-      <Tablettenfachcontainer zeitpunkt={'morgen'} id="morgen1" />
-      <Tablettenfachcontainer zeitpunkt={'mittag'} id="mittag" />
-      <Tablettenfachcontainer zeitpunkt={'abend'} id="abend" />
-      <Tablettenfachcontainer zeitpunkt={'nacht'} id="nacht" />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="morgen"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="mittag"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="abend"
+      />
+      <Tablettenfachcontainer
+        highlightFach={props.highlightFach}
+        containerId="nacht"
+      />
     </View>
   );
 };
 
 const Tablettenfachcontainer = (props) => {
+  //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
-      <Text style={styles.tabblettenfachHeading}>{props.zeitpunkt}</Text>
-      <Tablettenfach />
+      <Text style={styles.tabblettenfachHeading}>{props.containerId}</Text>
+      <Tablettenfach
+        fachId={props.containerId}
+        highlightFach={props.highlightFach}
+      />
     </View>
   );
 };
 
 const Tablettenfach = (props) => {
+  console.log(props);
+  console.log(chechHighlightFach(props.highlightFach, props.fachId));
+
+  let mystyle;
+
+  // for (let i = 0; i < props.highlightFach.length; i++) {
+  //   if (props.highlightFach[i] === props.fachId) {
+  //     mystyle = styles.tablettenfach_changed;
+  //   } else {
+  //     mystyle = styles.tablettenfach;
+  //   }
+  // }
+
+  function chechHighlightFach(highlightFach, fachId) {
+    for (let i = 0; i < highlightFach.length; i++) {
+      if (highlightFach[i] === fachId) {
+        return true;
+      }
+    }
+  }
+
+  // let mystyle;
+  // props.highlightFach.forEach(
+  //   chechHighlightFach(props.highlightFach, props.fachId)
+  // );
+  // {
+  //   mystyle = styles.tablettenfach_changed;
+  // }
+
+  // for (fach in props.highlightFach) {
+  //   if (fach === props.fachId) {
+  //     mystyle = styles.tablettenfach_changed;
+  //   } else {
+  //     mystyle = styles.tablettenfach;
+  //   }
+  // }
+
+  if (chechHighlightFach(props.highlightFach, props.fachId)) {
+    mystyle = styles.tablettenfach_changed;
+  } else {
+    mystyle = styles.tablettenfach;
+  }
+
   return (
-    <View style={styles.tablettenfach}>
-      <Text>*</Text>
+    <View style={mystyle}>
+      <Text></Text>
     </View>
   );
 };
@@ -50,13 +112,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'blue',
+    // backgroundColor: 'yellow',
     width: '25%',
     height: '100%',
     margin: 4,
     marginBottom: 4,
     marginTop: 4,
-    //borderColor: 'black',
+    // borderColor: 'black',
     // borderWidth: 1,
   },
   tablettenfach: {
@@ -73,6 +135,22 @@ const styles = StyleSheet.create({
     marginBottom: '10%',
     margin: '5%',
     borderWidth: 1,
+    borderColor: 'black',
+  },
+  tablettenfach_changed: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'yellow',
+    width: '84%',
+    height: '10%',
+    borderColor: 'black',
+    elevation: 24,
+    borderWidth: 1.5,
+    marginBottom: '10%',
+    margin: '5%',
+    borderWidth: 4,
     borderColor: 'black',
   },
   tabblettenfachHeading: {

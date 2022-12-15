@@ -1,18 +1,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
-import { MEDIKAMENTE } from './data/mediList';
-import { Medikamentvisualisierung } from './components/Medikamentvisualisierung'
-
+import { modelsTests } from './models/ModelsTests';
+import Tablettenbox from './components/Tablettenbox';
 import Logo from './components/Logo';
+import { useState } from 'react';
+import ForwardButton from './components/ForwardButton';
 
 export default function App() {
-  
+  modelsTests.test();
+
   return (
     <View style={styles.container}>
       <Logo />
-      {/* Hier wird ein Objekt Medikamentvisualisierung erzeugt. Muss als Parameter eine medikamentID bekommen */}
-      <Medikamentvisualisierung medikamentID={1}/>
+      <Tablettenbox highlightFach={['morgen', 'nacht']} />
+      <ForwardButton />
     </View>
   );
 }

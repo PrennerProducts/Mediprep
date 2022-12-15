@@ -107,3 +107,16 @@ CustomDatePicker.defaultProps = {
 };
 
 export default CustomDatePicker;
+
+/*
+<CustomDatePicker
+    textStyle={{
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        borderColor: 'gray',
+        borderWidth: 1,
+        backgroundColor: '#FFFFFF'
+    }}
+/>
+
+*/
