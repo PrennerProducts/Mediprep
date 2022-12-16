@@ -4,7 +4,10 @@ import moment from 'moment';
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 import WeiterButton from '../components/WeiterButton';
 
-export const WochenTagAuswahlScreen = () => {
+export const WochenTagAuswahlScreen = ({navigation}) => {
+        const pressHandler6 = () => {
+          navigation.navigate('MedikamentenUebersichtScreen');
+        };
   let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
   let currentWeekday = moment().format('dddd').toString();
   return (
@@ -30,7 +33,10 @@ export const WochenTagAuswahlScreen = () => {
         </TouchableOpacity>
       </View>
       <Text>Hallo</Text>
+      <TouchableOpacity onPress={pressHandler6}>
       <WeiterButton />
+    </TouchableOpacity>
+
     </View>
   );
 };
@@ -120,6 +126,8 @@ const styles = StyleSheet.create({
   container4: {
     backgroundColor: '#032E5B',
     flex: 1,
+  
+
   },
   container2: {
     justifyContent: 'center',
