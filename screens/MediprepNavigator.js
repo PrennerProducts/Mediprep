@@ -9,6 +9,7 @@ import Homescreen from './Homescreen';
 import Ladebildschirm from './Ladebildschirm';
 
 import Befullungstarten from './MedikamenteVorbereiten';
+import GreatSuccessScreen from './GreatSuccessScreen';
 
 
 const screens = {
@@ -24,7 +25,11 @@ const screens = {
     Befullungstarten: {
         screen: Befullungstarten
 
-}
+},
+    GreatSuccessScreen: {
+        screen: GreatSuccessScreen
+
+    },
 
 
 }

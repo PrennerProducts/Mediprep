@@ -10,13 +10,13 @@ const Homescreen = ({ navigation }) => {
     navigation.navigate('Befullungstarten');
   };
   const pressHandler2 = () => {
-    navigation.navigate('Ladebildschirm');
+    navigation.navigate('GreatSuccessScreen');
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
-      <Text style={styles.WelcomeFont}></Text>
+  
       <Text style={styles.WelcomeSlogan}>Was möchten Sie gerne tun?</Text>
       <Text style={styles.WelcomeFont}></Text>
       <TouchableOpacity onPress={pressHandler1}>

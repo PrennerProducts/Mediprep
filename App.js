@@ -12,7 +12,7 @@ import Tablettenbox from './components/Tablettenbox';
 
 import MediprepNavigator from './screens/MediprepNavigator';
 import Ladebildschirm from './screens/Ladebildschirm';
-import { MedikamentenanzeigeScreen } from './screens/MedikamentenanzeigeScreen';
+import GreatSuccessScreen from './screens/GreatSuccessScreen';
 
 export default function App() {
   modelsTests.test();
@@ -20,21 +20,13 @@ export default function App() {
   
 
   return (
-    /*
-    <View style={styles.container}>
-      <Logo />
-      <ForwardButton />
-        <CustomDatePicker
-            textStyle={{
-                paddingVertical: 15,
-                paddingHorizontal: 10,
-                borderColor: 'gray',
-                borderWidth: 1,
-                backgroundColor: '#FFFFFF'
-            }}
-        />
-    </View>*/
+    
+    /*<View style={styles.container}>
+      
+      <GreatSuccessScreen />
 
+    </View>
+*/
     <MediprepNavigator />
     
     
