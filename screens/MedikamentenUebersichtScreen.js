@@ -20,7 +20,7 @@ const MedikamentenUebersichtScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
-        {[MedikamentenListe.MLDummy.getMedikamentName(4)]}
+        {[MedikamentenListe.MLDummy.getMedikamentName(6)]}
       </Text>
 
       <Image
