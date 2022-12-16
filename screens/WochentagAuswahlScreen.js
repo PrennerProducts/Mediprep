@@ -1,27 +1,24 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { modelsTests } from '../models/ModelsTests';
-import Logo from '../components/Logo';
+import { View, Text, StyleSheet, Animated } from 'react-native';
 import WochenTagAuswahl from "../components/WochenTagAuswahl";
 
 
-const WochenTagAuswahlScreen = (props) => {
+export const WochenTagAuswahlScreen = (props) => {
+
     return (
         <View style={styles.container}>
-            <WochenTagAuswahlScreen/>
-
+            <Text>Hallo</Text>
+            <WochenTagAuswahl/>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#032e5b',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'white',
+        width: 400,
+        height: 380,
     },
 });
 
 export default WochenTagAuswahlScreen;
-
