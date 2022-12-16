@@ -1,16 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { MediprepNavigator } from '../screens/MediprepNavigator'
 
 const MedBearbeitenButton = () => {
   return (
-
     <View style={styles.Bearbeitenbox}>
       <Text style={styles.LogoFont}>Medikamentenliste bearbeiten</Text>
-
     </View>
-  
   );
 };
 
@@ -34,7 +30,6 @@ const styles = StyleSheet.create({
     color: 'white',
     elevation: 42,
   },
-
 });
 
 const TouchableWithoutFeedbackExample = () => {
@@ -55,4 +50,3 @@ const TouchableWithoutFeedbackExample = () => {
 };
 
 export default MedBearbeitenButton;
-
