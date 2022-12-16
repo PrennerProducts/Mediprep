@@ -12,10 +12,12 @@ import Tablettenbox from './components/Tablettenbox';
 
 import MediprepNavigator from './screens/MediprepNavigator';
 import Ladebildschirm from './screens/Ladebildschirm';
+import { MedikamentenanzeigeScreen } from './screens/MedikamentenanzeigeScreen';
 
 export default function App() {
   modelsTests.test();
   // modelsTests.test();
+  
 
   return (
     /*
@@ -34,6 +36,8 @@ export default function App() {
     </View>*/
 
     <MediprepNavigator />
+    
+    
   );
 }
 
@@ -45,3 +49,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
