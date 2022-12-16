@@ -8,13 +8,13 @@ import {
 import moment from "moment";
 
 export const WochenTagAuswahl = () => {
-    let currentDate = moment(); //.format('dddd') für WeekDay
-    let currentWeekday = moment().format('dddd')
+    let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
+    let currentWeekday = moment().format('dddd').toString()
     console.log(currentWeekday); //[1] LOG current Date
     return(
         <View style={styles.container}>
             <Text>Bitte wählen Sie die gewünschten Wochentage:</Text>
-            <Text>Heutiges Datum: %currentDate</Text>
+            <Text>Heutiges Datum: {currentDate}</Text>
             <View style={styles.rahmen}>
                 <WochenTag wochenTag={'MO'} id="Monday"  />
                 <WochenTag wochenTag={'DI'} id="Tuesday" />
