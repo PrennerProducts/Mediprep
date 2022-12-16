@@ -3,11 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 import WeiterButton from '../components/WeiterButton';
+import { ScreenObserver } from '../models/ScreenObserver';
 
 export const WochenTagAuswahlScreen = ({navigation}) => {
         const pressHandler6 = () => {
-          navigation.navigate('MedikamentenUebersichtScreen');
+          navigation.navigate('MedikamentenanzeigeScreen');
         };
+  ScreenObserver.aktuellerScreen = 'WochenTagAuswahlScreen';
   let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
   let currentWeekday = moment().format('dddd').toString();
   return (
@@ -59,7 +61,7 @@ const Farbauswahl = (props) => {
       <TouchableOpacity
         onPress={
           active === 0
-            ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
+            ? () => [setActive(1), (finalAuswahl[props.weekday] = 1), ScreenObserver.wochentag = props.weekday, console.log(ScreenObserver)]
             : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
         }
         style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}

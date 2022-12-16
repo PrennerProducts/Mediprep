@@ -28,7 +28,7 @@ export class MedikamentenListe {
         return m;
       }
     }
-    return { name: 'Ungueltig', bild: '' };
+    return { name: 'Leer', bild: '../assets/Immagine.png' };
   }
 
   // Returns the name of the medication with the given ID

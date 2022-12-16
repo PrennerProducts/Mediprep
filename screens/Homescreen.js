@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { modelsTests } from '../models/ModelsTests';
-import Logo from '../components/Logo';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
+import { ScreenObserver } from '../models/ScreenObserver';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
@@ -12,6 +11,8 @@ const Homescreen = ({ navigation }) => {
   const pressHandler2 = () => {
     navigation.navigate('GreatSuccessScreen');
   };
+  ScreenObserver.aktuellerScreen = 'Homescreen';
+  console.log(ScreenObserver);
 
   return (
     <View style={styles.container}>
