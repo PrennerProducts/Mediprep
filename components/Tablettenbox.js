@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#d8e4e9',
     width: '84%',
     height: '10%',
     borderColor: 'black',

@@ -48,11 +48,7 @@ export const MedikamenteVorbereiten = (props) => {
         highlightFach={DummySchachtel.zeigeFaecher(2)}
         stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(2)}
       />
-      <Text style={{ marginBottom: 10 }}>
-        Bitte legen Sie {'irgendwas '} in das
-        {' erste '}
-        {' noch irgendwas'} in das andere Fach
-      </Text>
+
       <View style={{ alignItems: 'center' }}>
         <WeiterButton />
       </View>
@@ -61,6 +57,9 @@ export const MedikamenteVorbereiten = (props) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
   tablettenProFachAnzeige: {
     backgroundColor: 'white',
     width: 400,
