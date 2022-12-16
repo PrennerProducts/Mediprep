@@ -4,6 +4,7 @@ import Tablettenbox from '../components/Tablettenbox';
 import { Schachtel } from '../models/Schachtel';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
+
 //import { DummySchachtel } from '../data/DummySchachtelFile';
 
 export const MedikamenteVorbereiten = (props) => {
@@ -38,7 +39,9 @@ export const MedikamenteVorbereiten = (props) => {
 
   return (
     <View style={styles.container}>
-      <Text>Hallo</Text>
+      <Text style={styles.medNameText}>
+        {[MedikamentenListe.MLDummy.getMedikamentName(137)]}
+      </Text>
       <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(5)} />
       <TablettenStueckAnzeige
         highlightFach={DummySchachtel.zeigeFaecher(5)}
@@ -54,6 +57,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: 400,
     height: 100,
+  },
+  medNameText: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: 'blue',
   },
 });
 
