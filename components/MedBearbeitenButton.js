@@ -17,15 +17,16 @@ const MedBearbeitenButton = () => {
 const styles = StyleSheet.create({
   Bearbeitenbox: {
     height: 150,
-    width: '90%',
+    width: 380,
     borderWidth: 5,
     borderColor: 'lightblue',
     borderRadius: 30,
     borderBottomLeftRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'lightgreen',
+    backgroundColor: '#5B032E',
     elevation: 55,
+    marginBottom: 150,
   },
   LogoFont: {
     fontSize: 36,
