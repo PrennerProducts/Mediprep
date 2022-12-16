@@ -14,8 +14,8 @@ export const WochenTagAuswahl = () => {
     let currentWeekday = moment().format('dddd').toString()
     return (
         <View style={styles.container4}>
-            <Text>Bitte wählen Sie die gewünschten Wochentage:</Text>
-            <Text>Heutiges Datum: {currentWeekday} {currentDate}</Text>
+            <Text style={styles.textfont}>Bitte wählen Sie die gewünschten Wochentage:</Text>
+            <Text style={styles.textfont}>Heutiges Datum: {currentWeekday} {currentDate}</Text>
             <View style={styles.rahmen}>
                 <WochenTag wochenTag={'MO'} name="Monday"  id='0'/>
                 <WochenTag wochenTag={'DI'} name="Tuesday" id='1'/>
@@ -29,9 +29,9 @@ export const WochenTagAuswahl = () => {
                 <TouchableOpacity
                     onPress={listArray}
                     style={styles.container2}>
-                    <View >
-                        <Text>Weiter</Text>
-                    </View>
+
+                        <Text style={styles.textfont2}>Weiter</Text>
+
                 </TouchableOpacity>
             </View>
         </View>
@@ -79,13 +79,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '97%',
-        height: '40%',
+        flex: 0.7,
         borderColor: 'gray',
         borderWidth: 1,
-        backgroundColor: '#a6aed2',
+        backgroundColor: '#00BFB2',
+        //backgroundColor: '#a6aed2',
         elevation: 10,
-        margin: 10,
+        marginTop: 20,
+
     },
 
     farblicheauswahl: {
@@ -123,9 +124,8 @@ const styles = StyleSheet.create({
         marginTop:7,
     },
     container4: {
-        backgroundColor: 'white',
-        width: 407,
-        height: 380,
+        backgroundColor: '#032E5B',
+        flex:1,
 
     },
     container2: {
@@ -135,12 +135,28 @@ const styles = StyleSheet.create({
         height: '30%',
         borderColor: 'gray',
         borderWidth: 1,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#00BFB2',
         elevation: 10,
         margin: 10,
     }, container3: {
+        marginTop: 30,
         alignItems:'flex-end'
 
+    }, textfont: {
+        marginLeft:12,
+        marginTop: 20,
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: '#00BFB2',
+        elevation: 42,
+        textAlign: 'left',
+    },
+    textfont2: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: 'white',
+        elevation: 42,
+        textAlign: 'left',
     },
 });
 
