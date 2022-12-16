@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+/*import React, {useState} from 'react';
 import {
     View,
     Text,
@@ -6,25 +6,25 @@ import {
     TouchableOpacity
 } from 'react-native';
 import moment from "moment";
+const finalAuswahl = [7];
 
-export const WochenTagAuswahl = () => {
+export const WochenTagAuswahl = (props) => {
+
     let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
     let currentWeekday = moment().format('dddd').toString()
-    console.log(currentWeekday); //[1] LOG current Date
+
     return(
-        <View style={styles.container}>
-            <Text>Bitte wählen Sie die gewünschten Wochentage:</Text>
-            <Text>Heutiges Datum: {currentDate}</Text>
+
             <View style={styles.rahmen}>
-                <WochenTag wochenTag={'MO'} id="Monday"  />
-                <WochenTag wochenTag={'DI'} id="Tuesday" />
-                <WochenTag wochenTag={'MI'} id="Wednesday" />
-                <WochenTag wochenTag={'DO'} id="Thursday" />
-                <WochenTag wochenTag={'FR'} id="Friday" />
-                <WochenTag wochenTag={'SA'} id="Saturday" />
-                <WochenTag wochenTag={'SO'} id="Sunday"/>
+                <WochenTag wochenTag={'MO'} name="Monday"  id='0'/>
+                <WochenTag wochenTag={'DI'} name="Tuesday" id='1'/>
+                <WochenTag wochenTag={'MI'} name="Wednesday" id='2'/>
+                <WochenTag wochenTag={'DO'} name="Thursday" id='3'/>
+                <WochenTag wochenTag={'FR'} name="Friday" id='4'/>
+                <WochenTag wochenTag={'SA'} name="Saturday" id='5'/>
+                <WochenTag wochenTag={'SO'} name="Sunday" id='6'/>
             </View>
-        </View>
+
     );
 };
 const WochenTag = (props) => {
@@ -32,28 +32,29 @@ const WochenTag = (props) => {
     return (
         <View style={styles.farblicheauswahl}>
             <Text style={styles.wochentag}>{props.wochenTag}</Text>
-            <TouchableOpacity><Farbauswahl active={0} /></TouchableOpacity>
+            <TouchableOpacity><Farbauswahl weekday={props.id}/></TouchableOpacity>
         </View>
     );
 };
 
 const Farbauswahl = (props) => {
-    console.log(props.active)
     const [active, setActive] = useState(0);
 
     return (
 
         <View style={styles.screen}>
             <TouchableOpacity
-                onPress={active === 0 ? () => [setActive(1)]: () => setActive(0)}
+                onPress={active === 0 ? () => [setActive(1),finalAuswahl[props.weekday] = 1]: () => [setActive(0), finalAuswahl[props.weekday] = 0]}
                 style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}>
             </TouchableOpacity>
         </View>
     );
+
 };
 
-
-
+const listArray = (finalAuswahl) => {
+    finalAuswahl.map
+};
 
 
 const styles = StyleSheet.create({
@@ -116,6 +117,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#ee9a49',
         marginTop:7,
     },
+    container4: {
+        backgroundColor: 'white',
+        width: 400,
+        height: 380,
+    },
+    container2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '30%',
+        height: '30%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        backgroundColor: 'lightblue',
+        elevation: 10,
+        margin: 10,
+    }, container3: {
+        alignItems:'flex-end'
+
+    },
 });
 
 export default WochenTagAuswahl;
+
+ */
