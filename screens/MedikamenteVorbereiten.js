@@ -35,18 +35,20 @@ export const MedikamenteVorbereiten = (props) => {
   //DummySchachtel.anzeigenFach(1);
   MedikamentenListe.MLDummy.anzeigen();
 
-  DummySchachtel.zeigeFaecher(2);
-  DummySchachtel.zeigeStueckProFaecher(2);
+  let medikamentId = 7;
+
+  DummySchachtel.zeigeFaecher(medikamentId);
+  DummySchachtel.zeigeStueckProFaecher(medikamentId);
 
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
-        {[MedikamentenListe.MLDummy.getMedikamentName(6)]}
+        {[MedikamentenListe.MLDummy.getMedikamentName(medikamentId)]}
       </Text>
-      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(3)} />
+      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(medikamentId)} />
       <TablettenStueckAnzeige
-        highlightFach={DummySchachtel.zeigeFaecher(3)}
-        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(3)}
+        highlightFach={DummySchachtel.zeigeFaecher(medikamentId)}
+        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(medikamentId)}
       />
 
       <View style={{ alignItems: 'center' }}>
@@ -58,7 +60,9 @@ export const MedikamenteVorbereiten = (props) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: 'center',
+    backgroundColor: '#cdf1fe',
   },
   tablettenProFachAnzeige: {
     backgroundColor: 'white',

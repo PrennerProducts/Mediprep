@@ -14,13 +14,15 @@ import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
 
 const MedikamentenUebersichtScreen = ({ navigation }) => {
+  let medikamentId = 7;
+
   const pressHandler4 = () => {
     navigation.navigate('Befullungstarten');
   };
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
-        {[MedikamentenListe.MLDummy.getMedikamentName(6)]}
+        {[MedikamentenListe.MLDummy.getMedikamentName(medikamentId)]}
       </Text>
 
       <Image
@@ -38,7 +40,7 @@ const MedikamentenUebersichtScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25b5e9',
+    backgroundColor: '#cdf1fe',
     alignItems: 'center',
   },
   medNameText: {

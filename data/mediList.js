@@ -59,7 +59,7 @@ const medikamente = [
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
     zeitpunkt_menge: { ['mittags']: 1, ['abends']: 2 },
-    img: '/myuri',
+    img: '../assets/morphin.png',
     isReady: false,
   },
   {
@@ -69,7 +69,7 @@ const medikamente = [
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
     zeitpunkt_menge: { ['mittags']: 1, ['abends']: 2 },
-    img: '/myuri',
+    img: '../assets/diazepam.png',
     isReady: false,
   },
   {

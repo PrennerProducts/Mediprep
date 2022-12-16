@@ -14,11 +14,12 @@ const styles = StyleSheet.create({
     height: 120,
     width: 350,
     borderWidth: 3,
-    borderColor: '#02005c',
+
+    borderColor: '#6b93ff',
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0548ff',
+    backgroundColor: '#02005c',
     elevation: 24,
   },
   font: {

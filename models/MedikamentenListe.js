@@ -40,4 +40,17 @@ export class MedikamentenListe {
     }
     return 'Error 42';
   }
+
+  // Returns the path of the image file
+  getImgUrl(medikamentId) {
+    for (const m of this.medikamente) {
+      if (m.id === medikamentId) {
+        return m.bild;
+        console.log(m.bild);
+      }
+    }
+    return 'No image found';
+  }
+
+  //static medikmantId = 7;
 }
