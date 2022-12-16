@@ -41,12 +41,12 @@ export const MedikamenteVorbereiten = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
-        {[MedikamentenListe.MLDummy.getMedikamentName(5)]}
+        {[MedikamentenListe.MLDummy.getMedikamentName(4)]}
       </Text>
-      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(3)} />
+      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(2)} />
       <TablettenStueckAnzeige
-        highlightFach={DummySchachtel.zeigeFaecher(3)}
-        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(3)}
+        highlightFach={DummySchachtel.zeigeFaecher(2)}
+        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(2)}
       />
 
       <View style={{ alignItems: 'center' }}>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   medNameText: {
     fontSize: 55,
     fontWeight: 'bold',
-    color: '#0548ff',
+    color: 'black',
   },
 });
 

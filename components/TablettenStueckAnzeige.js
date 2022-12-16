@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import pfeil from '../assets/pfeil.png';
+import pfeil_blue from '../assets/pfeil_blue.png';
 
 const TablettenStueckAnzeige = (props) => {
   return (
@@ -76,6 +77,7 @@ const Tablettenfach = (props) => {
         />
         <Text
           style={{
+            color: 'black',
             textAlign: 'center',
             fontWeight: 'bold',
             fontSize: 24,

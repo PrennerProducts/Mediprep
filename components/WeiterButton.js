@@ -11,7 +11,7 @@ const WeiterButton = () => {
 
 const styles = StyleSheet.create({
   button: {
-    height: 150,
+    height: 120,
     width: 350,
     borderWidth: 3,
     borderColor: '#02005c',
