@@ -1,31 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
-import { useState } from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import Tablettenbox from '../components/Tablettenbox';
+import { Schachtel } from '../models/Schachtel';
+import { MedikamentenListe } from '../models/MedikamentenListe';
+import pfeil from '../assets/pfeil.png';
 
-export const Tablettenbox = (props) => {
-  //console.log(props.highlightFach);
-
+const TablettenStueckAnzeige = (props) => {
   return (
     <View style={styles.tablettenbox}>
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
+        stueckProFachDict={props.stueckProFachDict}
         containerId={0}
-        containerName="morgen"
+        containerName=""
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
+        stueckProFachDict={props.stueckProFachDict}
         containerId={1}
-        containerName="mittag"
+        containerName=""
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
+        stueckProFachDict={props.stueckProFachDict}
         containerId={2}
-        containerName="abend"
+        containerName=""
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
+        stueckProFachDict={props.stueckProFachDict}
         containerId={3}
-        containerName="nacht"
+        containerName=""
       />
     </View>
   );
@@ -35,10 +40,10 @@ const Tablettenfachcontainer = (props) => {
   //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
-      <Text style={styles.tabblettenfachHeading}>{props.containerName}</Text>
       <Tablettenfach
         fachId={props.containerId}
         highlightFach={props.highlightFach}
+        stueckProFachDict={props.stueckProFachDict}
       />
     </View>
   );
@@ -59,16 +64,38 @@ const Tablettenfach = (props) => {
   }
 
   if (chechHighlightFach(props.highlightFach, props.fachId)) {
-    mystyle = styles.tablettenfach_changed;
+    mystyle = styles.tablettenfach_pfeil;
+    return (
+      <View style={mystyle}>
+        <Image
+          source={pfeil}
+          style={{
+            width: 100,
+            height: 100,
+            marginTop: 0,
+            position: 'absolute',
+            top: 0,
+          }}
+        />
+        <Text
+          style={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            fontSize: 24,
+            marginTop: 30,
+          }}
+        >
+          {props.stueckProFachDict[props.fachId]} Stück
+        </Text>
+      </View>
+    );
   } else {
-    mystyle = styles.tablettenfach;
+    return (
+      <View>
+        <Text></Text>
+      </View>
+    );
   }
-
-  return (
-    <View style={mystyle}>
-      <Text></Text>
-    </View>
-  );
 };
 
 const styles = StyleSheet.create({
@@ -78,12 +105,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '97%',
     height: '37%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    backgroundColor: '#E6D3BB',
-    elevation: 10,
+    //borderColor: 'gray',
+    //borderWidth: 1,
+    // backgroundColor: '#E6D3BB',
+    //elevation: 10,
     margin: 10,
-    marginBottom: 0,
+    magrinTop: 0,
   },
   text: {
     fontSize: 20,
@@ -98,7 +125,7 @@ const styles = StyleSheet.create({
     height: '100%',
     margin: 4,
     marginBottom: 4,
-    marginTop: 4,
+    marginTop: 0,
     // borderColor: 'black',
     // borderWidth: 1,
   },
@@ -107,32 +134,27 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    //backgroundColor: 'white',
     width: '84%',
     height: '10%',
-    borderColor: 'black',
-    elevation: 24,
-    borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
     borderWidth: 1,
-    borderColor: 'black',
+    //borderColor: 'black',
   },
-  tablettenfach_changed: {
+  tablettenfach_pfeil: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
     width: '84%',
     height: '10%',
-    borderColor: 'black',
-    elevation: 24,
-    borderWidth: 1.5,
+    //elevation: 24,
     marginBottom: '10%',
     margin: '5%',
-    borderWidth: 4,
-    borderColor: 'black',
+    // borderWidth: 4,
+    // borderColor: 'black',
   },
   tabblettenfachHeading: {
     fontSize: 13,
@@ -141,4 +163,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Tablettenbox;
+export default TablettenStueckAnzeige;
