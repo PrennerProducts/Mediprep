@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   medNameText: {
     fontSize: 55,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#0548ff',
   },
 });
 

@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     height: '20%',
     borderColor: 'gray',
     borderWidth: 1,
-    backgroundColor: '#E6D3BB',
+    backgroundColor: '#6b93ff',
     elevation: 10,
     margin: 10,
     marginBottom: 0,
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     marginBottom: '10%',
     margin: '5%',
     borderWidth: 4,
-    borderColor: 'black',
+    borderColor: '#f31b1b',
   },
   tabblettenfachHeading: {
     fontSize: 13,
