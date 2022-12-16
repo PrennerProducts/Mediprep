@@ -14,7 +14,7 @@ import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
 
 const MedikamentenUebersichtScreen = ({ navigation }) => {
-  let medikamentId = 7;
+  let medikamentId = 6;
 
   const pressHandler4 = () => {
     navigation.navigate('Befullungstarten');
