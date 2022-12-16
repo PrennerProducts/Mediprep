@@ -1,16 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { mediprepNavigation } from '../screens/MediprepNavigator'
 
 const StartButton = () => {
   return (
-    
     <View style={styles.Startbox}>
       <Text style={styles.LogoFont}>Tablettenbox befüllen</Text>
-
     </View>
-
   );
 };
 
@@ -34,10 +30,6 @@ const styles = StyleSheet.create({
     color: 'white',
     elevation: 42,
   },
-
 });
 
-
-
 export default StartButton;
-
