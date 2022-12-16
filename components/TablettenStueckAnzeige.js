@@ -1,8 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import Tablettenbox from '../components/Tablettenbox';
-import { Schachtel } from '../models/Schachtel';
-import { MedikamentenListe } from '../models/MedikamentenListe';
 import pfeil from '../assets/pfeil.png';
 
 const TablettenStueckAnzeige = (props) => {

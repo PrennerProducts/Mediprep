@@ -4,6 +4,7 @@ import Tablettenbox from '../components/Tablettenbox';
 import { Schachtel } from '../models/Schachtel';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
+import WeiterButton from '../components/WeiterButton';
 
 //import { DummySchachtel } from '../data/DummySchachtelFile';
 
@@ -40,28 +41,34 @@ export const MedikamenteVorbereiten = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
-        {[MedikamentenListe.MLDummy.getMedikamentName(137)]}
+        {[MedikamentenListe.MLDummy.getMedikamentName(5)]}
       </Text>
-      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(5)} />
+      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(3)} />
       <TablettenStueckAnzeige
-        highlightFach={DummySchachtel.zeigeFaecher(5)}
-        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(5)}
+        highlightFach={DummySchachtel.zeigeFaecher(3)}
+        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(3)}
       />
-      <Text>%d müssen sie morgens einnehmen %d am Abned</Text>
+
+      <View style={{ alignItems: 'center' }}>
+        <WeiterButton />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
   tablettenProFachAnzeige: {
     backgroundColor: 'white',
     width: 400,
     height: 100,
   },
   medNameText: {
-    fontSize: 42,
+    fontSize: 55,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#0548ff',
   },
 });
 

@@ -1,4 +1,4 @@
-import { IDGenerator } from './IDGenerator';  
+import { IDGenerator } from './IDGenerator';
 import { MedikamentenListe } from './MedikamentenListe';
 
 export class Medikament {
@@ -12,7 +12,18 @@ export class Medikament {
   }
 
   //Gibt Infos zum Medikament auf der Console aus
-  anzeigen(){
-    console.log(this.name + "\tID: " + this.id + ",\tInhalt Verpackung: " + this.inhaltVerpackung + ",\tBild: " + this.bild + ",\tBereit: " + this.istBereit + ";");
+  anzeigen() {
+    console.log(
+      this.name +
+        '\tID: ' +
+        this.id +
+        ',\tInhalt Verpackung: ' +
+        this.inhaltVerpackung +
+        ',\tBild: ' +
+        this.bild +
+        ',\tBereit: ' +
+        this.istBereit +
+        ';'
+    );
   }
 }

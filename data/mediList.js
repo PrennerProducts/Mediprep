@@ -54,7 +54,8 @@ const medikamente = [
   },
 ];
 
-export const MEDIKAMENTE = medikamente.map( (medikament) =>
+export const MEDIKAMENTE = medikamente.map(
+  (medikament) =>
     new Medikament(
       medikament.name,
       medikament.boxSize,
