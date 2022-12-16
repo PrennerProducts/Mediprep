@@ -6,6 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import moment from "moment";
+import {Weiterbutton} from "../components/WeiterButton";
 const finalAuswahl = [0,0,0,0,0,0,0];
 
 export const WochenTagAuswahlScreen = () => {
@@ -14,6 +15,7 @@ export const WochenTagAuswahlScreen = () => {
     let currentWeekday = moment().format('dddd').toString()
     return (
         <View style={styles.container4}>
+            
             <Text style={styles.textfont}>Bitte wählen Sie die gewünschten Wochentage:</Text>
             <Text style={styles.textfont}>Heutiges Datum: {currentWeekday} {currentDate}</Text>
             <View style={styles.rahmen}>
@@ -33,7 +35,9 @@ export const WochenTagAuswahlScreen = () => {
                         <Text style={styles.textfont2}>Weiter</Text>
 
                 </TouchableOpacity>
+                
             </View>
+
         </View>
     );
 
