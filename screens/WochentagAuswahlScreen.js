@@ -48,48 +48,48 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
 
 
   const pressHandler6 = () => {
-          navigation.navigate('MedikamentenUebersichtScreen');
-        };
+    navigation.navigate('MedikamentenUebersichtScreen');
+  };
 
   return (
-    <View style={styles.container4}>
-      <Text style={styles.textfont}>
-        Bitte wählen Sie die gewünschten Wochentage:
-      </Text>
-      <Text style={styles.textfont}>
-        Heutiges Datum: {currentWeekday} {currentDate}
-      </Text>
-      <View style={styles.rahmen}>
+      <View style={styles.container4}>
+        <Text style={styles.textfont}>
+          Bitte wählen Sie die gewünschten Wochentage:
+        </Text>
+        <Text style={styles.textfont}>
+          Heutiges Datum: {currentWeekday} {currentDate}
+        </Text>
+        <View style={styles.rahmen}>
 
-        <WochenTag wochenTag={'MO'} name="Monday" id="0" />
-        <WochenTag wochenTag={'DI'} name="Tuesday" id="1" />
-        <WochenTag wochenTag={'MI'} name="Wednesday" id="2" />
-        <WochenTag wochenTag={'DO'} name="Thursday" id="3" />
-        <WochenTag wochenTag={'FR'} name="Friday" id="4" />
-        <WochenTag wochenTag={'SA'} name="Saturday" id="5" />
-        <WochenTag wochenTag={'SO'} name="Sunday" id="6" />
-      </View>
+          <WochenTag wochenTag={'MO'} name="Monday" id="0" />
+          <WochenTag wochenTag={'DI'} name="Tuesday" id="1" />
+          <WochenTag wochenTag={'MI'} name="Wednesday" id="2" />
+          <WochenTag wochenTag={'DO'} name="Thursday" id="3" />
+          <WochenTag wochenTag={'FR'} name="Friday" id="4" />
+          <WochenTag wochenTag={'SA'} name="Saturday" id="5" />
+          <WochenTag wochenTag={'SO'} name="Sunday" id="6" />
+        </View>
         <TouchableOpacity onPress={listArray} style={styles.container2}>
           <Text style={styles.textfont2}>Log</Text>
         </TouchableOpacity>
-      <TouchableOpacity onPress={pressHandler6} style={styles.weiterButton}>
-      <WeiterButton />
-    </TouchableOpacity>
+        <TouchableOpacity onPress={pressHandler6} style={styles.weiterButton}>
+          <WeiterButton />
+        </TouchableOpacity>
 
-    </View>
+      </View>
   );
 };
 const WochenTag = (props) => {
   return (
-    <View style={styles.farblicheauswahl}>
+      <View style={styles.farblicheauswahl}>
 
-      <Text style={styles.wochentag}>{props.name}</Text>
-      <View style={styles.kugel}>
-        <TouchableOpacity>
-          <Farbauswahl weekday={props.id} />
-        </TouchableOpacity>
+        <Text style={styles.wochentag}>{props.name}</Text>
+        <View style={styles.kugel}>
+          <TouchableOpacity>
+            <Farbauswahl weekday={props.id} />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
   );
 };
 
@@ -97,16 +97,16 @@ const Farbauswahl = (props) => {
   const [active, setActive] = useState(0);
 
   return (
-    <View style={styles.screen}>
-      <TouchableOpacity
-        onPress={
-          active === 0
-            ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
-            : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
-        }
-        style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
-      ></TouchableOpacity>
-    </View>
+      <View style={styles.screen}>
+        <TouchableOpacity
+            onPress={
+              active === 0
+                  ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
+                  : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
+            }
+            style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
+        ></TouchableOpacity>
+      </View>
   );
 };
 
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   rahmen: {
     //flexDirection: 'column',
     //justifyContent: 'flex-end',
-   // alignItems: 'center',
+    // alignItems: 'center',
     borderColor: 'gray',
 
     //backgroundColor: '#a6aed2',
@@ -136,18 +136,20 @@ const styles = StyleSheet.create({
   farblicheauswahl: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+
+
 
 
   },
 
   wochentag: {
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: 'bold',
     color: 'black',
     marginRight:10,
     width:200,
     height:50,
+    marginTop: 10,
   },
 
   roundButton1: {
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 100,
     backgroundColor: 'white',
-    marginTop: 7,
+    marginTop: 12,
     elevation: 10,
   },
   roundButton1active: {
@@ -169,25 +171,21 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 100,
     backgroundColor: '#ee9a49',
-    marginTop: 7,
+    marginTop: 12,
     elevation: 10,
   },
   container4: {
     backgroundColor: '#cdf1fe',
     flex:1,
     alignItems: 'flex-start',
-  
+
 
   },
   container2: {
-    justifyContent: 'center',
-    alignItems: 'center',
-
     borderColor: 'gray',
-    borderWidth: 1,
     backgroundColor: 'white',
-    elevation: 10,
     margin: 10,
+    height:30,
   },
   container3: {
     width: '50%',
@@ -203,7 +201,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   textfont2: {
-    fontSize:30,
+    fontSize:20,
     fontWeight: 'bold',
     color: 'black',
     elevation: 42,
