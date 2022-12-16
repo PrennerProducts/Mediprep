@@ -9,19 +9,23 @@ export const Tablettenbox = (props) => {
     <View style={styles.tablettenbox}>
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
-        containerId="morgen"
+        containerId={0}
+        containerName="morgen"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
-        containerId="mittag"
+        containerId={1}
+        containerName="mittag"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
-        containerId="abend"
+        containerId={2}
+        containerName="abend"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
-        containerId="nacht"
+        containerId={3}
+        containerName="nacht"
       />
     </View>
   );
@@ -31,7 +35,7 @@ const Tablettenfachcontainer = (props) => {
   //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
-      <Text style={styles.tabblettenfachHeading}>{props.containerId}</Text>
+      <Text style={styles.tabblettenfachHeading}>{props.containerName}</Text>
       <Tablettenfach
         fachId={props.containerId}
         highlightFach={props.highlightFach}
@@ -46,14 +50,6 @@ const Tablettenfach = (props) => {
 
   let mystyle;
 
-  // for (let i = 0; i < props.highlightFach.length; i++) {
-  //   if (props.highlightFach[i] === props.fachId) {
-  //     mystyle = styles.tablettenfach_changed;
-  //   } else {
-  //     mystyle = styles.tablettenfach;
-  //   }
-  // }
-
   function chechHighlightFach(highlightFach, fachId) {
     for (let i = 0; i < highlightFach.length; i++) {
       if (highlightFach[i] === fachId) {
@@ -61,22 +57,6 @@ const Tablettenfach = (props) => {
       }
     }
   }
-
-  // let mystyle;
-  // props.highlightFach.forEach(
-  //   chechHighlightFach(props.highlightFach, props.fachId)
-  // );
-  // {
-  //   mystyle = styles.tablettenfach_changed;
-  // }
-
-  // for (fach in props.highlightFach) {
-  //   if (fach === props.fachId) {
-  //     mystyle = styles.tablettenfach_changed;
-  //   } else {
-  //     mystyle = styles.tablettenfach;
-  //   }
-  // }
 
   if (chechHighlightFach(props.highlightFach, props.fachId)) {
     mystyle = styles.tablettenfach_changed;
