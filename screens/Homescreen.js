@@ -17,7 +17,7 @@ const Homescreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
       <Text style={styles.WelcomeFont}></Text>
-      <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
+      <Text style={styles.WelcomeSlogan}>Was möchten Sie gerne tun?</Text>
       <Text style={styles.WelcomeFont}></Text>
       <TouchableOpacity onPress={pressHandler1}>
         <StartButton />
@@ -32,22 +32,25 @@ const Homescreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#032E5B',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   WelcomeFont: {
+    marginTop: 20,
     fontSize: 40,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#00BFB2',
     elevation: 42,
     textAlign: 'left',
+    
   },
   WelcomeSlogan: {
-    fontSize: 30,
+    flex:1,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#00BFB2',
     elevation: 42,
     textAlign: 'left',
   },
