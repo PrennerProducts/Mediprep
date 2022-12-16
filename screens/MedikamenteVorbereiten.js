@@ -18,14 +18,15 @@ export const MedikamenteVorbereiten = (props) => {
 
   //DummySchachtel.anzeigenFachMedikament(1, 1);
 
-  DummySchachtel.anzeigen();
+  // DummySchachtel.anzeigen();
   //DummySchachtel.anzeigenFach(1);
   MedikamentenListe.MLDummy.anzeigen();
-  DummySchachtel.anzeigenMedikament(2);
+  DummySchachtel.zeigeFaecher(2);
+
   return (
     <View style={styles.container}>
       <Text>Hallo</Text>
-      <Tablettenbox highlightFach={['morgen', 'mittag']} />
+      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(2)} />
       <Text>%d müssen sie morgens einnehmen %d am Abned</Text>
     </View>
   );
@@ -40,3 +41,5 @@ const styles = StyleSheet.create({
 });
 
 export default MedikamenteVorbereiten;
+
+// Legende verwendete Funktienen:

@@ -100,20 +100,6 @@ export class Schachtel {
   //TODO: diese Funktion zeigt alle Faecher an, in denen ein bestimmtes Medikament eingetragen ist
   anzeigenMedikament(medikamentId) {
     //TODO...
-    let index = 0;
-    console.log('MyTest');
-    let indexesFach = [];
-
-    for (const f of this.faecher) {
-      for (const e of f.eintraege) {
-        if (e.medikamentId === medikamentId) {
-          indexesFach.push(index);
-        }
-      }
-      index++;
-    }
-    console.log(indexesFach);
-    return indexesFach;
   }
 
   //diese Funktion legt einen neuen Eintrag im angegebenen Fach an.
@@ -149,5 +135,29 @@ export class Schachtel {
     for (const f of this.faecher) {
       f.leeren();
     }
+  }
+
+  // **********  **********  **********  *********  **********
+  // Medikamentevorbereiten / Einschachteln Funktionen
+  // ----------  ----------  ----------  ----------  ----------
+
+  // Diese Funktion zeigt an in welchen Fächern ein bestimmtes Medikament (ID) liegt, um die Farbliche
+  // Visualisierung des Fachs umzusetzen.
+  zeigeFaecher(medikamentId) {
+    //TODO...
+    let index = 0;
+    console.log('MyTest');
+    let indexesFach = [];
+
+    for (const f of this.faecher) {
+      for (const e of f.eintraege) {
+        if (e.medikamentId === medikamentId) {
+          indexesFach.push(index);
+        }
+      }
+      index++;
+    }
+    console.log(indexesFach);
+    return indexesFach;
   }
 }
