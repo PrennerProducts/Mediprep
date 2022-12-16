@@ -8,7 +8,7 @@ import {
 import moment from "moment";
 const finalAuswahl = [0,0,0,0,0,0,0];
 
-export const WochenTagAuswahl = () => {
+export const WochenTagAuswahlScreen = () => {
 
     let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
     let currentWeekday = moment().format('dddd').toString()
@@ -160,4 +160,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default WochenTagAuswahl;
+export default WochenTagAuswahlScreen;

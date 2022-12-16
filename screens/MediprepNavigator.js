@@ -11,6 +11,7 @@ import Ladebildschirm from './Ladebildschirm';
 import Befullungstarten from './MedikamenteVorbereiten';
 import GreatSuccessScreen from './GreatSuccessScreen';
 import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
+import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 
 
 const screens = {
@@ -33,6 +34,10 @@ const screens = {
     },
     MedikamentenUebersichtScreen: {
         screen: MedikamentenUebersichtScreen
+
+    },
+    WochenTagAuswahlScreen: {
+        screen: WochenTagAuswahlScreen
 
     },
 

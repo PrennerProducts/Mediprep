@@ -13,6 +13,7 @@ import Tablettenbox from './components/Tablettenbox';
 import MediprepNavigator from './screens/MediprepNavigator';
 import Ladebildschirm from './screens/Ladebildschirm';
 import GreatSuccessScreen from './screens/GreatSuccessScreen';
+import WochenTagAuswahlScreen from './screens/WochentagAuswahlScreen';
 
 export default function App() {
   modelsTests.test();
