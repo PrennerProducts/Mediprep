@@ -8,8 +8,9 @@ import WeiterButton from '../components/WeiterButton';
 
 const MedikamentenUebersichtScreen = (props) => {
   return (
-    <View>
+    <View style={{ backgroundColor: '#25b5e9' }}>
       <Text style={styles.title}>MedikamentenUebersichtScreen</Text>
+      <WeiterButton style={styles.weiterButton} />
     </View>
   );
 };

@@ -7,7 +7,7 @@ import MedBearbeitenButton from '../components/MedBearbeitenButton';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
-    navigation.navigate('Befullungstarten');
+    navigation.navigate('MedikamentenUebersichtScreen');
   };
   const pressHandler2 = () => {
     navigation.navigate('GreatSuccessScreen');
@@ -16,7 +16,7 @@ const Homescreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
-  
+
       <Text style={styles.WelcomeSlogan}>Was möchten Sie gerne tun?</Text>
       <Text style={styles.WelcomeFont}></Text>
       <TouchableOpacity onPress={pressHandler1}>
@@ -44,10 +44,9 @@ const styles = StyleSheet.create({
     color: '#00BFB2',
     elevation: 42,
     textAlign: 'left',
-    
   },
   WelcomeSlogan: {
-    flex:1,
+    flex: 1,
     fontSize: 28,
     fontWeight: 'bold',
     color: '#00BFB2',
