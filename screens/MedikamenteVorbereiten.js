@@ -5,29 +5,33 @@ import { Schachtel } from '../models/Schachtel';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
+import { ScreenObserver } from '../models/ScreenObserver';
+import { DummySchachtel } from '../data/DummySchachtelFile';
 
 //import { DummySchachtel } from '../data/DummySchachtelFile';
 
 export const MedikamenteVorbereiten = (props) => {
-  let DummySchachtel = new Schachtel('Meine Schachtel', 4);
+  ScreenObserver.aktuellerScreen = 'MedikamenteVorbereiten';
+  console.log(ScreenObserver);
+  // let DummySchachtel = new Schachtel('Meine Schachtel', 4);
 
-  DummySchachtel.befuellen(0, 3, 0.5);
-  DummySchachtel.befuellen(0, 2, 3);
-  DummySchachtel.befuellen(0, 2, 5);
-  DummySchachtel.befuellen(1, 7, 0.5);
-  DummySchachtel.befuellen(1, 5, 3);
-  DummySchachtel.befuellen(2, 2, 0.5);
-  DummySchachtel.befuellen(3, 3, 1);
-  DummySchachtel.befuellen(3, 6, 1);
+  // DummySchachtel.befuellen(0, 3, 0.5);
+  // DummySchachtel.befuellen(0, 2, 3);
+  // DummySchachtel.befuellen(0, 2, 5);
+  // DummySchachtel.befuellen(1, 7, 0.5);
+  // DummySchachtel.befuellen(1, 5, 3);
+  // DummySchachtel.befuellen(2, 2, 0.5);
+  // DummySchachtel.befuellen(3, 3, 1);
+  // DummySchachtel.befuellen(3, 6, 1);
 
-  DummySchachtel.befuellen(0, 1, 0.5);
-  DummySchachtel.befuellen(0, 2, 3);
-  DummySchachtel.befuellen(0, 3, 5);
-  DummySchachtel.befuellen(1, 7, 0.5);
-  DummySchachtel.befuellen(1, 1, 3);
-  DummySchachtel.befuellen(2, 4, 0.5);
-  DummySchachtel.befuellen(3, 3, 1);
-  DummySchachtel.befuellen(3, 6, 1);
+  // DummySchachtel.befuellen(0, 1, 0.5);
+  // DummySchachtel.befuellen(0, 2, 3);
+  // DummySchachtel.befuellen(0, 3, 5);
+  // DummySchachtel.befuellen(1, 7, 0.5);
+  // DummySchachtel.befuellen(1, 1, 3);
+  // DummySchachtel.befuellen(2, 4, 0.5);
+  // DummySchachtel.befuellen(3, 3, 1);
+  // DummySchachtel.befuellen(3, 6, 1);
 
   //DummySchachtel.anzeigenFachMedikament(1, 1);
 
