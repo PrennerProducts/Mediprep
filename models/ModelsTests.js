@@ -21,7 +21,7 @@ export const modelsTests = {
 
     //Simulation: Benutzer*in befuellt Schachtel manuell mit verschiedenen Medikamenten
     s1.befuellen(0, 3, 0.5);
-    s1.befuellen(0, 2, 30);
+    s1.befuellen(0, 2, 3);
     s1.befuellen(0, 1, 5.25);
     s1.befuellen(1, 7, 0.5);
     s1.befuellen(1, 5, 3);
