@@ -1,58 +1,60 @@
 import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Tablettenbox from '../components/Tablettenbox';
-import { Schachtel } from '../models/Schachtel';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
+import { ScreenObserver } from '../models/ScreenObserver';
+import { DummySchachtel } from '../data/DummySchachtelFile';
+import { Schachtel } from '../models/Schachtel';
 
 //import { DummySchachtel } from '../data/DummySchachtelFile';
 
-export const MedikamenteVorbereiten = (props) => {
-  let DummySchachtel = new Schachtel('Meine Schachtel', 4);
+export const MedikamenteVorbereiten = ({ navigation }) => {
+  let befuellungready = false;
+  ScreenObserver.aktuellerScreen = 'MedikamenteVorbereiten';
+  let medikamentId = ScreenObserver.medikamente[0];
+  ScreenObserver.medikamente.shift();
+  console.log(ScreenObserver.medikamente);
 
-  DummySchachtel.befuellen(0, 3, 0.5);
-  DummySchachtel.befuellen(0, 2, 3);
-  DummySchachtel.befuellen(0, 2, 5);
-  DummySchachtel.befuellen(1, 7, 0.5);
-  DummySchachtel.befuellen(1, 5, 3);
-  DummySchachtel.befuellen(2, 2, 0.5);
-  DummySchachtel.befuellen(3, 3, 1);
-  DummySchachtel.befuellen(3, 6, 1);
+  if (ScreenObserver.medikamente.length == 0) {
+    befuellungready = true;
+  }
 
-  DummySchachtel.befuellen(0, 1, 0.5);
-  DummySchachtel.befuellen(0, 2, 3);
-  DummySchachtel.befuellen(0, 3, 5);
-  DummySchachtel.befuellen(1, 7, 0.5);
-  DummySchachtel.befuellen(1, 1, 3);
-  DummySchachtel.befuellen(2, 4, 0.5);
-  DummySchachtel.befuellen(3, 3, 1);
-  DummySchachtel.befuellen(3, 6, 1);
+  // DummySchachtel.starten();
 
-  //DummySchachtel.anzeigenFachMedikament(1, 1);
+  DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId);
 
-  // DummySchachtel.anzeigen();
-  //DummySchachtel.anzeigenFach(1);
-  MedikamentenListe.MLDummy.anzeigen();
+  const pressHandler = () => {
+    navigation.navigate('MedikamentenanzeigeScreen');
+  };
 
-  let medikamentId = 6;
-
-  DummySchachtel.zeigeFaecher(medikamentId);
-  DummySchachtel.zeigeStueckProFaecher(medikamentId);
+  const pressHandler2 = () => {
+    navigation.navigate('GreatSuccessScreen');
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.medNameText}>
         {[MedikamentenListe.MLDummy.getMedikamentName(medikamentId)]}
       </Text>
-      <Tablettenbox highlightFach={DummySchachtel.zeigeFaecher(medikamentId)} />
+      <Tablettenbox
+        highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId)}
+      />
       <TablettenStueckAnzeige
-        highlightFach={DummySchachtel.zeigeFaecher(medikamentId)}
-        stueckProFachDict={DummySchachtel.zeigeStueckProFaecher(medikamentId)}
+        highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId)}
+        stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(
+          medikamentId
+        )}
       />
 
       <View style={{ alignItems: 'center' }}>
-        <WeiterButton />
+        <TouchableOpacity
+          onPress={befuellungready ? pressHandler2 : pressHandler}
+          style={styles.weiterButton}
+        >
+          <WeiterButton />
+        </TouchableOpacity>
       </View>
     </View>
   );

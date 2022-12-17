@@ -1,10 +1,11 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Medikamentvisualisierung } from '../components/Medikamentvisualisierung';
 import { ScreenObserver } from '../models/ScreenObserver';
 import { DummySchachtel } from '../data/DummySchachtelFile';
+import WeiterButton from '../components/WeiterButton';
 
 
-export const MedikamentenanzeigeScreen = (props) => {
+export const MedikamentenanzeigeScreen = ({navigation}) => {
     ScreenObserver.aktuellerScreen = 'MedikamentenanzeigeScreen';
     console.log(ScreenObserver);
     fach = DummySchachtel.DummySchachtel.faecher[ScreenObserver.wochentag * 4];
@@ -14,10 +15,17 @@ export const MedikamentenanzeigeScreen = (props) => {
             medikamente.push(e.medikamentId);
         }
     }
+    ScreenObserver.medikamente = medikamente;
     console.log(medikamente);
+    const pressHandler = () => {
+        navigation.navigate('Befullungstarten');
+      };
     return (
             <View style={styles.container}>
                 <Medikamentvisualisierung medikamentID={medikamente[0]}/>
+                <TouchableOpacity onPress={pressHandler} style={styles.weiterButton}>
+                    <WeiterButton />
+                </TouchableOpacity>
             </View>
     );
 };
