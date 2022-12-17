@@ -12,6 +12,7 @@ export const DummySchachtelFile = (props) => {
   DummySchachtel.befuellen(2, 2, 0.5);
   DummySchachtel.befuellen(3, 3, 1);
   DummySchachtel.befuellen(3, 6, 1);
+   DummySchachtel.befuellen(0, 5, 1);
 
   //DummySchachtel.anzeigenFachMedikament(1, 1);
 

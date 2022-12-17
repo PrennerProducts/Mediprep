@@ -35,10 +35,10 @@ export const MedikamenteVorbereiten = (props) => {
   //DummySchachtel.anzeigenFach(1);
   MedikamentenListe.MLDummy.anzeigen();
 
-  let medikamentId = 6;
+  let medikamentId = 3;
 
-  DummySchachtel.zeigeFaecher(medikamentId);
-  DummySchachtel.zeigeStueckProFaecher(medikamentId);
+  //DummySchachtel.zeigeFaecher(medikamentId);
+  //DummySchachtel.zeigeStueckProFaecher(medikamentId);
 
   return (
     <View style={styles.container}>
