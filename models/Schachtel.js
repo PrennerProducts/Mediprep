@@ -163,7 +163,6 @@ export class Schachtel {
   //diese Funktion zeigt wieviel Stück eines bestimmten Medi in welchem Fach sind.
   zeigeStueckProFaecher(medikamentId) {
     let index = 0;
-    console.log('ZeigeStueckProFaecher Test');
     let stueckProFachDict = {};
 
     for (const f of this.faecher) {
@@ -174,7 +173,44 @@ export class Schachtel {
       }
       index++;
     }
-    console.log(stueckProFachDict);
+    console.log(+stueckProFachDict);
     return stueckProFachDict;
   }
+
+
+  //zähle Tabletten pro Fach, Funktion gibt FachId, Ganze, Halbe, Viertel zurück
+  sumTabFach() {
+    let stueckProFachGroeße = {};
+    let FachId = 0;
+    let ganze = 0;
+    let halbe = 0;
+    let viertel = 0;
+
+    for (const f of this.faecher) {
+      ganze = 0;
+      halbe = 0;
+      viertel = 0;
+      for (const e of f.eintraege) {
+        //Anzahl Tabletten wird auf ganze Zahl gebracht, aber immer abgerundet
+        const zahlint = Math.floor(e.anzahl);
+        // Die abgerundete Zahle wird in "ganze" gespeichert
+        ganze += zahlint;
+        //Überprüft, ob es sich um eine halbe Tablette handelt, wenn ja dann wird die in "halbe" gespeichert
+        if ((e.anzahl - zahlint) === 0.5) {
+          halbe += 1;
+        }
+        //Überprüft, ob es sich um eine viertele Tablette handelt, wenn ja dann wird die in "viertel" gespeichert
+        if ((e.anzahl - zahlint) === 0.25) {
+          viertel += 1;
+        }
+      }
+      //console.log("Test Zeller FachId = " +FachId+ " Ganze " +ganze+ " Halbe " +halbe+ " Viertel " +viertel);
+      stueckProFachGroeße[FachId] = [ganze,halbe,viertel];
+      FachId =+ 1;
+
+    }
+    return stueckProFachGroeße;
+  }
+
+
 }
