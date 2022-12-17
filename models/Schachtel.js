@@ -204,7 +204,6 @@ export class Schachtel {
           viertel += 1;
         }
       }
-      //console.log("Test Zeller FachId = " +FachId+ " Ganze " +ganze+ " Halbe " +halbe+ " Viertel " +viertel);
       stueckProFachGroeße[FachId] = [ganze,halbe,viertel];
       FachId =+ 1;
 
