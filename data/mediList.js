@@ -2,18 +2,19 @@ import { Medikament } from '../models/Medikament';
 
 const medikamente = [
   {
-    name: 'Mexalen',
+    name: 'Mexalen 500mg',
     boxSize: 20,
     countSize: 0,
     tag: ['mo', 'mi', 'fr'],
     zeitpunkt_menge: {
       ['morgens']: 1,
+      ['abends']: 1.5,
     },
     img: 'https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg',
     isReady: false,
   },
   {
-    name: 'Aspirin',
+    name: 'Aspirin 500mg',
     boxSize: 20,
     countSize: 0,
     tag: ['di', 'do', 'sa'],
@@ -25,7 +26,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Euthyrox',
+    name: 'Euthyrox 75µg',
     boxSize: 10,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -34,7 +35,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Bisoprolol',
+    name: 'Bisoprolol 2,5mg ',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -43,7 +44,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Morhphin 10mg',
+    name: 'Morphin 10mg',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -52,7 +53,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Diazepam',
+    name: 'Diazepam 10mg',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -61,7 +62,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Lorazepam',
+    name: 'Lendorm 0,25mg ',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -70,7 +71,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Fentanyl',
+    name: 'Fentanyl 5µg',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -79,7 +80,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Hydromorphon',
+    name: 'Hydal 2mg',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
@@ -88,7 +89,7 @@ const medikamente = [
     isReady: false,
   },
   {
-    name: 'Oxycodon',
+    name: 'Oxycodon 5mg',
     boxSize: 30,
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],

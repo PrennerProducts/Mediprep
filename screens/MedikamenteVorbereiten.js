@@ -16,6 +16,10 @@ export const MedikamenteVorbereiten = ({ navigation }) => {
   let medikamentId = ScreenObserver.medikamente[0];
   ScreenObserver.medikamente.shift();
   console.log(ScreenObserver.medikamente);
+  console.log(
+    'ZeigeFaecherTest--------------',
+    DummySchachtel.DummySchachtel.anzeigen()
+  );
 
   if (ScreenObserver.medikamente.length == 0) {
     befuellungready = true;
