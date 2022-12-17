@@ -15,14 +15,14 @@ export const modelsTests = {
 
 
     //Simulation: Benutzer*in erstellt Schachtel mit gewuenschter Anzahl von Faechern (4,7,14 oder 28)
-    let s1 = new Schachtel("Meine Schachtel", 28);
+    let s1 = new Schachtel("Meine Schachtel", 4);
     //s1.anzeigen();
 
 
     //Simulation: Benutzer*in befuellt Schachtel manuell mit verschiedenen Medikamenten
     s1.befuellen(0, 3, 0.5);
-    s1.befuellen(0, 2, 3);
-    s1.befuellen(0, 2, 5);
+    s1.befuellen(0, 2, 30);
+    s1.befuellen(0, 1, 5.25);
     s1.befuellen(1, 7, 0.5);
     s1.befuellen(1, 5, 3);
     s1.befuellen(2, 2, 0.5);
@@ -49,7 +49,8 @@ export const modelsTests = {
     //Schritt 4: Benutzer*in bestaetigt Befuellung durch Tippen auf "Weiter"-Button. Naechstes Medikament wird angezeigt (medikamentIndex wird um 1 hochgezaehlt).
     medikamentIndex++;
     s1.anzeigenFachMedikament(fachIndex, medikamentIndex);
-
+    // Summe ermitteln von Fach
+    s1.sumTabFach()
 
     //Simulation: Benutzer*in leert Fach
     s1.leerenFach(0);

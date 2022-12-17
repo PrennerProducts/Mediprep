@@ -12,6 +12,7 @@ import Befullungstarten from './MedikamenteVorbereiten';
 import GreatSuccessScreen from './GreatSuccessScreen';
 import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
+import { MedikamentenanzeigeScreen } from './MedikamentenanzeigeScreen';
 
 
 const screens = {
@@ -40,8 +41,10 @@ const screens = {
         screen: WochenTagAuswahlScreen
 
     },
+    MedikamentenanzeigeScreen: {
+        screen: MedikamentenanzeigeScreen
 
-
+    },
 }
 
 const MediprepNavigator = createStackNavigator(screens);

@@ -7,27 +7,26 @@ export const Medikamentvisualisierung = (props) => {
     return (
         <View style={styles.container}>
             <Text style = {styles.text}>{name} </Text>
-            {/* Hier kommt spaeter ein Image mit der Url */}
-            <Text style = {styles.text}>{bild} </Text>
+            <Image source={{uri: bild}} style={{width: 200, height: 200}} />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 2,
+        flex: 1,
         position: 'absolute',
-        top: 570,
+        top: 100,
         left: 50,
         width: 300,
-        height: 200,
+        height: 400,
         borderRadius: 25,
-        backgroundColor: '#dcdcdc',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
-        fontSize: 30,
+        fontSize: 60,
         color: '#000080',
     },
 });
