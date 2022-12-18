@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
-const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 const dataAuswahl = [0,0,0,0,0,0,0];
-import WeiterButton from '../components/WeiterButton';
 import { ScreenObserver } from '../models/ScreenObserver';
+
 
 export const WochenTagAuswahlScreen = ({navigation}) => {
 
@@ -48,10 +46,6 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
   }
 
 
-  const pressHandler6 = () => {
-    navigation.navigate('MedikamentenanzeigeScreen');
-  };
-
   return (
       <View style={styles.container4}>
         <Text style={styles.textfont}>
@@ -62,20 +56,14 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
         </Text>
         <View style={styles.rahmen}>
 
-          <WochenTag wochenTag={'MO'} name="Monday" id="0" />
-          <WochenTag wochenTag={'DI'} name="Tuesday" id="1" />
-          <WochenTag wochenTag={'MI'} name="Wednesday" id="2" />
-          <WochenTag wochenTag={'DO'} name="Thursday" id="3" />
-          <WochenTag wochenTag={'FR'} name="Friday" id="4" />
-          <WochenTag wochenTag={'SA'} name="Saturday" id="5" />
-          <WochenTag wochenTag={'SO'} name="Sunday" id="6" />
+          <WochenTag wochenTag={'MO'} name="Monday" id="0" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'DI'} name="Tuesday" id="1" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'MI'} name="Wednesday" id="2" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'DO'} name="Thursday" id="3" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'FR'} name="Friday" id="4" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'SA'} name="Saturday" id="5" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'SO'} name="Sunday" id="6" navigation3 ={navigation}/>
         </View>
-        <TouchableOpacity onPress={listArray} style={styles.container2}>
-          <Text style={styles.textfont2}>Log</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={pressHandler6} style={styles.weiterButton}>
-          <WeiterButton />
-        </TouchableOpacity>
 
       </View>
   );
@@ -87,7 +75,7 @@ const WochenTag = (props) => {
         <Text style={styles.wochentag}>{props.name}</Text>
         <View style={styles.kugel}>
           <TouchableOpacity>
-            <Farbauswahl weekday={props.id} />
+            <Farbauswahl weekday={props.id} navigation4 ={props.navigation3}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -95,36 +83,24 @@ const WochenTag = (props) => {
 };
 
 const Farbauswahl = (props) => {
-  const [active, setActive] = useState(0);
-
+  const pressHandler6 = () => {
+    ScreenObserver.wochentag = props.weekday
+    console.log(ScreenObserver)
+    props.navigation4.navigate('MedikamentenanzeigeScreen');
+  };
   return (
       <View style={styles.screen}>
         <TouchableOpacity
-            onPress={
-              active === 0
-                  ? () => [setActive(1), (finalAuswahl[props.weekday] = 1), ScreenObserver.wochentag = props.weekday, console.log(ScreenObserver)]
-                  : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
-            }
-            style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
+            onPress={pressHandler6}
+            style={styles.roundButton1}
         ></TouchableOpacity>
       </View>
   );
 };
 
-const listArray = () => {
-  console.log('-')
-  for (let i = 0; i < 7; i++) {
-    console.log(finalAuswahl[i])
-    console.log(dataAuswahl[i])
-  }
-};
-
-
 const styles = StyleSheet.create({
   rahmen: {
-    //flexDirection: 'column',
-    //justifyContent: 'flex-end',
-    // alignItems: 'center',
+    paddingTop:50,
     borderColor: 'gray',
 
     //backgroundColor: '#a6aed2',
