@@ -3,11 +3,15 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { modelsTests } from '../models/ModelsTests';
 import Logo from '../components/Logo';
 import StartbildschirmButton from '../components/StartbildschirmButton';
-
+import NeuerTagButton from '../components/NeuerTagButton';
 
 const GreatSuccessScreen = ({ navigation }) => {
   const pressHandler3 = () => {
     navigation.navigate('Homescreen');
+    
+  };
+  const pressHandler1 = () => {
+    navigation.navigate('WochenTagAuswahlScreen');
   };
 
 
@@ -18,7 +22,10 @@ const GreatSuccessScreen = ({ navigation }) => {
       <Text style={styles.WelcomeSlogan}>Ihre Tablettenbox ist nun gefüllt</Text>
        
       <Text style={styles.WelcomeFont}></Text>
-       <Image source={require('../assets/feature.png')}  />
+       
+       <TouchableOpacity onPress={pressHandler1}>
+        <NeuerTagButton />
+        </TouchableOpacity>
       <TouchableOpacity onPress={pressHandler3}>
         <StartbildschirmButton />
         </TouchableOpacity>
