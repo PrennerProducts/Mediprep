@@ -21,7 +21,7 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
 
     for (let i = 1; i < 8; i++) {
       let search = i % found
-      datenbankEintrag[i-1] = moment().add(search, 'days').format('ll');
+      datenbankEintrag[i-1] = moment().add(search, 'days').format('ll');;
     }
   };
 
@@ -91,10 +91,11 @@ const Farbauswahl = (props) => {
     for (let i = 0; i < 7; i++) {
       console.log(datenbankEintrag[i])
     }
+    console.log('-')
   };
   const pressHandler6 = () => {
-
-    listArray()
+    console.log('-')
+    console.log('Ausgewählt: ' + datenbankEintrag[props.weekday])
     ScreenObserver.wochentag = props.weekday
     console.log(ScreenObserver)
     props.navigation4.navigate('MedikamentenanzeigeScreen');
