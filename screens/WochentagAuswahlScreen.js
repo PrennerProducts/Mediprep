@@ -56,13 +56,13 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
         </Text>
         <View style={styles.rahmen}>
 
-          <WochenTag wochenTag={'MO'} name="Monday" id="0" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'DI'} name="Tuesday" id="1" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'MI'} name="Wednesday" id="2" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'DO'} name="Thursday" id="3" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'FR'} name="Friday" id="4" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'SA'} name="Saturday" id="5" navigation3 ={navigation}/>
-          <WochenTag wochenTag={'SO'} name="Sunday" id="6" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'MO'} display="Montag" name="Monday" id="0" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'DI'} display="Dienstag" name="Tuesday" id="1" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'MI'} display="Mittwoch" name="Wednesday" id="2" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'DO'} display="Donnerstag" name="Thursday" id="3" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'FR'} display="Freitag" name="Friday" id="4" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'SA'} display="Samstag" name="Saturday" id="5" navigation3 ={navigation}/>
+          <WochenTag wochenTag={'SO'} display="Sonntag" name="Sunday" id="6" navigation3 ={navigation}/>
         </View>
 
       </View>
@@ -72,7 +72,7 @@ const WochenTag = (props) => {
   return (
       <View style={styles.farblicheauswahl}>
 
-        <Text style={styles.wochentag}>{props.name}</Text>
+        <Text style={styles.wochentag}>{props.display}</Text>
         <View style={styles.kugel}>
           <TouchableOpacity>
             <Farbauswahl weekday={props.id} navigation4 ={props.navigation3}/>
