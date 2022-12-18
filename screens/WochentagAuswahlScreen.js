@@ -94,7 +94,7 @@ const Farbauswahl = (props) => {
   };
   const pressHandler6 = () => {
 
-    //listArray()
+    listArray()
     ScreenObserver.wochentag = props.weekday
     console.log(ScreenObserver)
     props.navigation4.navigate('MedikamentenanzeigeScreen');
