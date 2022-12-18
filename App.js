@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { DummySchachtel } from './data/DummySchachtelFile';
+import { MedikamentenListe } from './models/MedikamentenListe';
 import MediprepNavigator from './screens/MediprepNavigator';
 
 export default function App() {
   DummySchachtel.starten();
+  MedikamentenListe.MLDummy.anzeigen();
   //DummySchachtel.DummySchachtel.anzeigen();
     
   return (

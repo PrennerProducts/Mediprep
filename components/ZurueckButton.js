@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 
-const WeiterButton = () => {
+const ZurueckButton = () => {
   return (
     <View style={styles.button}>
-      <Text style={styles.font}>Weiter</Text>
+      <Text style={styles.font}>Zurück</Text>
     </View>
   );
 };
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     height: 120,
     width: 200,
     borderWidth: 3,
+
     borderColor: '#6b93ff',
     borderRadius: 30,
     justifyContent: 'center',
@@ -28,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WeiterButton;
+export default ZurueckButton;

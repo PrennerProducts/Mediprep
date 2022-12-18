@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     margin: 10,
     marginBottom: 0,
-    marginTop: 40,
+    marginTop: 30,
   },
   text: {
     fontSize: 20,

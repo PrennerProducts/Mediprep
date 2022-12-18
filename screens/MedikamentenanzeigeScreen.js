@@ -1,42 +1,107 @@
+import React from 'react';
+import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Medikamentvisualisierung } from '../components/Medikamentvisualisierung';
 import { ScreenObserver } from '../models/ScreenObserver';
 import { DummySchachtel } from '../data/DummySchachtelFile';
+import ZurueckButton from '../components/ZurueckButton';
 import WeiterButton from '../components/WeiterButton';
-
+import Tablettenbox from '../components/Tablettenbox';
+import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 
 export const MedikamentenanzeigeScreen = ({navigation}) => {
+    const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
+    const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
     ScreenObserver.aktuellerScreen = 'MedikamentenanzeigeScreen';
-    console.log(ScreenObserver);
-    fach = DummySchachtel.DummySchachtel.faecher[ScreenObserver.wochentag * 4];
-    let medikamente = [];
-    if (fach.eintraege.length > 0) {
-        for (const e of fach.eintraege){
-            medikamente.push(e.medikamentId);
+    let index = ScreenObserver.wochentag*4; //Berechne Fachindex anhand Wochentag
+    ScreenObserver.medikamente = DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(index, index+3); //Finde Medikamente der naechsten 4 Tage
+    if (ScreenObserver.medikamente.length === 0) navigation.navigate('WochenTagAuswahl'); //Wenn keine Medikamente, geh zurueck zu WochenTagAuswahl
+
+    const pressHandlerBack = () => { //Zurueck-Button gedrueckt
+      if (showState){
+        let newIndex = medikamentIndex;
+        newIndex--;
+        if (newIndex < 0) navigation.navigate('WochenTagAuswahlScreen');
+        else setMedikamentIndex(newIndex);
+      }
+      setShowState(!showState);
+    };
+
+    const pressHandler = () => { //Weiter-Button gedrueckt
+        if (!showState){ 
+          let newIndex = medikamentIndex;
+          newIndex++;
+          if (newIndex >= ScreenObserver.medikamente.length) navigation.navigate('GreatSuccessScreen'); //TODO: Kontrollscreen
+          else setMedikamentIndex(newIndex);
         }
-    }
-    ScreenObserver.medikamente = medikamente;
-    console.log(medikamente);
-    const pressHandler = () => {
-        navigation.navigate('Befullungstarten');
+        setShowState(!showState);
       };
-    return (
-            <View style={styles.container}>
-                <Medikamentvisualisierung medikamentID={medikamente[0]}/>
-                <TouchableOpacity onPress={pressHandler} style={styles.weiterButton}>
-                    <WeiterButton />
-                </TouchableOpacity>
+
+    if (showState)  return ( //Zeige Medikamentvisualisierung an
+        <View style={styles.container}>
+            <Medikamentvisualisierung 
+                medikamentID={ScreenObserver.medikamente[medikamentIndex]} 
+                show={showState} 
+                index={medikamentIndex}/>
+            <View style = {styles.buttonsContainer}>
+              <TouchableOpacity onPress={pressHandlerBack}>
+                  <ZurueckButton style={styles.button}/>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={pressHandler}>
+                  <WeiterButton style={styles.button}/>
+              </TouchableOpacity>
             </View>
+        </View>
     );
+    else return ( //Zeige Tablettenbox an
+        <View style={styles.container}>
+            <Medikamentvisualisierung 
+                medikamentID={ScreenObserver.medikamente[medikamentIndex]} 
+                show={showState}
+                index={medikamentIndex}/>
+            <Tablettenbox highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex])} />
+            <TablettenStueckAnzeige
+                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex])}
+                stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(ScreenObserver.medikamente[medikamentIndex])}
+            />
+            <View style = {styles.buttonsContainer}>
+              <TouchableOpacity onPress={pressHandlerBack}>
+                  <ZurueckButton style={styles.button}/>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={pressHandler}>
+                  <WeiterButton style={styles.button}/>
+              </TouchableOpacity>
+            </View>
+        </View>
+    )
 };
+
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      alignItems: 'center',
+      backgroundColor: '#cdf1fe',
+    },
+    buttonsContainer:{
+      position: 'absolute',
+      bottom: 10,
       flexDirection: 'row',
-      backgroundColor: '#032e5b',
       alignItems: 'center',
       justifyContent: 'center',
     },
+    button: {
+      height: 120,
+      width: 50,
+      borderWidth: 3,
+      borderColor: '#6b93ff',
+      borderRadius: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#02005c',
+      elevation: 24,
+    },
   });
+
+export default MedikamentenanzeigeScreen;
 

@@ -12,7 +12,6 @@ const Homescreen = ({ navigation }) => {
     navigation.navigate('GreatSuccessScreen');
   };
   ScreenObserver.aktuellerScreen = 'Homescreen';
-  console.log(ScreenObserver);
 
   return (
     <View style={styles.container}>

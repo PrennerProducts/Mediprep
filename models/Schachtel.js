@@ -137,6 +137,18 @@ export class Schachtel {
     }
   }
 
+
+  //diese Funktion gibt innerhalb eines Bereichs von Faechern alle MedikamentenIds zurueck
+  zeigeMedikamentenIdsinBereich(startIndex, endIndex){
+    let medikamente = [];
+    for (let i = startIndex; i <= endIndex; i++){
+      for (const e of this.faecher[i].eintraege){
+        if (!medikamente.includes(e.medikamentId)) medikamente.push(e.medikamentId);
+      }
+    }
+    return medikamente;
+  }
+
   // **********  **********  **********  *********  **********
   // Medikamentevorbereiten / Einschachteln Funktionen
   // ----------  ----------  ----------  ----------  ----------
@@ -145,7 +157,7 @@ export class Schachtel {
   // Visualisierung des Fachs umzusetzen.
   zeigeFaecher(medikamentId) {
     let index = 0;
-    console.log('MyTest');
+    //console.log('MyTest');
     let indexesFach = [];
 
     for (const f of this.faecher) {
@@ -156,7 +168,7 @@ export class Schachtel {
       }
       index++;
     }
-    console.log(indexesFach);
+    //console.log(indexesFach);
     return indexesFach;
   }
 
@@ -173,7 +185,7 @@ export class Schachtel {
       }
       index++;
     }
-    console.log(+stueckProFachDict);
+    //console.log(+stueckProFachDict);
     return stueckProFachDict;
   }
 

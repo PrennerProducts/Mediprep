@@ -46,7 +46,7 @@ export class MedikamentenListe {
     for (const m of this.medikamente) {
       if (m.id === medikamentId) {
         return m.bild;
-        console.log(m.bild);
+        //console.log(m.bild);
       }
     }
     return 'No image found';

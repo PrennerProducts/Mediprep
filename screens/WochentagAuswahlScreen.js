@@ -102,7 +102,7 @@ const Farbauswahl = (props) => {
         <TouchableOpacity
             onPress={
               active === 0
-                  ? () => [setActive(1), (finalAuswahl[props.weekday] = 1), ScreenObserver.wochentag = props.weekday, console.log(ScreenObserver)]
+                  ? () => [setActive(1), (finalAuswahl[props.weekday] = 1), ScreenObserver.wochentag = props.weekday]
                   : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
             }
             style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
