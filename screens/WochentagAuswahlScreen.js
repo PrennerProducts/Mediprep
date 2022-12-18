@@ -90,9 +90,7 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
           <TouchableOpacity onPress={pressHandlerBack}>
             <ZurueckButton style={styles.button}/>
           </TouchableOpacity>
-        <TouchableOpacity onPress={pressHandler} style={styles.weiterButton}>
-          <WeiterButton />
-        </TouchableOpacity>
+
         </View>
       </View>
   );
