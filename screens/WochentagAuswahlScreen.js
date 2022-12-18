@@ -17,11 +17,9 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
         found = i +1
       }
     }
-
-
     for (let i = 1; i < 8; i++) {
       let search = i % found
-      datenbankEintrag[i-1] = moment().add(search, 'days').format('ll');;
+      datenbankEintrag[i-1] = moment().add(search, 'days').format('ll');
     }
   };
 
@@ -50,13 +48,19 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
 
 
   return (
-      <View style={styles.container4}>
+      <View style={styles.container}>
         <Text style={styles.textfont}>
+
           Bitte wählen Sie den gewünschten Wochentag:
+
         </Text>
+
         <Text style={styles.textfont}>
+
           Heutiges Datum: {currentWeekday} {currentDate}
+
         </Text>
+
         <View style={styles.rahmen}>
 
           <WochenTag wochenTag={'MO'} display="Montag" name="Monday" id="0" navigation3 ={navigation}/>
@@ -66,8 +70,8 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
           <WochenTag wochenTag={'FR'} display="Freitag" name="Friday" id="4" navigation3 ={navigation}/>
           <WochenTag wochenTag={'SA'} display="Samstag" name="Saturday" id="5" navigation3 ={navigation}/>
           <WochenTag wochenTag={'SO'} display="Sonntag" name="Sunday" id="6" navigation3 ={navigation}/>
-        </View>
 
+        </View>
       </View>
   );
 };
@@ -78,7 +82,9 @@ const WochenTag = (props) => {
         <Text style={styles.wochentag}>{props.display}</Text>
         <View style={styles.kugel}>
           <TouchableOpacity>
+
             <Farbauswahl weekday={props.id} navigation4 ={props.navigation3}/>
+
           </TouchableOpacity>
         </View>
       </View>
@@ -101,84 +107,22 @@ const Farbauswahl = (props) => {
     props.navigation4.navigate('MedikamentenanzeigeScreen');
   };
   return (
-      <View style={styles.screen}>
+      <View>
+
         <TouchableOpacity
             onPress={pressHandler6}
-            style={styles.roundButton1}
+            style={styles.roundButton}
         ></TouchableOpacity>
+
       </View>
   );
 };
 
 const styles = StyleSheet.create({
-  rahmen: {
-    paddingTop:50,
-    borderColor: 'gray',
-
-    //backgroundColor: '#a6aed2',
-
-    marginTop: 20,
-    width:200,
-    marginLeft:60,
-  },
-
-  farblicheauswahl: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-
-
-
-
-  },
-
-  wochentag: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    color: 'black',
-    marginRight:10,
-    width:200,
-    height:50,
-    marginTop: 10,
-  },
-
-  roundButton1: {
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: 'white',
-    marginTop: 12,
-    elevation: 10,
-  },
-  roundButton1active: {
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: '#ee9a49',
-    marginTop: 12,
-    elevation: 10,
-  },
-  container4: {
+  container: {
     backgroundColor: '#cdf1fe',
     flex:1,
     alignItems: 'flex-start',
-
-
-  },
-  container2: {
-    borderColor: 'gray',
-    backgroundColor: 'white',
-    margin: 10,
-    height:30,
-  },
-  container3: {
-    width: '50%',
-    height: '30%',
   },
   textfont: {
     marginLeft: 12,
@@ -189,21 +133,40 @@ const styles = StyleSheet.create({
     elevation: 42,
     textAlign: 'left',
   },
-  textfont2: {
-    fontSize:20,
+  rahmen: {
+    paddingTop:50,
+    borderColor: 'gray',
+    marginTop: 20,
+    width:200,
+    marginLeft:60,
+  },
+  farblicheauswahl: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  wochentag: {
+    fontSize: 35,
     fontWeight: 'bold',
     color: 'black',
-    elevation: 42,
-    textAlign: 'left',
+    marginRight:10,
+    width:200,
+    height:50,
+    marginTop: 10,
   },
-
-  weiterButton: {
-    marginLeft:25,
+  roundButton: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    backgroundColor: 'white',
+    marginTop: 12,
+    elevation: 10,
   },
   kugel: {
     justifyContent: 'flex-end',
   },
-
 });
 
 export default WochenTagAuswahlScreen;
