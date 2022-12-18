@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     marginRight:10,
     width:200,
     height:50,
-    marginTop: 10,
+    marginTop: 15,
   },
   roundButton: {
     width: 50,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     borderRadius: 100,
-    backgroundColor: 'white',
+    backgroundColor: '#02005c',
     marginTop: 12,
     elevation: 10,
   },
