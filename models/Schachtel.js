@@ -155,13 +155,13 @@ export class Schachtel {
 
   // Diese Funktion zeigt an in welchen Fächern ein bestimmtes Medikament (ID) liegt, um die Farbliche
   // Visualisierung des Fachs umzusetzen.
-  zeigeFaecher(medikamentId) {
+  zeigeFaecher(medikamentId, startIndex, endIndex) {
     let index = 0;
     //console.log('MyTest');
     let indexesFach = [];
 
-    for (const f of this.faecher) {
-      for (const e of f.eintraege) {
+    for (let i = startIndex; i <= endIndex; i++) {
+      for (const e of this.faecher[i].eintraege) {
         if (e.medikamentId === medikamentId) {
           indexesFach.push(index);
         }
@@ -173,12 +173,12 @@ export class Schachtel {
   }
 
   //diese Funktion zeigt wieviel Stück eines bestimmten Medi in welchem Fach sind.
-  zeigeStueckProFaecher(medikamentId) {
+  zeigeStueckProFaecher(medikamentId, startIndex, endIndex) {
     let index = 0;
     let stueckProFachDict = {};
 
-    for (const f of this.faecher) {
-      for (const e of f.eintraege) {
+    for (let i = startIndex; i <= endIndex; i++){
+      for (const e of this.faecher[i].eintraege) {
         if (e.medikamentId === medikamentId) {
           stueckProFachDict[index] = e.anzahl;
         }

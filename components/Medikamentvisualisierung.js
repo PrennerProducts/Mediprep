@@ -10,7 +10,7 @@ export const Medikamentvisualisierung = (props) => {
     if (props.show) return (
         <View style={styles.container} height = {'90%'} borderColor={color}>
             {/* <View style={styles.colorChecker} backgroundColor={color}/> */}
-            <Text style={styles.index} > {index} </Text>
+            {/* <Text style={styles.index} > {index} </Text> */}
             <Text style={styles.textMedikament} > {name} </Text>
             <Text style={styles.textAnleitung} > Medikamentinfos {'\n'} ...</Text>
             <Image source={{uri: bild}} style={styles.image} />
@@ -19,7 +19,7 @@ export const Medikamentvisualisierung = (props) => {
     else return(        
         <View style={styles.container} height = {'20%'} borderColor={color}>
             {/* <View style={styles.colorChecker} backgroundColor={color}/> */}
-            <Text style={styles.index} > {index} </Text>
+            {/* <Text style={styles.index} > {index} </Text> */}
             <Text style={styles.textMedikament} color='white'>{name} </Text>
         </View>
         );
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     textMedikament: {
         position: 'absolute',
-        top: 100,
+        top: 50,
         fontSize: 50,
         fontWeight: 'bold',
         textAlign: 'center',

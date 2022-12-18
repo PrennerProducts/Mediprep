@@ -16,7 +16,8 @@ export const MedikamentenanzeigeScreen = ({navigation}) => {
     let index = ScreenObserver.wochentag*4; //Berechne Fachindex anhand Wochentag
     ScreenObserver.medikamente = DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(index, index+3); //Finde Medikamente der naechsten 4 Tage
     if (ScreenObserver.medikamente.length === 0) navigation.navigate('WochenTagAuswahl'); //Wenn keine Medikamente, geh zurueck zu WochenTagAuswahl
-
+    console.log(ScreenObserver.medikamente);
+    
     const pressHandlerBack = () => { //Zurueck-Button gedrueckt
       if (showState){
         let newIndex = medikamentIndex;
@@ -28,6 +29,7 @@ export const MedikamentenanzeigeScreen = ({navigation}) => {
     };
 
     const pressHandler = () => { //Weiter-Button gedrueckt
+        
         if (!showState){ 
           let newIndex = medikamentIndex;
           newIndex++;
@@ -59,10 +61,10 @@ export const MedikamentenanzeigeScreen = ({navigation}) => {
                 medikamentID={ScreenObserver.medikamente[medikamentIndex]} 
                 show={showState}
                 index={medikamentIndex}/>
-            <Tablettenbox highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex])} />
+            <Tablettenbox highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex], ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3)} />
             <TablettenStueckAnzeige
-                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex])}
-                stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(ScreenObserver.medikamente[medikamentIndex])}
+                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(ScreenObserver.medikamente[medikamentIndex], ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3)}
+                stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(ScreenObserver.medikamente[medikamentIndex], ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3)}
             />
             <View style = {styles.buttonsContainer}>
               <TouchableOpacity onPress={pressHandlerBack}>

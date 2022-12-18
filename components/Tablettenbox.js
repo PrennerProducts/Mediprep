@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
-  //console.log(props.highlightFach);
+  console.log(props.highlightFach);
 
   return (
     <View style={styles.tablettenbox}>

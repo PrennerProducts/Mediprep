@@ -5,7 +5,7 @@ import { MedikamentenListe } from './models/MedikamentenListe';
 import MediprepNavigator from './screens/MediprepNavigator';
 
 export default function App() {
-  DummySchachtel.starten();
+  DummySchachtel.starten2();
   MedikamentenListe.MLDummy.anzeigen();
   //DummySchachtel.DummySchachtel.anzeigen();
     
