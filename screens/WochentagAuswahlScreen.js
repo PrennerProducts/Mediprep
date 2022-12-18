@@ -49,7 +49,7 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
   return (
       <View style={styles.container4}>
         <Text style={styles.textfont}>
-          Bitte wählen Sie die gewünschten Wochentage:
+          Bitte wählen Sie den gewünschten Wochentag:
         </Text>
         <Text style={styles.textfont}>
           Heutiges Datum: {currentWeekday} {currentDate}
