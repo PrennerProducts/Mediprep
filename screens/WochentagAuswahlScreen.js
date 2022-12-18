@@ -2,10 +2,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 const datenbankEintrag = [0,0,0,0,0,0,0];
 import { ScreenObserver } from '../models/ScreenObserver';
-
-
+import WeiterButton from "../components/WeiterButton";
+import ZurueckButton from "../components/ZurueckButton";
+import React, {useState} from "react";
 
 export const WochenTagAuswahlScreen = ({navigation}) => {
+  const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
+  const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
 
   let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
   let currentWeekday = moment().format('dddd').toString();
@@ -45,7 +48,18 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
     case 'Sunday':
       setCurrentDates(6)
   }
-
+  const pressHandler = () => {
+    navigation.navigate('MedikamentenUebersichtScreen');
+  };
+  const pressHandlerBack = () => { //Zurueck-Button gedrueckt
+    if (showState){
+      let newIndex = medikamentIndex;
+      newIndex--;
+      if (newIndex < 0) navigation.navigate('Homescreen');
+      else setMedikamentIndex(newIndex);
+    }
+    setShowState(!showState);
+  };
 
   return (
       <View style={styles.container}>
@@ -71,6 +85,14 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
           <WochenTag wochenTag={'SA'} display="Samstag" name="Saturday" id="5" navigation3 ={navigation}/>
           <WochenTag wochenTag={'SO'} display="Sonntag" name="Sunday" id="6" navigation3 ={navigation}/>
 
+        </View>
+        <View style = {styles.buttonsContainer} >
+          <TouchableOpacity onPress={pressHandlerBack}>
+            <ZurueckButton style={styles.button}/>
+          </TouchableOpacity>
+        <TouchableOpacity onPress={pressHandler} style={styles.weiterButton}>
+          <WeiterButton />
+        </TouchableOpacity>
         </View>
       </View>
   );
@@ -134,7 +156,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   rahmen: {
-    paddingTop:50,
+    paddingTop:20,
     borderColor: 'gray',
     marginTop: 20,
     width:200,
@@ -163,6 +185,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginTop: 12,
     elevation: 10,
+  },
+  buttonsContainer:{
+    position: 'absolute',
+    bottom: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   kugel: {
     justifyContent: 'flex-end',
