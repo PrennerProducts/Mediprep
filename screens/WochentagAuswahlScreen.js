@@ -172,8 +172,13 @@ const styles = StyleSheet.create({
     width:200,
     height:50,
     marginTop: 15,
+
   },
   roundButton: {
+    borderWidth: 3,
+
+    borderColor: '#6b93ff',
+
     width: 50,
     height: 50,
     justifyContent: 'center',
