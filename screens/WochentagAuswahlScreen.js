@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
-const dataAuswahl = [0,0,0,0,0,0,0];
+const datenbankEintrag = [0,0,0,0,0,0,0];
 import { ScreenObserver } from '../models/ScreenObserver';
 
 
@@ -18,7 +18,7 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
     }
     for (let i = 0; i < found + 7; i++) {
       let search = found - i-1
-      dataAuswahl[i] = moment().subtract(search, 'days').format('ll');
+      datenbankEintrag[i] = moment().subtract(search, 'days').format('ll');
     }
   };
 
