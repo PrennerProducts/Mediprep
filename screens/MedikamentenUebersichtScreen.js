@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Animated,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import Tablettenbox from '../components/Tablettenbox';
-import { Schachtel } from '../models/Schachtel';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+
 import { MedikamentenListe } from '../models/MedikamentenListe';
-import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
 
 const MedikamentenUebersichtScreen = ({ navigation }) => {

@@ -1,17 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { mediprepNavigation } from '../screens/MediprepNavigator'
 
-
-const StartbildschirmButton = () => {
+const NeuerTagButton = () => {
   return (
-    
     <View style={styles.Startbox}>
-      <Text style={styles.LogoFont}>Zur Startseite</Text>
-
+      <Text style={styles.LogoFont}>Neue Befüllung Starten</Text>
     </View>
-
   );
 };
 
@@ -25,7 +20,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#066107',
+    backgroundColor: '#5B032E',
     elevation: 55,
     marginBottom: 20,
   },
@@ -35,10 +30,6 @@ const styles = StyleSheet.create({
     color: 'white',
     elevation: 42,
   },
-
 });
 
-
-
-export default StartbildschirmButton;
-
+export default NeuerTagButton;

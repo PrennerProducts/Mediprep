@@ -2,6 +2,7 @@
 
 import { setStatusBarBackgroundColor } from 'expo-status-bar';
 import React from 'react';
+import {View, Text, Alert} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator, HeaderStyleInterpolators } from 'react-navigation-stack';
 
@@ -15,7 +16,9 @@ import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import MedikamentenanzeigeScreen2 from './MedikamentenanzeigeScreen2';
 
+
 const screens = {
+
     Homescreen: {
         screen: Homescreen,
         navigationOptions: ({ navigation }) => ({
@@ -71,9 +74,12 @@ const screens = {
             headerShown: false,
           }),
     },
+    
 }
 
 const MediprepNavigator = createStackNavigator(screens);
+
+
 
 
 
