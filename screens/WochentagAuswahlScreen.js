@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 const datenbankEintrag = [0,0,0,0,0,0,0];
 import { ScreenObserver } from '../models/ScreenObserver';
-import WeiterButton from "../components/WeiterButton";
 import ZurueckButton from "../components/ZurueckButton";
 import React, {useState} from "react";
 
@@ -48,9 +47,6 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
     case 'Sunday':
       setCurrentDates(6)
   }
-  const pressHandler = () => {
-    navigation.navigate('MedikamentenUebersichtScreen');
-  };
   const pressHandlerBack = () => { //Zurueck-Button gedrueckt
     if (showState){
       let newIndex = medikamentIndex;
@@ -190,6 +186,7 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   buttonsContainer:{
+    marginLeft:6,
     position: 'absolute',
     bottom: 10,
     flexDirection: 'row',
@@ -198,6 +195,17 @@ const styles = StyleSheet.create({
   },
   kugel: {
     justifyContent: 'flex-end',
+  },
+  button: {
+    height: 120,
+    width: 200,
+    borderWidth: 3,
+    borderColor: '#6b93ff',
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#02005c',
+    elevation: 24,
   },
 });
 
