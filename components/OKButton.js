@@ -4,17 +4,17 @@ import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 const OKButton = () => {
     return (
         <View style={styles.button}>
-            <Text style={styles.font}>Tablettenanzahl ist korrekt</Text>
+            <Text style={styles.font}>Anzahl korrekt</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     button: {
-        height: 120,
-        width: 200,
+        height: 80,
+        width: 150,
         borderWidth: 3,
-        borderColor: '#6b93ff',
+        borderColor: 'green',
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     font: {
-        fontSize: 36,
+        fontSize: 28,
         fontWeight: 'bold',
         color: 'white',
     },

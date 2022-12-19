@@ -50,8 +50,13 @@ export const modelsTests = {
     medikamentIndex++;
     s1.anzeigenFachMedikament(fachIndex, medikamentIndex);
     // Summe ermitteln von Fach
-    //s1.sumTabFach();
-
+        console.log("Zeller modelsTest");
+    s1.sumTabFach().forEach((Tab) => {
+        Tab.forEach((Zahl) => {
+            console.log("Array " +Zahl);
+        });
+        });
+    //console.log("ganze " +anzahl[1][0]);
     //Simulation: Benutzer*in leert Fach
     s1.leerenFach(0);
     //s1.anzeigen();

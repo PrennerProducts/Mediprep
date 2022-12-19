@@ -191,18 +191,21 @@ export class Schachtel {
 
 
   //zähle Tabletten pro Fach, Funktion gibt FachId, Ganze, Halbe, Viertel zurück
-  sumTabFach() {
+  sumTabFach( startIndex, endIndex) {
     let stueckProFachGroeße = {};
+    let dictganze = [];
+    let dicthalbe = [];
+    let dictviertel = [];
     let FachId = 0;
     let ganze = 0;
     let halbe = 0;
     let viertel = 0;
 
-    for (const f of this.faecher) {
+    for (let i = startIndex; i <= endIndex; i++){
       ganze = 0;
       halbe = 0;
       viertel = 0;
-      for (const e of f.eintraege) {
+      for (const e of this.faecher[i].eintraege) {
         //Anzahl Tabletten wird auf ganze Zahl gebracht, aber immer abgerundet
         const zahlint = Math.floor(e.anzahl);
         // Die abgerundete Zahle wird in "ganze" gespeichert
@@ -216,8 +219,11 @@ export class Schachtel {
           viertel += 1;
         }
       }
-      stueckProFachGroeße[FachId] = [ganze,halbe,viertel];
-      FachId =+ 1;
+      dictganze =[ganze];
+      dicthalbe =[halbe];
+      dictviertel =[viertel];
+      stueckProFachGroeße[FachId] = [dictganze, dicthalbe, dictviertel];
+      FachId += 1;
 
     }
     return stueckProFachGroeße;

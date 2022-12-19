@@ -1,36 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Tablettenbox from '../components/Tablettenbox';
-import { MedikamentenListe } from '../models/MedikamentenListe';
-import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
-import WeiterButton from '../components/WeiterButton';
 import OKButton from '../components/OKButton';
 import NOKButton from '../components/NOKButton';
 import { ScreenObserver } from '../models/ScreenObserver';
 import { DummySchachtel } from '../data/DummySchachtelFile';
 import { Schachtel } from '../models/Schachtel';
-import ZurueckButton from "../components/ZurueckButton";
+import TablettenSummeAnzeige from "../components/TablettenSummeAnzeige";
 
-//import { DummySchachtel } from '../data/DummySchachtelFile';
 
 export const Kontrolle = ({ navigation }) => {
-    let OK_Count = false;
+    let OK = false;
     ScreenObserver.aktuellerScreen = 'Kontrolle';
-    let medikamentId = ScreenObserver.medikamente[0];
-    console.log(ScreenObserver.medikamente);
+    let FachId = ScreenObserver.fach[0];
+    console.log(ScreenObserver.fach);
     console.log(
         'ZeigeFaecherTest--------------',
-        DummySchachtel.DummySchachtel.sumTabFach()
-    );
+        DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3));
 
 
-    DummySchachtel.DummySchachtel.sumTabFach();
+    //DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3);
 
-    const pressHandler5 = () => {
+    const pressHandlerOK = () => {
         navigation.navigate('MedikamentenanzeigeScreen');
     };
 
-    const pressHandler6 = () => {
+    const pressHandlerNOK = () => {
         navigation.navigate('GreatSuccessScreen');
     };
 
@@ -40,19 +35,19 @@ export const Kontrolle = ({ navigation }) => {
                 {["Befüllkontrolle"]}
             </Text>
             <Tablettenbox
-                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId)}
+                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(FachId)}
             />
-            <TablettenStueckAnzeige
-                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId)}
-                stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach()
+            <TablettenSummeAnzeige
+                //highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(FachId)}
+                stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3)
                 }
             />
 
             <View style = {styles.buttonsContainer}>
-                <TouchableOpacity onPress={pressHandler5}>
+                <TouchableOpacity onPress={pressHandlerOK}>
                     <NOKButton style={styles.button}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={pressHandler6}>
+                <TouchableOpacity onPress={pressHandlerNOK}>
                     <OKButton style={styles.button}/>
                 </TouchableOpacity>
             </View>
@@ -61,6 +56,7 @@ export const Kontrolle = ({ navigation }) => {
 
     );
 };
+
 
 const styles = StyleSheet.create({
     container: {
