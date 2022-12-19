@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
-import { useState } from 'react';
 
 export const Tablettenbox = (props) => {
   console.log(props.highlightFach);
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
     borderColor: '#f31b1b',
   },
   tabblettenfachHeading: {
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#00003B',
   },
