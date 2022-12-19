@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 const NOKButton = () => {
     return (
         <View style={styles.button}>
-            <Text style={styles.font}>NOT OK</Text>
+            <Text style={styles.font}>Tablettenanzahl ist falsch</Text>
         </View>
     );
 };
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#02005c',
+        backgroundColor: 'red',
         elevation: 24,
     },
     font: {

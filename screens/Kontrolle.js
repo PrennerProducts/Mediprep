@@ -4,9 +4,12 @@ import Tablettenbox from '../components/Tablettenbox';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import WeiterButton from '../components/WeiterButton';
+import OKButton from '../components/OKButton';
+import NOKButton from '../components/NOKButton';
 import { ScreenObserver } from '../models/ScreenObserver';
 import { DummySchachtel } from '../data/DummySchachtelFile';
 import { Schachtel } from '../models/Schachtel';
+import ZurueckButton from "../components/ZurueckButton";
 
 //import { DummySchachtel } from '../data/DummySchachtelFile';
 
@@ -45,12 +48,12 @@ export const Kontrolle = ({ navigation }) => {
                 }
             />
 
-            <View style={{ alignItems: 'center' }}>
-                <TouchableOpacity
-                    onPress={OK_Count ? pressHandler5 : pressHandler6}
-                    style={styles.weiterButton}
-                >
-                    <WeiterButton />
+            <View style = {styles.buttonsContainer}>
+                <TouchableOpacity onPress={pressHandler5}>
+                    <NOKButton style={styles.button}/>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={pressHandler6}>
+                    <OKButton style={styles.button}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -75,6 +78,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black',
     },
+    buttonsContainer:{
+        position: 'absolute',
+        bottom: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        height: 120,
+        width: 50,
+        borderWidth: 3,
+        borderColor: '#6b93ff',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#02005c',
+        elevation: 24,
+    },
+
+
 });
 
 export default Kontrolle;
