@@ -11,7 +11,7 @@ export const Medikamentvisualisierung = (props) => {
         <View style={styles.container} height = {'90%'} borderColor={color}>
             {/* <View style={styles.colorChecker} backgroundColor={color}/> */}
             {/* <Text style={styles.index} > {index} </Text> */}
-            <Text style={styles.textMedikament} > {name} </Text>
+            <Text style={styles.textMedikament} >{name} </Text>
             <Text style={styles.textAnleitung} > Medikamentinfos {'\n'} ...</Text>
             <Image source={{uri: bild}} style={styles.image} />
         </View>
