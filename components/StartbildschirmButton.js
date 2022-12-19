@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { mediprepNavigation } from '../screens/MediprepNavigator'
+//import { mediprepNavigation } from '../screens/MediprepNavigator'
 
 
 const StartbildschirmButton = () => {

@@ -11,8 +11,8 @@ const ZurueckButton = () => {
 
 const styles = StyleSheet.create({
   button: {
-    height: 120,
-    width: 200,
+    height: 80,
+    width: 150,
     borderWidth: 3,
 
     borderColor: '#6b93ff',
