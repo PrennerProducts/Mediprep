@@ -36,7 +36,7 @@ const GreatSuccessScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#032E5B',
+    backgroundColor: '#cdf1fe',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 40,
     fontWeight: 'bold',
-    color: '#00BFB2',
+    color: '#032E5B',
     elevation: 42,
     textAlign: 'left',
     
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#00BFB2',
+    color: '#032E5B',
     elevation: 42,
     textAlign: 'left',
   },
