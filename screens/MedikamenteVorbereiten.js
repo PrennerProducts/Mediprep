@@ -34,7 +34,8 @@ export const MedikamenteVorbereiten = ({ navigation }) => {
   };
 
   const pressHandler2 = () => {
-    navigation.navigate('GreatSuccessScreen');
+    //navigation.navigate('GreatSuccessScreen');
+    navigation.navigate('Kontrolle');
   };
 
   return (

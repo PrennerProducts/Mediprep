@@ -50,7 +50,7 @@ export const modelsTests = {
     medikamentIndex++;
     s1.anzeigenFachMedikament(fachIndex, medikamentIndex);
     // Summe ermitteln von Fach
-    s1.sumTabFach()
+    //s1.sumTabFach();
 
     //Simulation: Benutzer*in leert Fach
     s1.leerenFach(0);

@@ -15,7 +15,7 @@ import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import MedikamentenanzeigeScreen2 from './MedikamentenanzeigeScreen2';
-
+import Kontrolle from "./Kontrolle";
 
 const screens = {
 
@@ -73,6 +73,13 @@ const screens = {
         navigationOptions: ({ navigation }) => ({
             headerShown: false,
           }),
+    },
+
+    Kontrolle: {
+        screen: Kontrolle,
+        navigationOptions: ({ navigation }) => ({
+            headerShown: false,
+        }),
     },
     
 }

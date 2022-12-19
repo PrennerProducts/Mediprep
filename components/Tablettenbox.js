@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-    borderWidth: 1,
+   // borderWidth: 1,
     borderColor: '#02005c',
   },
   tablettenfach_changed: {
@@ -126,12 +126,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     width: '84%',
     height: '10%',
-    borderColor: 'black',
+   // borderColor: 'black',
     elevation: 24,
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-    borderWidth: 4,
+    //borderWidth: 4,
     borderColor: '#f31b1b',
   },
   tabblettenfachHeading: {
