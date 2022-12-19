@@ -75,25 +75,14 @@ const Tablettenfach = (props) => {
             top: 0,
           }}
         />
-        <Text
-          style={{
-            color: 'black',
-            textAlign: 'center',
-            fontWeight: 'bold',
-            fontSize: 24,
-            marginTop: 30,
-          }}
-        >
-          {props.stueckProFachDict[props.fachId]} Stück
+        <Text style={styles.zahlStyle}>
+          {props.stueckProFachDict[props.fachId]}
         </Text>
+        <Text style={styles.stueckStyle}>Stück</Text>
       </View>
     );
   } else {
-    return (
-      <View>
-        <Text></Text>
-      </View>
-    );
+    return <View></View>;
   }
 };
 
@@ -104,10 +93,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '97%',
     height: '37%',
-    //borderColor: 'gray',
-    //borderWidth: 1,
-    // backgroundColor: '#E6D3BB',
-    //elevation: 10,
     margin: 10,
     magrinTop: 0,
   },
@@ -119,46 +104,51 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'yellow',
     width: '25%',
     height: '100%',
     margin: 4,
     marginBottom: 4,
     marginTop: 0,
-    // borderColor: 'black',
-    // borderWidth: 1,
   },
   tablettenfach: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    //backgroundColor: 'white',
     width: '84%',
     height: '10%',
     marginBottom: '10%',
     margin: '5%',
     borderWidth: 1,
-    //borderColor: 'black',
   },
   tablettenfach_pfeil: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'yellow',
     width: '84%',
     height: '10%',
-    //elevation: 24,
     marginBottom: '10%',
     margin: '5%',
-    // borderWidth: 4,
-    // borderColor: 'black',
   },
   tabblettenfachHeading: {
     fontSize: 13,
     fontWeight: 'bold',
     color: '#00003B',
+  },
+  zahlStyle: {
+    color: 'black',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 56,
+    marginTop: 10,
+  },
+  stueckStyle: {
+    color: 'black',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 28,
+    marginTop: 0,
   },
 });
 

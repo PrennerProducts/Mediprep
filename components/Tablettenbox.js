@@ -10,22 +10,22 @@ export const Tablettenbox = (props) => {
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
         containerId={0}
-        containerName="morgen"
+        containerName="Morgen"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
         containerId={1}
-        containerName="mittag"
+        containerName="Mittag"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
         containerId={2}
-        containerName="abend"
+        containerName="Abend"
       />
       <Tablettenfachcontainer
         highlightFach={props.highlightFach}
         containerId={3}
-        containerName="nacht"
+        containerName="Nacht"
       />
     </View>
   );
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '97%',
-    height: '20%',
+    height: '17%',
     borderColor: '#02005c',
     borderWidth: 1,
     backgroundColor: '#6b93ff',
@@ -94,14 +94,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'yellow',
     width: '25%',
     height: '100%',
     margin: 4,
     marginBottom: 4,
     marginTop: 4,
-    // borderColor: 'black',
-    // borderWidth: 1,
   },
   tablettenfach: {
     flex: 1,
@@ -115,7 +112,6 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-   // borderWidth: 1,
     borderColor: '#02005c',
   },
   tablettenfach_changed: {
@@ -126,12 +122,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     width: '84%',
     height: '10%',
-   // borderColor: 'black',
     elevation: 24,
     borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
-    //borderWidth: 4,
     borderColor: '#f31b1b',
   },
   tabblettenfachHeading: {
