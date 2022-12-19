@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 const MedBearbeitenButton = () => {
   return (
     <View style={styles.Bearbeitenbox}>
-      <Text style={styles.LogoFont}>Medikamentenliste bearbeiten</Text>
+      <Text style={styles.LogoFont}>DummyButton</Text>
     </View>
   );
 };
