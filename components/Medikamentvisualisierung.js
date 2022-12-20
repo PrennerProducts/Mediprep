@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontWeight: 'bold',
         textAlign: 'center',
-        textTransform: 'uppercase',
+        //textTransform: 'uppercase',
         //textDecorationLine: 'underline',
         //lineHeight: 100
         //fontFamily: 'notoserif'

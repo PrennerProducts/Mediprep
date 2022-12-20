@@ -7,7 +7,7 @@ import {modelsTests} from "./models/ModelsTests";
 
 export default function App() {
 
-  DummySchachtel.starten2();
+  DummySchachtel.starten();
   MedikamentenListe.MLDummy.anzeigen();
   //DummySchachtel.DummySchachtel.anzeigen();
     

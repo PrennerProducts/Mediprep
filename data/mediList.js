@@ -63,7 +63,7 @@ const medikamente = [
     countSize: 0,
     tag: ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'],
     zeitpunkt_menge: { ['mittags']: 1, ['abends']: 2 },
-    img: '../assets/diazepam.png',
+    img: 'https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg',
     isReady: false,
     color: 'powderblue',
   },
