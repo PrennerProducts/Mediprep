@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 56,
+    fontSize: 40,
     marginTop: 10,
   },
   stueckStyle: {
