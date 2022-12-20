@@ -16,9 +16,7 @@ const GreatSuccessScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Fertig! Gut gemacht!</Text>
-      <Text style={styles.WelcomeSlogan}>
-        Ihre Tablettenbox ist nun gefüllt
-      </Text>
+      <Text style={styles.WelcomeSlogan}></Text>
 
       <TouchableOpacity onPress={pressHandler1}>
         <NeuerTagButton />
