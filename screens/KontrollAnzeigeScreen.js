@@ -9,18 +9,12 @@ import Tablettenbox from '../components/Tablettenbox';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import TablettenSummeAnzeige from '../components/TablettenSummeAnzeige';
 
-export const KontrollanzeigeScreen = ({ navigation }) => {
+export const KontrollAnzeigeScreen = ({ navigation }) => {
   const [FachIndex, setFachIndex] = useState(0); //zum Iterieren der Medikamente
   ScreenObserver.aktuellerScreen = 'KontrollanzeigeScreen';
-  let Anzahlboxen = DummySchachtel.DummySchachtel.sumTabFach(
-    ScreenObserver.wochentag * 4,
-    ScreenObserver.wochentag * 4 + 3
-  );
-  let index_max = Object.keys(Anzahlboxen).length; //Berechne Fachindex anhand Anzahl der Fächer
-  ScreenObserver.kontrolle = DummySchachtel.DummySchachtel.sumTabFach(
-    ScreenObserver.wochentag * 4,
-    ScreenObserver.wochentag * 4 + 3
-  ); //Anzahl Tabletten der Fächer
+  let Anzahlboxen = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3);
+  let index = Object.keys(Anzahlboxen).length; //Berechne Fachindex anhand Anzahl der Fächer
+  ScreenObserver.kontrolle = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3); //Anzahl Tabletten der Fächer
   let Auswertungsspeicher = {};
   let newIndex = 0;
 
@@ -29,8 +23,7 @@ export const KontrollanzeigeScreen = ({ navigation }) => {
     Auswertungsspeicher[FachIndex] = [0];
     newIndex = FachIndex;
     newIndex++;
-    if (newIndex >= index_max) {
-      console.log('Auswertung' + Auswertungsspeicher);
+    if (newIndex >= Object.keys(Anzahlboxen).length) {
       navigation.navigate('GreatSuccessScreen');
     } else setFachIndex(newIndex);
   };
@@ -40,8 +33,7 @@ export const KontrollanzeigeScreen = ({ navigation }) => {
     Auswertungsspeicher[FachIndex] = [1];
     newIndex = FachIndex;
     newIndex++;
-    if (newIndex >= index_max) {
-      console.log('Auswertung' + Auswertungsspeicher);
+    if (newIndex >= Object.keys(Anzahlboxen).length) {
       navigation.navigate('GreatSuccessScreen');
     } else setFachIndex(newIndex);
   };
@@ -53,10 +45,7 @@ export const KontrollanzeigeScreen = ({ navigation }) => {
       <Tablettenbox highlightFach={[FachIndex]} />
       <TablettenSummeAnzeige
         highlightFach={FachIndex}
-        stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach(
-          ScreenObserver.wochentag * 4,
-          ScreenObserver.wochentag * 4 + 3
-        )}
+        stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3)}
       />
       <View style={styles.buttonsContainer}>
         <TouchableOpacity onPress={HandlerNOK}>
@@ -96,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default KontrollanzeigeScreen;
+export default KontrollAnzeigeScreen;
