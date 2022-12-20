@@ -97,11 +97,6 @@ export class Schachtel {
       this.faecher[fachIndex].anzeigenEintrag(eintragIndex);
   }
 
-  //TODO: diese Funktion zeigt alle Faecher an, in denen ein bestimmtes Medikament eingetragen ist
-  anzeigenMedikament(medikamentId) {
-    //TODO...
-  }
-
   //diese Funktion legt einen neuen Eintrag im angegebenen Fach an.
   befuellen(fachIndex, medikamentId, anzahl) {
     if (fachIndex >= 0 && fachIndex < this.faecher.length)

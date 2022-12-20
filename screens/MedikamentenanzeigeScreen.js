@@ -9,7 +9,7 @@ import WeiterButton from '../components/WeiterButton';
 import Tablettenbox from '../components/Tablettenbox';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 
-export const MedikamentenanzeigeScreen = ({navigation}) => {
+const MedikamentenanzeigeScreen = ({navigation}) => {
     const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
     const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
     ScreenObserver.aktuellerScreen = 'MedikamentenanzeigeScreen';
