@@ -12,20 +12,20 @@ const StartButton = () => {
 
 const styles = StyleSheet.create({
   Startbox: {
-    height: 150,
-    width: 380,
+    height: 120,
+    width: 310,
     borderWidth: 5,
-    borderColor: 'lightblue',
+    borderColor: 'black',
     borderRadius: 30,
-    borderBottomLeftRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#066107',
+    backgroundColor: '#02005c',
     elevation: 55,
     marginBottom: 20,
   },
   LogoFont: {
-    fontSize: 36,
+    textAlign: 'center',
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
