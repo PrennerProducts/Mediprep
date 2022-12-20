@@ -131,11 +131,13 @@ const WochenTag = (props) => {
     props.navigation3.navigate('MedikamentenanzeigeScreen');
   };
   return (
-    <View style={styles.farblicheauswahl}>
       <TouchableOpacity onPress={pressHandler6}>
+    <View style={styles.farblicheauswahl}>
+
         <Text style={styles.wochentag}>{props.display}</Text>
-      </TouchableOpacity>
+
     </View>
+      </TouchableOpacity>
   );
 };
 
