@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 const StartButton = () => {
   return (
@@ -14,7 +13,7 @@ const styles = StyleSheet.create({
   Startbox: {
     height: 120,
     width: 310,
-    borderWidth: 5,
+    borderWidth: 4,
     borderColor: 'black',
     borderRadius: 30,
     justifyContent: 'center',

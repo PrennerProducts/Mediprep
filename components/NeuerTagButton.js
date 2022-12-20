@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   Startbox: {
     height: 120,
     width: 310,
-    borderWidth: 5,
+    borderWidth: 4,
     borderColor: 'black',
     borderRadius: 30,
     justifyContent: 'center',
