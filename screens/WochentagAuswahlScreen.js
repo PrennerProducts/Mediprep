@@ -5,11 +5,11 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from "../components/ZurueckButton";
 import React, {useState} from "react";
 
+
 export const WochenTagAuswahlScreen = ({navigation}) => {
   const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
   const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
 
-  let currentDate = moment().format('ll').toString(); //.format('dddd') für WeekDay
   let currentWeekday = moment().format('dddd').toString();
 
   const setCurrentDates = (index) => {
@@ -47,7 +47,7 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
     case 'Sunday':
       setCurrentDates(6)
   }
-  const pressHandlerBack = () => { //Zurueck-Button gedrueckt
+  const pressHandlerBack = () => {
     if (showState){
       let newIndex = medikamentIndex;
       newIndex--;
@@ -59,15 +59,10 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
 
   return (
       <View style={styles.container}>
-        <Text style={styles.textfont}>
-
-          Bitte wählen Sie den gewünschten Wochentag:
-
-        </Text>
 
         <Text style={styles.textfont}>
 
-          Heutiges Datum: {currentWeekday} {currentDate}
+          Bitte wählen Sie den gewünschten Wochentag um mit der Befüllung der Medikamentenbox zu beginnen:
 
         </Text>
 
@@ -86,49 +81,26 @@ export const WochenTagAuswahlScreen = ({navigation}) => {
           <TouchableOpacity onPress={pressHandlerBack}>
             <ZurueckButton style={styles.button}/>
           </TouchableOpacity>
+          <View style={styles.hidden}/>
 
         </View>
       </View>
   );
 };
 const WochenTag = (props) => {
-  return (
-      <View style={styles.farblicheauswahl}>
-
-        <Text style={styles.wochentag}>{props.display}</Text>
-        <View style={styles.kugel}>
-          <TouchableOpacity>
-
-            <Farbauswahl weekday={props.id} navigation4 ={props.navigation3}/>
-
-          </TouchableOpacity>
-        </View>
-      </View>
-  );
-};
-
-const Farbauswahl = (props) => {
-  const listArray = () => {
-    console.log('-')
-    for (let i = 0; i < 7; i++) {
-      console.log(datenbankEintrag[i])
-    }
-    console.log('-')
-  };
   const pressHandler6 = () => {
     console.log('-')
-    console.log('Ausgewählt: ' + datenbankEintrag[props.weekday])
-    ScreenObserver.wochentag = props.weekday
+    console.log('Ausgewählt: ' + datenbankEintrag[props.display])
+    ScreenObserver.wochentag = props.id
     console.log(ScreenObserver)
-    props.navigation4.navigate('MedikamentenanzeigeScreen');
+    props.navigation3.navigate('MedikamentenanzeigeScreen');
   };
   return (
-      <View>
+      <View style={styles.farblicheauswahl}>
+        <TouchableOpacity onPress={pressHandler6}>
 
-        <TouchableOpacity
-            onPress={pressHandler6}
-            style={styles.roundButton}
-        ></TouchableOpacity>
+          <Text style={styles.wochentag}>{props.display}</Text>
+        </TouchableOpacity>
 
       </View>
   );
@@ -136,14 +108,14 @@ const Farbauswahl = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#cdf1fe',
-    flex:1,
-    alignItems: 'flex-start',
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   textfont: {
-    marginLeft: 12,
+    margin:5,
     marginTop: 20,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
     elevation: 42,
@@ -151,54 +123,46 @@ const styles = StyleSheet.create({
   },
   rahmen: {
     paddingTop:20,
-    borderColor: 'gray',
-    marginTop: 20,
-    width:200,
-    marginLeft:60,
+
+    width:250,
   },
   farblicheauswahl: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    marginTop:15,
+    borderWidth: 3,
+    borderColor: '#6b93ff',
+    borderRadius: 30,
+    backgroundColor: '#02005c',
+    justifyContent:'center',
+    alignItems:'center',
+
   },
   wochentag: {
     fontSize: 35,
     fontWeight: 'bold',
-    color: 'black',
-    marginRight:10,
-    width:200,
-    height:50,
-    marginTop: 15,
+    color: 'white',
+    margin:5,
+
 
   },
-  roundButton: {
-    borderWidth: 3,
+  hidden: {
+    height: 120,
+    width: 200,
 
-    borderColor: '#6b93ff',
 
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: '#02005c',
-    marginTop: 12,
-    elevation: 10,
   },
   buttonsContainer:{
-    marginLeft:6,
-    position: 'absolute',
+
     bottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  kugel: {
-    justifyContent: 'flex-end',
+    marginTop:44,
+    marginLeft:50,
   },
   button: {
+
     height: 120,
-    width: 200,
+    width: 50,
     borderWidth: 3,
     borderColor: '#6b93ff',
     borderRadius: 30,
