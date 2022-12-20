@@ -33,7 +33,7 @@ const MedikamentenanzeigeScreen = ({navigation}) => {
         if (!showState){ 
           let newIndex = medikamentIndex;
           newIndex++;
-          if (newIndex >= ScreenObserver.medikamente.length) navigation.navigate('KontrollanzeigeScreen'); //TODO: Kontrollscreen
+          if (newIndex >= ScreenObserver.medikamente.length) navigation.navigate('Kontrolle'); //TODO: Kontrollscreen
           else setMedikamentIndex(newIndex);
         }
         setShowState(!showState);

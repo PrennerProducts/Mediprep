@@ -6,6 +6,8 @@ import pfeil_blau from '../assets/pfeil_blau.png';
 
 const TablettenSummeAnzeige = (props) => {
 
+
+
     return (
         <View style={styles.tablettenbox}>
             <Tablettenfachcontainer
@@ -54,15 +56,8 @@ const Tablettenfach = (props) => {
 
     // console.log(chechHighlightFach(props.highlightFach, props.fachId));
     let mystyle;
-    function chechHighlightFach(fachId) {
-            if (props.fachId === fachId) {
-                return true;
-
-            }
-        }
 
 
-    if (chechHighlightFach(props.highlightFach, props.fachId)) {
         mystyle = styles.tablettenfach_pfeil;
         return (
             <View style={mystyle}>
@@ -76,25 +71,22 @@ const Tablettenfach = (props) => {
                         top: 0,
                     }}
                 />
-                <Text style={styles.stueckStyle}>Anzahl</Text>
-                <Text style={styles.zahlStyle}>Ganze:
+
+                <Text style={styles.zahlStyle}>
                     {props.stueckProFachGroeße[props.fachId][0]
                     }
                 </Text>
-                <Text style={styles.zahlStyle}>Halbe:
+                <Text style={styles.zahlStyle}>
                     {props.stueckProFachGroeße[props.fachId][1]
                     }
                 </Text>
-                <Text style={styles.zahlStyle}>Viertel:
+                <Text style={styles.zahlStyle}>
                     {props.stueckProFachGroeße[props.fachId][2]
                     }
                 </Text>
-
+                <Text style={styles.stueckStyle}>Anzahl</Text>
             </View>
         );
-    } else {
-        return <View></View>;
-    }
 };
 
 const styles = StyleSheet.create({
@@ -148,11 +140,10 @@ const styles = StyleSheet.create({
         color: '#00003B',
     },
     zahlStyle: {
-        flexDirection: 'row',
         color: 'black',
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 12,
         marginTop: 10,
     },
     stueckStyle: {

@@ -10,30 +10,22 @@ import TablettenSummeAnzeige from "../components/TablettenSummeAnzeige";
 
 
 export const Kontrolle = ({ navigation }) => {
+    let OK = false;
     ScreenObserver.aktuellerScreen = 'Kontrolle';
-    let FachId = ScreenObserver.fach;
-    let checkfinish;
+    let FachId = ScreenObserver.fach[0];
     console.log(ScreenObserver.fach);
     console.log(
         'ZeigeFaecherTest--------------',
         DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3));
 
-    let Anzahlboxen = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3);
 
-    if (ScreenObserver.fach === Object.keys(Anzahlboxen).length) {
-        checkfinish = true;
-    }
     //DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3);
 
-    const pressHandlernext = () => {
-        navigation.navigate('Kontrolle');
-    };
-
-    const pressHandlerNOK = () => {
+    const pressHandlerOK = () => {
         navigation.navigate('MedikamentenanzeigeScreen');
     };
 
-    const pressHandlerOK = () => {
+    const pressHandlerNOK = () => {
         navigation.navigate('GreatSuccessScreen');
     };
 
@@ -43,21 +35,19 @@ export const Kontrolle = ({ navigation }) => {
                 {["Befüllkontrolle"]}
             </Text>
             <Tablettenbox
-                highlightFach={[FachId]}
+                highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(FachId)}
             />
             <TablettenSummeAnzeige
-                highlightFach={FachId}
+                //highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(FachId)}
                 stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag*4, (ScreenObserver.wochentag*4)+3)
                 }
             />
 
             <View style = {styles.buttonsContainer}>
-                <TouchableOpacity
-                    onPress={checkfinish ? pressHandlerNOK : pressHandlernext}>
+                <TouchableOpacity onPress={pressHandlerOK}>
                     <NOKButton style={styles.button}/>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={checkfinish ? pressHandlerOK : pressHandlernext}>
+                <TouchableOpacity onPress={pressHandlerNOK}>
                     <OKButton style={styles.button}/>
                 </TouchableOpacity>
             </View>

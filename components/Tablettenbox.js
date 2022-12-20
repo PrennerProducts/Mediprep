@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     width: '84%',
     height: '10%',
     elevation: 24,
-    borderWidth: 3,
+    borderWidth: 1.5,
     marginBottom: '10%',
     margin: '5%',
     borderColor: '#f31b1b',

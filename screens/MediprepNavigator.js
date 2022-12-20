@@ -8,7 +8,6 @@ import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import Kontrolle from './Kontrolle';
-import KontrollanzeigeScreen from "./KontrollanzeigeScreen";
 
 const screens = {
   Homescreen: {
@@ -62,13 +61,6 @@ const screens = {
 
   Kontrolle: {
     screen: Kontrolle,
-    navigationOptions: ({ navigation }) => ({
-      headerShown: false,
-    }),
-  },
-
-  KontrollanzeigeScreen: {
-    screen: KontrollanzeigeScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),

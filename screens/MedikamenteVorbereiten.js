@@ -27,7 +27,7 @@ export const MedikamenteVorbereiten = ({ navigation }) => {
 
   // DummySchachtel.starten();
 
-  //DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId);
+  DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId);
 
   const pressHandler = () => {
     navigation.navigate('MedikamentenanzeigeScreen');
@@ -48,7 +48,9 @@ export const MedikamenteVorbereiten = ({ navigation }) => {
       />
       <TablettenStueckAnzeige
         highlightFach={DummySchachtel.DummySchachtel.zeigeFaecher(medikamentId)}
-        stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(medikamentId)}
+        stueckProFachDict={DummySchachtel.DummySchachtel.zeigeStueckProFaecher(
+          medikamentId
+        )}
       />
 
       <View style={{ alignItems: 'center' }}>
