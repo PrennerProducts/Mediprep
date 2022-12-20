@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     elevation: 10,
-    textShadowColor: 'black',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 1,
+    // textShadowColor: 'black',
+    // textShadowOffset: { width: 2, height: 2 },
+    // textShadowRadius: 1,
   },
 });
 

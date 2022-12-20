@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'red',
     elevation: 10,
-    marginBottom: 20,
+    marginBottom: 100,
   },
   LogoFont: {
     textAlign: 'center',
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     elevation: 10,
-    textShadowColor: 'black',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 1,
+    // textShadowColor: 'black',
+    // textShadowOffset: { width: 2, height: 2 },
+    // textShadowRadius: 1,
   },
 });
 

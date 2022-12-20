@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'red',
     elevation: 10,
-    marginBottom: 20,
+    marginBottom: 100,
   },
   LogoFont: {
     textAlign: 'center',
