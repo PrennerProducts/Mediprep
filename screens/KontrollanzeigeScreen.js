@@ -19,22 +19,20 @@ export const KontrollanzeigeScreen = ({navigation}) => {
     let newIndex = 0;
 
     const HandlerNOK = () => { //Falsch Button gedrueckt
-        Auswertungsspeicher[FachIndex] = [0];
+        Auswertungsspeicher[FachIndex] = 0;
         newIndex = FachIndex;
         newIndex++;
         if (newIndex >= index_max){
-            console.log("Auswertung" +Auswertungsspeicher);
             navigation.navigate('GreatSuccessScreen');
         }
         else setFachIndex(newIndex);
     };
 
     const HandlerOK = () => { //Korrekt Button gedrueckt
-        Auswertungsspeicher[FachIndex] = [1];
+        Auswertungsspeicher[FachIndex] = 1;
         newIndex = FachIndex;
         newIndex++;
         if (newIndex >= index_max){
-            console.log("Auswertung" +Auswertungsspeicher);
             navigation.navigate('GreatSuccessScreen');
         }
         else setFachIndex(newIndex);
