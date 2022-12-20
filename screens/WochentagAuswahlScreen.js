@@ -177,16 +177,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   hidden: {
-    height: 120,
-    width: 200,
+    height: 82,
+    width: 150,
   },
   buttonsContainer: {
+    position: 'absolute',
     bottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 55,
-    marginLeft: 60,
   },
   button: {
     height: 120,
