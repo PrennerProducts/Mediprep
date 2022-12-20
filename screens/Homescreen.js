@@ -15,8 +15,8 @@ const Homescreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.WelcomeFont}>Willkommen zurück Sieglinde!</Text>
-      <Text style={styles.WelcomeSlogan}>Was möchten Sie gerne tun?</Text>
+      <Text style={styles.WelcomeFont}>Willkommen zurück, Sieglinde!</Text>
+      <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
 
       <TouchableOpacity onPress={pressHandler1}>
         <StartButton />
