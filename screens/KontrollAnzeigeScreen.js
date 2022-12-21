@@ -8,7 +8,8 @@ import OKButton from '../components/OKButton';
 import ZurueckButton from "../components/ZurueckButton";
 import Tablettenbox from '../components/Tablettenbox';
 import TablettenSummeAnzeige from '../components/TablettenSummeAnzeige';
-//Text
+
+
 export const KontrollAnzeigeScreen = ({ navigation }) => {
   const [FachIndex, setFachIndex] = useState(0); //zum Iterieren der Medikamente
   ScreenObserver.aktuellerScreen = 'KontrollanzeigeScreen';

@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import pfeil from '../assets/pfeil.png';
-import pfeil_blue from '../assets/pfeil_blue.png';
-import pfeil_blau from '../assets/pfeil_blau.png';
+
 
 const TablettenSummeAnzeige = (props) => {
 
