@@ -4,12 +4,18 @@ const datenbankEintrag = [0, 0, 0, 0, 0, 0, 0];
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from '../components/ZurueckButton';
 
+
 export const WochenTagAuswahlScreen = ({ navigation }) => {
 
   let currentWeekday = moment().format('dddd').toString();
 
   const setCurrentDates = (index) => {
-    let found = index +1
+    let found = 0;
+    for (let i = 0; i < 7; i++) {
+      if (index === i) {
+        found = i + 1;
+      }
+    }
     for (let i = 1; i < 8; i++) {
       let search = i % found;
       datenbankEintrag[i - 1] = moment().add(search, 'days').format('ll');
