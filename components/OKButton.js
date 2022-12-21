@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'green',
         elevation: 24,
+        marginLeft: 10,
+        marginRight: 10,
     },
     font: {
         fontSize: 28,

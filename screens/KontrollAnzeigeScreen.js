@@ -5,6 +5,7 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import { DummySchachtel } from '../data/DummySchachtelFile';
 import NOKButton from '../components/NOKButton';
 import OKButton from '../components/OKButton';
+import ZurueckButton from "../components/ZurueckButton";
 import Tablettenbox from '../components/Tablettenbox';
 import TablettenSummeAnzeige from '../components/TablettenSummeAnzeige';
 //Text
@@ -16,6 +17,15 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
   ScreenObserver.medikamente = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3); //Anzahl Tabletten der Fächer
   let Auswertungsspeicher = {};
   let newIndex = 0;
+
+  const HandlerZurueck = () => {    //Falsch Button gedrueckt
+    Auswertungsspeicher[FachIndex] = 0;
+    newIndex = FachIndex;
+    newIndex--;
+    if (newIndex < 0) {
+      navigation.navigate('MedikamentenanzeigeScreen');
+    } else setFachIndex(newIndex);
+  };
 
   const HandlerNOK = () => {    //Falsch Button gedrueckt
     Auswertungsspeicher[FachIndex] = 0;
@@ -52,6 +62,11 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
           <OKButton style={styles.button} />
         </TouchableOpacity>
       </View>
+      <View style={styles.buttonsZurueckContainer}>
+      <TouchableOpacity onPress={HandlerZurueck}>
+      <ZurueckButton style={styles.button} />
+      </TouchableOpacity>
+    </View>
     </View>
   );
 };
@@ -64,7 +79,15 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 120,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  buttonsZurueckContainer: {
+    position: 'absolute',
+    bottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
