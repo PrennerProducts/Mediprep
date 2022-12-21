@@ -146,6 +146,8 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontWeight: 'bold',
         color: '#00003B',
+        marginTop: 70,
+        marginLeft:20,
     },
     zahlStyle: {
         width: '100%',
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     stueckStyle: {
-        width: '100%',
+        width: '200%',
         height: '20%',
         flexDirection: 'row',
         color: 'black',
