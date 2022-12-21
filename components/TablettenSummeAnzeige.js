@@ -79,7 +79,7 @@ const Tablettenfach = (props) => {
                 <View style={styles.tabblettenfachHeading}>
                     <Text style={styles.stueckStyle}>Anzahl</Text>
                     <Text style={styles.zahlStyle}>
-                        {props.stueckProFachGroeße[props.fachId][0]} Ganz
+                        {props.stueckProFachGroeße[props.fachId][0]} Ganze
                     </Text>
                     <Text style={styles.zahlStyle}>
                         {props.stueckProFachGroeße[props.fachId][1]} Halbe
