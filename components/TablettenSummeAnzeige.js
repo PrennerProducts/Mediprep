@@ -148,6 +148,7 @@ const styles = StyleSheet.create({
         color: '#00003B',
         marginTop: 70,
         marginLeft:20,
+        marginRight:20,
     },
     zahlStyle: {
         width: '100%',
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'left',
         fontWeight: 'bold',
-        fontSize: 28,
+        fontSize: 27,
         marginTop: 10,
     },
     stueckStyle: {
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'left',
         fontWeight: 'bold',
-        fontSize: 28,
+        fontSize: 27,
         marginTop: 0,
 
     },
