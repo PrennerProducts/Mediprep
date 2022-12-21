@@ -49,6 +49,9 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
     //Zeige Medikamentbox an
 
     <View style={styles.container}>
+      <Text style={styles.textfont}>
+        Bitte konrollieren Sie die Tablettenanzahl von der markierten Box.
+      </Text>
       <Tablettenbox highlightFach={[FachIndex]} />
       <TablettenSummeAnzeige
         highlightFach={FachIndex}
@@ -102,6 +105,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#02005c',
     elevation: 24,
+  },
+  textfont: {
+    margin: 5,
+    marginTop: 50,
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'black',
+    elevation: 42,
+    textAlign: 'center',
   },
 });
 

@@ -33,6 +33,7 @@ const TablettenSummeAnzeige = (props) => {
                 containerName=""
             />
 
+
         </View>
     );
 };
@@ -46,13 +47,13 @@ const Tablettenfachcontainer = (props) => {
                 highlightFach={props.highlightFach}
                 stueckProFachGroeße={props.stueckProFachGroeße}
             />
-        </View>
-    );
+    </View>
+       );
 };
+
 
 const Tablettenfach = (props) => {
 
-    // console.log(chechHighlightFach(props.highlightFach, props.fachId));
     let mystyle;
     function chechHighlightFach(fachId) {
         if (props.fachId === fachId) {
@@ -60,7 +61,6 @@ const Tablettenfach = (props) => {
 
         }
     }
-
 
     if (chechHighlightFach(props.highlightFach, props.fachId)) {
         mystyle = styles.tablettenfach_pfeil;
@@ -76,19 +76,18 @@ const Tablettenfach = (props) => {
                         top: 0,
                     }}
                 />
-                <Text style={styles.stueckStyle}>Anzahl</Text>
-                <Text style={styles.zahlStyle}>Ganze:
-                    {props.stueckProFachGroeße[props.fachId][0]
-                    }
-                </Text>
-                <Text style={styles.zahlStyle}>Halbe:
-                    {props.stueckProFachGroeße[props.fachId][1]
-                    }
-                </Text>
-                <Text style={styles.zahlStyle}>Viertel:
-                    {props.stueckProFachGroeße[props.fachId][2]
-                    }
-                </Text>
+                <View style={styles.tabblettenfachHeading}>
+                    <Text style={styles.stueckStyle}>Anzahl</Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][0]} Ganz
+                    </Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][1]} Halbe
+                    </Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][2]} Viertel
+                    </Text>
+                </View>
 
             </View>
         );
@@ -96,6 +95,7 @@ const Tablettenfach = (props) => {
         return <View></View>;
     }
 };
+
 
 const styles = StyleSheet.create({
     tablettenbox: {
@@ -148,19 +148,25 @@ const styles = StyleSheet.create({
         color: '#00003B',
     },
     zahlStyle: {
+        width: '100%',
+        height: '20%',
         flexDirection: 'row',
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 28,
         marginTop: 10,
     },
     stueckStyle: {
+        width: '100%',
+        height: '20%',
+        flexDirection: 'row',
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: 'bold',
         fontSize: 28,
         marginTop: 0,
+
     },
 });
 
