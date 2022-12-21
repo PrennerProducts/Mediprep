@@ -17,8 +17,6 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
   let Auswertungsspeicher = {};
   let newIndex = 0;
 
-  console.log("zeller"+FachIndex);
-  console.log("zeller"+index);
   const HandlerNOK = () => {    //Falsch Button gedrueckt
     Auswertungsspeicher[FachIndex] = 0;
     newIndex = FachIndex;
