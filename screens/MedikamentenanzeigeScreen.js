@@ -14,11 +14,7 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
   const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
   ScreenObserver.aktuellerScreen = 'MedikamentenanzeigeScreen';
   let index = ScreenObserver.wochentag * 4; //Berechne Fachindex anhand Wochentag
-  ScreenObserver.medikamente =
-    DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(
-      index,
-      index + 3
-    ); //Finde Medikamente der naechsten 4 Tage
+  ScreenObserver.medikamente = DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(index,index + 3); //Finde Medikamente der naechsten 4 Tage
   if (ScreenObserver.medikamente.length === 0)
     navigation.navigate('WochenTagAuswahl'); //Wenn keine Medikamente, geh zurueck zu WochenTagAuswahl
   console.log(ScreenObserver.medikamente);
@@ -41,7 +37,7 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
       let newIndex = medikamentIndex;
       newIndex++;
       if (newIndex >= ScreenObserver.medikamente.length)
-        navigation.navigate('Kontrolle'); //TODO: Kontrollscreen
+        navigation.navigate('KontrollAnzeigeScreen');
       else setMedikamentIndex(newIndex);
     }
     setShowState(!showState);

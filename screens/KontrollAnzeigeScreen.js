@@ -6,21 +6,21 @@ import { DummySchachtel } from '../data/DummySchachtelFile';
 import NOKButton from '../components/NOKButton';
 import OKButton from '../components/OKButton';
 import Tablettenbox from '../components/Tablettenbox';
-import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 import TablettenSummeAnzeige from '../components/TablettenSummeAnzeige';
 //Text
 export const KontrollAnzeigeScreen = ({ navigation }) => {
   const [FachIndex, setFachIndex] = useState(0); //zum Iterieren der Medikamente
   ScreenObserver.aktuellerScreen = 'KontrollanzeigeScreen';
   let Anzahlboxen = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3);
-  let index = Object.keys(Anzahlboxen).length; //Berechne Fachindex anhand Anzahl der Fächer
-  ScreenObserver.kontrolle = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3); //Anzahl Tabletten der Fächer
+  let index = ScreenObserver.wochentag * 4; //Berechne Fachindex anhand Anzahl der Fächer
+  ScreenObserver.medikamente = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3); //Anzahl Tabletten der Fächer
   let Auswertungsspeicher = {};
   let newIndex = 0;
 
-  const HandlerNOK = () => {
-    //Falsch Button gedrueckt
-    Auswertungsspeicher[FachIndex] = [0];
+  console.log("zeller"+FachIndex);
+  console.log("zeller"+index);
+  const HandlerNOK = () => {    //Falsch Button gedrueckt
+    Auswertungsspeicher[FachIndex] = 0;
     newIndex = FachIndex;
     newIndex++;
     if (newIndex >= Object.keys(Anzahlboxen).length) {
@@ -28,9 +28,8 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
     } else setFachIndex(newIndex);
   };
 
-  const HandlerOK = () => {
-    //Korrekt Button gedrueckt
-    Auswertungsspeicher[FachIndex] = [1];
+  const HandlerOK = () => {    //Korrekt Button gedrueckt
+    Auswertungsspeicher[FachIndex] = 1;
     newIndex = FachIndex;
     newIndex++;
     if (newIndex >= Object.keys(Anzahlboxen).length) {
