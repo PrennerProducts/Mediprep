@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    elevation: 42,
+    //elevation: 42,
     textAlign: 'center',
   },
   rahmen: {
@@ -155,10 +155,10 @@ const styles = StyleSheet.create({
   },
   farblicheauswahl: {
     marginTop: 15,
-    borderWidth: 3,
-    borderColor: '#6b93ff',
-    borderRadius: 30,
-    backgroundColor: '#02005c',
+    //borderWidth: 3,
+    //borderColor: '#6b93ff',
+    //borderRadius: 30,
+    backgroundColor: '#032E5B',
     justifyContent: 'center',
     alignItems: 'center',
   },

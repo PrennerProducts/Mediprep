@@ -80,6 +80,11 @@ export const DummySchachtel = {
     this.DummySchachtel.befuellen(16, 3, 1);
     this.DummySchachtel.befuellen(17, 2, 2);
     this.DummySchachtel.befuellen(18, 7, 5);
+
+    this.DummySchachtel.befuellen(21, 1, 3);
+    this.DummySchachtel.befuellen(22, 3, 1);
+    this.DummySchachtel.befuellen(22, 2, 2);
+    this.DummySchachtel.befuellen(23, 7, 5);
   
     this.DummySchachtel.befuellen(24, 1, 2.5);
     this.DummySchachtel.befuellen(27, 3, 3);

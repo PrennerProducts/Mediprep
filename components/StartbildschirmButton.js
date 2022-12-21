@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
   Startbox: {
     height: 120,
     width: 310,
-    borderWidth: 5,
-    borderColor: 'black',
-    borderRadius: 30,
+    //borderWidth: 5,
+    //borderColor: 'black',
+    //borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
-    elevation: 42,
+    backgroundColor: '#7A003E',
+    //elevation: 42,
     marginBottom: 20,
   },
   LogoFont: {
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
-    textShadowColor: 'black',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 1,
+    //textShadowColor: 'black',
+    //textShadowOffset: { width: 2, height: 2 },
+    //textShadowRadius: 1,
   },
 });
 
