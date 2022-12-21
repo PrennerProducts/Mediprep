@@ -2,12 +2,10 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Homescreen from './Homescreen';
 import Ladebildschirm from './Ladebildschirm';
-import Befullungstarten from './MedikamenteVorbereiten';
 import GreatSuccessScreen from './GreatSuccessScreen';
 import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
-import Kontrolle from './Kontrolle';
 import KontrollAnzeigeScreen from "./KontrollAnzeigeScreen";
 
 /* Navigation Anleitung:
@@ -34,13 +32,6 @@ const screens = {
 
   Ladebildschirm: {
     screen: Ladebildschirm,
-    navigationOptions: ({ navigation }) => ({
-      headerShown: false,
-    }),
-  },
-
-  Befullungstarten: {
-    screen: Befullungstarten,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),
@@ -74,12 +65,6 @@ const screens = {
     }),
   },
 
-  Kontrolle: {
-    screen: Kontrolle,
-    navigationOptions: ({ navigation }) => ({
-      headerShown: false,
-    }),
-  },
   KontrollAnzeigeScreen: {
     screen: KontrollAnzeigeScreen,
     navigationOptions: ({ navigation }) => ({

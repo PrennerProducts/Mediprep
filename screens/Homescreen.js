@@ -2,16 +2,14 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
-import { ScreenObserver } from '../models/ScreenObserver';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
     navigation.navigate('WochenTagAuswahlScreen');
   };
   const pressHandler2 = () => {
-    navigation.navigate('GreatSuccessScreen');
+    navigation.navigate('Homescreen');
   };
-  ScreenObserver.aktuellerScreen = 'Homescreen';
 
   return (
     <View style={styles.container}>

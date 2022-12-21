@@ -117,7 +117,7 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
 };
 const WochenTag = (props) => {
   const pressHandler6 = () => {
-    console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
+    //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
     ScreenObserver.wochentag = props.id;
     //console.log(ScreenObserver);
     props.navigation3.navigate('MedikamentenanzeigeScreen');
