@@ -125,18 +125,19 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
 };
 const WochenTag = (props) => {
   const pressHandler6 = () => {
-    console.log('-');
-    console.log('Ausgewählt: ' + datenbankEintrag[props.display]);
+    //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
     ScreenObserver.wochentag = props.id;
-    console.log(ScreenObserver);
+    //console.log(ScreenObserver);
     props.navigation3.navigate('MedikamentenanzeigeScreen');
   };
   return (
-    <View style={styles.farblicheauswahl}>
       <TouchableOpacity onPress={pressHandler6}>
+    <View style={styles.farblicheauswahl}>
+
         <Text style={styles.wochentag}>{props.display}</Text>
-      </TouchableOpacity>
+
     </View>
+      </TouchableOpacity>
   );
 };
 
@@ -178,16 +179,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   hidden: {
-    height: 120,
-    width: 200,
+    height: 82,
+    width: 150,
   },
   buttonsContainer: {
+    position: 'absolute',
     bottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 44,
-    marginLeft: 50,
   },
   button: {
     height: 120,
