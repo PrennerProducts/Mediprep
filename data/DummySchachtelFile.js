@@ -87,6 +87,6 @@ export const DummySchachtel = {
     this.DummySchachtel.befuellen(23, 7, 5);
   
     this.DummySchachtel.befuellen(24, 1, 2.5);
-    this.DummySchachtel.befuellen(27, 3, 3);
+    this.DummySchachtel.befuellen(27, 3, 3.25);
   }
 };

@@ -51,7 +51,7 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
 
     <View style={styles.container}>
       <Text style={styles.textfont}>
-        Bitte konrollieren Sie die Tablettenanzahl von der markierten Box.
+        Bitte kontrollieren Sie die Tablettenanzahl im markierten Fach.
       </Text>
       <Tablettenbox highlightFach={[FachIndex]} />
       <TablettenSummeAnzeige
@@ -70,6 +70,7 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
       <TouchableOpacity onPress={HandlerZurueck}>
       <ZurueckButton style={styles.button} />
       </TouchableOpacity>
+      <View style={styles.hidden} />
     </View>
     </View>
   );
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     flexDirection: 'row',
-    alignItems: 'center',
+    //alignItems: 'center',
     justifyContent: 'center',
   },
   button: {
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#02005c',
-    elevation: 24,
+    //elevation: 24,
   },
   textfont: {
     margin: 5,
@@ -113,8 +114,14 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    elevation: 42,
+    //elevation: 42,
     textAlign: 'center',
+  },
+  hidden: {
+    height: 82,
+    width: 150,
+    marginLeft: 10,
+    marginRight: 10,
   },
 });
 

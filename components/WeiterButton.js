@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0041C8',
-    elevation: 24,
+    //elevation: 24,
   },
   font: {
     fontSize: 36,

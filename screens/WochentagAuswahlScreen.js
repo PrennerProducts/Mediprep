@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
   hidden: {
     height: 82,
     width: 150,
+
   },
   buttonsContainer: {
     position: 'absolute',
