@@ -10,6 +10,20 @@ import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import Kontrolle from './Kontrolle';
 import KontrollAnzeigeScreen from "./KontrollAnzeigeScreen";
 
+/* Navigation Anleitung:
+
+1. Importiere den bereits erstellten Screen den du verwenden möchtest
+2. Füge ihn in die screens Konstante ein (Achtung, nicht den Screen als erstes reihen, da dies automatisch der Startbildschirm ist beim Starten der App)
+3. In deinem neuen Screen.js File füge folgendes ein:
+- PressHandler (verwende bitte eine neue Nummer, damit es nicht zu Verwechslungen kommt)
+- Übergibe {navigation} als Parameter in deiner Screen Funktion
+- Übergib dem TouchableOpacity mit onPress den pressHandler
+4. Teste ob der Button funktioniert, falls nicht hilft dir Robert gerne weiter :)
+
+
+*/
+
+
 const screens = {
   Homescreen: {
     screen: Homescreen,
