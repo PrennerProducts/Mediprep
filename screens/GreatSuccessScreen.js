@@ -4,6 +4,7 @@ import StartbildschirmButton from '../components/StartbildschirmButton';
 import NeuerTagButton from '../components/NeuerTagButton';
 import { ScreenObserver } from '../models/ScreenObserver';
 
+
 const GreatSuccessScreen = ({ navigation }) => {
   const pressHandler3 = () => {
     navigation.navigate('Homescreen');
@@ -16,8 +17,7 @@ const GreatSuccessScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Fertig! Gut gemacht!</Text>
-      <Text style={styles.WelcomeSlogan}></Text>
-
+      <Image source={require('../assets/award.jpg')} style={{width: 300, height: 300}} />
       <TouchableOpacity onPress={pressHandler1}>
         <NeuerTagButton />
       </TouchableOpacity>

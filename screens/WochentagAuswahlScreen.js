@@ -3,7 +3,7 @@ import moment from 'moment';
 const datenbankEintrag = [0, 0, 0, 0, 0, 0, 0];
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from '../components/ZurueckButton';
-import React, { useState } from 'react';
+
 
 export const WochenTagAuswahlScreen = ({ navigation }) => {
 
@@ -117,7 +117,7 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
 };
 const WochenTag = (props) => {
   const pressHandler6 = () => {
-    //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
+    console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
     ScreenObserver.wochentag = props.id;
     //console.log(ScreenObserver);
     props.navigation3.navigate('MedikamentenanzeigeScreen');

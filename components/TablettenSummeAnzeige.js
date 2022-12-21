@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import pfeil from '../assets/pfeil.png';
-import pfeil_blue from '../assets/pfeil_blue.png';
-import pfeil_blau from '../assets/pfeil_blau.png';
+
 
 const TablettenSummeAnzeige = (props) => {
 
@@ -33,6 +32,7 @@ const TablettenSummeAnzeige = (props) => {
                 containerName=""
             />
 
+
         </View>
     );
 };
@@ -46,13 +46,13 @@ const Tablettenfachcontainer = (props) => {
                 highlightFach={props.highlightFach}
                 stueckProFachGroeße={props.stueckProFachGroeße}
             />
-        </View>
-    );
+    </View>
+       );
 };
+
 
 const Tablettenfach = (props) => {
 
-    // console.log(chechHighlightFach(props.highlightFach, props.fachId));
     let mystyle;
     function chechHighlightFach(fachId) {
         if (props.fachId === fachId) {
@@ -60,7 +60,6 @@ const Tablettenfach = (props) => {
 
         }
     }
-
 
     if (chechHighlightFach(props.highlightFach, props.fachId)) {
         mystyle = styles.tablettenfach_pfeil;
@@ -76,19 +75,18 @@ const Tablettenfach = (props) => {
                         top: 0,
                     }}
                 />
-                <Text style={styles.stueckStyle}>Anzahl</Text>
-                <Text style={styles.zahlStyle}>Ganze:
-                    {props.stueckProFachGroeße[props.fachId][0]
-                    }
-                </Text>
-                <Text style={styles.zahlStyle}>Halbe:
-                    {props.stueckProFachGroeße[props.fachId][1]
-                    }
-                </Text>
-                <Text style={styles.zahlStyle}>Viertel:
-                    {props.stueckProFachGroeße[props.fachId][2]
-                    }
-                </Text>
+                <View style={styles.tabblettenfachHeading}>
+                    <Text style={styles.stueckStyle}>Anzahl</Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][0]} Ganze
+                    </Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][1]} Halbe
+                    </Text>
+                    <Text style={styles.zahlStyle}>
+                        {props.stueckProFachGroeße[props.fachId][2]} Viertel
+                    </Text>
+                </View>
 
             </View>
         );
@@ -96,6 +94,7 @@ const Tablettenfach = (props) => {
         return <View></View>;
     }
 };
+
 
 const styles = StyleSheet.create({
     tablettenbox: {
@@ -146,21 +145,30 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontWeight: 'bold',
         color: '#00003B',
+        marginTop: 70,
+        marginLeft:20,
+        marginRight:20,
     },
     zahlStyle: {
+        width: '100%',
+        height: '20%',
         flexDirection: 'row',
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 27,
         marginTop: 10,
     },
     stueckStyle: {
+        width: '200%',
+        height: '20%',
+        flexDirection: 'row',
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: 'bold',
-        fontSize: 28,
+        fontSize: 27,
         marginTop: 0,
+
     },
 });
 
