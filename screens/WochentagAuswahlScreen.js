@@ -6,8 +6,6 @@ import ZurueckButton from '../components/ZurueckButton';
 import React, { useState } from 'react';
 
 export const WochenTagAuswahlScreen = ({ navigation }) => {
-  const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
-  const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
 
   let currentWeekday = moment().format('dddd').toString();
 
@@ -47,13 +45,7 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
       setCurrentDates(6);
   }
   const pressHandlerBack = () => {
-    if (showState) {
-      let newIndex = medikamentIndex;
-      newIndex--;
-      if (newIndex < 0) navigation.navigate('Homescreen');
-      else setMedikamentIndex(newIndex);
-    }
-    setShowState(!showState);
+      navigation.navigate('Homescreen');
   };
 
   return (
@@ -158,7 +150,7 @@ const styles = StyleSheet.create({
   },
   rahmen: {
     paddingTop: 20,
-
+    bottom: 30,
     width: 250,
   },
   farblicheauswahl: {
@@ -174,7 +166,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: 'bold',
     color: 'white',
-    margin: 5,
+    margin: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
