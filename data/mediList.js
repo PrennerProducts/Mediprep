@@ -113,9 +113,6 @@ export const MEDIKAMENTE = medikamente.map(
   (medikament) =>
     new Medikament(
       medikament.name,
-      medikament.boxSize,
       medikament.img,
-      medikament.isReady,
-      medikament.color
     )
 );

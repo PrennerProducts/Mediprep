@@ -1,4 +1,5 @@
 import { Schachtel } from '../models/Schachtel';
+import { MedikamentenListe } from '../models/MedikamentenListe';
 
 export const DummySchachtel = {
   DummySchachtel: new Schachtel('Meine Dummy Schachtel', 28),
@@ -88,5 +89,16 @@ export const DummySchachtel = {
   
     this.DummySchachtel.befuellen(24, 1, 2.5);
     this.DummySchachtel.befuellen(27, 3, 3.25);
+  },
+  aktualisieren(){
+    //console.log('DummySchachtel wird aktualisiert');
+    for (const m of MedikamentenListe.MLDummy.medikamente){
+      for (let i = 0; i<28; i++){
+        if (m.befuellung[i] != 0) this.DummySchachtel.befuellen(i, m.id, m.befuellung[i]);
+      }
+    }
+  },
+  anzeigen(){
+    this.DummySchachtel.anzeigen;
   }
 };

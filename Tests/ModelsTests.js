@@ -1,7 +1,7 @@
-import { Medikament } from "./Medikament";
+import { Medikament } from "../models/Medikament";
 import { MEDIKAMENTE } from "../data/mediList";
-import { MedikamentenListe } from "./MedikamentenListe";
-import { Schachtel } from "./Schachtel";
+import { MedikamentenListe } from "../models/MedikamentenListe";
+import { Schachtel } from "../models/Schachtel";
 
 export const modelsTests = {
     test: function(){
