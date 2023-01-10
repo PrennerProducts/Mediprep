@@ -2,7 +2,7 @@ import * as FileSystem from 'expo-file-system';
 
 export const Speicherverwaltung = {
 
-    //Diese Funktion erstellt eine neue Datei mit einem Inhalt
+    //Diese Funktion erstellt eine neue Datei mit dem angegebenen Inhalt (darf auch leerer String sein)
     createFile : async (filename, content) => {
         let path = FileSystem.documentDirectory + filename;
         await FileSystem.writeAsStringAsync(path, content, { encoding: FileSystem.EncodingType.UTF8 });

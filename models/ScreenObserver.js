@@ -9,7 +9,5 @@ export const ScreenObserver = {
     medikamente: [],                    // alle im ausgewaehlten Tag hinterlegten Medikamente
 
     //Medikamentenerfassung
-    tempMedName : '',       // Name des temporaeren Medikaments
-    tempMedBefuellung: [],  // Befuellung des temporaeren Medikaments. Index = Fachindex, Wert = Tablettenanzahl
     tempMed: new Medikament('')
 }
