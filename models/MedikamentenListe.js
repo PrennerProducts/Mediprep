@@ -52,5 +52,9 @@ export class MedikamentenListe {
     return 'No image found';
   }
 
+  getmaxmeds(){
+    return this.medikamente.length
+  }
+
   //static medikmantId = 7;
 }
