@@ -2,7 +2,7 @@ export var IDGenerator = {};
 IDGenerator.Singleton = (function() {
   var singletonInstance;  
   function constructor() {
-    var id = 0;
+    var id = -1;
     return {
       getNextID: function() {
         id++;

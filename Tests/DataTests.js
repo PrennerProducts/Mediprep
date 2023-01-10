@@ -18,13 +18,13 @@ export const DataTests = {
         console.log('Datei mediList.txt wurde erstellt.');
     }
 
-    // Beispielbefuellung mit Medikamenten. Jeder Eintrag besteht aus Name, Url, Befuellung. Mit ',' getrennt. Am Ende steht '}'. 
-    await Speicherverwaltung.writeFile('mediList.txt', 'Mexalen,https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}');
-    await Speicherverwaltung.writeFile('mediList.txt', 'Aspirin,https://cdn.shop-apotheke.com/images/A24/239/92/A2423992-p1.jpg,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}');
+    // Beispielbefuellung mit schon existierenden Medikamenten. Jeder Eintrag besteht aus Name, Url, Befuellung. Mit ',' getrennt. Am Ende steht '}'. 
+    await Speicherverwaltung.writeFile('mediList.txt', 'Mexalen,https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n');
+    await Speicherverwaltung.writeFile('mediList.txt', 'Aspirin,https://cdn.shop-apotheke.com/images/A24/239/92/A2423992-p1.jpg,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n');
 
     // MedikamentenListe wird mit den Daten aus mediList.txt befuellt. 
     let mediListString = await Speicherverwaltung.loadFile('mediList.txt');
-    let mediListMeds = mediListString.split('}');                                        
+    let mediListMeds = mediListString.split('\n');                                        
     for (const m of mediListMeds){
         let token = m.split(',');
         if (token[0] === '') break;                         // bei leerem Token Abbruch!
@@ -51,7 +51,7 @@ export const DataTests = {
 
     // User speichert Medikament ab -> Medikamentenliste wird aktualisiert und neuer Eintrag in mediList hinzugefuegt.
     MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
-    await Speicherverwaltung.writeFile('mediList.txt', ScreenObserver.tempMed.name + ',' + ScreenObserver.tempMed.bild + ',' + ScreenObserver.tempMed.befuellung + '}');
+    await Speicherverwaltung.writeFile('mediList.txt', ScreenObserver.tempMed.name + ',' + ScreenObserver.tempMed.bild + ',' + ScreenObserver.tempMed.befuellung + '\n');
 
     // Zur Kontrolle:
     console.log('\nInhalt von mediList.txt:\n');
