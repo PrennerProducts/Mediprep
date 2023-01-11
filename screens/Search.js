@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import { ListItem, SearchBar } from "react-native-elements";
 import { MedikamentenListe } from '../models/MedikamentenListe';
 
-let medtitle = MedikamentenListe.MLDummy.getMedikamentName(1)
-let maxmeds = MedikamentenListe.MLDummy.getmaxmeds
+
 
 const DATA = [
     {
