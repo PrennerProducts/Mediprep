@@ -6,7 +6,7 @@ import GreatSuccessScreen from './GreatSuccessScreen';
 import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
-import KontrollAnzeigeScreen from "./KontrollAnzeigeScreen";
+import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 
 /* Navigation Anleitung:
@@ -22,11 +22,7 @@ import CustomSearch from './Search';
 
 */
 
-
 const screens = {
-
-
-
   Homescreen: {
     screen: Homescreen,
     navigationOptions: ({ navigation }) => ({
