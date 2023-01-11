@@ -12,7 +12,10 @@ export default function App() {
   //MedikamentenListe.MLDummy.anzeigen();
   //DummySchachtel.DummySchachtel.anzeigen();
 
+  const myDataset = getMedikamenteFromApi();
+
   return <MediprepNavigator />;
+  console.log('MyDataset = ', myDataset);
 }
 
 const styles = StyleSheet.create({
