@@ -9,23 +9,8 @@ export class Fach {
 
   //Gibt Infos zum Fach auf der Console aus. Alle Eintraege werden angezeigt.
   anzeigen() {
-    console.log(
-      this.tag +
-        '' +
-        this.zeit +
-        '. Inhalt (' +
-        this.eintraege.length +
-        ' Eintraege):'
-    );
-    for (const e of this.eintraege) {
-      console.log(e.anzeigen());
-    }
-  }
-
-  //Zeigt nur einen ausgewaehlten Eintrag an.
-  anzeigenEintrag(eintragIndex) {
-    if (eintragIndex >= 0 && eintragIndex < this.eintraege.length)
-      this.eintraege[eintragIndex].anzeigen();
+    console.log(this.tag + '' + this.zeit + '. Inhalt (' + this.eintraege.length + ' Eintraege):');
+    for (const e of this.eintraege) {console.log(e);}
   }
 
   //Eintrag wird hinzugefeugt. Wenn bereits ein Eintrag mit dem gleichen Medikament existiert, wird die Anzahl im Eintrag ueberschrieben

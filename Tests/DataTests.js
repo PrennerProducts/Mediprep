@@ -1,65 +1,68 @@
 import { Medikament } from "../models/Medikament";
 import { MedikamentenListe } from "../models/MedikamentenListe";
-import { DummySchachtel } from "../data/DummySchachtelFile";
 import { ScreenObserver } from '../models/ScreenObserver';
 import { Speicherverwaltung } from "../data/Speicherverwaltung";
 
 export const DataTests = {
     test: async function(){
-    
-    // In der Datei mediList.txt im lokalen Speicher werden alle Medikamente des Users*in gespeichert. Bei jedem Start der App wird diese Datei ausgelesen und die Medikamentenliste aktualisiert.
-    // Zu Testzwecken wird hier mediList.txt geloescht...
-    await Speicherverwaltung.deleteFile('mediList.txt');
+        // Szenario 1: 
+        // App wird zum ersten mal gestartet. Noch keine Medikamente vorhanden.
+        await this.reset();  
+        await MedikamentenListe.MLDummy.initialisieren();
 
-    // Pruefen ob die Datei 'mediList.txt' im Speicher existiert. Wenn nicht, wird sie erstellt.
-    let checkForMediListFile = await Speicherverwaltung.checkFile('mediList.txt');
-    if (checkForMediListFile === false) {
-        await Speicherverwaltung.createFile('mediList.txt', '');
-        console.log('Datei mediList.txt wurde erstellt.');
-    }
+        // Beispielerfassung von Medikamenten.
+        //Mexalen
+        ScreenObserver.tempMed = new Medikament('Mexalen','https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg');
+        ScreenObserver.tempMed.befuellung[0] = 2;
+        ScreenObserver.tempMed.befuellung[4] = 3;
+        ScreenObserver.tempMed.befuellung[7] = 1;
+        ScreenObserver.tempMed.befuellung[26] = 2;
+        await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
+        //Aspirin
+        ScreenObserver.tempMed = new Medikament('Aspirin','https://cdn.shop-apotheke.com/images/A24/239/92/A2423992-p1.jpg');
+        ScreenObserver.tempMed.befuellung[2] = 1;
+        ScreenObserver.tempMed.befuellung[4] = 0.5;
+        ScreenObserver.tempMed.befuellung[8] = 1;
+        ScreenObserver.tempMed.befuellung[26] = 3;
+        await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
 
-    // Beispielbefuellung mit schon existierenden Medikamenten. Jeder Eintrag besteht aus Name, Url, Befuellung. Mit ',' getrennt. Am Ende steht '}'. 
-    await Speicherverwaltung.writeFile('mediList.txt', 'Mexalen,https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n');
-    await Speicherverwaltung.writeFile('mediList.txt', 'Aspirin,https://cdn.shop-apotheke.com/images/A24/239/92/A2423992-p1.jpg,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n');
+        // Zur Kontrolle:
+        console.log('\nInhalt von userMeds:\n');
+        await Speicherverwaltung.showFile('userMeds');
+        console.log('\nMedikamentenliste:\n')
+        MedikamentenListe.MLDummy.anzeigen();
+    },
 
-    // MedikamentenListe wird mit den Daten aus mediList.txt befuellt. 
-    let mediListString = await Speicherverwaltung.loadFile('mediList.txt');
-    let mediListMeds = mediListString.split('\n');                                        
-    for (const m of mediListMeds){
-        let token = m.split(',');
-        if (token[0] === '') break;                         // bei leerem Token Abbruch!
-        let tempMed = new Medikament(token[0], token[1]);
-        for (let i = 0; i<28; i++){
-            tempMed.befuellung[i] = token[i+2];             
-        }
-        MedikamentenListe.MLDummy.medikamentHinzufuegen(tempMed);
-    }
+    test2: async function(){
+        // Szenario 2:
+        // Medikamente sind vorhanden. MedikamentenListe wird mit den Daten aus userMeds befuellt. 
+        await MedikamentenListe.MLDummy.initialisieren();
 
-    // *** SIMULATION DER MEDIKAMENTENERFASSUNG ***
-    // Beispiel: User muss Montag Morgen (= Fach 0) 1, Mittwoch Nachts (= Fach 11) 0.5, und Sonntag Abend (= Fach 26) 3 Tabletten Euthyrox nehmen.
+        // Beispielerfassung von Medikament
+        //Euthyrox
+        ScreenObserver.tempMed = new Medikament('Euthyrox','https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg');
+        ScreenObserver.tempMed.befuellung[0] = 2.5;
+        ScreenObserver.tempMed.befuellung[4] = 2.5;
+        ScreenObserver.tempMed.befuellung[8] = 2.5;
+        ScreenObserver.tempMed.befuellung[12] = 2.5;
+        ScreenObserver.tempMed.befuellung[16] = 2.5;
+        ScreenObserver.tempMed.befuellung[20] = 2.5;
+        ScreenObserver.tempMed.befuellung[24] = 2.5;
+        ScreenObserver.tempMed.befuellung[28] = 2.5; // ungueltiges Fach
+        await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
 
-    // TODO: Medikamentenerfassung auf Startscreen starten...
-   
-    // TODO: User sucht nach Medikament...
-    // In API wird Medikament gefunden, und im ScreenObserver das temporaere Medikament aktualisiert.
-    ScreenObserver.tempMed = new Medikament('Euthyrox 75µg', 'https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg');
+        // Zur Kontrolle:
+        console.log('\nInhalt von userMeds:\n');
+        await Speicherverwaltung.showFile('userMeds');
+        console.log('\nMedikamentenliste:\n')
+        MedikamentenListe.MLDummy.anzeigen();
+    },
 
-    // TODO: User gibt die Medikamentbefuellung ein...
-    ScreenObserver.tempMed.befuellung[0] = 1;
-    ScreenObserver.tempMed.befuellung[11] = 0.5;
-    ScreenObserver.tempMed.befuellung[26] = 3;
-
-    // User speichert Medikament ab -> Medikamentenliste wird aktualisiert und neuer Eintrag in mediList hinzugefuegt.
-    MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
-    await Speicherverwaltung.writeFile('mediList.txt', ScreenObserver.tempMed.name + ',' + ScreenObserver.tempMed.bild + ',' + ScreenObserver.tempMed.befuellung + '\n');
-
-    // Zur Kontrolle:
-    console.log('\nInhalt von mediList.txt:\n');
-    await Speicherverwaltung.showFile('mediList.txt');
-    console.log('\nMedikamentenliste:\n')
-    MedikamentenListe.MLDummy.anzeigen();
-
-    // Zum Schluss: Auf DummySchachtel anwenden.
-    DummySchachtel.aktualisieren();
+    //Zum Resetten...
+    reset: async function(){
+        let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
+        if (checkForMediListFile === true) {
+            await Speicherverwaltung.deleteFile('userMeds');
+        }   
     }
 }

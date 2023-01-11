@@ -1,5 +1,4 @@
 import { IDGenerator } from './IDGenerator';
-import { MedikamentenListe } from './MedikamentenListe';
 
 export class Medikament {
   constructor(name, url) {

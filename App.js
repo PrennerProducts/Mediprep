@@ -6,7 +6,8 @@ import { DataTests } from './Tests/DataTests';
 
 export default function App() {
 
-  DataTests.test();
+  //DataTests.test();
+  DataTests.test2();
 
   return (
     <MediprepNavigator />
