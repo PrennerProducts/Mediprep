@@ -10,7 +10,7 @@ let maxmeds = MedikamentenListe.MLDummy.getmaxmeds;
 const Item = ({ title }) => {
   return (
     <View style={styles.item}>
-      <Text>{title}</Text>
+      <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{title}</Text>
     </View>
   );
 };
