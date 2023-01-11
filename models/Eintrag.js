@@ -1,22 +1,10 @@
-import { MedikamentenListe } from './MedikamentenListe';
-
 export class Eintrag {
   constructor(medikamentId, anzahl) {
     this.medikamentId = medikamentId;
     this.anzahl = anzahl;
   }
 
-  //Gibt Infos zum Eintrag auf der Console aus.
-  anzeigen() {
-    console.log(
-      '\t' +
-        MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(this.medikamentId)
-          .name,
-      this.anzahl + ';'
-    );
-  }
-
-  //Anzahl wird aktualsiert.
+  //Anzahl wird aktualisiert.
   anzahlAendern(anzahl) {
     this.anzahl = anzahl;
   }
