@@ -52,5 +52,6 @@ export class MedikamentenListe {
     return 'No image found';
   }
 
+
   //static medikmantId = 7;
 }
