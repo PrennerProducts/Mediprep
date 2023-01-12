@@ -19,7 +19,7 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
   let Auswertungsspeicher = {};
   let newIndex = 0;
 
-  const HandlerZurueck = () => {    //Falsch Button gedrueckt
+  const HandlerZurueck = () => {    //Falsch Button gedrueckt hgfhd
     Auswertungsspeicher[FachIndex] = 0;
     newIndex = FachIndex;
     newIndex--;
