@@ -19,7 +19,7 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
   let Auswertungsspeicher = {};
   let newIndex = 0;
 
-  const HandlerZurueck = () => {    //Falsch Button gedrueckt hgfhd
+  const HandlerZurueck = () => {    //Zurück Button gedrueckt hgfhd
     Auswertungsspeicher[FachIndex] = 0;
     newIndex = FachIndex;
     newIndex--;
@@ -29,12 +29,7 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
   };
 
   const HandlerNOK = () => {    //Falsch Button gedrueckt
-    Auswertungsspeicher[FachIndex] = 0;
-    newIndex = FachIndex;
-    newIndex++;
-    if (newIndex >= Object.keys(Anzahlboxen).length) {
-      navigation.navigate('GreatSuccessScreen');
-    } else setFachIndex(newIndex);
+    navigation.navigate('FalscheBefuellung');
   };
 
   const HandlerOK = () => {    //Korrekt Button gedrueckt

@@ -7,6 +7,7 @@ import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import KontrollAnzeigeScreen from "./KontrollAnzeigeScreen";
+import FalscheBefuellung from "./FalscheBefuellung";
 
 /* Navigation Anleitung:
 
@@ -67,6 +68,12 @@ const screens = {
 
   KontrollAnzeigeScreen: {
     screen: KontrollAnzeigeScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  FalscheBefuellung: {
+    screen: FalscheBefuellung,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),
