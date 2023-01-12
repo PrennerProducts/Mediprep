@@ -6,7 +6,6 @@ import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
 
 
-ScreenObserver.aktuellerScreen = 'SearchScreen';
 
 const Item = ({ title }) => {
   return (
