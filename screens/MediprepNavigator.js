@@ -9,6 +9,7 @@ import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
+import FalscheBefuellung from "./FalscheBefuellung";
 
 /* Navigation Anleitung:
 
@@ -87,6 +88,12 @@ const screens = {
     }),
   },
   
+  FalscheBefuellung: {
+    screen: FalscheBefuellung,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
 };
 
 const MediprepNavigator = createStackNavigator(screens);

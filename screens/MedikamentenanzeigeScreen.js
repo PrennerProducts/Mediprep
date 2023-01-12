@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#02005c',
     elevation: 24,
   },
+
 });
 
 export default MedikamentenanzeigeScreen;
