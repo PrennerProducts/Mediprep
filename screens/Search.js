@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableHighlight } from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
-import { MedikamentenListe } from '../models/MedikamentenListe';
+import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
+import { ScreenObserver } from '../models/ScreenObserver';
 
-let medtitle = MedikamentenListe.MLDummy.getMedikamentName(1);
-let maxmeds = MedikamentenListe.MLDummy.getmaxmeds;
+
 
 const Item = ({ title }) => {
   return (
@@ -36,9 +36,28 @@ class Search extends Component {
     });
     this.setState({ data: updatedData, searchValue: text });
   };
+
+  // Mit Klick auf ein Suchergebnis Speichern des Medikamentennames im temporären Objekt und weiter zu Abfrage Intervall.
+  onPressHandler = () => {
+    const tempMedikament = new Medikament(this.state.data[0].title, this.state.data[0].img);
+    ScreenObserver.tempMed = tempMedikament;
+    
+    //Weiterleitung zu Screen Abfrage Intervall
+    // ... 
+
+    // LOG
+    //console.log('TempMedikament= ', tempMedikament);
+    //console.log('MyLog Name = ', this.state.data[0].title, 'MyBild= ', this.state.data[0].img);	
+    console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
+    alert('Pressed:  ' + this.state.data[0].title);
+    //navigation.navigate('Neuer Screen');
+
+    }
   render() {
     return (
       <View style={styles.container}>
+        
+      <View style= {styles.container}>
         <SearchBar
           placeholder="Search Here..."
           lightTheme
@@ -47,11 +66,16 @@ class Search extends Component {
           onChangeText={(text) => this.searchFunction(text)}
           autoCorrect={false}
         />
+        </View>
+        <View style={styles.container}>
+        <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPressIn={this.onPressHandler}>
         <FlatList
           data={this.state.data}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
+        </TouchableHighlight>
+      </View>
       </View>
     );
   }
