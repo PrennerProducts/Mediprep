@@ -8,6 +8,7 @@ import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
+import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 
 /* Navigation Anleitung:
 
@@ -78,6 +79,14 @@ const screens = {
       headerShown: false,
     }),
   },
+
+  MedikamenteBearbeitenScreen: {
+    screen: MedikamenteBearbeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  
 };
 
 const MediprepNavigator = createStackNavigator(screens);

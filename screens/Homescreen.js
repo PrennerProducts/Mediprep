@@ -5,10 +5,10 @@ import MedBearbeitenButton from '../components/MedBearbeitenButton';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
-    navigation.navigate('CustomSearch');
+    navigation.navigate('WochenTagAuswahlScreen');
   };
   const pressHandler2 = () => {
-    navigation.navigate('Homescreen');
+    navigation.navigate('MedikamenteBearbeitenScreen');
   };
 
   return (
