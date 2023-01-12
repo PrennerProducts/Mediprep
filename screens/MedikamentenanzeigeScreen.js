@@ -17,7 +17,7 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
   ScreenObserver.medikamente = DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(index,index + 3); //Finde Medikamente der naechsten 4 Tage
   if (ScreenObserver.medikamente.length === 0)
     navigation.navigate('WochenTagAuswahl'); //Wenn keine Medikamente, geh zurueck zu WochenTagAuswahl
- // console.log(ScreenObserver.medikamente);
+  //console.log(ScreenObserver.medikamente);
 
   const pressHandlerBack = () => {
     //Zurueck-Button gedrueckt
@@ -47,11 +47,13 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
     return (
       //Zeige Medikamentvisualisierung an
       <View style={styles.container}>
+        <TouchableOpacity onPress={pressHandler}>
         <Medikamentvisualisierung
           medikamentID={ScreenObserver.medikamente[medikamentIndex]}
           show={showState}
           index={medikamentIndex}
         />
+        </TouchableOpacity>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity onPress={pressHandlerBack}>
             <ZurueckButton style={styles.button} />

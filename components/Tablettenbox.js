@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import {View, Text, StyleSheet, Animated, Image} from 'react-native';
+import pfeil from "../assets/pfeil.png";
+import rotes_X from '../assets/rotes_X.png';
 
 export const Tablettenbox = (props) => {
   //console.log(props.highlightFach);
@@ -49,6 +51,7 @@ const Tablettenfach = (props) => {
 
   let mystyle;
 
+
   function chechHighlightFach(highlightFach, fachId) {
     for (let i = 0; i < highlightFach.length; i++) {
       if (highlightFach[i] === fachId) {
@@ -59,15 +62,31 @@ const Tablettenfach = (props) => {
 
   if (chechHighlightFach(props.highlightFach, props.fachId)) {
     mystyle = styles.tablettenfach_changed;
+    return (
+        <View style={mystyle}>
+          <Text></Text>
+        </View>
+    );
   } else {
     mystyle = styles.tablettenfach;
+    return (
+        <View style={mystyle}>
+          <Image
+              source={rotes_X}
+              style={{
+                width: 75,
+                height: 75,
+                marginTop: 12,
+                position: 'absolute',
+                top: 0,
+              }}
+          />
+          <Text></Text>
+        </View>
+    );
   }
 
-  return (
-    <View style={mystyle}>
-      <Text></Text>
-    </View>
-  );
+
 };
 
 const styles = StyleSheet.create({
