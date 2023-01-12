@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 const MedBearbeitenButton = () => {
   return (
     <View style={styles.Bearbeitenbox}>
-      <Text style={styles.LogoFont}>Liste der Medikamente bearbeiten</Text>
+      <Text style={styles.LogoFont}>Medikamente bearbeiten</Text>
     </View>
   );
 };

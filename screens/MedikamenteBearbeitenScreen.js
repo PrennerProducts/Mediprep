@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import ZurueckButton from '../components/ZurueckButton';
 import NewMedButton from '../components/NewMedButton';
 import DelMedButton from '../components/DelMedButton';
 import WeiterButton from '../components/WeiterButton';
+import { MedikamentenListe } from '../models/MedikamentenListe';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler21 = () => {
@@ -16,11 +17,22 @@ const Homescreen = ({ navigation }) => {
     navigation.navigate('Homescreen');
   };
   
-
+  
+  
+  
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeSlogan}>Meine Medikamente</Text>
+    
+     {/* <ScrollView>
+        {MedikamentenListe.map((item) => (
+            <View key={item.id}>
+                <Text>{item.name}</Text>
 
+            </View>
+        ))}
+
+        </ScrollView> */}
       <TouchableOpacity onPress={pressHandler21}>
         <NewMedButton/>
       </TouchableOpacity>
