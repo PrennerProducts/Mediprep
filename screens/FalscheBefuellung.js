@@ -36,7 +36,7 @@ export const FalscheBefuellung = ({ navigation }) => {
     };
 
     return (
-        //Zeige Medikamentbox an
+        //Zeige Medikamentbox an kjdjf
 
         <View style={styles.container}>
             <Text style={styles.textfont}>
