@@ -44,7 +44,7 @@ const Homescreen = ({ navigation }) => {
             <ZurueckButton style={styles.button} />
           </TouchableOpacity>
           <TouchableOpacity >
-            <WeiterButton style={styles.button} />
+            <View style={styles.hidden} />
           </TouchableOpacity>
         </View>
     </View>
@@ -57,6 +57,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  hidden: {
+    height: 82,
+    width: 150,
+
   },
 
   WelcomeFont: {
