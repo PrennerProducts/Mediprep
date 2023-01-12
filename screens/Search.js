@@ -49,13 +49,15 @@ class Search extends Component {
     //console.log('TempMedikament= ', tempMedikament);
     //console.log('MyLog Name = ', this.state.data[0].title, 'MyBild= ', this.state.data[0].img);	
     console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
-    alert('Pressed:  ' + this.state.data[0].title); 
+    alert('Pressed:  ' + this.state.data[0].title);
+    //navigation.navigate('Neuer Screen');
+
     }
   render() {
     return (
       <View style={styles.container}>
         
-
+      <View style= {styles.container}>
         <SearchBar
           placeholder="Search Here..."
           lightTheme
@@ -64,13 +66,16 @@ class Search extends Component {
           onChangeText={(text) => this.searchFunction(text)}
           autoCorrect={false}
         />
-        <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPress={this.onPressHandler}>
+        </View>
+        <View style={styles.container}>
+        <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPressIn={this.onPressHandler}>
         <FlatList
           data={this.state.data}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
         </TouchableHighlight>
+      </View>
       </View>
     );
   }
