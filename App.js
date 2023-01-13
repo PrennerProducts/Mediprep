@@ -6,8 +6,10 @@ import { DataTests } from './Tests/DataTests';
 
 export default function App() {
 
+  
+  //DataTests.reset();
   //DataTests.test();
-  DataTests.test2();
+  DataTests.test3();
 
   return (
     <MediprepNavigator />

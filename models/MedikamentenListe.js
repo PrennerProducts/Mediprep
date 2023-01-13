@@ -23,7 +23,7 @@ export class MedikamentenListe {
     let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
     if (checkForMediListFile === false) {
         await Speicherverwaltung.createFile('userMeds', '');
-        console.log('Datei userMeds wurde erstellt.');
+        //console.log('Datei userMeds wurde erstellt.');
     }
     let userMeds = await Speicherverwaltung.loadFile('userMeds');
     console.log(userMeds);

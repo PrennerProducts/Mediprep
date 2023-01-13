@@ -8,7 +8,7 @@ import { MedikamentenListe } from '../models/MedikamentenListe';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler21 = () => {
-    navigation.navigate('CustomSearch');
+    navigation.navigate('MEKontrollScreen');
   };
   const pressHandler22 = () => {
     navigation.navigate('MedikamenteBearbeitenScreen');

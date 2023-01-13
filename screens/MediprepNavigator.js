@@ -9,6 +9,8 @@ import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
 import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
+import MEKontrollScreen from './MEKontrollScreen';
+import MESuccessScreen from './MESuccesScreen';
 
 /* Navigation Anleitung:
 
@@ -82,6 +84,20 @@ const screens = {
 
   MedikamenteBearbeitenScreen: {
     screen: MedikamenteBearbeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
+  MEKontrollScreen: {
+    screen: MEKontrollScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
+  MESuccessScreen: {
+    screen: MESuccessScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),

@@ -11,14 +11,14 @@ export const DataTests = {
         await MedikamentenListe.MLDummy.initialisieren();
 
         // Beispielerfassung von Medikamenten.
-        //Mexalen
+        // Mexalen
         ScreenObserver.tempMed = new Medikament('Mexalen','https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg');
         ScreenObserver.tempMed.befuellung[0] = 2;
         ScreenObserver.tempMed.befuellung[4] = 3;
         ScreenObserver.tempMed.befuellung[7] = 1;
         ScreenObserver.tempMed.befuellung[26] = 2;
         await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
-        //Aspirin
+        // Aspirin
         ScreenObserver.tempMed = new Medikament('Aspirin','https://cdn.shop-apotheke.com/images/A24/239/92/A2423992-p1.jpg');
         ScreenObserver.tempMed.befuellung[2] = 1;
         ScreenObserver.tempMed.befuellung[4] = 0.5;
@@ -39,7 +39,7 @@ export const DataTests = {
         await MedikamentenListe.MLDummy.initialisieren();
 
         // Beispielerfassung von Medikament
-        //Euthyrox
+        // Euthyrox
         ScreenObserver.tempMed = new Medikament('Euthyrox','https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg');
         ScreenObserver.tempMed.befuellung[0] = 2.5;
         ScreenObserver.tempMed.befuellung[4] = 2.5;
@@ -56,6 +56,31 @@ export const DataTests = {
         await Speicherverwaltung.showFile('userMeds');
         console.log('\nMedikamentenliste:\n')
         MedikamentenListe.MLDummy.anzeigen();
+    },
+
+    test3: async function(){
+        // Szenario 3: MEKontrollScreen
+        // App wird zum ersten mal gestartet. Noch keine Medikamente vorhanden.
+        await this.reset();  
+        await MedikamentenListe.MLDummy.initialisieren();
+
+        // Beispielerfassung von Medikament
+        // Bisoprolol
+        ScreenObserver.tempMed = new Medikament('Bisoprolol','https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg');
+        ScreenObserver.tempMed.befuellung[0] = 1;
+        ScreenObserver.tempMed.befuellung[4] = 1;
+        ScreenObserver.tempMed.befuellung[8] = 1;
+        ScreenObserver.tempMed.befuellung[9] = 1;
+        ScreenObserver.tempMed.befuellung[12] = 2;
+        ScreenObserver.tempMed.befuellung[15] = 2;
+        ScreenObserver.tempMed.befuellung[16] = 2;
+        ScreenObserver.tempMed.befuellung[20] = 3;
+        ScreenObserver.tempMed.befuellung[22] = 3;
+        ScreenObserver.tempMed.befuellung[23] = 3;
+        ScreenObserver.tempMed.befuellung[24] = 3;
+        
+        //console.log(ScreenObserver.tempMed);
+        //await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
     },
 
     //Zum Resetten...
