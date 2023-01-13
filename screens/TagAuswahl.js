@@ -13,7 +13,7 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.textfont}>
-                Bitte wählen Sie den Tage:
+                Bitte wählen Sie die Tage:
             </Text>
 
             <View style={styles.rahmen}>
