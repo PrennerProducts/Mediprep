@@ -4,7 +4,7 @@ const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 const dataAuswahl = [0,0,0,0,0,0,0];
 import WeiterButton from '../components/WeiterButton';
 
-export const WochenTagAuswahlScreen = ({navigation}) => {
+export const TagAuswahl = ({navigation}) => {
 
     const pressHandler6 = () => {
         navigation.navigate('MedikamentenUebersichtScreen');
@@ -172,6 +172,6 @@ const styles = StyleSheet.create({
 
 });
 
-export default WochenTagAuswahlScreen;
+export default TagAuswahl;
 
 
