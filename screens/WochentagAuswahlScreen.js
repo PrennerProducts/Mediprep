@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
     width: 250,
   },
   farblicheauswahl: {
+
     marginTop: 15,
     //borderWidth: 3,
     //borderColor: '#6b93ff',

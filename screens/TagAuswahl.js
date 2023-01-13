@@ -1,108 +1,147 @@
-import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScreenObserver } from '../models/ScreenObserver';
+import ZurueckButton from '../components/ZurueckButton';
+import {useState} from "react";
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
-const dataAuswahl = [0,0,0,0,0,0,0];
-import WeiterButton from '../components/WeiterButton';
 
-export const TagAuswahl = ({navigation}) => {
+export const WochenTagAuswahlScreen = ({ navigation }) => {
 
-    const pressHandler6 = () => {
-        navigation.navigate('MedikamentenUebersichtScreen');
+    const pressHandlerBack = () => {
+        navigation.navigate('Homescreen');
     };
 
     return (
-        <View style={styles.container4}>
+        <View style={styles.container}>
             <Text style={styles.textfont}>
-                Bitte wählen Sie die gewünschten Wochentage:
+                Bitte wählen Sie den Tage:
             </Text>
-            <Text style={styles.textfont}>
-                Heutiges Datum: {currentWeekday} {currentDate}
-            </Text>
+
             <View style={styles.rahmen}>
-
-                <WochenTag wochenTag={'MO'} name="Monday" id="0" />
-                <WochenTag wochenTag={'DI'} name="Tuesday" id="1" />
-                <WochenTag wochenTag={'MI'} name="Wednesday" id="2" />
-                <WochenTag wochenTag={'DO'} name="Thursday" id="3" />
-                <WochenTag wochenTag={'FR'} name="Friday" id="4" />
-                <WochenTag wochenTag={'SA'} name="Saturday" id="5" />
-                <WochenTag wochenTag={'SO'} name="Sunday" id="6" />
+                <WochenTag
+                    wochenTag={'MO'}
+                    display="Montag"
+                    name="Monday"
+                    id="0"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'DI'}
+                    display="Dienstag"
+                    name="Tuesday"
+                    id="1"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'MI'}
+                    display="Mittwoch"
+                    name="Wednesday"
+                    id="2"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'DO'}
+                    display="Donnerstag"
+                    name="Thursday"
+                    id="3"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'FR'}
+                    display="Freitag"
+                    name="Friday"
+                    id="4"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'SA'}
+                    display="Samstag"
+                    name="Saturday"
+                    id="5"
+                    navigation3={navigation}
+                />
+                <WochenTag
+                    wochenTag={'SO'}
+                    display="Sonntag"
+                    name="Sunday"
+                    id="6"
+                    navigation3={navigation}
+                />
             </View>
-            <TouchableOpacity onPress={listArray} style={styles.container2}>
-                <Text style={styles.textfont2}>Log</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={pressHandler6} style={styles.weiterButton}>
-                <WeiterButton />
-            </TouchableOpacity>
-
+            <View style={styles.buttonsContainer}>
+                <TouchableOpacity onPress={pressHandlerBack}>
+                    <ZurueckButton style={styles.button} />
+                </TouchableOpacity>
+                <View style={styles.hidden} />
+            </View>
         </View>
     );
 };
 const WochenTag = (props) => {
-    return (
-        <View style={styles.farblicheauswahl}>
-
-            <Text style={styles.wochentag}>{props.name}</Text>
-            <View style={styles.kugel}>
-                <TouchableOpacity>
-                    <Farbauswahl weekday={props.id} />
-                </TouchableOpacity>
-            </View>
-        </View>
-    );
-};
-
-const Farbauswahl = (props) => {
     const [active, setActive] = useState(0);
-
+    const pressHandler6 = () => {
+        //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
+        ScreenObserver.wochentag = props.id;
+        //console.log(ScreenObserver);
+        props.navigation3.navigate('MedikamentenanzeigeScreen');
+    };
     return (
-        <View style={styles.screen}>
-            <TouchableOpacity
-                onPress={
-                    active === 0
-                        ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
-                        : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
-                }
-                style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
-            ></TouchableOpacity>
-        </View>
+        //<TouchableOpacity onPress={pressHandler6}>
+            <View style={styles.farblicheauswahl}>
+
+                <Text style={styles.wochentag}>{props.display}</Text>
+                <View style={styles.kugel}>
+                    <TouchableOpacity
+                        onPress={
+                            active === 0
+                                ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
+                                : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
+                        }
+                        style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
+                    ></TouchableOpacity>
+                </View>
+            </View>
+
+        //</TouchableOpacity>
     );
 };
-
-const listArray = () => {
-    console.log('-')
-    for (let i = 0; i < 7; i++) {
-        console.log(finalAuswahl[i])
-        console.log(dataAuswahl[i])
-    }
-};
-
 
 const styles = StyleSheet.create({
-    rahmen: {
-        borderColor: 'gray',
-        marginTop: 20,
-        width:200,
-        marginLeft:60,
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'white',
     },
-
+    textfont: {
+        margin: 5,
+        marginTop: 50,
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'black',
+        //elevation: 42,
+        textAlign: 'center',
+    },
+    rahmen: {
+        paddingTop: 20,
+        bottom: 30,
+        width: 250,
+    },
     farblicheauswahl: {
-        flexDirection: 'row',
+        marginTop: 15,
+        //borderWidth: 3,
+        //borderColor: '#6b93ff',
+        //borderRadius: 30,
+        backgroundColor: '#032E5B',
         justifyContent: 'flex-start',
         alignItems: 'center',
 
 
     },
+    farblicheauswahlkugel: {
 
-    wochentag: {
-        fontSize: 40,
-        fontWeight: 'bold',
-        color: 'black',
-        marginRight:10,
-        width:200,
-        height:50,
+        alignItems: 'center',
+
+
     },
-
     roundButton1: {
         width: 50,
         height: 50,
@@ -125,53 +164,40 @@ const styles = StyleSheet.create({
         marginTop: 7,
         elevation: 10,
     },
-    container4: {
-        backgroundColor: '#cdf1fe',
-        flex:1,
-        alignItems: 'flex-start',
-
-
-    },
-    container2: {
-        justifyContent: 'center',
+    wochentag: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        color: 'white',
+        margin: 4,
         alignItems: 'center',
+        justifyContent: 'center',
+    },
+    hidden: {
+        height: 82,
+        width: 150,
 
-        borderColor: 'gray',
-        borderWidth: 1,
-        backgroundColor: 'white',
-        elevation: 10,
-        margin: 10,
     },
-    container3: {
-        width: '50%',
-        height: '30%',
-    },
-    textfont: {
-        marginLeft: 12,
-        marginTop: 20,
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: 'black',
-        elevation: 42,
-        textAlign: 'left',
-    },
-    textfont2: {
-        fontSize:30,
-        fontWeight: 'bold',
-        color: 'black',
-        elevation: 42,
-        textAlign: 'left',
-    },
-
-    weiterButton: {
-        marginLeft:25,
+    buttonsContainer: {
+        position: 'absolute',
+        bottom: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     kugel: {
         justifyContent: 'flex-end',
     },
-
+    button: {
+        height: 120,
+        width: 50,
+        borderWidth: 3,
+        borderColor: '#6b93ff',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#02005c',
+        elevation: 24,
+    },
 });
 
-export default TagAuswahl;
-
-
+export default WochenTagAuswahlScreen;

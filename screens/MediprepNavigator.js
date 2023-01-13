@@ -10,6 +10,7 @@ import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 import FalscheBefuellung from "./FalscheBefuellung";
+import TagAuswahl from "./TagAuswahl";
 
 /* Navigation Anleitung:
 
@@ -55,6 +56,13 @@ const screens = {
 
   WochenTagAuswahlScreen: {
     screen: WochenTagAuswahlScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
+  TagAuswahlScreen: {
+    screen: TagAuswahl,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),

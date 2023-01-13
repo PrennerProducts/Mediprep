@@ -5,7 +5,7 @@ import MedBearbeitenButton from '../components/MedBearbeitenButton';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
-    navigation.navigate('WochenTagAuswahlScreen');
+    navigation.navigate('TagAuswahlScreen');
   };
   const pressHandler2 = () => {
     navigation.navigate('MedikamenteBearbeitenScreen');
