@@ -85,23 +85,20 @@ const WochenTag = (props) => {
         props.navigation3.navigate('MedikamentenanzeigeScreen');
     };
     return (
-        //<TouchableOpacity onPress={pressHandler6}>
-            <View style={styles.farblicheauswahl}>
+        <TouchableOpacity onPress={
+            active === 0
+            ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
+            : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
+        }
+        style={active === 0 ? [styles.farblicheauswahl] : styles.farblicheauswahlActive}>
+
+            <View>
 
                 <Text style={styles.wochentag}>{props.display}</Text>
-                <View style={styles.kugel}>
-                    <TouchableOpacity
-                        onPress={
-                            active === 0
-                                ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
-                                : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
-                        }
-                        style={active === 0 ? [styles.roundButton1] : styles.roundButton1active}
-                    ></TouchableOpacity>
-                </View>
+
             </View>
 
-        //</TouchableOpacity>
+        </TouchableOpacity>
     );
 };
 
@@ -127,43 +124,29 @@ const styles = StyleSheet.create({
     },
     farblicheauswahl: {
         marginTop: 15,
+        flexDirection: 'row',
         //borderWidth: 3,
         //borderColor: '#6b93ff',
         //borderRadius: 30,
         backgroundColor: '#032E5B',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-
-
-    },
-    farblicheauswahlkugel: {
-
-        alignItems: 'center',
-
-
-    },
-    roundButton1: {
-        width: 50,
-        height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10,
-        borderRadius: 100,
-        backgroundColor: 'white',
-        marginTop: 7,
-        elevation: 10,
+
+
     },
-    roundButton1active: {
-        width: 50,
-        height: 50,
+    farblicheauswahlActive: {
+        marginTop: 15,
+        flexDirection: 'row',
+        //borderWidth: 5,
+        //borderColor: '#6b93ff',
+        //borderRadius: 30,
+        backgroundColor: 'lightblue',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10,
-        borderRadius: 100,
-        backgroundColor: '#ee9a49',
-        marginTop: 7,
-        elevation: 10,
+
+
     },
+
     wochentag: {
         fontSize: 35,
         fontWeight: 'bold',
