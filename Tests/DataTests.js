@@ -67,8 +67,8 @@ export const DataTests = {
         // Beispielerfassung von Medikament
         // Bisoprolol
         ScreenObserver.tempMed = new Medikament('Bisoprolol','https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg');
-        ScreenObserver.tempMed.befuellung[0] = 1;
-        ScreenObserver.tempMed.befuellung[4] = 1;
+        ScreenObserver.tempMed.befuellung[0] = 0.25;
+        ScreenObserver.tempMed.befuellung[4] = 2.5;
         ScreenObserver.tempMed.befuellung[8] = 1;
         ScreenObserver.tempMed.befuellung[9] = 1;
         ScreenObserver.tempMed.befuellung[12] = 2;

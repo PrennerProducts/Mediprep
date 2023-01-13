@@ -35,22 +35,22 @@ const MEKontrollScreen = ({ navigation }) => {
            else befuellung[i] = '';
     }
     const befuellungTabelle = {
-
-        HeadTable: ['MO', 'DI', 'MI', 'DO', 'FR', 'SA', 'SO'],
+        HeadTable: ['Morgen', 'Mittag', 'Abend', 'Nacht'],
+        Tage: [['Montag'], ['Dienstag'], ['Mittwoch'], ['Donnerstag'], ['Freitag'], ['Samstag'], ['Sonntag']],
         DataTable: [
-          [befuellung[0], befuellung[4], befuellung[8], befuellung[12], befuellung[16], befuellung[20], befuellung[24]],
-          [befuellung[1], befuellung[5], befuellung[9], befuellung[13], befuellung[17], befuellung[21], befuellung[25]],
-          [befuellung[3], befuellung[6], befuellung[10], befuellung[14], befuellung[18], befuellung[22], befuellung[26]],
-          [befuellung[4], befuellung[7], befuellung[11], befuellung[15], befuellung[19], befuellung[23], befuellung[27]]
+          [befuellung[0], befuellung[1], befuellung[2], befuellung[3]],
+          [befuellung[4], befuellung[5], befuellung[6], befuellung[7]],
+          [befuellung[8], befuellung[9], befuellung[10], befuellung[11]],
+          [befuellung[12], befuellung[13], befuellung[14], befuellung[15]],
+          [befuellung[16], befuellung[17], befuellung[18], befuellung[19]],
+          [befuellung[20], befuellung[21], befuellung[22], befuellung[23]],
+          [befuellung[24], befuellung[25], befuellung[26], befuellung[27]]
         ]
     }
-    //let befuellungsText = befuellungsTextausrechnen(ScreenObserver.tempMed.befuellung);
     const pressHandlerBack = () => {
-        //Zurueck-Button gedrueckt
         navigation.navigate('MedikamenteBearbeitenScreen');
     };
     const pressHandler = () => {
-        //Weiter-Button gedrueckt
         navigation.navigate('MESuccessScreen');
     };
     const noimage = {
@@ -58,6 +58,18 @@ const MEKontrollScreen = ({ navigation }) => {
         width: 100,
         height: 250,
       };
+    const Tabelle = () => {
+        return (
+            <View style = {styles.tableContainer}>   
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[0]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[0]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Text style={styles.textHeader}>{'\n'}</Text>
+            </View>
+        )
+    }
     return (
 
         <View>   
@@ -70,10 +82,40 @@ const MEKontrollScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.tableContainer}>
                     <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                        <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
-                        <Rows data={befuellungTabelle.DataTable} textStyle={styles.TableText}/>
-                    </Table>
-                    <Image source={noimage} />
+                    <Row data={befuellungTabelle.Tage[0]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[0]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[1]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[1]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[2]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[2]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[3]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[3]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[4]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[4]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[5]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[5]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
+                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                    <Row data={befuellungTabelle.Tage[6]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                    <Row data={befuellungTabelle.HeadTable} style={styles.HeadStyle} textStyle={styles.TableHeaderText}/>
+                    <Row data={befuellungTabelle.DataTable[6]} style={styles.DataStyle} textStyle={styles.TableText}/>
+                </Table>
                 </View>
             </ScrollView>
 
@@ -102,6 +144,7 @@ const styles = StyleSheet.create({
         top: 30,
         alignItems: 'center',
         backgroundColor: 'white',
+        bottom: 100,
     },
     buttonsContainer: {
         position: 'absolute',
@@ -163,16 +206,33 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     HeadStyle: { 
-        height: 80,
+        height: 30,
         alignContent: "center",
         backgroundColor: '#0041C8',
     },
-    TableHeaderText: { 
+    DayStyle: { 
+        height: 60,
+        alignContent: "center",
+        backgroundColor: '#0060C8',
+    },
+    DayText: {
         margin: 10,
         fontWeight: 'bold',
         textAlign: 'center',
+        fontSize: 30,
+        color: '#ffffff',
+    },
+    TableHeaderText: { 
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'top',
         fontSize: 15,
         color: '#ffffff',
+    },
+    DataStyle: { 
+        height: 60,
+        alignContent: "center",
+        backgroundColor: '#ffffff',
     },
     TableText: { 
         margin: 10,
