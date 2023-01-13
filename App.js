@@ -5,9 +5,10 @@ import MediprepNavigator from './screens/MediprepNavigator';
 import { DataTests } from './Tests/DataTests';
 
 export default function App() {
-
-  //DataTests.test();
-  DataTests.test2();
+  //DataTests.reset();
+  DataTests.test();
+  //DataTests.test2();
+  
 
   return (
     <MediprepNavigator />
