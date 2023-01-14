@@ -23,14 +23,14 @@ export const TageszeitenScreen = ({ navigation }) => {
         const [selected, setSelected] = React.useState("");
         
         const data = [
-            {key:'1', value:'Nie einnehmen'},
-            {key:'2', value:'1/4 Tablette'},
-            {key:'3', value:'1/2 Tablette'},
-            {key:'4', value:'1 Tablette'},
-            {key:'5', value:'1 1/2 Tabletten'},
-            {key:'6', value:'2 Tabletten'},
-            {key:'7', value:'3 Tabletten'},
-            {key:'8', value:'4 Tabletten'},
+            {key:'1', value:'Nie einnehmen',  s:'1'},
+            {key:'2', value:'1/4 Tablette', s:'1/4'},
+            {key:'3', value:'1/2 Tablette', s:'1/2'},
+            {key:'4', value:'1 Tablette', s:'1'},
+            {key:'5', value:'1 1/2 Tabletten', s:'1 1/2'},
+            {key:'6', value:'2 Tabletten', s:'2'},
+            {key:'7', value:'3 Tabletten', s:'3'},
+            {key:'8', value:'4 Tabletten', s:'4'},
         ]
 
     return (
@@ -41,13 +41,17 @@ export const TageszeitenScreen = ({ navigation }) => {
            <View style={styles.container3}>
             <Text style={styles.textfontzeit}>Morgens </Text>
             <SelectList 
+            search={false}
+            defaultOption={data[0]}
             setSelected={(val) => setSelected(val)} 
             data={data} 
-            save="value" />
+            save="s" />
             </View>
             <View style={styles.container3}>
             <Text style={styles.textfontzeit}>Mittags </Text>
             <SelectList 
+            search={false}
+            defaultOption={data[0]}
             setSelected={(val) => setSelected(val)} 
             data={data} 
             save="value" />
@@ -55,6 +59,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
             <Text style={styles.textfontzeit}>Abends </Text>
             <SelectList 
+            search={false}
+            defaultOption={data[0]}
             setSelected={(val) => setSelected(val)} 
             data={data} 
             save="value" />
@@ -62,6 +68,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
             <Text style={styles.textfontzeit}>Nachts </Text>
             <SelectList 
+            search={false}
+            defaultOption={data[0]}
             setSelected={(val) => setSelected(val)} 
             data={data} 
             save="value" />
