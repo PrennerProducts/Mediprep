@@ -6,7 +6,7 @@ import WeiterButton from "../components/WeiterButton";
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 
 
-export const WochenTagAuswahlScreen = ({ navigation }) => {
+export const TagAuswahl = ({ navigation }) => {
     //Array bei jedem Neuladen in die Seite auf 0 setzen
     let i = 6;
     while(i >= 0){
@@ -172,8 +172,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightblue',
         justifyContent: 'center',
         alignItems: 'center',
-
-
     },
 
     wochentag: {
@@ -213,4 +211,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default WochenTagAuswahlScreen;
+export default TagAuswahl;
