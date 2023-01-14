@@ -37,67 +37,49 @@ export const TagAuswahlScreen = ({ navigation }) => {
     };
     const pressHandler = () => {
         message();
-        console.log(finalAuswahl)
+        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]
         alert('Auswahl:  ' + DisplayName);
-        //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]
+
         //----------------------------------------------------------------------------------- Navigate
         //navigation.navigate('screen');
     };
     return (
         <View style={styles.container}>
+            <Text style={styles.textfontINT}>
+                Täglich?
+            </Text>
             <Text style={styles.textfont}>
                 Bitte wählen Sie die Tage:
             </Text>
 
             <View style={styles.rahmen}>
                 <WochenTag
-                    wochenTag={'MO'}
                     display="Montag"
-                    name="Monday"
                     id="0"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'DI'}
                     display="Dienstag"
-                    name="Tuesday"
                     id="1"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'MI'}
                     display="Mittwoch"
-                    name="Wednesday"
                     id="2"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'DO'}
                     display="Donnerstag"
-                    name="Thursday"
                     id="3"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'FR'}
                     display="Freitag"
-                    name="Friday"
                     id="4"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'SA'}
                     display="Samstag"
-                    name="Saturday"
                     id="5"
-                    navigation3={navigation}
                 />
                 <WochenTag
-                    wochenTag={'SO'}
                     display="Sonntag"
-                    name="Sunday"
                     id="6"
-                    navigation3={navigation}
                 />
             </View>
             <View style={styles.buttonsContainer}>
@@ -138,6 +120,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     textfont: {
+        margin: 5,
+        //marginTop: 50,
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'black',
+        //elevation: 42,
+        textAlign: 'center',
+    },
+    textfontINT: {
         margin: 5,
         marginTop: 50,
         fontSize: 30,
