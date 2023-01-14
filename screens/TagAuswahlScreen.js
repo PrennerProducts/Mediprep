@@ -9,6 +9,7 @@ let finaltaglich = 0;
 
 export const TagAuswahlScreen = ({ navigation }) => {
     //Array bei jedem Neuladen in die Seite auf 0 setzen
+    finaltaglich = 0;
     let i = 6;
     while(i >= 0){
         finalAuswahl[i]= 0;
