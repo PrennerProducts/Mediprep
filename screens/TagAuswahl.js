@@ -1,15 +1,48 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from '../components/ZurueckButton';
-import {useState} from "react";
+import React, {useState} from "react";
+import WeiterButton from "../components/WeiterButton";
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 
+
 export const WochenTagAuswahlScreen = ({ navigation }) => {
+    //Array bei jedem Neuladen in die Seite auf 0 setzen
+    let i = 6;
+    while(i >= 0){
+        finalAuswahl[i]= 0;
+        i--;
+    }
+    let DayName = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag',];
+    let DisplayName = [];
+
+    const message = () => {
+        DisplayName = [];
+        let startindex = 0;
+        let i = 0;
+        while(i <= 6){
+            if (finalAuswahl[i] === 1){
+                DisplayName[startindex] = DayName[i];
+                startindex++
+            }
+            i++;
+        }
+        if (startindex === 0){
+            DisplayName = ['Leer'];
+        }
+    }
 
     const pressHandlerBack = () => {
         navigation.navigate('Homescreen');
     };
-
+    const pressHandler = () => {
+        message();
+        console.log(finalAuswahl)
+        alert('Auswahl:  ' + DisplayName);
+        //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]
+        //----------------------------------------------------------------------------------- Navigate
+        //navigation.navigate('screen');
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.textfont}>
@@ -71,30 +104,26 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={pressHandlerBack}>
                     <ZurueckButton style={styles.button} />
                 </TouchableOpacity>
-                <View style={styles.hidden} />
+                <TouchableOpacity onPress={pressHandler}>
+                    <WeiterButton style={styles.button} />
+                </TouchableOpacity>
             </View>
         </View>
     );
 };
 const WochenTag = (props) => {
     const [active, setActive] = useState(0);
-    const pressHandler6 = () => {
-        //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
-        ScreenObserver.wochentag = props.id;
-        //console.log(ScreenObserver);
-        props.navigation3.navigate('MedikamentenanzeigeScreen');
-    };
     return (
         <TouchableOpacity onPress={
             active === 0
-            ? () => [setActive(1), (finalAuswahl[props.weekday] = 1)]
-            : () => [setActive(0), (finalAuswahl[props.weekday] = 0)]
+            ? () => [setActive(1), (finalAuswahl[props.id] = 1)]
+            : () => [setActive(0), (finalAuswahl[props.id] = 0)]
         }
         style={active === 0 ? [styles.farblicheauswahl] : styles.farblicheauswahlActive}>
 
             <View>
 
-                <Text style={styles.wochentag}>{props.display}</Text>
+                <Text style={active === 0 ? [styles.wochentag] : styles.wochentagActive}>{props.display}</Text>
 
             </View>
 
@@ -155,10 +184,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    hidden: {
-        height: 82,
-        width: 150,
-
+    wochentagActive: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        color: 'white',
+        margin: 4,
+        alignItems: 'center',
+        justifyContent: 'center',
+        textDecorationLine: 'underline',
     },
     buttonsContainer: {
         position: 'absolute',
@@ -166,9 +199,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    kugel: {
-        justifyContent: 'flex-end',
     },
     button: {
         height: 120,
