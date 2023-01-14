@@ -41,12 +41,31 @@ export const TagAuswahlScreen = ({ navigation }) => {
     }
 
     const pressHandlerBack = () => {
+        ScreenObserver.dayly = false;
+        ScreenObserver.days = [];
         navigation.navigate('Homescreen');
     };
     const pressHandler = () => {
         message();
         console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
         alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
+
+        // Wenn Täglich Falg dayly auf true setzen und alle days auf true setzen (im ScreenObserver)
+        if(finaltaglich === 1){
+            console.log('Täglich is the Shit'); //Variable finalAusw
+            ScreenObserver.dayly = true;
+            console.log('checkObserver: ', ScreenObserver.dayly);
+
+        // Alle Tage mit true befüllen
+           for(let i = 0; i <7; i++){
+                 ScreenObserver.days.push(1);
+             }
+        }else{ // Wenn nicht täglich, dann die ausgewählten Tage in den ScreenObserver schreiben
+            ScreenObserver.days = finalAuswahl;
+    }
+        
+
+        console.log('Tage:' ,ScreenObserver.days,'Dayly: ', ScreenObserver.dayly);
 
         //----------------------------------------------------------------------------------- Navigate
         //navigation.navigate('screen');
@@ -62,7 +81,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
                 />
             </View>
             <Text style={styles.textfont}>
-                Bitte wählen Sie die Tage:
+                Oder wählen Sie die Tage:
             </Text>
 
             <View style={styles.rahmen}>
