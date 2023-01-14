@@ -44,7 +44,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
     };
     const pressHandler = () => {
         message();
-        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]
+        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
         alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
 
         //----------------------------------------------------------------------------------- Navigate
