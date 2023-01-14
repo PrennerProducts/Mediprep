@@ -48,7 +48,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
     const pressHandler = () => {
         message();
         console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
-        alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
+        //alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
 
         // Wenn Täglich Falg dayly auf true setzen und alle days auf true setzen (im ScreenObserver)
         if(finaltaglich === 1){
@@ -68,7 +68,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         console.log('Tage:' ,ScreenObserver.days,'Dayly: ', ScreenObserver.dayly);
 
         //----------------------------------------------------------------------------------- Navigate
-        //navigation.navigate('screen');
+        navigation.navigate('TageszeitenScreen');
     };
     return (
         <View style={styles.container}>

@@ -11,6 +11,7 @@ import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 import FalscheBefuellung from "./FalscheBefuellung";
 import TagAuswahlScreen from "./TagAuswahlScreen";
+import TageszeitenScreen from './TageszeitenScreen';
 
 /* Navigation Anleitung:
 
@@ -60,6 +61,14 @@ const screens = {
       headerShown: false,
     }),
   },
+
+  TageszeitenScreen: {
+    screen: TageszeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  
 
   TagAuswahlScreen: {
     screen: TagAuswahlScreen,
