@@ -6,7 +6,7 @@ import WeiterButton from "../components/WeiterButton";
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 
 
-export const TagAuswahl = ({ navigation }) => {
+export const TagAuswahlScreen = ({ navigation }) => {
     //Array bei jedem Neuladen in die Seite auf 0 setzen
     let i = 6;
     while(i >= 0){
@@ -211,4 +211,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TagAuswahl;
+export default TagAuswahlScreen;

@@ -10,7 +10,7 @@ import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 import FalscheBefuellung from "./FalscheBefuellung";
-import TagAuswahl from "./TagAuswahl";
+import TagAuswahlScreen from "./TagAuswahlScreen";
 
 /* Navigation Anleitung:
 
@@ -62,7 +62,7 @@ const screens = {
   },
 
   TagAuswahlScreen: {
-    screen: TagAuswahl,
+    screen: TagAuswahlScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),
