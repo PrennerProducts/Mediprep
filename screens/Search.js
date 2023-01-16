@@ -53,6 +53,8 @@ class Search extends Component {
     //navigation.navigate('Neuer Screen');
     this.props.navigation.navigate('TagAuswahlScreen');
 
+
+    
     }
   render() {
     return (
