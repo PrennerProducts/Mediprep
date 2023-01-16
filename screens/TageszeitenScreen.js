@@ -5,14 +5,14 @@ import React, {useState} from "react";
 import WeiterButton from "../components/WeiterButton";
 import { SelectList } from 'react-native-dropdown-select-list'
 
-let finalAuswahl = [0, 0, 0, 0];
+
 
 
 
 
 
 export const TageszeitenScreen = ({ navigation }) => {
-
+    let finalAuswahl = [0, 0, 0, 0];
     const [selectedValue, setSelectedValue] = useState(null);
 
     //Array bei jedem Neuladen in die Seite auf 0 setzen
@@ -21,16 +21,16 @@ export const TageszeitenScreen = ({ navigation }) => {
         navigation.navigate('TagAuswahlScreen');
     };
     const pressHandler = () => {
-   
-        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts] 
+        ScreenObserver.dosierung = finalAuswahl;
+        console.log('FinalAuswahl' +finalAuswahl);  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts] 
         alert('Auswahl:  ' + ScreenObserver.dosierung );
-        finalAuswahl= [0,0,0,0];
+       
         
         ScreenObserver.dosierung = finalAuswahl;
     
         
 
-        console.log('Dosierung:' ,ScreenObserver.dosierung);
+        console.log('Dosierung:' +ScreenObserver.dosierung);
 
         
         
@@ -88,9 +88,11 @@ export const TageszeitenScreen = ({ navigation }) => {
             <SelectList 
             search={false}
             defaultOption={data[0]}
-            setSelected={(val) => handleSelectmorgens(val)} 
+            setSelected={(val) => setSelected(val)}
+            onSelect={(val) => handleSelectmorgens(val)}
             data={data} 
             save="key"
+            
           
             />
             </View>
