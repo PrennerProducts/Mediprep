@@ -5,7 +5,7 @@ import WeiterButton from '../components/WeiterButton';
 import ZurueckButton from "../components/ZurueckButton";
 import Tablettenbox from "../components/Tablettenbox";
 import MedikamentenanzeigeScreen from "./MedikamentenanzeigeScreen";
-import { CommonActions } from '@react-navigation/native';
+
 
 export const FalscheBefuellung = ({ navigation }) => {
     ScreenObserver.aktuellerScreen = 'FalscheBefuellung';
