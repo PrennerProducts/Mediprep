@@ -28,7 +28,7 @@ import { ScreenObserver } from '../models/ScreenObserver';
         searchValue: '',
       };
     }
-
+//gh
     searchFunction = async (text) => {
       let data = await getMedikamenteFromApi();
       this.arrayholder = data;
