@@ -49,8 +49,9 @@ class Search extends Component {
     //console.log('TempMedikament= ', tempMedikament);
     //console.log('MyLog Name = ', this.state.data[0].title, 'MyBild= ', this.state.data[0].img);	
     console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
-    alert('Pressed:  ' + this.state.data[0].title);
+    //alert('Pressed:  ' + this.state.data[0].title);
     //navigation.navigate('Neuer Screen');
+    this.props.navigation.navigate('TagAuswahlScreen');
 
     }
   render() {

@@ -1,42 +1,26 @@
 import React from 'react';
-import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { ScreenObserver } from '../models/ScreenObserver';
-import { DummySchachtel } from '../data/DummySchachtelFile';
 import WeiterButton from '../components/WeiterButton';
-import OKButton from '../components/OKButton';
 import ZurueckButton from "../components/ZurueckButton";
 import Tablettenbox from "../components/Tablettenbox";
-import TablettenSummeAnzeige from "../components/TablettenSummeAnzeige";
-import NOKButton from "../components/NOKButton";
-
+import MedikamentenanzeigeScreen from "./MedikamentenanzeigeScreen";
 
 
 export const FalscheBefuellung = ({ navigation }) => {
-    const [FachIndex, setFachIndex] = useState(0); //zum Iterieren der Medikamente
-    ScreenObserver.aktuellerScreen = 'KontrollanzeigeScreen';
-    let Anzahlboxen = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3);
-    let index = ScreenObserver.wochentag * 4; //Berechne Fachindex anhand Anzahl der Fächer
-    ScreenObserver.medikamente = DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3); //Anzahl Tabletten der Fächer
-    let Auswertungsspeicher = {};
-    let newIndex = 0;
+    ScreenObserver.aktuellerScreen = 'FalscheBefuellung';
 
-    const HandlerZurueck = () => {    //Zurück Button gedrueckt hgfhd
-        Auswertungsspeicher[FachIndex] = 0;
-        newIndex = FachIndex;
-        newIndex--;
-        if (newIndex < 0) {
+
+    const HandlerZurueck = () => {    //Zurück Button gedrueckt
             navigation.navigate('KontrollAnzeigeScreen');
-        } else setFachIndex(newIndex);
     };
 
-
-    const HandlerWeiter = () => {    //Korrekt Button gedrueckt
-        navigation.navigate('GreatSuccessScreen');
+    const HandlerWeiter = (props) => {    //Neubefuellung Button gedrueckt
+        navigation.replace('MedikamentenanzeigeScreen');
     };
 
     return (
-        //Zeige Medikamentbox an kjdjf
+        //Zeige Medikamentbox an
 
         <View style={styles.container}>
             <Text style={styles.textfont}>
@@ -44,7 +28,10 @@ export const FalscheBefuellung = ({ navigation }) => {
             </Text>
             <Tablettenbox highlightFach={0} />
             <Text style={styles.textfont}>
-                Mit weiter wird eine neue Befüllung gestartet.
+                Mit "Weiter" wird eine neue Befüllung gestartet.
+            </Text>
+            <Text style={styles.textfont}>
+                Mit "Zurück" kann die Kontrolle korrigiert werden.
             </Text>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity onPress={HandlerZurueck}>
@@ -53,7 +40,6 @@ export const FalscheBefuellung = ({ navigation }) => {
                 <TouchableOpacity onPress={HandlerWeiter}>
                     <WeiterButton style={styles.button} />
                 </TouchableOpacity>
-                <View style={styles.hidden} />
             </View>
         </View>
     );

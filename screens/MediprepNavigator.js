@@ -10,6 +10,8 @@ import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
 import CustomSearch from './Search';
 import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 import FalscheBefuellung from "./FalscheBefuellung";
+import TagAuswahlScreen from "./TagAuswahlScreen";
+import TageszeitenScreen from './TageszeitenScreen';
 
 /* Navigation Anleitung:
 
@@ -60,11 +62,26 @@ const screens = {
     }),
   },
 
+  TageszeitenScreen: {
+    screen: TageszeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  
+
+  TagAuswahlScreen: {
+    screen: TagAuswahlScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
   MedikamentenanzeigeScreen: {
     screen: MedikamentenanzeigeScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
-    }),
+          }),
   },
 
   CustomSearch: {
@@ -95,6 +112,7 @@ const screens = {
     }),
   },
 };
+
 
 const MediprepNavigator = createStackNavigator(screens);
 

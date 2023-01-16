@@ -11,7 +11,7 @@ const Homescreen = ({ navigation }) => {
     navigation.navigate('CustomSearch');
   };
   const pressHandler22 = () => {
-    navigation.navigate('MedikamenteBearbeitenScreen');
+    navigation.navigate('TagAuswahlScreen');
   };
   const pressHandlerBack = () => {
     navigation.navigate('Homescreen');

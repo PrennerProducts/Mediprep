@@ -9,6 +9,7 @@ import WeiterButton from '../components/WeiterButton';
 import Tablettenbox from '../components/Tablettenbox';
 import TablettenStueckAnzeige from '../components/TablettenStueckAnzeige';
 
+
 const MedikamentenanzeigeScreen = ({ navigation }) => {
   const [medikamentIndex, setMedikamentIndex] = useState(0); //zum Iterieren der Medikamente
   const [showState, setShowState] = useState(true); //Aktuelle Anzeige, true = Medikamentenvisualisierung, false = Tablettenbox-Anzeige
@@ -17,7 +18,6 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
   ScreenObserver.medikamente = DummySchachtel.DummySchachtel.zeigeMedikamentenIdsinBereich(index,index + 3); //Finde Medikamente der naechsten 4 Tage
   if (ScreenObserver.medikamente.length === 0)
     navigation.navigate('WochenTagAuswahl'); //Wenn keine Medikamente, geh zurueck zu WochenTagAuswahl
-  //console.log(ScreenObserver.medikamente);
 
   const pressHandlerBack = () => {
     //Zurueck-Button gedrueckt
@@ -30,14 +30,17 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
     setShowState(!showState);
   };
 
+
   const pressHandler = () => {
     //Weiter-Button gedrueckt
 
     if (!showState) {
       let newIndex = medikamentIndex;
       newIndex++;
-      if (newIndex >= ScreenObserver.medikamente.length)
-        navigation.navigate('KontrollAnzeigeScreen');
+      if (newIndex >= ScreenObserver.medikamente.length){
+        //ScreenObserver.oldIndex = medikamentIndex;
+        //setMedikamentIndex(0);
+        navigation.navigate('KontrollAnzeigeScreen');}
       else setMedikamentIndex(newIndex);
     }
     setShowState(!showState);
