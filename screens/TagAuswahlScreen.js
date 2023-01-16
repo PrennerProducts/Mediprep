@@ -43,7 +43,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
     const pressHandlerBack = () => {
         ScreenObserver.dayly = false;
         ScreenObserver.days = [];
-        navigation.navigate('Homescreen');
+        navigation.navigate('Search');
     };
     const pressHandler = () => {
         message();
