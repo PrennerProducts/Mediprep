@@ -51,7 +51,7 @@ class Search extends Component {
     console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
     //alert('Pressed:  ' + this.state.data[0].title);
     //navigation.navigate('Neuer Screen');
-    this.props.navigation.navigate('TagAuswahlScreen');
+    this.props.navigation.navigate('WochenTagAuswahlScreen');
 
 
     
