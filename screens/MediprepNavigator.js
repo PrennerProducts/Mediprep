@@ -81,7 +81,7 @@ const screens = {
     screen: MedikamentenanzeigeScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
-    }),
+          }),
   },
 
   CustomSearch: {
@@ -112,6 +112,7 @@ const screens = {
     }),
   },
 };
+
 
 const MediprepNavigator = createStackNavigator(screens);
 

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MedikamentenListe } from '../models/MedikamentenListe';
+import {ScreenObserver} from "../models/ScreenObserver";
 
 export const Medikamentvisualisierung = (props) => {
+
     let name = MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(props.medikamentID).name;
     let bild = MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(props.medikamentID).bild;
     let color = MedikamentenListe.MLDummy.medikamentAnhandIDabrufen(props.medikamentID).color;
