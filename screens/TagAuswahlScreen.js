@@ -3,119 +3,117 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from '../components/ZurueckButton';
 import React, {useState} from "react";
 import WeiterButton from "../components/WeiterButton";
-import { SelectList } from 'react-native-dropdown-select-list'
-
-let finalAuswahl = [0, 0, 0, 0];
-let morgens=0;
-let mittags=0;
-let abends=0;
-let nachts=0;
+const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
+let finaltaglich = 0;
 
 
-
-
-export const TageszeitenScreen = ({ navigation }) => {
-
-    const [selectedValue, setSelectedValue] = useState(null);
-
+export const TagAuswahlScreen = ({ navigation }) => {
     //Array bei jedem Neuladen in die Seite auf 0 setzen
-    const pressHandlerBack = () => {
-        ScreenObserver.dosierung = [0, 0, 0, 0];
-        navigation.navigate('TagAuswahlScreen');
-    };
-    const pressHandler = () => {
-   
-        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts] 
-        alert('Auswahl:  ' + ScreenObserver.dosierung + 'Abends ' + abends);
-        let finalAuswahl= [morgens, mittags, abends, nachts];
-        
-        ScreenObserver.dosierung = finalAuswahl;
-    
-        
+    finaltaglich = 0;
+    let i = 6;
+    while(i >= 0){
+        finalAuswahl[i]= 0;
+        i--;
+    }
+    let DayName = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag',];
+    let DisplayName = [];
+    let DisplayTaglich = [];
 
-        console.log('Dosierung:' ,ScreenObserver.dosierung);
-
-        
-        
-        navigation.navigate('TageszeitenScreen');
-    };
-    //store the selected s value in variable abends
-    const handleSelect = (s) => {
-        abends = s;
-        console.log('Abends: ', abends);
-        alert('Auswahl:  ' + ScreenObserver.dosierung + 'Abends ' + abends);
-        
+    const message = () => {
+        DisplayName = [];
+        let startindex = 0;
+        let i = 0;
+        while(i <= 6){
+            if (finalAuswahl[i] === 1){
+                DisplayName[startindex] = DayName[i];
+                startindex++
+            }
+            i++;
+        }
+        if (startindex === 0){
+            DisplayName = ['Leer'];
+        }
+        if (finaltaglich === 1){
+            DisplayTaglich = ['Ja']
+        }else {
+            DisplayTaglich = ['Nein']
+        }
     }
 
+    const pressHandlerBack = () => {
+        ScreenObserver.dayly = false;
+        ScreenObserver.days = [];
+        navigation.navigate('Homescreen');
+    };
+    const pressHandler = () => {
+        message();
+        console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
+        //alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
+
+        // Wenn Täglich Falg dayly auf true setzen und alle days auf true setzen (im ScreenObserver)
+        if(finaltaglich === 1){
+            console.log('Täglich is the Shit'); //Variable finalAusw
+            ScreenObserver.dayly = true;
+            console.log('checkObserver: ', ScreenObserver.dayly);
+
+            // Alle Tage mit true befüllen
+            for(let i = 0; i <7; i++){
+                ScreenObserver.days.push(1);
+            }
+        }else{ // Wenn nicht täglich, dann die ausgewählten Tage in den ScreenObserver schreiben
+            ScreenObserver.days = finalAuswahl;
+        }
 
 
+        console.log('Tage:' ,ScreenObserver.days,'Dayly: ', ScreenObserver.dayly);
 
-
-        const [selected, setSelected] = useState(null);
-        
-        const data = [
-            {key:'1', value:'Nie einnehmen',  s:1},
-            {key:'2', value:'1/4 Tablette', s:1.25},
-            {key:'3', value:'1/2 Tablette', s:0.5},
-            {key:'4', value:'1 Tablette', s:1},
-            {key:'5', value:'1 1/2 Tabletten', s:1.5},
-            {key:'6', value:'2', s:'2'},
-            {key:'7', value:'3 Tabletten', s:3},
-            {key:'8', value:'4 Tabletten', s:4},
-        ]
-
+        //----------------------------------------------------------------------------------- Navigate
+        navigation.navigate('TageszeitenScreen');
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.textfontINT}>
-                Wie oft möchten Sie die Medikamente einnehmen?
+                Tägliche Einnahme?
             </Text>
-           <View style={styles.container3}>
-            <Text style={styles.textfontzeit}>Morgens </Text>
-            <SelectList 
-            search={false}
-            defaultOption={data[0]}
-            setSelected={(val) => setSelected(val)} 
-            data={data} 
-            save="s" 
-            let f
-            />
+            <View style={styles.rahmen1}>
+                <TaglichAuswahl
+                    auswahl="Ja"
+                />
             </View>
-            <View style={styles.container3}>
-            <Text style={styles.textfontzeit}>Mittags </Text>
-            <SelectList 
-            search={false}
-            defaultOption={data[0]}
-            setSelected={(val) => setSelected(val)} 
-            data={data} 
-            save="s"
-            let mittags="s" />
+            <Text style={styles.textfont}>
+                Oder wählen Sie die Tage:
+            </Text>
 
+            <View style={styles.rahmen}>
+                <WochenTag
+                    display="Montag"
+                    id="0"
+                />
+                <WochenTag
+                    display="Dienstag"
+                    id="1"
+                />
+                <WochenTag
+                    display="Mittwoch"
+                    id="2"
+                />
+                <WochenTag
+                    display="Donnerstag"
+                    id="3"
+                />
+                <WochenTag
+                    display="Freitag"
+                    id="4"
+                />
+                <WochenTag
+                    display="Samstag"
+                    id="5"
+                />
+                <WochenTag
+                    display="Sonntag"
+                    id="6"
+                />
             </View>
-            <View style={styles.container3}>
-            <Text style={styles.textfontzeit}>Abends </Text>
-        
-            <SelectList 
-            search={false}
-            defaultOption={data[0]}
-            setSelected={(val) => setSelected(val)}
-            onChange={(value) => setSelectedValue(value)}
-            data={data}
-            save="s"
-
-            
-            />
-            </View>
-            <View style={styles.container3}>
-            <Text style={styles.textfontzeit}>Nachts </Text>
-            <SelectList 
-            search={false}
-            defaultOption={data[0]}
-            setSelected={(val) => setSelected(val)} 
-            data={data} 
-            save="value"
-            let nachts="s" />
-            </View>
-            
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity onPress={pressHandlerBack}>
                     <ZurueckButton style={styles.button} />
@@ -126,11 +124,43 @@ export const TageszeitenScreen = ({ navigation }) => {
             </View>
         </View>
     );
-
-    
 };
 
+const TaglichAuswahl = (props) => {
+    const [active, setActive] = useState(0);
+    return(
+        <TouchableOpacity onPress={
+            active === 0
+                ? () => [setActive(1), (finaltaglich = 1)]
+                : () => [setActive(0), (finaltaglich = 0)]
+        }
+                          style={active === 0 ? [styles.tagauswahlrahmen] : styles.tagauswahlrahmenActive}
+        >
+            <Text style={active === 0 ? [styles.tagauswahltext] : styles.tagauswahltextActive}>
+                {props.auswahl}
+            </Text>
+        </TouchableOpacity>
+    )
+}
+const WochenTag = (props) => {
+    const [active, setActive] = useState(0);
+    return (
+        <TouchableOpacity onPress={
+            active === 0
+                ? () => [setActive(1), (finalAuswahl[props.id] = 1)]
+                : () => [setActive(0), (finalAuswahl[props.id] = 0)]
+        }
+                          style={active === 0 ? [styles.farblicheauswahl] : styles.farblicheauswahlActive}>
 
+            <View>
+
+                <Text style={active === 0 ? [styles.wochentag] : styles.wochentagActive}>{props.display}</Text>
+
+            </View>
+
+        </TouchableOpacity>
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -142,13 +172,6 @@ const styles = StyleSheet.create({
         marginBottom:5,
         fontSize: 30,
         fontWeight: 'bold',
-        color: 'black',
-        //elevation: 42,
-        textAlign: 'center',
-    },
-    textfontzeit: {
-        marginBottom:5,
-        fontSize: 20,
         color: 'black',
         //elevation: 42,
         textAlign: 'center',
@@ -201,9 +224,39 @@ const styles = StyleSheet.create({
 
 
     },
+    rahmen: {
+        paddingTop: 20,
+        bottom: 30,
+        width: 250,
+    },
+    rahmen1: {
+        flexDirection: 'row',
+        paddingTop: 20,
+        bottom: 30,
+
+    },
+    farblicheauswahl: {
+        marginTop: 15,
+        //flexDirection: 'row',
+        //borderWidth: 3,
+        //borderColor: '#6b93ff',
+        //borderRadius: 30,
+        backgroundColor: '#032E5B',
+        justifyContent: 'center',
+        alignItems: 'center',
 
 
-
+    },
+    farblicheauswahlActive: {
+        marginTop: 15,
+        //flexDirection: 'row',
+        //borderWidth: 5,
+        //borderColor: '#6b93ff',
+        //borderRadius: 30,
+        backgroundColor: 'lightblue',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 
     wochentag: {
         fontSize: 35,
@@ -240,14 +293,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#02005c',
         elevation: 24,
     },
-    container3: {
-     
-        marginTop: 30,
-        bottom: 10,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
 });
 
-export default TageszeitenScreen
+export default TagAuswahlScreen;
