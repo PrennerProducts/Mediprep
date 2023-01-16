@@ -1,30 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-const MedBearbeitenButton = () => {
+const StartButton = () => {
   return (
-    <View style={styles.Bearbeitenbox}>
-      <Text style={styles.LogoFont}>Medikamente bearbeiten</Text>
+    <View style={styles.Startbox}>
+      <Text style={styles.LogoFont}>Neues Medikament</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  Bearbeitenbox: {
-    height: 120,
+  Startbox: {
+    height: 90,
     width: 310,
     //borderWidth: 5,
     //borderColor: 'black',
     //borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7A003E',
-    //elevation: 42,
+    backgroundColor: '#0041C8',
+    //elevation: 55,
     marginBottom: 20,
   },
   LogoFont: {
     textAlign: 'center',
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
@@ -34,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MedBearbeitenButton;
+export default StartButton;

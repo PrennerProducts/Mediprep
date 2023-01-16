@@ -79,44 +79,10 @@ export class Schachtel {
     }
   }
 
-  //diese Funktion zeigt ein einzelnes Fach in der Console an. Der Index des Faches wird als Parameter uebergeben.
-  anzeigenFach(fachIndex) {
-    if (fachIndex >= 0 && fachIndex < this.faecher.length)
-      this.faecher[fachIndex].anzeigen();
-  }
-
-  //diese Funktion zeigt ein einzelnes Fach und einen einzelnen Eintrag an.
-  anzeigenFachMedikament(fachIndex, eintragIndex) {
-    console.log(
-      'Inhalt wird angezeigt von Fach ' +
-        fachIndex +
-        ', Eintrag Nummer ' +
-        eintragIndex
-    );
-    if (fachIndex >= 0 && fachIndex < this.faecher.length)
-      this.faecher[fachIndex].anzeigenEintrag(eintragIndex);
-  }
-
   //diese Funktion legt einen neuen Eintrag im angegebenen Fach an.
   befuellen(fachIndex, medikamentId, anzahl) {
     if (fachIndex >= 0 && fachIndex < this.faecher.length)
       this.faecher[fachIndex].eintragHinzufuegen(medikamentId, anzahl);
-  }
-
-  //diese Funktion befuellt mehrere Faecher, moegliche Modi: 1 = taeglich, 2 = alle 2 Tage...
-  befuellenZyklisch(modus, startIndex, medikamentId, anzahl) {
-    if (this.faecher.length === 4) {
-      console.log(
-        'Schachtel mit 4 Faechern kann nicht zyklisch befuellt werden.'
-      );
-      return;
-    } else if (this.faecher.length === 14) modus = 2 * modus;
-    else if (this.faecher.length === 28) modus = 4 * modus;
-    let zaehler = startIndex;
-    while (zaehler >= 0 && zaehler < this.faecher.length) {
-      this.faecher[zaehler].eintragHinzufuegen(medikamentId, anzahl);
-      zaehler += modus;
-    }
   }
 
   //leert nur ein ausgewaehltes Fach
@@ -131,7 +97,6 @@ export class Schachtel {
       f.leeren();
     }
   }
-
 
   //diese Funktion gibt innerhalb eines Bereichs von Faechern alle MedikamentenIds zurueck
   zeigeMedikamentenIdsinBereich(startIndex, endIndex){

@@ -1,15 +1,43 @@
+import { Speicherverwaltung } from "../data/Speicherverwaltung";
+import { DummySchachtel } from "../data/DummySchachtelFile";
+import { Medikament } from "./Medikament";
+
 export class MedikamentenListe {
   static MLDummy = new MedikamentenListe('Medikamenten-Datenbank');
   constructor(name) {
     this.name = name;
     this.medikamente = [];
   }
-  //Jedes erzeugte Medikament (aus mediList oder vom User) wird in der MedikamentenListe hinzugefuegt. Wenn schon ein Eintrag besteht, wird das neue Medikament verworfen.
-  medikamentHinzufuegen(medikament) {
+  //Jedes erzeugte Medikament wird in der MedikamentenListe hinzugefuegt und in userMeds gespeichert. Wenn schon ein Eintrag besteht, wird der neue verworfen.
+  async medikamentHinzufuegen(medikament) {
     for (const m of this.medikamente) {
       if (medikament.name === m.name) return;
     }
     this.medikamente.push(medikament);
+    await Speicherverwaltung.writeFile('userMeds', medikament.name + ',' + medikament.bild + ',' + medikament.befuellung + '\n');
+    DummySchachtel.aktualisieren(this.medikamente);
+  }
+
+  async initialisieren(){
+    // Hier wird geprueft ob die Datei 'userMeds' im Speicher existiert. Wenn nicht, wird sie erstellt.
+    let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
+    if (checkForMediListFile === false) {
+        await Speicherverwaltung.createFile('userMeds', '');
+        console.log('Datei userMeds wurde erstellt.');
+    }
+    let userMeds = await Speicherverwaltung.loadFile('userMeds');
+    console.log(userMeds);
+    let medikamente = userMeds.split('\n');                                        
+    for (const m of medikamente){
+        let token = m.split(',');
+        if (token[0] === '') break;                         // bei leerem Token Abbruch!
+        let tempMed = new Medikament(token[0], token[1]);
+        for (let i = 0; i<28; i++){
+            tempMed.befuellung[i] = token[i+2];             
+        }
+        this.medikamente.push(tempMed);
+        DummySchachtel.aktualisieren(this.medikamente);
+    }
   }
   //Zeigt die gesamete Liste in der Console an
   anzeigen() {
@@ -52,5 +80,4 @@ export class MedikamentenListe {
     return 'No image found';
   }
 
-  //static medikmantId = 7;
 }

@@ -6,8 +6,12 @@ import GreatSuccessScreen from './GreatSuccessScreen';
 import MedikamentenUebersichtScreen from './MedikamentenUebersichtScreen';
 import WochenTagAuswahlScreen from './WochentagAuswahlScreen';
 import MedikamentenanzeigeScreen from './MedikamentenanzeigeScreen';
-import KontrollAnzeigeScreen from "./KontrollAnzeigeScreen";
+import KontrollAnzeigeScreen from './KontrollAnzeigeScreen';
+import CustomSearch from './Search';
+import MedikamenteBearbeitenScreen from './MedikamenteBearbeitenScreen';
 import FalscheBefuellung from "./FalscheBefuellung";
+import TagAuswahlScreen from "./TagAuswahlScreen";
+import TageszeitenScreen from './TageszeitenScreen';
 
 /* Navigation Anleitung:
 
@@ -21,7 +25,6 @@ import FalscheBefuellung from "./FalscheBefuellung";
 
 
 */
-
 
 const screens = {
   Homescreen: {
@@ -59,11 +62,33 @@ const screens = {
     }),
   },
 
+  TageszeitenScreen: {
+    screen: TageszeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  
+
+  TagAuswahlScreen: {
+    screen: TagAuswahlScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
   MedikamentenanzeigeScreen: {
     screen: MedikamentenanzeigeScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
           }),
+  },
+
+  CustomSearch: {
+    screen: CustomSearch,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
   },
 
   KontrollAnzeigeScreen: {
@@ -72,6 +97,14 @@ const screens = {
       headerShown: false,
     }),
   },
+
+  MedikamenteBearbeitenScreen: {
+    screen: MedikamenteBearbeitenScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  
   FalscheBefuellung: {
     screen: FalscheBefuellung,
     navigationOptions: ({ navigation }) => ({

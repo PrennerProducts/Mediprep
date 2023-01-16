@@ -1,16 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { DummySchachtel } from './data/DummySchachtelFile';
-import { MedikamentenListe } from './models/MedikamentenListe';
 import MediprepNavigator from './screens/MediprepNavigator';
-import {modelsTests} from "./models/ModelsTests";
+
+import { DataTests } from './Tests/DataTests';
 
 export default function App() {
+  //DataTests.reset();
+  DataTests.test();
+  //DataTests.test2();
+  
 
-  DummySchachtel.starten2();
-  //MedikamentenListe.MLDummy.anzeigen();
-  //DummySchachtel.DummySchachtel.anzeigen();
-    
   return (
     <MediprepNavigator />
   );

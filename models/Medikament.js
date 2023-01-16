@@ -1,15 +1,14 @@
 import { IDGenerator } from './IDGenerator';
-import { MedikamentenListe } from './MedikamentenListe';
 
 export class Medikament {
-  constructor(name, inhaltVerpackung, bild, istBereit, color) {
+  constructor(name, url) {
     this.id = IDGenerator.Singleton.getInstance().getNextID();
     this.name = name;
-    this.inhaltVerpackung = inhaltVerpackung;
-    this.bild = bild;
-    this.istBereit = istBereit;
-    this.color = color;
-    MedikamentenListe.MLDummy.medikamentHinzufuegen(this);
+    this.bild = url;
+    this.befuellung = [];         // Befuellung des Medikaments. Index = Fachindex, Wert = Tablettenanzahl
+    for (let i = 0; i<28; i++){   // Anfangs werden alle Werte auf 0 gesetzt
+      this.befuellung.push(0);
+    }
   }
 
   //Gibt Infos zum Medikament auf der Console aus
@@ -19,12 +18,10 @@ export class Medikament {
       this.id +
         '\t' +
         this.name +
-        //',\tInhalt Verpackung: ' +
-        //this.inhaltVerpackung +
-        //',\tBild: ' +
-        //this.bild +
-        //',\tBereit: ' +
-        //this.istBereit +
+        ',\tBild: ' +
+        this.bild +
+        '\tBefuellung: ' +
+        this.befuellung +
         ';'
     );
   }
