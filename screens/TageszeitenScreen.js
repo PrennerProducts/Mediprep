@@ -9,7 +9,6 @@ import { SelectList } from 'react-native-dropdown-select-list'
 
 export const TageszeitenScreen = ({ navigation }) => {
     let finalAuswahl = [0, 0, 0, 0];
-    const [selectedValue, setSelectedValue] = useState(null);
 
     //Array bei jedem Neuladen in die Seite auf 0 setzen
     const pressHandlerBack = () => {
