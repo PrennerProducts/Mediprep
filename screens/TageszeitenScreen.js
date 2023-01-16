@@ -17,10 +17,10 @@ export const TageszeitenScreen = ({ navigation }) => {
     };
     const pressHandler = () => {
         ScreenObserver.dosierung = [selectedMorgen,selectedMittag,selectedAbends,selectedNacht];
+
         console.log('FinalAuswahl' +finalAuswahl);  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts]
         alert('Auswahl:  ' + ScreenObserver.dosierung );
 
-        ScreenObserver.dosierung = finalAuswahl;
 
         console.log('Dosierung:' +ScreenObserver.dosierung);
 
