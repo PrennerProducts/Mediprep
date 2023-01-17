@@ -13,6 +13,8 @@ import FalscheBefuellung from "./FalscheBefuellung";
 import TagAuswahlScreen from "./TagAuswahlScreen";
 import TageszeitenScreen from './TageszeitenScreen';
 import Search from "./Search";
+import MEKontrollScreen from './MEKontrollScreen';
+import MESuccessScreen from './MESuccessScreen';
 
 /* Navigation Anleitung:
 
@@ -108,6 +110,20 @@ const screens = {
   
   FalscheBefuellung: {
     screen: FalscheBefuellung,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
+  MEKontrollScreen: {
+    screen: MEKontrollScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+
+  MESuccessScreen: {
+    screen: MESuccessScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),

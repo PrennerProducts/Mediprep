@@ -59,10 +59,13 @@ export const DataTests = {
     },
 
     //Zum Resetten...
-    reset: async function(){
-        let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
-        if (checkForMediListFile === true) {
-            await Speicherverwaltung.deleteFile('userMeds');
-        }   
+    reset: async function(deleteFile){
+        if (deleteFile === true){
+            let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
+            if (checkForMediListFile === true) {
+                await Speicherverwaltung.deleteFile('userMeds');
+            }   
+        }
+        await MedikamentenListe.MLDummy.initialisieren();
     }
 }

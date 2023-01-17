@@ -10,33 +10,9 @@ const {width} = Dimensions.get('window');
 const frameWidth = width;
 const columnWidth = frameWidth * 0.4;
 
-/*
-const befuellungsTextausrechnen = (befuellung) => {
-    let text = '\n';
-    let tag = '';
-    let zeit = '';
-    for (let i = 0; i <28; i++){
-        if (befuellung[i] != 0){
-            if (i === 0) text += 'Montag\n';
-            else if (i === 4) text += 'Dienstag\n';
-            else if (i === 8) text += 'Mittwoch\n';
-            else if (i === 12) text += 'Donnerstag\n';
-            else if (i === 16) text += 'Freitag\n';
-            else if (i === 20) text += 'Samstag\n';
-            else if (i === 24) text += 'Sonntag\n';
-            let rest = i % 4;
-            if (rest === 0) zeit = '\t\t\t\tMorgen: ';
-            else if (rest === 1) zeit = '\t\t\t\tMittag: ';
-            else if (rest === 2) zeit = '\t\t\t\tAbend: ';
-            else zeit = '\t\t\t\tNacht: ';
-            text += tag + zeit + befuellung[i] + '\n';
-        }
-    }
-    return text;
-}
-*/
 
 const MEKontrollScreen = ({ navigation }) => {
+    console.log(ScreenObserver.tempMed);
     let befuellung = [];
     for (let i = 0; i<28; i++){
            if (ScreenObserver.tempMed.befuellung[i] != 0) befuellung[i] = ScreenObserver.tempMed.befuellung[i];
@@ -62,89 +38,122 @@ const MEKontrollScreen = ({ navigation }) => {
         navigation.navigate('MESuccessScreen');
     };
 
-    return (
-
-        <View>   
+    if (ScreenObserver.dayly === false){
+        return (
+            <View>   
+                <ScrollView>
+                    <View style={styles.container}>  
+                        <Text style={styles.textA} marginTop={10}>Bitte kontrollieren Sie die Eingaben{'\n'}</Text>
+                        <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
+                        <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
+                        <Text style={styles.textA}>{'\n'}Dummy-Text{'\n'}</Text>        
+                    </View>
+                    <View style={styles.tableContainer}>
+                        <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
+                            <Row data={tabelle.tage[0]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                            <Image source={require('../assets/IconsDaytimes.png')} /*backgroundColor={'#0041C8'}*/ style={{width: 370, height: 90}}/> 
+                            <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                            <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                        </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[1]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[1]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[2]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[2]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[3]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[3]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[4]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[4]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[5]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[5]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <View style={styles.tableContainer}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
+                        <Row data={tabelle.tage[6]} style={styles.DayStyle} textStyle={styles.DayText}/>
+                        <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
+                        <Row data={tabelle.daten[6]} style={styles.DataStyle} textStyle={styles.DataText}/>
+                    </Table>
+                    </View>
+                    <Image style={{width: 370, height: 150}}/> 
+                    <View style={styles.buttonsContainer}>
+                    <DefaultButton 
+                        buttonStyle = {styles.buttonAbbruch} 
+                        textstyle = {styles.buttonAbbruch}
+                        buttonText = {'Verwerfen'}
+                        pressHandler = {pressHandlerBack}
+                        />
+                    <DefaultButton 
+                        buttonStyle = {styles.buttonSpeichern} 
+                        textstyle = {styles.buttonSpeichern}
+                        buttonText = {'Speichern'}
+                        pressHandler = {pressHandler}
+                        />
+                </View>
+                </ScrollView>
+            </View>
+        );
+    }
+    else {
+        return (
+            <View>   
             <ScrollView>
                 <View style={styles.container}>  
                     <Text style={styles.textA} marginTop={10}>Bitte kontrollieren Sie die Eingaben{'\n'}</Text>
                     <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                     <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
-                    <Text style={styles.textA}>{'\n'}Dummy-Text{'\n'}</Text>
-                    
+                    <Text style={styles.textA}>{'\n'}Dummy-Text</Text>   
+                    <Image source={require('../assets/IconsDaytimes.png')} /*backgroundColor={'#0041C8'}*/ style={{width: 370, height: 80}}/>     
                 </View>
-
                 <View style={styles.tableContainer}>
                     <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
-                        <Row data={tabelle.tage[0]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                        <Image source={require('../assets/IconsDaytimes.png')} /*backgroundColor={'#0041C8'}*/ style={{width: 370, height: 90}}/> 
+                         
                         <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                         <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
                     </Table>
                 </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[1]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[1]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[2]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[2]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[3]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[3]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[4]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[4]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[5]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[5]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
-                <View style={styles.tableContainer}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#0041C8'}}>
-                    <Row data={tabelle.tage[6]} style={styles.DayStyle} textStyle={styles.DayText}/>
-                    <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
-                    <Row data={tabelle.daten[6]} style={styles.DataStyle} textStyle={styles.DataText}/>
-                </Table>
-                </View>
                 <Image style={{width: 370, height: 150}}/> 
-                <View style={styles.buttonsContainer}>
-                <DefaultButton 
-                    buttonStyle = {styles.buttonAbbruch} 
-                    textstyle = {styles.buttonAbbruch}
-                    buttonText = {'Verwerfen'}
-                    pressHandler = {pressHandlerBack}
-                    />
-                <DefaultButton 
-                    buttonStyle = {styles.buttonSpeichern} 
-                    textstyle = {styles.buttonSpeichern}
-                    buttonText = {'Speichern'}
-                    pressHandler = {pressHandler}
-                    />
-            </View>
+                    <View style={styles.buttonsContainer}>
+                    <DefaultButton 
+                        buttonStyle = {styles.buttonAbbruch} 
+                        textstyle = {styles.buttonAbbruch}
+                        buttonText = {'Verwerfen'}
+                        pressHandler = {pressHandlerBack}
+                        />
+                    <DefaultButton 
+                        buttonStyle = {styles.buttonSpeichern} 
+                        textstyle = {styles.buttonSpeichern}
+                        buttonText = {'Speichern'}
+                        pressHandler = {pressHandler}
+                        />
+                </View>
             </ScrollView>
-
-
-
         </View>
-    );
+        );
+    }
 };
 
 const styles = StyleSheet.create({
