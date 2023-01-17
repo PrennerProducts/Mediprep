@@ -12,7 +12,7 @@ const MESuccessScreen = ({ navigation }) => {
     ScreenObserver.dosierung = [];
 
     const pressHandler2 = () => {
-        navigation.navigate('Homescreen');
+        navigation.replace('Homescreen');
     };
     const pressHandler = () => {
         navigation.replace('MedikamenteBearbeitenScreen');

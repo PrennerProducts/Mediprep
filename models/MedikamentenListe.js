@@ -55,8 +55,10 @@ export class MedikamentenListe {
   toString() {
     if (this.medikamente.length === 0) return 'Leer';
     let meds = '';
+    let index = 1;
     for (const m of this.medikamente) {
-      meds += m.name + '\n';
+      meds += index + ' ' + m.name + '\n';
+      index++;
     }
     return meds;
   }

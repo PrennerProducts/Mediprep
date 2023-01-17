@@ -8,6 +8,8 @@ import { MedikamentenListe } from '../models/MedikamentenListe';
 import { Speicherverwaltung } from '../data/Speicherverwaltung';
 
 const Homescreen = ({ navigation }) => {
+  MedikamentenListe.MLDummy.anzeigen();
+
   let meds = MedikamentenListe.MLDummy.toString();
   const pressHandler21 = () => {
     navigation.navigate('Search');
