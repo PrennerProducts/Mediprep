@@ -15,7 +15,7 @@ const MESuccessScreen = ({ navigation }) => {
         navigation.navigate('Homescreen');
     };
     const pressHandler = () => {
-        navigation.navigate('MedikamenteBearbeitenScreen');
+        navigation.replace('MedikamenteBearbeitenScreen');
     };
 
     return (

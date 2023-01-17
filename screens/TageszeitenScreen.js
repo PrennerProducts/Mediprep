@@ -9,10 +9,15 @@ import { SelectList } from 'react-native-dropdown-select-list'
 
 export const TageszeitenScreen = ({ navigation }) => {
     let finalAuswahl = [0, 0, 0, 0];
-    console.log(ScreenObserver.days);
+    //console.log(ScreenObserver.days);
 
     //Array bei jedem Neuladen in die Seite auf 0 setzen
     const pressHandlerBack = () => {
+        ScreenObserver.dayly = false;
+        ScreenObserver.days = [];
+        for (let i = 0; i<28; i++){
+            ScreenObserver.tempMed.befuellung[i] = 0;
+        }
         ScreenObserver.dosierung = [0, 0, 0, 0];
         navigation.navigate('TagAuswahlScreen');
     };
@@ -27,11 +32,11 @@ export const TageszeitenScreen = ({ navigation }) => {
             }
         }
 
-        console.log('FinalAuswahl' +finalAuswahl);  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts]
-        alert('Auswahl:  ' + ScreenObserver.dosierung );
+        //console.log('FinalAuswahl' +finalAuswahl);  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts]
+        //alert('Auswahl:  ' + ScreenObserver.dosierung );
 
 
-        console.log('Dosierung:' +ScreenObserver.dosierung);
+        //console.log('Dosierung:' +ScreenObserver.dosierung);
 
         navigation.navigate('MEKontrollScreen');
     };

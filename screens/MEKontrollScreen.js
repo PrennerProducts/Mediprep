@@ -6,13 +6,14 @@ import { Table, Row, } from 'react-native-table-component';
 import { Dimensions } from 'react-native';
 
 const {width} = Dimensions.get('window');
-
 const frameWidth = width;
-const columnWidth = frameWidth * 0.4;
 
+const DaytimesImage = () => {
+    return (<Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/>);  
+}
 
 const MEKontrollScreen = ({ navigation }) => {
-    console.log(ScreenObserver.tempMed);
+    //console.log(ScreenObserver.tempMed);
     let befuellung = [];
     for (let i = 0; i<28; i++){
            if (ScreenObserver.tempMed.befuellung[i] != 0) befuellung[i] = ScreenObserver.tempMed.befuellung[i];
@@ -32,111 +33,131 @@ const MEKontrollScreen = ({ navigation }) => {
         ]
     }
     const pressHandlerBack = () => {
-        ScreenObserver.dayly = false;
-        ScreenObserver.days = [];
-        ScreenObserver.dosierung = [];
-        navigation.navigate('MedikamenteBearbeitenScreen');
+        //ScreenObserver.dayly = false;
+        //ScreenObserver.days = [];
+        //ScreenObserver.dosierung = [];
+        navigation.navigate('TageszeitenScreen');
     };
     const pressHandler = () => {
         navigation.navigate('MESuccessScreen');
     };
+    const MEButtons = () => {
+        return (
+            <View style={styles.buttonsContainer}>
+                <DefaultButton 
+                    buttonStyle = {styles.buttonAbbruch} 
+                    textstyle = {styles.buttonAbbruch}
+                    buttonText = {'Zurück'}
+                    pressHandler = {pressHandlerBack}
+                    />
+                    <Image style={{width: frameWidth*0.05, height: 80}}/> 
+                <DefaultButton 
+                    buttonStyle = {styles.buttonSpeichern} 
+                    textstyle = {styles.buttonSpeichern}
+                    buttonText = {'Speichern'}
+                    pressHandler = {pressHandler}
+                    />
+            </View>
+        );
+    }
 
     if (ScreenObserver.dayly === false){
         return (
             <View>   
                 <ScrollView>
                     <View style={styles.container}>  
-                        <Text style={styles.textA} marginTop={10}>Bitte kontrollieren Sie die Eingaben{'\n'}</Text>
+                        <Text style={styles.textA} marginTop={10}>Bitte kontrollieren{'\n'}</Text>
                         <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
-                        <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
-                        <Text style={styles.textA}>{'\n'}Dummy-Text{'\n'}</Text>        
+                        <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />    
                     </View>
+
+                    { ScreenObserver.days[0] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[0]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/>
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View> : null }
+                    
+                    { ScreenObserver.days[1] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[1]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/> 
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[1]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+
+                    { ScreenObserver.days[2] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[2]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/>
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[2]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+                    
+                    { ScreenObserver.days[3] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[3]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/> 
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[3]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+
+                    { ScreenObserver.days[4] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[4]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/> 
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[4]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+
+                    { ScreenObserver.days[5] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[5]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/>
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[5]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+
+                    { ScreenObserver.days[6] === 1 ? 
                     <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[6]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/> 
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[6]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
-                    </View>
+                    </View>: null }
+
                     <Image style={{width: frameWidth, height: 150}}/> 
-                    <View style={styles.buttonsContainer}>
-                    <DefaultButton 
-                        buttonStyle = {styles.buttonAbbruch} 
-                        textstyle = {styles.buttonAbbruch}
-                        buttonText = {'Verwerfen'}
-                        pressHandler = {pressHandlerBack}
-                        />
-                        <Image style={{width: frameWidth*0.05, height: 80}}/> 
-                    <DefaultButton 
-                        buttonStyle = {styles.buttonSpeichern} 
-                        textstyle = {styles.buttonSpeichern}
-                        buttonText = {'Speichern'}
-                        pressHandler = {pressHandler}
-                        />
-                </View>
+
+                    <MEButtons/>
                 </ScrollView>
             </View>
         );
@@ -146,16 +167,15 @@ const MEKontrollScreen = ({ navigation }) => {
             <View>   
             <ScrollView>
                 <View style={styles.container}>  
-                    <Text style={styles.textA} marginTop={10}>Bitte kontrollieren Sie die Eingaben{'\n'}</Text>
+                    <Text style={styles.textA} marginTop={10}>Bitte kontrollieren{'\n'}</Text>
                     <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                     <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
-                    <Text style={styles.textA}>{'\n'}Dummy-Text{'\n'}</Text>     
                 </View>
                 <View style={styles.tableContainer}>
                         <Table borderStyle={{borderWidth: 0, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.tage[7]} style={styles.DayStyle} textStyle={styles.DayText}/>
                             </Table>
-                            <Image source={require('../assets/IconsDaytimes.png')} style={{width: frameWidth*0.96, height: 80}}/> 
+                            <DaytimesImage/>
                             <Table borderStyle={{borderWidth: 2, borderLeftWidth: 2, borderColor: '#0041C8'}}>
                             <Row data={tabelle.zeitangaben} style={styles.TimesStyle} textStyle={styles.TimesText}/>
                             <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
@@ -166,7 +186,7 @@ const MEKontrollScreen = ({ navigation }) => {
                     <DefaultButton 
                         buttonStyle = {styles.buttonAbbruch} 
                         textstyle = {styles.buttonAbbruch}
-                        buttonText = {'Verwerfen'}
+                        buttonText = {'Zurück'}
                         pressHandler = {pressHandlerBack}
                         />
                     <Image style={{width: frameWidth*0.05, height: 80}}/> 
@@ -229,8 +249,8 @@ const styles = StyleSheet.create({
     },
     image: {
         alignContent: 'center',
-        height: columnWidth,
-        width: columnWidth,
+        height: frameWidth * 0.4,
+        width: frameWidth * 0.4,
     },
     textA: {
         fontSize: 30,

@@ -68,9 +68,7 @@ const styles = StyleSheet.create({
   },
   medikament: {
     fontSize: 30,
-    fontWeight: 'bold',
     color: 'black',
-    textAlign: 'center',
   },
 
   WelcomeFont: {
