@@ -1,8 +1,15 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from '../components/ZurueckButton';
 import React, {useState} from "react";
 import WeiterButton from "../components/WeiterButton";
+import { ScrollView } from 'react-native';
+
+import { Dimensions } from 'react-native';
+
+const {width} = Dimensions.get('window');
+const frameWidth = width;
+
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
 let finaltaglich = 0;
 
@@ -73,17 +80,22 @@ export const TagAuswahlScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.textfontINT}>
-                Tägliche Einnahme?
+                Wie oft erfolgt die Einnahme?
             </Text>
             <View style={styles.rahmen1}>
                 <TaglichAuswahl
-                    auswahl="Ja"
+                    auswahl="Täglich"
+                />
+            </View>
+            <View style={styles.rahmen1}>
+                <TaglichAuswahl
+                    auswahl="An Einzeltagen"
                 />
             </View>
             <Text style={styles.textfont}>
                 Oder wählen Sie die Tage:
             </Text>
-
+        <ScrollView>
             <View style={styles.rahmen}>
                 <WochenTag
                     display="Montag"
@@ -113,7 +125,9 @@ export const TagAuswahlScreen = ({ navigation }) => {
                     display="Sonntag"
                     id="6"
                 />
+                <Image style={{width: 400, height: 80}}/>
             </View>
+            </ScrollView>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity onPress={pressHandlerBack}>
                     <ZurueckButton style={styles.button} />
@@ -198,11 +212,11 @@ const styles = StyleSheet.create({
     tagauswahltextActive: {
         fontSize: 35,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'blue',
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        textDecorationLine: 'underline',
+        //textDecorationLine: 'underline',
 
     },
 
@@ -211,7 +225,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#032E5B',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 100,
+        width: frameWidth * 0.8,
 
     },
     tagauswahlrahmenActive: {
@@ -219,7 +233,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightblue',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 100,
+        width: frameWidth * 0.8,
 
 
 
@@ -227,7 +241,7 @@ const styles = StyleSheet.create({
     rahmen: {
         paddingTop: 20,
         bottom: 30,
-        width: 250,
+        width: frameWidth * 0.8,
     },
     rahmen1: {
         flexDirection: 'row',

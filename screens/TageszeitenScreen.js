@@ -49,23 +49,23 @@ export const TageszeitenScreen = ({ navigation }) => {
     const [selectedNacht, setSelectedNacht] = useState(null);
 
     const data = [
-        {key:'0', value:'Nie einnehmen'},
-        {key:'0.25', value:'1/4 Tablette'},
-        {key:'0.5', value:'1/2 Tablette'},
-        {key:'1', value:'1 Tabletten'},
-        {key:'1.5', value:'1 1/2 Tabletten'},
-        {key:'2', value:'2 Tabletten'},
-        {key:'3', value:'3 Tabletten'},
-        {key:'4', value:'4 Tabletten'}
+        {key:'0', value:' - '},
+        {key:'0.25', value:'1/4'},
+        {key:'0.5', value:'1/2'},
+        {key:'1', value:'1'},
+        {key:'1.5', value:'1 1/2'},
+        {key:'2', value:'2'},
+        {key:'3', value:'3'},
+        {key:'4', value:'4'}
     ]
 
     return (
         <View style={styles.container}>
             <Text style={styles.textfontINT}>
-                Wie oft möchten Sie die Medikamente einnehmen?
+                Bitte geben Sie die verordnete Dosierung an:
             </Text>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Morgens </Text>
+                <Text style={styles.textfontzeit}>Morgen </Text>
                 <SelectList
                     search={false}
                     defaultOption={data[0]}
@@ -78,7 +78,7 @@ export const TageszeitenScreen = ({ navigation }) => {
                 />
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Mittags </Text>
+                <Text style={styles.textfontzeit}>Mittag </Text>
                 <SelectList
                     search={false}
                     defaultOption={data[0]}
@@ -90,7 +90,7 @@ export const TageszeitenScreen = ({ navigation }) => {
 
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Abends </Text>
+                <Text style={styles.textfontzeit}>Abend </Text>
 
                 <SelectList
                     search={false}
@@ -104,7 +104,7 @@ export const TageszeitenScreen = ({ navigation }) => {
                 />
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Nachts </Text>
+                <Text style={styles.textfontzeit}>Nacht </Text>
                 <SelectList
                     search={false}
                     defaultOption={data[0]}
@@ -143,14 +143,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
     },
     textfontzeit: {
         marginBottom:5,
-        fontSize: 20,
+        fontSize: 30,
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
     },
     textfontINT: {
         margin: 5,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
     },
 
     tagauswahltext: {
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'left',
+        justifyContent: 'left',
 
     },
     tagauswahltextActive: {
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
-        alignItems: 'center',
+        //alignItems: 'center',
         justifyContent: 'center',
         textDecorationLine: 'underline',
 
@@ -185,16 +185,16 @@ const styles = StyleSheet.create({
     tagauswahlrahmen: {
         marginTop: 15,
         backgroundColor: '#032E5B',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'left',
+        //alignItems: 'center',
         width: 100,
 
     },
     tagauswahlrahmenActive: {
         marginTop: 15,
         backgroundColor: 'lightblue',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'left',
+        //alignItems: 'center',
         width: 100,
 
 
@@ -240,12 +240,11 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     container3: {
-
         marginTop: 30,
         bottom: 10,
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        align: 'flex-start',
+        justifyContent: 'flex-start',
     },
 });
 

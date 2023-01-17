@@ -66,7 +66,7 @@ const MEKontrollScreen = ({ navigation }) => {
             <View>   
                 <ScrollView>
                     <View style={styles.container}>  
-                        <Text style={styles.textA} marginTop={10}>Bitte kontrollieren{'\n'}</Text>
+                        <Text style={styles.textA} marginTop={10}>Medikament speichern?{'\n'}</Text>
                         <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                         <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />    
                     </View>
@@ -167,7 +167,7 @@ const MEKontrollScreen = ({ navigation }) => {
             <View>   
             <ScrollView>
                 <View style={styles.container}>  
-                    <Text style={styles.textA} marginTop={10}>Bitte kontrollieren{'\n'}</Text>
+                    <Text style={styles.textA} marginTop={10}>Medikament speichern?{'\n'}</Text>
                     <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                     <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
                 </View>
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
     DayStyle: { 
         height: 60,
         alignContent: "center",
-        backgroundColor: '#0060C8',
+        backgroundColor: '#0041C8',
     },
     DayText: {
         margin: 10,

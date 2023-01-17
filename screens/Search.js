@@ -11,10 +11,12 @@ import { ScreenObserver } from '../models/ScreenObserver';
 
   const Item = ({title}) => {
     return (
+      
         <View style={styles.item}>
           <Text style={{fontSize: 25, fontWeight: 'bold'}}>{title}</Text>
         </View>
-    );
+
+);
   };
 
   const renderItem = ({item}) => <Item title={item.title}/>;
@@ -60,7 +62,6 @@ import { ScreenObserver } from '../models/ScreenObserver';
     render() {
       return (
           <View style={styles.container}>
-
             <View style={styles.container}>
               <SearchBar
                   placeholder="Search Here..."
@@ -72,14 +73,15 @@ import { ScreenObserver } from '../models/ScreenObserver';
               />
             </View>
             <View style={styles.container}>
-              <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPressIn={this.onPressHandler}>
+            <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPressIn={this.onPressHandler}>
                 <FlatList
                     data={this.state.data}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                 />
-              </TouchableHighlight>
+                </TouchableHighlight>
             </View>
+            
           </View>
       );
     }
