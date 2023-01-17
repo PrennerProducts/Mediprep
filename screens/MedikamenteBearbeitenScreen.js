@@ -5,13 +5,19 @@ import NewMedButton from '../components/NewMedButton';
 import DelMedButton from '../components/DelMedButton';
 import WeiterButton from '../components/WeiterButton';
 import { MedikamentenListe } from '../models/MedikamentenListe';
+import { Speicherverwaltung } from '../data/Speicherverwaltung';
 
 const Homescreen = ({ navigation }) => {
+  let meds = MedikamentenListe.MLDummy.toString();
   const pressHandler21 = () => {
     navigation.navigate('Search');
   };
-  const pressHandler22 = () => {
-    navigation.navigate('TagAuswahlScreen');
+  const pressHandler22 = async () => {
+    await Speicherverwaltung.deleteFile('userMeds');
+    await MedikamentenListe.MLDummy.initialisieren();
+    await Speicherverwaltung.showFile('userMeds');
+    MedikamentenListe.MLDummy.anzeigen();
+    navigation.replace('MedikamenteBearbeitenScreen');
   };
   const pressHandlerBack = () => {
     navigation.navigate('Homescreen');
@@ -24,15 +30,12 @@ const Homescreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.WelcomeSlogan}>Meine Medikamente</Text>
     
-     {/* <ScrollView>
-        {MedikamentenListe.map((item) => (
-            <View key={item.id}>
-                <Text>{item.name}</Text>
+     <ScrollView>
+          <View>
+              <Text style={styles.medikament}>{meds}</Text>
+          </View>
+      </ScrollView> 
 
-            </View>
-        ))}
-
-        </ScrollView> */}
       <TouchableOpacity onPress={pressHandler21}>
         <NewMedButton/>
       </TouchableOpacity>
@@ -62,6 +65,12 @@ const styles = StyleSheet.create({
     height: 82,
     width: 150,
 
+  },
+  medikament: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'black',
+    textAlign: 'center',
   },
 
   WelcomeFont: {

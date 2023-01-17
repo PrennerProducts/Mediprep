@@ -27,6 +27,7 @@ export class MedikamentenListe {
     }
     let userMeds = await Speicherverwaltung.loadFile('userMeds');
     console.log(userMeds);
+    this.medikamente = [];
     let medikamente = userMeds.split('\n');                                        
     for (const m of medikamente){
         let token = m.split(',');
@@ -38,6 +39,7 @@ export class MedikamentenListe {
         this.medikamente.push(tempMed);
         DummySchachtel.aktualisieren(this.medikamente);
     }
+    DummySchachtel.aktualisieren(this.medikamente);
   }
   //Zeigt die gesamete Liste in der Console an
   anzeigen() {
@@ -48,6 +50,15 @@ export class MedikamentenListe {
       m.anzeigen();
     }
     console.log('\n');
+  }
+  //Gibt die gesamete Liste als String
+  toString() {
+    if (this.medikamente.length === 0) return 'Leer';
+    let meds = '';
+    for (const m of this.medikamente) {
+      meds += m.name + '\n';
+    }
+    return meds;
   }
   //Gibt aus der Liste das Medikament mit der angegebenen ID zurueck.
   medikamentAnhandIDabrufen(medikamentId) {

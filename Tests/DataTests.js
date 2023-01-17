@@ -66,6 +66,8 @@ export const DataTests = {
                 await Speicherverwaltung.deleteFile('userMeds');
             }   
         }
+        await Speicherverwaltung.showFile('userMeds');
         await MedikamentenListe.MLDummy.initialisieren();
+        MedikamentenListe.MLDummy.anzeigen();
     }
 }
