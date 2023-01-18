@@ -6,7 +6,6 @@ import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
 
 
-
 const Item = ({ name }) => {
   return (
     <View style={styles.item}>
@@ -30,10 +29,9 @@ class Search extends Component {
       error: null,
       searchValue: '',
       selectedItem: '',
-    };
-    
-    
+    }; 
   }
+  
  //HandleSelect
   handleSelect = (item) => {
     this.setState({selectedItem: item });
@@ -59,12 +57,10 @@ class Search extends Component {
   onPressHandler = () => {
     const tempMedikament = new Medikament(this.state.selectedItem.name, this.state.selectedItem.img);
     ScreenObserver.tempMed = tempMedikament;
-
-    //Weiterleitung zu Screen Abfrage Intervall
- 
     console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
-    //alert('Pressed:  ' + this.state.data[0].name);
-    //navigation.navigate('Neuer Screen');
+
+    
+    //Weiterleitung zu Screen Abfrage Intervall
     this.props.navigation.navigate('TagAuswahlScreen');
 
     }
