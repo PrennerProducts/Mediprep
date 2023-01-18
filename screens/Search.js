@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity, ScrollView} from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
 import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
@@ -77,7 +77,7 @@ class Search extends Component {
     return (
       <View >
       <View style={styles.container}>
-        
+
       <View style= {styles.container}>
         <SearchBar
           placeholder="Search Here..."
@@ -88,8 +88,7 @@ class Search extends Component {
           autoCorrect={false}
         />
         </View>
-        <View style={styles.container}>
-        
+        <View style={styles.auflistung}>
         <FlatList
           data={this.state.data}
           renderItem={({item}) =>(
@@ -101,15 +100,17 @@ class Search extends Component {
           )}
           keyExtractor={(item) => item.name}
         />
-     
       </View>
+
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity onPress={this.pressHandlerBack}>
+            <ZurueckButton style={styles.button} />
+          </TouchableOpacity>
+          <View style={styles.hidden} />
+        </View>
+
       </View>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity onPress={this.pressHandlerBack}>
-          <ZurueckButton style={styles.button} />
-        </TouchableOpacity>
-        <View style={styles.hidden} />
-      </View>
+
       </View>
       
     );
@@ -123,7 +124,13 @@ const styles = StyleSheet.create({
     marginTop: 30,
     padding: 2,
   },
+  auflistung: {
+    marginTop: 30,
+    padding: 2,
+    height: "79%",
+  },
   item: {
+    flex:1,
     backgroundColor: 'lightblue',
     padding: 20,
     marginVertical: 8,
@@ -131,7 +138,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: -500,
+    bottom: -70,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

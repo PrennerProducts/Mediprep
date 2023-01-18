@@ -66,6 +66,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
             // Alle Tage mit true befüllen
             for(let i = 0; i <7; i++){
                 ScreenObserver.days.push(1);
+                console.log(i);
             }
         }else{ // Wenn nicht täglich, dann die ausgewählten Tage in den ScreenObserver schreiben
             ScreenObserver.days = finalAuswahl;

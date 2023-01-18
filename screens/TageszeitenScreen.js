@@ -51,14 +51,14 @@ export const TageszeitenScreen = ({ navigation }) => {
 
 
     const data = [
-        {key:'0', value:'----'},
-        {key:'0.25', value:'1/4'},
-        {key:'0.5', value:'1/2'},
-        {key:'1', value:'1'},
+        {key:'0', value:'  ----   '},
+        {key:'0.25', value:'  1/4  '},
+        {key:'0.5', value:' 1/2 '},
+        {key:'1', value:'    1    '},
         {key:'1.5', value:'1 1/2'},
-        {key:'2', value:'2'},
-        {key:'3', value:'3'},
-        {key:'4', value:'4'}
+        {key:'2', value:'    2   '},
+        {key:'3', value:'    3   '},
+        {key:'4', value:'    4   '}
        
     ]
 
@@ -71,7 +71,9 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}/>
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Morgen      </Text>
-                <SelectList 
+                <SelectList
+                    style={styles.dropdown}
+                    containerStyle={styles.shadow}
                     inputStyles={{fontSize: 20}}
                     dropdownTextStyles={{fontSize: 20}}
                     search={false}
@@ -88,8 +90,9 @@ export const TageszeitenScreen = ({ navigation }) => {
             </View>
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Mittag        </Text>
-                <SelectList 
-                    boxStyles={{}}
+                <SelectList
+                    style={styles.dropdown}
+                    containerStyle={styles.shadow}
                     inputStyles={{fontSize: 20}}
                     dropdownTextStyles={{fontSize: 20}}
                     search={false}
@@ -106,6 +109,8 @@ export const TageszeitenScreen = ({ navigation }) => {
                 <Text style={styles.textfontzeit}>Abend        </Text>
 
                 <SelectList
+                    style={styles.dropdown}
+                    containerStyle={styles.shadow}
                     inputStyles={{fontSize: 20}}
                     dropdownTextStyles={{fontSize: 20}}
                     search={false}
@@ -121,6 +126,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Nacht         </Text>
                 <SelectList
+                    style={styles.dropdown}
+                    containerStyle={styles.shadow}
                     inputStyles={{fontSize: 20}}
                     dropdownTextStyles={{fontSize: 20}}
                     search={false}
@@ -180,10 +187,7 @@ const styles = StyleSheet.create({
         //elevation: 42,
         textAlign: 'center',
     },
-    boxstyle: {
-        
-  
-    },
+
 
     tagauswahltext: {
         fontSize: 35,
@@ -223,9 +227,6 @@ const styles = StyleSheet.create({
 
 
     },
-
-
-
 
     wochentag: {
         fontSize: 35,
@@ -277,8 +278,24 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         align: 'flex-start',
         justifyContent: 'flex-start',
-        
-        
+    },
+
+    dropdown: {
+        backgroundColor: 'white',
+        borderBottomColor: 'gray',
+        borderBottomWidth: 0.5,
+        marginTop: 20,
+    },
+
+    shadow: {
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+        elevation: 2,
     },
 });
 

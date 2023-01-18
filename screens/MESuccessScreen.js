@@ -33,7 +33,7 @@ const MESuccessScreen = ({navigation}) => {
       navigation.replace('Homescreen');
     };
     const pressHandler = () => {
-      navigation.replace('MedikamenteBearbeitenScreen');
+      navigation.replace('Search');
     };
 
     return (
@@ -41,18 +41,20 @@ const MESuccessScreen = ({navigation}) => {
             <Text style={styles.WelcomeFont}>{text}</Text>
             <Image source={myImage} style={{width: 300, height: 300}} />
             <View style={styles.buttonsContainer}>
-                {/*<DefaultButton 
-                    buttonStyle = {styles.buttonNeu} 
-                    textstyle = {styles.buttonNeu}
-                    buttonText = {'Medikamente bearbeiten'}
-                    pressHandler = {pressHandler}
-                    />*/}
                 <DefaultButton 
                     buttonStyle = {styles.buttonStart} 
                     textstyle = {styles.buttonStart}
                     buttonText = {'Zur Startseite'}
                     pressHandler = {pressHandler2}
                     />
+                <View style={styles.buttonsContainer}>
+                <DefaultButton
+                    buttonStyle = {styles.buttonNeu}
+                    textstyle = {styles.buttonNeu}
+                    buttonText = {'neues Medikament'}
+                    pressHandler = {pressHandler}
+                    />
+                </View>
             </View>
         </View>
     );
@@ -93,10 +95,12 @@ const styles = StyleSheet.create({
   buttonNeu: {
       height: 100,
       width: 300,
+      bottom: 10,
+      borderRadius: 10,
       borderColor: '#6b93ff',
       alignItems: 'center',
       backgroundColor: '#7A003E',
-      fontSize: 30,
+      fontSize: 36,
       fontWeight: 'bold',
       color: 'white',
       textAlign: 'center',
@@ -105,8 +109,8 @@ const styles = StyleSheet.create({
   buttonStart: {
       height: 100,
       width: 300,
-      top: 10,
       bottom: 10,
+      top: 10,
       borderRadius: 10,
       borderColor: '#6b93ff',
       justifyContent: 'center',
