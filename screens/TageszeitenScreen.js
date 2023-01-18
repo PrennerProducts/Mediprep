@@ -19,7 +19,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             ScreenObserver.tempMed.befuellung[i] = 0;
         }
         ScreenObserver.dosierung = [0, 0, 0, 0];
-        navigation.navigate('TagAuswahlScreen');
+        navigation.replace('EinnahmeScreen');
+        
     };
     const pressHandler = () => {
         ScreenObserver.dosierung = [selectedMorgen,selectedMittag,selectedAbends,selectedNacht];
@@ -50,7 +51,7 @@ export const TageszeitenScreen = ({ navigation }) => {
 
 
     const data = [
-        {key:'0', value:' - '},
+        {key:'0', value:'----'},
         {key:'0.25', value:'1/4'},
         {key:'0.5', value:'1/2'},
         {key:'1', value:'1'},
@@ -87,7 +88,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             </View>
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Mittag        </Text>
-                <SelectList
+                <SelectList 
+                    boxStyles={{}}
                     inputStyles={{fontSize: 20}}
                     dropdownTextStyles={{fontSize: 20}}
                     search={false}
@@ -177,6 +179,10 @@ const styles = StyleSheet.create({
         color: 'black',
         //elevation: 42,
         textAlign: 'center',
+    },
+    boxstyle: {
+        
+  
     },
 
     tagauswahltext: {

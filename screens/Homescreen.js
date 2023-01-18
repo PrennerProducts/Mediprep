@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
+import Logo from '../components/Logo';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
@@ -15,6 +16,7 @@ const Homescreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Willkommen zurück, Sieglinde!</Text>
       <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
+      
 
       <TouchableOpacity onPress={pressHandler1}>
         <StartButton />
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   WelcomeFont: {
-    marginTop: 50,
+    marginTop: 140,
     fontSize: 50,
     fontWeight: 'bold',
     color: 'black',
