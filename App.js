@@ -3,12 +3,14 @@ import { StyleSheet, View } from 'react-native';
 import MediprepNavigator from './screens/MediprepNavigator';
 
 import { DataTests } from './Tests/DataTests';
+import { Speicherverwaltung } from './data/Speicherverwaltung';
+
 
 export default function App() {
   DataTests.reset(false);
-  //DataTests.test();
+ // DataTests.test();
   //DataTests.test2();
-  
+ // Speicherverwaltung.createFile('userMeds', '');  
 
   return (
     <MediprepNavigator />

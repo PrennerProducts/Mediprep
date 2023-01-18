@@ -1,9 +1,11 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
 import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
+import ZurueckButton from "../components/ZurueckButton";
+
 
 
 const Item = ({ name }) => {
@@ -31,6 +33,8 @@ class Search extends Component {
       selectedItem: '',
     }; 
   }
+
+
   
  //HandleSelect
   handleSelect = (item) => {
@@ -59,13 +63,19 @@ class Search extends Component {
     ScreenObserver.tempMed = tempMedikament;
     console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
 
-    
     //Weiterleitung zu Screen Abfrage Intervall
     this.props.navigation.navigate('EinnahmeScreen');
-
     }
+    
+  //HandleBack
+   pressHandlerBack = () => {
+    //this.props.navigation.navigate('MedikamenteBearbeitenScreen');
+    this.props.navigation.navigate('MedikamenteBearbeitenScreen');
+};
+    
   render() {
     return (
+      <View >
       <View style={styles.container}>
         
       <View style= {styles.container}>
@@ -94,6 +104,14 @@ class Search extends Component {
      
       </View>
       </View>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity onPress={this.pressHandlerBack}>
+          <ZurueckButton style={styles.button} />
+        </TouchableOpacity>
+        <View style={styles.hidden} />
+      </View>
+      </View>
+      
     );
   }
 }
@@ -110,5 +128,28 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+  },
+  buttonsContainer: {
+    position: 'absolute',
+    bottom: -500,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    height: 120,
+    width: 50,
+    borderWidth: 3,
+    borderColor: '#6b93ff',
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#02005c',
+    elevation: 24,
+  },
+  hidden: {
+    height: 82,
+    width: 150,
+
   },
 });

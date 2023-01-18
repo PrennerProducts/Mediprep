@@ -19,6 +19,7 @@ export const EinnahmeScreen = ({ navigation }) => {
     };
     const pressHandlertaglich = () => {
         ScreenObserver.dayly = true;
+        ScreenObserver.days = [1,1,1,1,1,1,1];
         navigation.navigate('TageszeitenScreen');
     };
     const pressHandlereinzeltage = () => {
