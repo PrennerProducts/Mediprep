@@ -48,6 +48,7 @@ export const TageszeitenScreen = ({ navigation }) => {
     const [selectedAbends, setSelectedAbends] = useState(null);
     const [selectedNacht, setSelectedNacht] = useState(null);
 
+
     const data = [
         {key:'0', value:' - '},
         {key:'0.25', value:'1/4'},
@@ -77,6 +78,7 @@ export const TageszeitenScreen = ({ navigation }) => {
                     //setSelect={(val) => handleSelectmorgens(val)}
                     data={data}
                     save="key"
+
                     
 
 
@@ -158,6 +160,7 @@ const styles = StyleSheet.create({
         color: 'black',
         //elevation: 42,
         textAlign: 'left',
+        fontWeight: 'bold',
     },
     textfontINT: {
         margin: 5,
@@ -261,6 +264,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         align: 'flex-start',
         justifyContent: 'flex-start',
+        
         
     },
 });
