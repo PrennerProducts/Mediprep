@@ -12,7 +12,7 @@ const Homescreen = ({ navigation }) => {
 
   let meds = MedikamentenListe.MLDummy.toString();
   const pressHandler21 = () => {
-    navigation.navigate('Search');
+    navigation.replace('Search');
   };
   const pressHandler22 = async () => {
     await Speicherverwaltung.deleteFile('userMeds');
