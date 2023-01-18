@@ -93,6 +93,7 @@ export const DummySchachtel = {
   */
   aktualisieren(medikamente){
     //console.log('DummySchachtel wird aktualisiert');
+    this.DummySchachtel.leeren();
     for (const m of medikamente){
       for (let i = 0; i<28; i++){
         if (m.befuellung[i] != 0) this.DummySchachtel.befuellen(i, m.id, m.befuellung[i]);

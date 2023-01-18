@@ -5,12 +5,12 @@ import { MedikamentenListe } from '../models/MedikamentenListe';
 import DefaultButton from '../components/DefaultButton';
 
 
-const MESuccessScreen = ({ navigation }) => {
-    MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
-    ScreenObserver.dayly = false;
-    ScreenObserver.days = [];
-    ScreenObserver.dosierung = [];
-
+const MESuccessScreen = ({navigation}) => {
+    MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed).then (
+    ScreenObserver.dayly = false,
+    ScreenObserver.days = [],
+    ScreenObserver.dosierung = [],);
+    
     const pressHandler2 = () => {
         navigation.replace('Homescreen');
     };
@@ -23,12 +23,12 @@ const MESuccessScreen = ({ navigation }) => {
             <Text style={styles.WelcomeFont}>Medikament wurde gespeichert!</Text>
             <Image source={require('../assets/award.jpg')} style={{width: 300, height: 300}} />
             <View style={styles.buttonsContainer}>
-                <DefaultButton 
+                {/*<DefaultButton 
                     buttonStyle = {styles.buttonNeu} 
                     textstyle = {styles.buttonNeu}
                     buttonText = {'Medikamente bearbeiten'}
                     pressHandler = {pressHandler}
-                    />
+                    />*/}
                 <DefaultButton 
                     buttonStyle = {styles.buttonStart} 
                     textstyle = {styles.buttonStart}
@@ -38,6 +38,7 @@ const MESuccessScreen = ({ navigation }) => {
             </View>
         </View>
     );
+    
 };
 
 const styles = StyleSheet.create({

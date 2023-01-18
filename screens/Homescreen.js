@@ -8,7 +8,7 @@ const Homescreen = ({ navigation }) => {
     navigation.navigate('WochenTagAuswahlScreen');
   };
   const pressHandler2 = () => {
-    navigation.navigate('MedikamenteBearbeitenScreen');
+    navigation.replace('MedikamenteBearbeitenScreen');
   };
 
   return (
