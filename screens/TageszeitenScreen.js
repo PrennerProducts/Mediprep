@@ -71,7 +71,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Morgen      </Text>
                 <SelectList 
-
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMorgen(val)}
@@ -87,6 +88,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Mittag        </Text>
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMittag(val)}
@@ -101,6 +104,8 @@ export const TageszeitenScreen = ({ navigation }) => {
                 <Text style={styles.textfontzeit}>Abend        </Text>
 
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedAbends(val)}
@@ -114,6 +119,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container3}>
                 <Text style={styles.textfontzeit}>Nacht         </Text>
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedNacht(val)}
