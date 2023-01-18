@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableHighlight } from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
 import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
-
 
 
 const Item = ({ name }) => {
@@ -15,18 +14,35 @@ const Item = ({ name }) => {
   );
 };
 
-const renderItem = ({ item }) => <Item name={item.name} />;
+const renderItem = ({ item }) => (
+  <TouchableHighlight onPress={() => this.handleSelect(item)} activeOpacity={0.6} underlayColor="#DDDDDD">
+<Item name={item.name} />;
+</TouchableHighlight>
+);
+
 class Search extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       loading: false,
       error: null,
       searchValue: '',
-    };
+      selectedItem: '',
+    }; 
+  }
+  
+ //HandleSelect
+  handleSelect = (item) => {
+    this.setState({selectedItem: item });
+    this.state.selectedItem = item;
+    console.log('HandleSelect: ', item.name);
+    console.log('HandleSelect State : ', this.state.selectedItem);
+    this.onPressHandler();
   }
 
   searchFunction = async (text) => {
+    
     let data = await getMedikamenteFromApi();
     this.arrayholder = data;
     const updatedData = this.arrayholder.filter((item) => {
@@ -39,18 +55,12 @@ class Search extends Component {
 
   // Mit Klick auf ein Suchergebnis Speichern des Medikamentennames im temporären Objekt und weiter zu Abfrage Intervall.
   onPressHandler = () => {
-    const tempMedikament = new Medikament(this.state.data[0].name, this.state.data[0].img);
+    const tempMedikament = new Medikament(this.state.selectedItem.name, this.state.selectedItem.img);
     ScreenObserver.tempMed = tempMedikament;
+    console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
+
     
     //Weiterleitung zu Screen Abfrage Intervall
-    // ... 
-
-    // LOG
-    //console.log('TempMedikament= ', tempMedikament);
-    //console.log('MyLog Name = ', this.state.data[0].name, 'MyBild= ', this.state.data[0].img);	
-    console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
-    //alert('Pressed:  ' + this.state.data[0].name);
-    //navigation.navigate('Neuer Screen');
     this.props.navigation.navigate('TagAuswahlScreen');
 
     }
@@ -69,13 +79,19 @@ class Search extends Component {
         />
         </View>
         <View style={styles.container}>
-        <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" onPressIn={this.onPressHandler}>
+        
         <FlatList
           data={this.state.data}
-          renderItem={renderItem}
+          renderItem={({item}) =>(
+            <TouchableHighlight onPress={() => this.handleSelect(item)} activeOpacity={0.6} underlayColor="#DDDDDD">
+              <View style={styles.item}>
+                <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{item.name}</Text>
+              </View>
+            </TouchableHighlight>
+          )}
           keyExtractor={(item) => item.name}
         />
-        </TouchableHighlight>
+     
       </View>
       </View>
     );
