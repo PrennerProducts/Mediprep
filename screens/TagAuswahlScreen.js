@@ -79,21 +79,9 @@ export const TagAuswahlScreen = ({ navigation }) => {
     };
     return (
         <View style={styles.container}>
-            <Text style={styles.textfontINT}>
-                Wie oft erfolgt die Einnahme?
-            </Text>
-            <View style={styles.rahmen1}>
-                <TaglichAuswahl
-                    auswahl="Täglich"
-                />
-            </View>
-            <View style={styles.rahmen1}>
-                <TaglichAuswahl
-                    auswahl="An Einzeltagen"
-                />
-            </View>
+
             <Text style={styles.textfont}>
-                Oder wählen Sie die Tage:
+                Wählen Sie die Tage:
             </Text>
         <ScrollView>
             <View style={styles.rahmen}>
@@ -183,6 +171,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     textfont: {
+        marginTop: 50,
         marginBottom:5,
         fontSize: 30,
         fontWeight: 'bold',

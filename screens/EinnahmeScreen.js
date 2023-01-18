@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import { Dimensions } from 'react-native';
 import ZurueckButton from "../components/ZurueckButton";
 import WeiterButton from "../components/WeiterButton";
+import {ScreenObserver} from "../models/ScreenObserver";
 
 const {width} = Dimensions.get('window');
 const frameWidth = width;
@@ -16,11 +17,18 @@ export const EinnahmeScreen = ({ navigation }) => {
     const pressHandler = () => {
         navigation.navigate('Homescreen');
     };
+    const pressHandlertaglich = () => {
+        ScreenObserver.dayly = true;
+        navigation.navigate('TageszeitenScreen');
+    };
+    const pressHandlereinzeltage = () => {
+        navigation.navigate('TagAuswahlScreen');
+    };
+
 
     const TaglichAuswahl = (props) => {
-        const [active, setActive] = useState(0);
         return(
-            <TouchableOpacity
+            <TouchableOpacity onPress={pressHandlertaglich}
                 style={styles.tagauswahlrahmen}
             >
                 <Text style={styles.tagauswahltext}>
@@ -30,7 +38,19 @@ export const EinnahmeScreen = ({ navigation }) => {
             </TouchableOpacity>
         )
     }
+    const EinzeltageAuswahl = (props) => {
+        const [active, setActive] = useState(0);
+        return(
+            <TouchableOpacity onPress={pressHandlereinzeltage}
+                              style={styles.tagauswahlrahmen}
+            >
+                <Text style={styles.tagauswahltext}>
+                    {props.auswahl}
+                </Text>
 
+            </TouchableOpacity>
+        )
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.textfontINT}>
@@ -45,7 +65,7 @@ export const EinnahmeScreen = ({ navigation }) => {
                 oder
             </Text>
             <View style={styles.rahmen1}>
-                <TaglichAuswahl
+                <EinzeltageAuswahl
                     auswahl="Einzeltage Auswahl"
                 />
             </View>

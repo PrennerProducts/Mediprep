@@ -61,7 +61,7 @@ class Search extends Component {
 
     
     //Weiterleitung zu Screen Abfrage Intervall
-    this.props.navigation.navigate('TagAuswahlScreen');
+    this.props.navigation.navigate('EinnahmeScreen');
 
     }
   render() {
