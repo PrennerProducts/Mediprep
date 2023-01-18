@@ -15,7 +15,7 @@ import TageszeitenScreen from './TageszeitenScreen';
 import Search from "./Search";
 import MEKontrollScreen from './MEKontrollScreen';
 import MESuccessScreen from './MESuccessScreen';
-
+import EinnahmeScreen from './EinnahmeScreen';
 /* Navigation Anleitung:
 
 1. Importiere den bereits erstellten Screen den du verwenden möchtest
@@ -124,6 +124,12 @@ const screens = {
 
   MESuccessScreen: {
     screen: MESuccessScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerShown: false,
+    }),
+  },
+  EinnahmeScreen: {
+    screen: EinnahmeScreen,
     navigationOptions: ({ navigation }) => ({
       headerShown: false,
     }),
