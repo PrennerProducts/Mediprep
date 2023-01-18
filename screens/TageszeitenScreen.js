@@ -48,6 +48,7 @@ export const TageszeitenScreen = ({ navigation }) => {
     const [selectedAbends, setSelectedAbends] = useState(null);
     const [selectedNacht, setSelectedNacht] = useState(null);
 
+
     const data = [
         {key:'0', value:' - '},
         {key:'0.25', value:'1/4'},
@@ -57,6 +58,7 @@ export const TageszeitenScreen = ({ navigation }) => {
         {key:'2', value:'2'},
         {key:'3', value:'3'},
         {key:'4', value:'4'}
+       
     ]
 
     return (
@@ -64,9 +66,13 @@ export const TageszeitenScreen = ({ navigation }) => {
             <Text style={styles.textfontINT}>
                 Bitte geben Sie die verordnete Dosierung an:
             </Text>
+            <View style={styles.container2}>
+            <View style={styles.container3}/>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Morgen </Text>
-                <SelectList
+                <Text style={styles.textfontzeit}>Morgen      </Text>
+                <SelectList 
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMorgen(val)}
@@ -74,25 +80,32 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
 
+                    
+
 
                 />
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Mittag </Text>
+                <Text style={styles.textfontzeit}>Mittag        </Text>
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMittag(val)}
                     //setSelected={(val) => handleSelectmittags(val)}
                     data={data}
                     save="key"
+                    
                 />
 
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Abend </Text>
+                <Text style={styles.textfontzeit}>Abend        </Text>
 
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedAbends(val)}
@@ -104,8 +117,10 @@ export const TageszeitenScreen = ({ navigation }) => {
                 />
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Nacht </Text>
+                <Text style={styles.textfontzeit}>Nacht         </Text>
                 <SelectList
+                    inputStyles={{fontSize: 20}}
+                    dropdownTextStyles={{fontSize: 20}}
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedNacht(val)}
@@ -113,6 +128,7 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
                 />
+            </View>
             </View>
 
             <View style={styles.buttonsContainer}>
@@ -151,6 +167,7 @@ const styles = StyleSheet.create({
         color: 'black',
         //elevation: 42,
         textAlign: 'left',
+        fontWeight: 'bold',
     },
     textfontINT: {
         margin: 5,
@@ -239,12 +256,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#02005c',
         elevation: 24,
     },
+    container2: {
+        marginTop: 30,
+        bottom: 10,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        align: 'left',
+      
+        
+    },
     container3: {
         marginTop: 30,
         bottom: 10,
         flexDirection: 'row',
         align: 'flex-start',
         justifyContent: 'flex-start',
+        
+        
     },
 });
 
