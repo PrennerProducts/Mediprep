@@ -12,7 +12,7 @@ const frameWidth = width;
 export const EinnahmeScreen = ({ navigation }) => {
 
     const pressHandlerBack = () => {
-        navigation.navigate('Homescreen');
+        navigation.navigate('Search');
     };
     const pressHandler = () => {
         navigation.navigate('Homescreen');
@@ -73,9 +73,7 @@ export const EinnahmeScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={pressHandlerBack}>
                     <ZurueckButton style={styles.button} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={pressHandler}>
-                    <WeiterButton style={styles.button} />
-                </TouchableOpacity>
+                <View style={styles.hidden} />
             </View>
         </View>
     )
@@ -86,6 +84,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'white',
+    },
+    hidden: {
+        height: 82,
+        width: 150,
+
     },
     buttonsContainer: {
         position: 'absolute',
