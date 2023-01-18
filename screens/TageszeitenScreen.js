@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'left',
+        textAlign: 'center',
     },
 
     tagauswahltext: {
