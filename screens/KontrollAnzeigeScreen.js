@@ -54,18 +54,20 @@ export const KontrollAnzeigeScreen = ({ navigation }) => {
         stueckProFachGroeße={DummySchachtel.DummySchachtel.sumTabFach(ScreenObserver.wochentag * 4,ScreenObserver.wochentag * 4 + 3)}
       />
       <View style={styles.buttonsContainer}>
+      <View style={styles.hidden} />
         <TouchableOpacity onPress={HandlerNOK}>
           <NOKButton style={styles.button} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={HandlerOK}>
-          <OKButton style={styles.button} />
-        </TouchableOpacity>
+        
       </View>
       <View style={styles.buttonsZurueckContainer}>
       <TouchableOpacity onPress={HandlerZurueck}>
       <ZurueckButton style={styles.button} />
       </TouchableOpacity>
-      <View style={styles.hidden} />
+      <TouchableOpacity onPress={HandlerOK}>
+          <OKButton style={styles.button} />
+        </TouchableOpacity>
+     
     </View>
     </View>
   );
@@ -109,7 +111,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    //elevation: 42,
     textAlign: 'center',
   },
   hidden: {
