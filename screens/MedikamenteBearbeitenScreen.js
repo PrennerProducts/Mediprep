@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import ZurueckButton from '../components/ZurueckButton';
-import NewMedButton from '../components/NewMedButton';
-import DelMedButton from '../components/DelMedButton';
-import WeiterButton from '../components/WeiterButton';
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
+import DefaultButton from '../components/DefaultButton';
 import { MedikamentenListe } from '../models/MedikamentenListe';
 import { Speicherverwaltung } from '../data/Speicherverwaltung';
+import { Dimensions } from 'react-native';
+
+const {height, width} = Dimensions.get('window');
+const frameHeight = height;
+const frameWidth = width;
 
 const Homescreen = ({ navigation }) => {
   MedikamentenListe.MLDummy.anzeigen();
@@ -17,8 +19,8 @@ const Homescreen = ({ navigation }) => {
   const pressHandler22 = async () => {
     await Speicherverwaltung.deleteFile('userMeds');
     await MedikamentenListe.MLDummy.initialisieren();
-    await Speicherverwaltung.showFile('userMeds');
-    MedikamentenListe.MLDummy.anzeigen();
+    //await Speicherverwaltung.showFile('userMeds');
+    //MedikamentenListe.MLDummy.anzeigen();
     navigation.replace('MedikamenteBearbeitenScreen');
   };
   const pressHandlerBack = () => {
@@ -33,25 +35,41 @@ const Homescreen = ({ navigation }) => {
       <Text style={styles.WelcomeSlogan}>Meine Medikamente</Text>
     
      <ScrollView>
-          <View>
+          <View style={styles.medsContainer}>
               <Text style={styles.medikament}>{meds}</Text>
           </View>
+          <Image style={{width: frameWidth, height: 150}}/> 
       </ScrollView> 
 
-      <TouchableOpacity onPress={pressHandler21}>
-        <NewMedButton/>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={pressHandler22}>
-        <DelMedButton/>
-      </TouchableOpacity>
+
       <View style={styles.buttonsContainer}>
-          <TouchableOpacity onPress={pressHandlerBack}>
-            <ZurueckButton style={styles.button} />
-          </TouchableOpacity>
-          <TouchableOpacity >
+                <DefaultButton 
+                    buttonStyle = {styles.buttonDel} 
+                    textstyle = {styles.buttonDel}
+                    buttonText = {'Medikamente\nlöschen'}
+                    pressHandler = {pressHandler22}
+                    />
+                <View style={styles.buttonsContainer}>
+                <DefaultButton
+                    buttonStyle = {styles.buttonNeu}
+                    textstyle = {styles.buttonNeu}
+                    buttonText = {'Neues\nMedikament'}
+                    pressHandler = {pressHandler21}
+                    />
+                </View>
+                
+          </View>
+          <View style={styles.buttonsContainer2}>
+          <DefaultButton
+                    buttonStyle = {styles.buttonBack}
+                    textstyle = {styles.buttonBack}
+                    buttonText = {'Zurück'}
+                    pressHandler = {pressHandlerBack}
+                    />
+
             <View style={styles.hidden} />
-          </TouchableOpacity>
-        </View>
+
+          </View>
     </View>
   );
 };
@@ -63,16 +81,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  medsContainer: {
+    padding: 10,
+    alignItems: 'center',
+  },
   hidden: {
-    height: 82,
-    width: 150,
-
+    height: frameWidth*0.25,
+    width: frameWidth*0.45,
   },
   medikament: {
     fontSize: 30,
     color: 'black',
   },
-
   WelcomeFont: {
     marginTop: 50,
     fontSize: 50,
@@ -92,21 +112,61 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 135,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonsContainer2: {
+    position: 'absolute',
+    bottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  button: {
-    height: 120,
-    width: 50,
-    borderWidth: 3,
+  buttonNeu: {
+    height: frameHeight*0.15,
+    width: frameWidth*0.8,
+    borderRadius: 10,
     borderColor: '#6b93ff',
-    borderRadius: 30,
+    alignItems: 'center',
+    backgroundColor: '#0041C8',
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    textAlignVertical: 'center'
+},
+buttonDel: {
+    height: frameHeight*0.15,
+    width: frameWidth*0.8,
+    borderRadius: 10,
+    borderColor: '#6b93ff',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#02005c',
-    elevation: 24,
+    backgroundColor: '#7A003E',
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    textAlignVertical: 'center'
+},
+buttonBack: {
+  height: frameHeight*0.125,
+  width: frameWidth*0.4,
+  borderRadius: 10,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#0041C8',
+  fontSize: 36,
+  fontWeight: 'bold',
+  color: 'white',
+  textAlign: 'center',
+  textAlignVertical: 'center'
+},
+  hidden: {
+    height: frameHeight*0.125,
+    width: frameWidth*0.4,
   },
 
 });
