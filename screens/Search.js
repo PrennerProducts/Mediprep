@@ -78,7 +78,7 @@ class Search extends Component {
     return (
       <View >
       <View style={styles.container}>
-        <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', marginTop: 30 }}>Medikament suchen</Text>
+        <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', marginTop: 30 }}>Bittes suchen Sie Ihr Medikament</Text>
 
       <View style= {styles.container}>
         <SearchBar
