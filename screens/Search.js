@@ -40,13 +40,14 @@ class Search extends Component {
   handleSelect = (item) => {
     this.setState({selectedItem: item });
     this.state.selectedItem = item;
-    console.log('HandleSelect: ', item.name);
-    console.log('HandleSelect State : ', this.state.selectedItem);
+    //console.log('HandleSelect: ', item.name);
+    //console.log('HandleSelect State : ', this.state.selectedItem);
     this.onPressHandler();
   }
 
   searchFunction = async (text) => {
     
+    //getMedikamenteFromApi()
     let data = await getMedikamenteFromApi();
     this.arrayholder = data;
     const updatedData = this.arrayholder.filter((item) => {
@@ -61,7 +62,7 @@ class Search extends Component {
   onPressHandler = () => {
     const tempMedikament = new Medikament(this.state.selectedItem.name, this.state.selectedItem.img);
     ScreenObserver.tempMed = tempMedikament;
-    console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
+    //console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
 
     //Weiterleitung zu Screen Abfrage Intervall
     this.props.navigation.navigate('EinnahmeScreen');

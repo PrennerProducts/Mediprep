@@ -4,13 +4,15 @@ import MediprepNavigator from './screens/MediprepNavigator';
 
 import { DataTests } from './Tests/DataTests';
 import { Speicherverwaltung } from './data/Speicherverwaltung';
+import { SpeichervTests } from './Tests/SpeichervTests';
 
 
 export default function App() {
   DataTests.reset(false);
  // DataTests.test();
   //DataTests.test2();
- // Speicherverwaltung.createFile('userMeds', '');  
+ // Speicherverwaltung.createFile('userMeds', ''); 
+ //SpeichervTests.test();
 
   return (
     <MediprepNavigator />

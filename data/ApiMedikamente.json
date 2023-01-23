@@ -10,99 +10,38 @@
     "img": "https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg"
   },
   {
-    "name": "Bisoprolol 2,5mg ",
+    "name": "Bisoprolol 2.5mg",
     "boxSize": 30,
     "img": "https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg"
   },
+
   {
-    "name": "Bisoprolol 2,5mg ",
-    "boxSize": 30,
-    "img": "https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg"
-  },
-  {
-    "name": "Glucophage 500mg ",
+    "name": "Glucophage 500mg",
     "boxSize": 50,
     "img": "https://www.adlershop.ch/pph/32454/0/1600x1600.jpg"
   },
   {
-    "name": "Lamictal 100mg ",
+    "name": "Lamictal 100mg",
     "boxSize": 20,
     "img": "https://cdn.shop-apotheke.com/images/420x0/D06/108/460/D06108460-p1.webp"
   },
   {
-    "name": "ASS 100mg ",
+    "name": "ASS 100mg",
     "boxSize": 100,
     "img": "https://www.apotheke.at/images/product_images/popup_images/ass-100mg-hexal-100-stk-pzn-07402210.jpg"
   },
   {
-    "name": "Zoldem 10mg ",
+    "name": "Zoldem 10mg",
     "boxSize": 30,
     "img": "https://gl-pharma.com/wp-content/uploads/2021/01/Zoldem-10mg-FT_30_WEB.jpg"
   },
   {
-    "name": "Ramipril 2,5mg ",
-    "boxSize": 100,
-    "img": "https://onlinemedikament.com/wp-content/uploads/2020/11/Ramipril-ratiopharm.jpg"
-  }
-]
-[
-  {
-    "id": 1,
-    "title": "Mexalen 500mg",
-    "boxSize": 20,
-    "img": "https://cdn.shop-apotheke.com/images/A39/097/80/A3909780-p14.jpg"
-  },
-  {
-    "id": 2,
-    "title": "Euthyrox 75µg",
-    "boxSize": 10,
-    "img": "https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Bisoprolol 2,5mg ",
-    "boxSize": 30,
-    "img": "https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Bisoprolol 2,5mg ",
-    "boxSize": 30,
-    "img": "https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg"
-  },
-  {
-    "id": 5,
-    "title": "Glucophage 500mg ",
-    "boxSize": 50,
-    "img": "https://www.adlershop.ch/pph/32454/0/1600x1600.jpg"
-  },
-  {
-    "id": 6,
-    "title": "Lamictal 100mg ",
-    "boxSize": 20,
-    "img": "https://cdn.shop-apotheke.com/images/420x0/D06/108/460/D06108460-p1.webp"
-  },
-  {
-    "id": 7,
-    "title": "ASS 100mg ",
-    "boxSize": 100,
-    "img": "https://www.apotheke.at/images/product_images/popup_images/ass-100mg-hexal-100-stk-pzn-07402210.jpg"
-  },
-  {
-    "id": 8,
-    "title": "Zoldem 10mg ",
-    "boxSize": 30,
-    "img": "https://gl-pharma.com/wp-content/uploads/2021/01/Zoldem-10mg-FT_30_WEB.jpg"
-  },
-  {
-    "id": 9,
-    "title": "Ramipril 2,5mg ",
+    "name": "Ramipril 2.5mg",
     "boxSize": 100,
     "img": "https://onlinemedikament.com/wp-content/uploads/2020/11/Ramipril-ratiopharm.jpg"
   },
   {
-    "id": 10,
-    "title": "Pantoloc 40mg ",
+    "title": "Pantoloc 40mg",
     "boxSize": 100,
     "img": "https://static.mshosting.at/pharma_images/thumbnail_images/1/1292648_b430h268.jpg"
   }

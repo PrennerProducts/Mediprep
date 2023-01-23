@@ -7,7 +7,7 @@ export const getMedikamenteFromApi = async () => {
   try {
     const response = await fetch(url);
     const json = await response.json();
-    console.log('MyJason:', json);
+    //console.log('MyJason:', json);
     return json;
   } catch (error) {
     console.error(error);
