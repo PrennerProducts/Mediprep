@@ -4,7 +4,6 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import WeiterButton from '../components/WeiterButton';
 import ZurueckButton from "../components/ZurueckButton";
 import Tablettenbox from "../components/Tablettenbox";
-import MedikamentenanzeigeScreen from "./MedikamentenanzeigeScreen";
 
 
 export const FalscheBefuellung = ({ navigation }) => {
