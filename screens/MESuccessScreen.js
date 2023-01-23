@@ -18,10 +18,12 @@ function sleep(time){
 const MESuccessScreen = ({navigation}) => {
     const[text,setText]=useState('Daten werden gespeichert');
     const[myImage,setMyImage]=useState(images.image1);
+    const[ladeBool, setLadeBoll]=useState(false);
     MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed).then(()=>{
       sleep(2100).then(()=>{
         setText('Medikament wurde gespeichert.');
         setMyImage(images.image2);
+        setLadeBoll(true);
       });
       //setText('Medikament wurde gespeichert.');
       ScreenObserver.dayly = false;
@@ -36,7 +38,7 @@ const MESuccessScreen = ({navigation}) => {
       navigation.replace('Search');
     };
 
-    return (
+    if (ladeBool) return (
         <View style={styles.container}>
             <Text style={styles.WelcomeFont}>{text}</Text>
             <Image source={myImage} style={{width: 200, height: 200,  resizeMode: 'contain'}} />
@@ -56,6 +58,12 @@ const MESuccessScreen = ({navigation}) => {
                     />
                 </View>
             </View>
+        </View>
+    );
+    else return(
+      <View style={styles.container}>
+            <Text style={styles.WelcomeFont}>{text}</Text>
+            <Image source={myImage} style={{width: 200, height: 200, resizeMode: 'contain'}} />
         </View>
     );
     

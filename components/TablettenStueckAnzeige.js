@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import pfeil from '../assets/pfeil.png';
 import Pfeil_schwarz from "../assets/Pfeil_schwarz.png";
-import Pfeil_blau from "../assets/Pfeil_blau.png"
+import Pfeil_blau from "../assets/pfeil_blau.png"
 
 //Hallo
 const TablettenStueckAnzeige = (props) => {
