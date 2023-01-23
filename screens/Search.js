@@ -86,7 +86,8 @@ class Search extends Component {
           inputContainerStyle={{backgroundColor: 'white'}}
           inputStyle={{color: 'black', fontWeight: 'bold'}}
           placeholder="Hier Medikament suchen..."
-          lightTheme
+          lightTheme={false}
+          placeholderTextColor="grey"
           round
           value={this.state.searchValue}
           onChangeText={(text) => this.searchFunction(text)}
