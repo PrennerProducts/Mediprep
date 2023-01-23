@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, Animated, Image} from 'react-native';
 import pfeil from "../assets/pfeil.png";
+
 import rotes_X from '../assets/rotes_X.png';
+import Durchgestrichen_weiss from '../assets/Durchgestrichen_weiss.png';
 
 export const Tablettenbox = (props) => {
   //console.log(props.highlightFach);
@@ -72,10 +74,10 @@ const Tablettenfach = (props) => {
     return (
         <View style={mystyle}>
           <Image
-              source={rotes_X}
+              source={Durchgestrichen_weiss}
               style={{
-                width: 75,
-                height: 75,
+                width: 70,
+                height: 70,
                 marginTop: 12,
                 position: 'absolute',
                 top: 0,

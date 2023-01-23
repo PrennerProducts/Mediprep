@@ -4,6 +4,7 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import DefaultButton from '../components/DefaultButton';
 import { Table, Row, } from 'react-native-table-component';
 import { Dimensions } from 'react-native';
+import { white } from 'color-name';
 
 const {width} = Dimensions.get('window');
 const frameWidth = width;
@@ -63,10 +64,10 @@ const MEKontrollScreen = ({ navigation }) => {
 
     if (ScreenObserver.dayly === false){
         return (
-            <View>   
+            <View style={{backgroundColor: 'white'}}>   
                 <ScrollView>
                     <View style={styles.container}>  
-                        <Text style={styles.textA} marginTop={10}>Medikament speichern?{'\n'}</Text>
+                        <Text style={styles.textA} marginTop={10}>Möchten Sie das Medikament speichern?{'\n'}</Text>
                         <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                         <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />    
                     </View>
@@ -164,10 +165,10 @@ const MEKontrollScreen = ({ navigation }) => {
     }
     else {
         return (
-            <View>   
+            <View style={{backgroundColor: 'white'}} >   
             <ScrollView>
                 <View style={styles.container}>  
-                    <Text style={styles.textA} marginTop={10}>Medikament speichern?{'\n'}</Text>
+                    <Text style={styles.textA} marginTop={10}>Möchten Sie das Medikament speichern?{'\n'}</Text>
                     <Text style={styles.textMedikament} >{ScreenObserver.tempMed.name}</Text> 
                     <Image source={{uri: ScreenObserver.tempMed.bild}} style={styles.image} />
                 </View>
@@ -181,7 +182,7 @@ const MEKontrollScreen = ({ navigation }) => {
                             <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
                     </View>
-                <Image style={{width: frameWidth, height: 150}}/> 
+                <Image style={{width: frameWidth, height: 150, backgroundColor: 'white'}}/> 
                     <View style={styles.buttonsContainer}>
                     <DefaultButton 
                         buttonStyle = {styles.buttonAbbruch} 
@@ -223,7 +224,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems:'flex-start',
         justifyContent:'flex-start',
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        
     },
     buttonAbbruch: {
         height: 80,
@@ -251,19 +253,22 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         height: frameWidth * 0.4,
         width: frameWidth * 0.4,
+        marginBottom: 20,
     },
     textA: {
         fontSize: 30,
         fontWeight: 'bold',
-        textAlign: 'center',
+        textAlign: 'left',
+        marginTop: 30, 
+        marginLeft: 25,
+        marginRight:25 
     },
     textMedikament: {
         fontSize: 40,
         fontWeight: 'bold',
-        textAlign: 'left',
     },
     tableContainer: { 
-        top: 20,
+        top: 0,
         width: frameWidth,
         paddingTop: 20,
         paddingLeft: frameWidth*0.02,

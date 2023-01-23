@@ -6,8 +6,8 @@ import { MedikamentenListe } from '../models/MedikamentenListe';
 import DefaultButton from '../components/DefaultButton';
 
 const images = {
-  image1: require('../assets/sanduhr.png'),
-  image2: require('../assets/award.jpg'),
+  image1: require('../assets/Ladebalken.gif'),
+  image2: require('../assets/Medikament_gespeichert.png'),
 };
 
 function sleep(time){
@@ -19,7 +19,7 @@ const MESuccessScreen = ({navigation}) => {
     const[text,setText]=useState('Daten werden gespeichert');
     const[myImage,setMyImage]=useState(images.image1);
     MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed).then(()=>{
-      sleep(2000).then(()=>{
+      sleep(2100).then(()=>{
         setText('Medikament wurde gespeichert.');
         setMyImage(images.image2);
       });
@@ -39,7 +39,7 @@ const MESuccessScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.WelcomeFont}>{text}</Text>
-            <Image source={myImage} style={{width: 300, height: 300}} />
+            <Image source={myImage} style={{width: 200, height: 200,  resizeMode: 'contain'}} />
             <View style={styles.buttonsContainer}>
                 <DefaultButton 
                     buttonStyle = {styles.buttonStart} 
@@ -64,13 +64,14 @@ const MESuccessScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: 30,
+    paddingTop: 30,
     alignItems: 'center',
     backgroundColor: 'white',
 },
   WelcomeFont: {
     marginTop: 50,
-    fontSize: 50,
+    marginBottom: 50,
+    fontSize: 40,
     fontWeight: 'bold',
     color: 'black',
     elevation: 4,

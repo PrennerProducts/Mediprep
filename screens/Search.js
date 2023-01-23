@@ -22,6 +22,7 @@ const renderItem = ({ item }) => (
 </TouchableHighlight>
 );
 
+let data = null;
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,10 @@ class Search extends Component {
       searchValue: '',
       selectedItem: '',
     }; 
+   
   }
+
+  
 
 
   
@@ -45,10 +49,14 @@ class Search extends Component {
     this.onPressHandler();
   }
 
+   
   searchFunction = async (text) => {
-    
+  
     //getMedikamenteFromApi()
-    let data = await getMedikamenteFromApi();
+    if(data === null){
+       data = await getMedikamenteFromApi();
+    }
+    
     this.arrayholder = data;
     const updatedData = this.arrayholder.filter((item) => {
       const item_data = `${item.name.toUpperCase()})`;
@@ -77,11 +85,15 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
-
+ <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 30, marginLeft: 25, marginRight:25 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
       <View style= {styles.container}>
         <SearchBar
-          placeholder="Search Here..."
-          lightTheme
+          containerStyle={{backgroundColor: 'white'}}
+          inputContainerStyle={{backgroundColor: 'white'}}
+          inputStyle={{color: 'black', fontWeight: 'bold'}}
+          placeholder="Hier Medikament suchen..."
+          lightTheme={false}
+          placeholderTextColor="grey"
           round
           value={this.state.searchValue}
           onChangeText={(text) => this.searchFunction(text)}
@@ -136,7 +148,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: -70,
+    bottom: 80,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
