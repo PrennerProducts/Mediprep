@@ -68,10 +68,10 @@ const Tablettenfach = (props) => {
     return (
       <View style={mystyle}>
         <Image
-          source={Pfeil_blau}
+          source={pfeil}
           style={{
             resizeMode: 'contain',
-            width: 100,
+            width: 120,
             height: 100,
             marginTop: 0,
             position: 'absolute',
