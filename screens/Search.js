@@ -1,13 +1,13 @@
-import React, { Component, useState } from 'react';
+import React, { Component, } from 'react';
 import {StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity, ScrollView} from 'react-native';
-import { ListItem, SearchBar } from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
 import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from "../components/ZurueckButton";
 
 
-
+/*
 const Item = ({ name }) => {
   return (
     <View style={styles.item}>
@@ -21,6 +21,8 @@ const renderItem = ({ item }) => (
 <Item name={item.name} />;
 </TouchableHighlight>
 );
+*/
+
 
 let data = null;
 class Search extends Component {
