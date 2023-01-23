@@ -78,10 +78,14 @@ class Search extends Component {
     return (
       <View >
       <View style={styles.container}>
+        <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', marginTop: 30 }}>Medikament suchen</Text>
 
       <View style= {styles.container}>
         <SearchBar
-          placeholder="Search Here..."
+          containerStyle={{backgroundColor: 'white'}}
+          inputContainerStyle={{backgroundColor: 'white'}}
+          inputStyle={{color: 'black', fontWeight: 'bold'}}
+          placeholder="Hier Medikament suchen..."
           lightTheme
           round
           value={this.state.searchValue}
@@ -139,7 +143,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: -70,
+    bottom: 50,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
