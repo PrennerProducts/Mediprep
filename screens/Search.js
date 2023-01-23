@@ -77,16 +77,11 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', marginTop: 30 }}>Bittes suchen Sie Ihr Medikament</Text>
 
       <View style= {styles.container}>
         <SearchBar
-          containerStyle={{backgroundColor: 'white'}}
-          inputContainerStyle={{backgroundColor: 'white'}}
-          inputStyle={{color: 'black', fontWeight: 'bold'}}
-          placeholder="Hier Medikament suchen..."
-          lightTheme={false}
-          placeholderTextColor="grey"
+          placeholder="Search Here..."
+          lightTheme
           round
           value={this.state.searchValue}
           onChangeText={(text) => this.searchFunction(text)}
@@ -141,7 +136,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: 50,
+    bottom: -70,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
