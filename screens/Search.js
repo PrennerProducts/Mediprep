@@ -76,7 +76,6 @@ class Search extends Component {
     
   render() {
     return (
-      <View >
       <View style={styles.container}>
         <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', marginTop: 30 }}>Bittes suchen Sie Ihr Medikament</Text>
 
@@ -117,8 +116,6 @@ class Search extends Component {
 
       </View>
 
-      </View>
-      
     );
   }
 }
@@ -148,18 +145,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft:50,
   },
-  button: {
-    height: 120,
-    width: 50,
-    borderWidth: 3,
-    borderColor: '#6b93ff',
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#02005c',
-    elevation: 24,
-  },
+      button: {
+        height: 120,
+        width: 50,
+        borderWidth: 3,
+        borderColor: '#6b93ff',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#02005c',
+        elevation: 24,
+      },
+
   hidden: {
     height: 82,
     width: 150,
