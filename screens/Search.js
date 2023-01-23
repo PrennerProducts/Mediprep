@@ -85,7 +85,7 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
- <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 30, marginLeft: 25, marginRight:25 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
+ <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 60, marginLeft: 25, marginRight:25, marginBottom: 20 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
       <View style= {styles.container}>
         <SearchBar
           containerStyle={{backgroundColor: 'white'}}
@@ -131,8 +131,9 @@ export default Search;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop: 0,
     padding: 2,
+    backgroundColor: 'white',
   },
   auflistung: {
     marginTop: 30,

@@ -53,7 +53,7 @@ export class MedikamentenListe {
   }
   //Gibt die gesamete Liste als String
   toString() {
-    if (this.medikamente.length === 0) return 'Leer';
+    if (this.medikamente.length === 0) return 'Keine Medikamente gespeichert.';
     let meds = '';
     let index = 1;
     for (const m of this.medikamente) {

@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         fontWeight: 'bold',
         fontSize: 27,
-        marginTop: 10,
+        marginTop: 0,
     },
     stueckStyle: {
         width: '200%',
