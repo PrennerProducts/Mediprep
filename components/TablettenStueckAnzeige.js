@@ -4,7 +4,7 @@ import pfeil from '../assets/pfeil.png';
 import Pfeil_schwarz from "../assets/Pfeil_schwarz.png";
 import Pfeil_blau from "../assets/Pfeil_blau.png"
 
-
+//Hallo
 const TablettenStueckAnzeige = (props) => {
   return (
     <View style={styles.tablettenbox}>
