@@ -16,7 +16,7 @@ export const EinnahmeScreen = ({ navigation }) => {
         navigation.navigate('TageszeitenScreen');
     };
     const pressHandlereinzeltage = () => {
-        navigation.navigate('TagAuswahlScreen');
+        navigation.replace('TagAuswahlScreen');
     };
 
 

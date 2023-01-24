@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 38,
+    fontSize: 36,
     marginTop: 10,
   },
   stueckStyle: {
