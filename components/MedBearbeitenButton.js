@@ -12,7 +12,7 @@ const MedBearbeitenButton = () => {
 const styles = StyleSheet.create({
   Bearbeitenbox: {
     height: 120,
-    width: 310,
+    width: 320,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#032E5B',

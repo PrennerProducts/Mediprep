@@ -53,7 +53,7 @@ const MESuccessScreen = ({navigation}) => {
                 <DefaultButton
                     buttonStyle = {styles.buttonNeu}
                     textstyle = {styles.buttonNeu}
-                    buttonText = {'neues Medikament'}
+                    buttonText = {'Neues Medikament'}
                     pressHandler = {pressHandler}
                     />
                 </View>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       borderColor: '#6b93ff',
       alignItems: 'center',
-      backgroundColor: '#7A003E',
+      backgroundColor: '#032E5B',
       fontSize: 36,
       fontWeight: 'bold',
       color: 'white',
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
       borderColor: '#6b93ff',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#0041C8',
+      backgroundColor: '#032E5B',
       fontSize: 36,
       fontWeight: 'bold',
       color: 'white',

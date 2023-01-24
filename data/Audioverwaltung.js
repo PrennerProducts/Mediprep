@@ -113,6 +113,8 @@ export function Audioverwaltung(props) {
     container: {
       flex: 1,
       flexDirection: 'row',
+      position: 'absolute',
+      bottom: 35,
     },
     languageButtonStyle: {
       top: 10,

@@ -182,7 +182,7 @@ const MEKontrollScreen = ({ navigation }) => {
                             <Row data={tabelle.daten[0]} style={styles.DataStyle} textStyle={styles.DataText}/>
                         </Table>
                     </View>
-                <Image style={{width: frameWidth, height: 150, backgroundColor: 'white'}}/> 
+                <Image style={{width: frameWidth, height: 185, backgroundColor: 'white'}}/> 
                     <View style={styles.buttonsContainer}>
                     <DefaultButton 
                         buttonStyle = {styles.buttonAbbruch} 
@@ -257,30 +257,11 @@ const styles = StyleSheet.create({
          borderColor: '#6b93ff',
          borderRadius: 10,
     },
-    // buttonsContainer: {
-    //     position: 'absolute',
-    //     bottom: 10,
-    //     flexDirection: 'row',
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    // },
-    // button: {
-    //     height: 120,
-    //     width: 50,
-    //     borderWidth: 3,
-    //     borderColor: '#6b93ff',
-    //     borderRadius: 30,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: '#02005c',
-    //     elevation: 24,
-    // },
-
     image: {
         alignContent: 'center',
         height: frameWidth * 0.4,
         width: frameWidth * 0.4,
-        marginBottom: 20,
+        marginBottom: 30,
     },
     textA: {
         fontSize: 30,
@@ -291,6 +272,7 @@ const styles = StyleSheet.create({
         marginRight:25 
     },
     textMedikament: {
+        marginBottom: 20,
         fontSize: 40,
         fontWeight: 'bold',
     },

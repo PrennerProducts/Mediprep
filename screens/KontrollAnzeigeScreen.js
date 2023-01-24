@@ -106,12 +106,12 @@ const styles = StyleSheet.create({
     //elevation: 24,
   },
   textfont: {
-    margin: 5,
+    marginLeft: 25,
     marginTop: 50,
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    textAlign: 'center',
+    textAlign: 'left',
   },
   hidden: {
     height: 82,

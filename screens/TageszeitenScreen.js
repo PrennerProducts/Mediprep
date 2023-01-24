@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     },
     buttonsContainer: {
         position: 'absolute',
-        bottom: 10,
+        bottom: 25,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',

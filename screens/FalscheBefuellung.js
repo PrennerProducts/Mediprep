@@ -22,14 +22,13 @@ export const FalscheBefuellung = ({ navigation }) => {
         //Zeige Medikamentbox an
 
         <View style={styles.container}>
-            <Text style={styles.textfont}>
-                Bitte entleeren Sie die Tablettenboxfächer, damit diese wieder neu befüllt werden können.
+            <Text style={styles.textfont2} >
+                Zu Ihrer eigenen Sicherheit: Bitte entleeren Sie die Tablettenbox.
             </Text>
             <Tablettenbox highlightFach={0} />
             <Text style={styles.textfont}>
-                Mit "Weiter" wird eine neue Befüllung gestartet.
-            </Text>
-            <Text style={styles.textfont}>
+                Mit "Weiter" werden Sie noch einmal durch die Befüllung des ausgewählten Tages geführt.
+           {'\n\n'}
                 Mit "Zurück" kann die Kontrolle korrigiert werden.
             </Text>
             <View style={styles.buttonsContainer}>
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     },
     buttonsContainer: {
         position: 'absolute',
-        bottom: 10,
+        bottom: 25,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -69,13 +68,24 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     textfont: {
-        margin: 5,
         marginTop: 50,
-        fontSize: 30,
+        marginLeft: 25,
+        marginRight: 25,
+        fontSize: 27,
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
+    },
+    textfont2: {
+        marginTop: 50,
+        marginLeft: 25,
+        marginRight: 25,
+        fontSize: 30,
+        fontWeight: 'bold',
+        color:'#900028',
+        //elevation: 42,
+        textAlign: 'left',
     },
 });
 

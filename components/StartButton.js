@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 const StartButton = () => {
   return (
     <View style={styles.Startbox}>
-      <Text style={styles.LogoFont}>Tablettenbox befüllen</Text>
+      <Text style={styles.LogoFont}>Tablettenbox {'\n'} befüllen</Text>
     </View>
   );
 };
@@ -13,7 +13,7 @@ const StartButton = () => {
 const styles = StyleSheet.create({
   Startbox: {
     height: 120,
-    width: 310,
+    width: 320,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#032E5B',
