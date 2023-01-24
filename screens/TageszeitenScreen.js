@@ -9,7 +9,6 @@ import { SelectList } from 'react-native-dropdown-select-list'
 
 export const TageszeitenScreen = ({ navigation }) => {
     let finalAuswahl = [0, 0, 0, 0];
-    //console.log(ScreenObserver.days);
 
     //Array bei jedem Neuladen in die Seite auf 0 setzen
     const pressHandlerBack = () => {
@@ -32,13 +31,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                 ScreenObserver.tempMed.befuellung[(i*4)+3] = selectedNacht;
             }
         }
-
-        //console.log('FinalAuswahl' +finalAuswahl);  //Variable finalAuswahl beinhaltet die ausgewählten Zeiten im ArrayStyle [morgens, mittags, abends, nachts]
-        //alert('Auswahl:  ' + ScreenObserver.dosierung );
-
-
-        //console.log('Dosierung:' +ScreenObserver.dosierung);
-
         navigation.navigate('MEKontrollScreen');
     };
 
@@ -80,7 +72,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMorgen(val)}
-                    //setSelect={(val) => handleSelectmorgens(val)}
                     data={data}
                     save="key"
                 />
@@ -97,7 +88,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedMittag(val)}
-                    //setSelected={(val) => handleSelectmittags(val)}
                     data={data}
                     save="key"
                     
@@ -115,7 +105,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedAbends(val)}
-                    //setSelected={(val) => handleSelectabends(val)}
                     data={data}
                     save="key"
                 />
@@ -132,7 +121,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                     search={false}
                     defaultOption={data[0]}
                     setSelected={(val) => setSelectedNacht(val)}
-                    //setSelected={(val) => handleSelectnachts(val)}
                     data={data}
                     save="key"
                 />
@@ -167,14 +155,12 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
     },
     textfontzeit: {
         marginBottom:5,
         fontSize: 30,
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
         fontWeight: 'bold',
     },
@@ -184,7 +170,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'center',
     },
 
@@ -203,7 +188,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
-        //alignItems: 'center',
         justifyContent: 'center',
         textDecorationLine: 'underline',
 
@@ -213,7 +197,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: '#032E5B',
         justifyContent: 'left',
-        //alignItems: 'center',
         width: 100,
 
     },
@@ -221,7 +204,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: 'lightblue',
         justifyContent: 'left',
-        //alignItems: 'center',
         width: 100,
 
 

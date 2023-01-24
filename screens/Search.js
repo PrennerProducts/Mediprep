@@ -72,7 +72,6 @@ class Search extends Component {
   onPressHandler = () => {
     const tempMedikament = new Medikament(this.state.selectedItem.name, this.state.selectedItem.img);
     ScreenObserver.tempMed = tempMedikament;
-    //console.log('Observer TempMedikament= ', ScreenObserver.tempMed);
 
     //Weiterleitung zu Screen Abfrage Intervall
     this.props.navigation.navigate('EinnahmeScreen');
@@ -80,7 +79,6 @@ class Search extends Component {
     
   //HandleBack
    pressHandlerBack = () => {
-    //this.props.navigation.navigate('MedikamenteBearbeitenScreen');
     this.props.navigation.navigate('MedikamenteBearbeitenScreen');
 };
     

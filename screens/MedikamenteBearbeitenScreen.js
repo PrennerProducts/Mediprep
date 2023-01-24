@@ -164,10 +164,6 @@ buttonBack: {
   textAlign: 'center',
   textAlignVertical: 'center'
 },
-  hidden: {
-    height: frameHeight*0.125,
-    width: frameWidth*0.4,
-  },
 
 });
 
