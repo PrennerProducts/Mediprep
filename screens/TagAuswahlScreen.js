@@ -11,12 +11,12 @@ const {width} = Dimensions.get('window');
 const frameWidth = width;
 
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
-let finaltaglich = 0;
+//let finaltaglich = 0; FUER TAEGLICH-AUSWAHL. WIRD AKTUELL NICHT MEHR VERWENDET -> EINNAHMESCREEN
 
 
 export const TagAuswahlScreen = ({ navigation }) => {
     //Array bei jedem Neuladen in die Seite auf 0 setzen
-    finaltaglich = 0;
+    //finaltaglich = 0;
     let i = 6;
     while(i >= 0){
         finalAuswahl[i]= 0;
@@ -24,7 +24,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
     }
     let DayName = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag',];
     let DisplayName = [];
-    let DisplayTaglich = [];
+    //let DisplayTaglich = [];
 
     const message = () => {
         DisplayName = [];
@@ -40,11 +40,13 @@ export const TagAuswahlScreen = ({ navigation }) => {
         if (startindex === 0){
             DisplayName = ['Leer'];
         }
+        /*
         if (finaltaglich === 1){
             DisplayTaglich = ['Ja']
         }else {
             DisplayTaglich = ['Nein']
         }
+        */
     }
 
     const pressHandlerBack = () => {
@@ -57,6 +59,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         //console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
         //alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
 
+        /*
         // Wenn Täglich Falg dayly auf true setzen und alle days auf true setzen (im ScreenObserver)
         if(finaltaglich === 1){
             //console.log('Täglich is the Shit'); //Variable finalAusw
@@ -66,11 +69,12 @@ export const TagAuswahlScreen = ({ navigation }) => {
             // Alle Tage mit true befüllen
             for(let i = 0; i <7; i++){
                 ScreenObserver.days.push(1);
-                console.log(i);
+                //console.log(i);
             }
         }else{ // Wenn nicht täglich, dann die ausgewählten Tage in den ScreenObserver schreiben
+        */
             ScreenObserver.days = finalAuswahl;
-        }
+        //}
 
 
         //console.log('Tage:' ,ScreenObserver.days,'Dayly: ', ScreenObserver.dayly);
@@ -128,7 +132,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         </View>
     );
 };
-
+/*
 const TaglichAuswahl = (props) => {
     const [active, setActive] = useState(0);
     return(
@@ -145,6 +149,7 @@ const TaglichAuswahl = (props) => {
         </TouchableOpacity>
     )
 }
+*/
 const WochenTag = (props) => {
     const [active, setActive] = useState(0);
     return (
@@ -273,11 +278,11 @@ const styles = StyleSheet.create({
     wochentagActive: {
         fontSize: 35,
         fontWeight: 'bold',
-        color: 'white',
+        color: '#032E5B',
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        textDecorationLine: 'underline',
+        //textDecorationLine: 'underline',
     },
     buttonsContainer: {
         position: 'absolute',
