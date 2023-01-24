@@ -64,7 +64,7 @@ const MEKontrollScreen = ({ navigation }) => {
 
     if (ScreenObserver.dayly === false){
         return (
-            <View style={{backgroundColor: 'white'}}>   
+            <View style={{backgroundColor: 'white', flex: 1, bottom: 0}}>   
                 <ScrollView>
                     <View style={styles.container}>  
                         <Text style={styles.textA} marginTop={10}>Möchten Sie das Medikament speichern?{'\n'}</Text>
@@ -165,7 +165,7 @@ const MEKontrollScreen = ({ navigation }) => {
     }
     else {
         return (
-            <View style={{backgroundColor: 'white'}} >   
+            <View style={{backgroundColor: 'white', flex: 1, bottom: 0}} >   
             <ScrollView>
                 <View style={styles.container}>  
                     <Text style={styles.textA} marginTop={10}>Möchten Sie das Medikament speichern?{'\n'}</Text>
@@ -213,6 +213,7 @@ const styles = StyleSheet.create({
         bottom: 100,
     },
     buttonsContainer: {
+        flex: 1,
         position: 'absolute',
         width: frameWidth,
         bottom: 0,
@@ -229,26 +230,52 @@ const styles = StyleSheet.create({
     },
     buttonAbbruch: {
         height: 80,
-        width: frameWidth*0.425,
-        backgroundColor: '#7A003E',
-        fontSize: 30,
+        width: frameWidth*0.424,
+        backgroundColor: '#0041C8',
+        fontSize: 35,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
         textAlignVertical: 'center',
         justifyContent:'flex-start',
+        
+         borderColor: '#6b93ff',
+         borderRadius: 10,
     },
     buttonSpeichern: {
         height: 80,
-        width: frameWidth*0.425,
-        backgroundColor: '#0041C8',
-        fontSize: 30,
+        bottom: 0,
+        width: frameWidth*0.426,
+        backgroundColor: '#032E5B',
+        fontSize: 34,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
         textAlignVertical: 'center',
         justifyContent:'flex-start',
+      
+         borderColor: '#6b93ff',
+         borderRadius: 10,
     },
+    // buttonsContainer: {
+    //     position: 'absolute',
+    //     bottom: 10,
+    //     flexDirection: 'row',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    // },
+    // button: {
+    //     height: 120,
+    //     width: 50,
+    //     borderWidth: 3,
+    //     borderColor: '#6b93ff',
+    //     borderRadius: 30,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#02005c',
+    //     elevation: 24,
+    // },
+
     image: {
         alignContent: 'center',
         height: frameWidth * 0.4,

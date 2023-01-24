@@ -44,10 +44,10 @@ export const TageszeitenScreen = ({ navigation }) => {
 
     const data = [
         {key:'0', value:'  ----   '},
-        {key:'0.25', value:'  1/4  '},
+        {key:'0.25', value:' 1/4 '},
         {key:'0.5', value:' 1/2 '},
         {key:'1', value:'    1    '},
-        {key:'1.5', value:'1 1/2'},
+        // {key:'1.5', value:'1 1/2'},
         {key:'2', value:'    2   '},
         {key:'3', value:'    3   '},
         {key:'4', value:'    4   '}
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
     },
 
 

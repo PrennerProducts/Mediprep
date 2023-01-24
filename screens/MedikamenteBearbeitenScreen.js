@@ -76,6 +76,7 @@ const Homescreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 30,
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
@@ -92,6 +93,7 @@ const styles = StyleSheet.create({
   medikament: {
     fontSize: 30,
     color: 'black',
+    textAlign: 'left',
   },
   WelcomeFont: {
     marginTop: 50,
@@ -103,8 +105,10 @@ const styles = StyleSheet.create({
   },
   WelcomeSlogan: {
     flex: 1,
-    marginTop: 50,
-    fontSize: 28,
+    marginTop: 30,
+    marginLeft: 25,
+    marginRight:25,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
     elevation: 4,
@@ -130,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#6b93ff',
     alignItems: 'center',
-    backgroundColor: '#0041C8',
+    backgroundColor: '#032E5B',
     fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
@@ -144,7 +148,7 @@ buttonDel: {
     borderColor: '#6b93ff',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7A003E',
+    backgroundColor: '#032E5B',
     fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
