@@ -53,7 +53,7 @@ const Homescreen = ({ navigation }) => {
                 <DefaultButton
                     buttonStyle = {styles.buttonNeu}
                     textstyle = {styles.buttonNeu}
-                    buttonText = {'Neues\nMedikament'}
+                    buttonText = {'Medikament\nhinzufügen'}
                     pressHandler = {pressHandler21}
                     />
                 </View>
@@ -125,44 +125,45 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonNeu: {
-    height: frameHeight*0.15,
-    width: frameWidth*0.8,
+    height: frameHeight*0.14,
+    width: frameWidth*0.78,
     borderRadius: 10,
     borderColor: '#6b93ff',
     alignItems: 'center',
     backgroundColor: '#0041C8',
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
-    textAlignVertical: 'center'
+    textAlignVertical: 'center',
 },
 buttonDel: {
-    height: frameHeight*0.15,
-    width: frameWidth*0.8,
+    height: frameHeight*0.14,
+    width: frameWidth*0.78,
     borderRadius: 10,
     borderColor: '#6b93ff',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#7A003E',
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
     textAlignVertical: 'center'
 },
 buttonBack: {
-  height: frameHeight*0.095,
-  width: frameWidth*0.38,
+  height: frameHeight*0.094,
+  width: frameWidth*0.35,
+  marginLeft: 8,
   borderRadius: 10,
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: '#0041C8',
-  fontSize: 36,
+  fontSize: 32,
   fontWeight: 'bold',
   color: 'white',
   textAlign: 'center',
-  textAlignVertical: 'center'
+  textAlignVertical: 'center',
 },
 
 });

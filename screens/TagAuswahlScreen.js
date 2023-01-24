@@ -60,7 +60,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         <View style={styles.container}>
 
             <Text style={styles.textfont}>
-                Bitte wählen Sie die Tage an dem das Medikament eingenommen werden soll:
+                Bitte wählen Sie die Tage, an denen das Medikament eingenommen wird:
             </Text>
         <ScrollView>
             <View style={styles.rahmen}>
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginLeft: 25,
         marginRight:25,
+        marginBottom: 12,
     },
     textfontINT: {
         margin: 5,
@@ -149,6 +150,7 @@ const styles = StyleSheet.create({
         color: 'black',
         //elevation: 42,
         textAlign: 'center',
+        
     },
 
     tagauswahltext: {

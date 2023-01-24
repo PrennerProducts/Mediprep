@@ -54,12 +54,10 @@ export const EinnahmeScreen = ({ navigation }) => {
                     auswahl="Täglich"
                 />
             </View>
-            <Text style={styles.textfontINT2}>
-                oder
-            </Text>
+        
             <View style={styles.rahmen1}>
                 <EinzeltageAuswahl
-                    auswahl="Einzeltage Auswahl"
+                    auswahl="An Einzeltagen"
                 />
             </View>
             <View style={styles.buttonsContainer}>
@@ -103,10 +101,7 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     rahmen1: {
-        marginTop:20,
-        paddingTop: 50,
-        bottom: 30,
-
+        marginTop: 4,
 
     },
 
@@ -119,14 +114,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     textfontINT: {
-
+        marginLeft: 25,
+        marginRight:25,
+        textAlign: 'left',
         margin: 5,
         marginTop: 50,
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
         //elevation: 42,
-        textAlign: 'center',
+        marginBottom: 30,
+       
     },
     textfontINT2: {
 
@@ -139,7 +137,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     tagauswahltext: {
-        fontSize: 35,
+        fontSize: 34,
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
@@ -149,7 +147,7 @@ const styles = StyleSheet.create({
     },
     tagauswahlrahmen: {
         height:100,
-        width: 250,
+        width: 256,
         marginTop: 15,
         backgroundColor: '#032E5B',
         justifyContent: 'center',
