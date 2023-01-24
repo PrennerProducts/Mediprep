@@ -151,15 +151,15 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 85,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft:50,
+    marginLeft:33,
   },
       button: {
         height: 120,
-        width: 50,
+        width: 80,
         borderWidth: 3,
         borderColor: '#6b93ff',
         borderRadius: 30,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
       },
 
   hidden: {
-    height: 82,
+    height: 85,
     width: 150,
 
   },

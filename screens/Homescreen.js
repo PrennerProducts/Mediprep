@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: 115,
   },
 
   WelcomeFont: {

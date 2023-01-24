@@ -152,8 +152,8 @@ buttonDel: {
     textAlignVertical: 'center'
 },
 buttonBack: {
-  height: frameHeight*0.125,
-  width: frameWidth*0.4,
+  height: frameHeight*0.095,
+  width: frameWidth*0.38,
   borderRadius: 10,
   justifyContent: 'center',
   alignItems: 'center',
