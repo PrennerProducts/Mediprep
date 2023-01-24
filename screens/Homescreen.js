@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
 import Logo from '../components/Logo';
@@ -15,7 +15,10 @@ const Homescreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Willkommen zurück, Sieglinde!</Text>
+     
+      <Image style={styles.img} source={require('../assets/Icon_Mediprep_500x500px.png')} />
       <Text style={styles.WelcomeSlogan}>Was möchten Sie tun?</Text>
+      
       
 
       <TouchableOpacity onPress={pressHandler1}>
@@ -38,21 +41,26 @@ const styles = StyleSheet.create({
   },
 
   WelcomeFont: {
-    marginTop: 140,
-    fontSize: 50,
+    marginTop: 80,
+    fontSize: 45,
+    fontWeight: 'bold',
+    color: 'black',
+    elevation: 4,
+    textAlign: 'center',
+    marginBottom: 35,
+  },
+  WelcomeSlogan: {
+    flex: 1,
+    marginTop: 40,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'black',
     elevation: 4,
     textAlign: 'center',
   },
-  WelcomeSlogan: {
-    flex: 1,
-    marginTop: 50,
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: 'black',
-    elevation: 4,
-    textAlign: 'center',
+  img: {
+    width: 150,
+    height: 150,
   },
 });
 
