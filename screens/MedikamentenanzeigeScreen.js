@@ -40,7 +40,7 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
       if (newIndex >= ScreenObserver.medikamente.length){
         //ScreenObserver.oldIndex = medikamentIndex;
         //setMedikamentIndex(0);
-        navigation.navigate('KontrollAnzeigeScreen');}
+        navigation.replace('KontrollAnzeigeScreen');}
       else setMedikamentIndex(newIndex);
     }
     setShowState(!showState);

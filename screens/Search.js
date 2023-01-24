@@ -1,13 +1,13 @@
-import React, { Component, useState } from 'react';
+import React, { Component, } from 'react';
 import {StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity, ScrollView} from 'react-native';
-import { ListItem, SearchBar } from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
 import { Medikament } from '../models/Medikament';
 import { getMedikamenteFromApi } from '../data/Api';
 import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from "../components/ZurueckButton";
 
 
-
+/*
 const Item = ({ name }) => {
   return (
     <View style={styles.item}>
@@ -21,6 +21,8 @@ const renderItem = ({ item }) => (
 <Item name={item.name} />;
 </TouchableHighlight>
 );
+*/
+
 
 let data = null;
 class Search extends Component {
@@ -85,7 +87,7 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
- <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 30, marginLeft: 25, marginRight:25 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
+ <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 60, marginLeft: 25, marginRight:25, marginBottom: 20 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
       <View style= {styles.container}>
         <SearchBar
           containerStyle={{backgroundColor: 'white'}}
@@ -131,8 +133,9 @@ export default Search;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop: 0,
     padding: 2,
+    backgroundColor: 'white',
   },
   auflistung: {
     marginTop: 30,
