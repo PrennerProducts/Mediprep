@@ -1,21 +1,14 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import React, {useState} from "react";
-import { Dimensions } from 'react-native';
+import React from "react";
 import ZurueckButton from "../components/ZurueckButton";
-import WeiterButton from "../components/WeiterButton";
 import {ScreenObserver} from "../models/ScreenObserver";
 
-const {width} = Dimensions.get('window');
-const frameWidth = width;
 
 
 export const EinnahmeScreen = ({ navigation }) => {
 
     const pressHandlerBack = () => {
         navigation.navigate('Search');
-    };
-    const pressHandler = () => {
-        navigation.navigate('Homescreen');
     };
     const pressHandlertaglich = () => {
         ScreenObserver.dayly = true;
@@ -40,7 +33,6 @@ export const EinnahmeScreen = ({ navigation }) => {
         )
     }
     const EinzeltageAuswahl = (props) => {
-        const [active, setActive] = useState(0);
         return(
             <TouchableOpacity onPress={pressHandlereinzeltage}
                               style={styles.tagauswahlrahmen}
@@ -62,7 +54,7 @@ export const EinnahmeScreen = ({ navigation }) => {
                     auswahl="Täglich"
                 />
             </View>
-            <Text style={styles.textfontINT}>
+            <Text style={styles.textfontINT2}>
                 oder
             </Text>
             <View style={styles.rahmen1}>
@@ -85,6 +77,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'white',
+        paddingTop:30,
     },
     hidden: {
         height: 82,
@@ -110,9 +103,10 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     rahmen1: {
-        flexDirection: 'row',
-        paddingTop: 20,
+        marginTop:20,
+        paddingTop: 50,
         bottom: 30,
+
 
     },
 
@@ -125,8 +119,19 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     textfontINT: {
+
         margin: 5,
         marginTop: 50,
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'black',
+        //elevation: 42,
+        textAlign: 'center',
+    },
+    textfontINT2: {
+
+        paddingTop:20,
+        margin: 5,
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
@@ -143,11 +148,14 @@ const styles = StyleSheet.create({
 
     },
     tagauswahlrahmen: {
+        height:100,
+        width: 250,
         marginTop: 15,
         backgroundColor: '#032E5B',
         justifyContent: 'center',
         alignItems: 'center',
-        width: frameWidth * 0.8,
+        borderRadius:10,
+
 
     },
 

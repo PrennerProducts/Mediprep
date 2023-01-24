@@ -22,30 +22,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         finalAuswahl[i]= 0;
         i--;
     }
-    let DayName = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag',];
-    let DisplayName = [];
-    let DisplayTaglich = [];
 
-    const message = () => {
-        DisplayName = [];
-        let startindex = 0;
-        let i = 0;
-        while(i <= 6){
-            if (finalAuswahl[i] === 1){
-                DisplayName[startindex] = DayName[i];
-                startindex++
-            }
-            i++;
-        }
-        if (startindex === 0){
-            DisplayName = ['Leer'];
-        }
-        if (finaltaglich === 1){
-            DisplayTaglich = ['Ja']
-        }else {
-            DisplayTaglich = ['Nein']
-        }
-    }
 
     const pressHandlerBack = () => {
         ScreenObserver.dayly = false;
@@ -53,7 +30,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         navigation.navigate('EinnahmeScreen');
     };
     const pressHandler = () => {
-        message();
+
         //console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
         //alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
 
@@ -82,7 +59,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
         <View style={styles.container}>
 
             <Text style={styles.textfont}>
-                Wählen Sie die Tage:
+                Bitte wählen Sie die Tage an dem das Medikament eingenommen werden soll:
             </Text>
         <ScrollView>
             <View style={styles.rahmen}>
@@ -129,22 +106,6 @@ export const TagAuswahlScreen = ({ navigation }) => {
     );
 };
 
-const TaglichAuswahl = (props) => {
-    const [active, setActive] = useState(0);
-    return(
-        <TouchableOpacity onPress={
-            active === 0
-                ? () => [setActive(1), (finaltaglich = 1)]
-                : () => [setActive(0), (finaltaglich = 0)]
-        }
-                          style={active === 0 ? [styles.tagauswahlrahmen] : styles.tagauswahlrahmenActive}
-        >
-            <Text style={active === 0 ? [styles.tagauswahltext] : styles.tagauswahltextActive}>
-                {props.auswahl}
-            </Text>
-        </TouchableOpacity>
-    )
-}
 const WochenTag = (props) => {
     const [active, setActive] = useState(0);
     return (
@@ -170,15 +131,15 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'white',
+        paddingTop:30,
     },
     textfont: {
-        marginTop: 50,
-        marginBottom:5,
         fontSize: 30,
         fontWeight: 'bold',
-        color: 'black',
-        //elevation: 42,
-        textAlign: 'center',
+        textAlign: 'left',
+        marginTop: 30,
+        marginLeft: 25,
+        marginRight:25,
     },
     textfontINT: {
         margin: 5,
@@ -229,9 +190,10 @@ const styles = StyleSheet.create({
 
     },
     rahmen: {
+        marginTop:20,
         paddingTop: 20,
         bottom: 30,
-        width: frameWidth * 0.8,
+        width: 250,
     },
     rahmen1: {
         flexDirection: 'row',
@@ -240,8 +202,8 @@ const styles = StyleSheet.create({
 
     },
     farblicheauswahl: {
+        borderRadius: 10,
         marginTop: 15,
-        //flexDirection: 'row',
         //borderWidth: 3,
         //borderColor: '#6b93ff',
         //borderRadius: 30,
@@ -253,6 +215,7 @@ const styles = StyleSheet.create({
     },
     farblicheauswahlActive: {
         marginTop: 15,
+        borderRadius: 10,
         //flexDirection: 'row',
         //borderWidth: 5,
         //borderColor: '#6b93ff',
@@ -273,11 +236,11 @@ const styles = StyleSheet.create({
     wochentagActive: {
         fontSize: 35,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'darkblue',
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        textDecorationLine: 'underline',
+        //textDecorationLine: 'underline',
     },
     buttonsContainer: {
         position: 'absolute',
