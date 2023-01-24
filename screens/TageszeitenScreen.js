@@ -62,8 +62,9 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container2}>
             <View style={styles.container3}/>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Morgen</Text>
                 <View style={styles.container4}>
+                <Text style={styles.textfontzeit}>Morgen</Text>
+                </View>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -75,11 +76,11 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
                 />
-                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Mittag  </Text>
                 <View style={styles.container4}>
+                <Text style={styles.textfontzeit}>Mittag</Text>
+                </View>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -90,13 +91,12 @@ export const TageszeitenScreen = ({ navigation }) => {
                     setSelected={(val) => setSelectedMittag(val)}
                     data={data}
                     save="key"
-                    
                 />
-                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Abend  </Text>
                 <View style={styles.container4}>
+                <Text style={styles.textfontzeit}>Abend</Text>
+                </View>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -108,11 +108,11 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
                 />
-                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Nacht   </Text>
                 <View style={styles.container4}>
+                <Text style={styles.textfontzeit}>Nacht</Text>
+                </View>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -124,7 +124,6 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
                 />
-            </View>
             </View>
             </View>
 
@@ -155,14 +154,18 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
+        //elevation: 42,
         textAlign: 'left',
     },
     textfontzeit: {
         marginBottom:5,
         fontSize: 30,
         color: 'black',
+        //elevation: 42,
         textAlign: 'left',
         fontWeight: 'bold',
+
+
     },
     textfontINT: {
         margin: 5,
@@ -170,6 +173,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
+        //elevation: 42,
         textAlign: 'center',
     },
 
@@ -188,6 +192,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
+        //alignItems: 'center',
         justifyContent: 'center',
         textDecorationLine: 'underline',
 
@@ -197,6 +202,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: '#032E5B',
         justifyContent: 'left',
+        //alignItems: 'center',
         width: 100,
 
     },
@@ -204,6 +210,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: 'lightblue',
         justifyContent: 'left',
+        //alignItems: 'center',
         width: 100,
 
 
@@ -262,13 +269,15 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     container4: {
-        marginTop: 10,
-        marginLeft:30,
-        marginRight:30,
-        bottom: 10,
-        flexDirection: 'column',
-        align: 'flex-start',
-        justifyContent: 'flex-start',
+        height: 80,
+        width: 150,
+        //marginTop: 10,
+        //marginLeft:30,
+        //marginRight:30,
+        //bottom: 10,
+        //flexDirection: 'column',
+        //align: 'flex-start',
+       // justifyContent: 'flex-start',
     },
 
     dropdown: {
