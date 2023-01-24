@@ -70,7 +70,8 @@ export const TageszeitenScreen = ({ navigation }) => {
             <View style={styles.container2}>
             <View style={styles.container3}/>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Morgen      </Text>
+                <Text style={styles.textfontzeit}>Morgen</Text>
+                <View style={styles.container4}>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -82,14 +83,12 @@ export const TageszeitenScreen = ({ navigation }) => {
                     //setSelect={(val) => handleSelectmorgens(val)}
                     data={data}
                     save="key"
-
-                    
-
-
                 />
+                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Mittag        </Text>
+                <Text style={styles.textfontzeit}>Mittag  </Text>
+                <View style={styles.container4}>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -103,11 +102,11 @@ export const TageszeitenScreen = ({ navigation }) => {
                     save="key"
                     
                 />
-
+                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Abend        </Text>
-
+                <Text style={styles.textfontzeit}>Abend  </Text>
+                <View style={styles.container4}>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -119,12 +118,12 @@ export const TageszeitenScreen = ({ navigation }) => {
                     //setSelected={(val) => handleSelectabends(val)}
                     data={data}
                     save="key"
-
-
                 />
+                </View>
             </View>
             <View style={styles.container3}>
-                <Text style={styles.textfontzeit}>Nacht         </Text>
+                <Text style={styles.textfontzeit}>Nacht   </Text>
+                <View style={styles.container4}>
                 <SelectList
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -137,6 +136,7 @@ export const TageszeitenScreen = ({ navigation }) => {
                     data={data}
                     save="key"
                 />
+            </View>
             </View>
             </View>
 
@@ -276,6 +276,15 @@ const styles = StyleSheet.create({
         marginTop: 30,
         bottom: 10,
         flexDirection: 'row',
+        align: 'flex-start',
+        justifyContent: 'flex-start',
+    },
+    container4: {
+        marginTop: 10,
+        marginLeft:30,
+        marginRight:30,
+        bottom: 10,
+        flexDirection: 'column',
         align: 'flex-start',
         justifyContent: 'flex-start',
     },
