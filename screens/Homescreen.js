@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import StartButton from '../components/StartButton';
 import MedBearbeitenButton from '../components/MedBearbeitenButton';
 import Logo from '../components/Logo';
+import { Audioverwaltung } from '../data/Audioverwaltung';
 
 const Homescreen = ({ navigation }) => {
   const pressHandler1 = () => {
@@ -27,6 +28,11 @@ const Homescreen = ({ navigation }) => {
       <TouchableOpacity onPress={pressHandler2}>
         <MedBearbeitenButton />
       </TouchableOpacity>
+
+      <Audioverwaltung 
+        index={0} 
+        playButtonText={'...'}
+      />
     </View>
   );
 };

@@ -85,7 +85,7 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
- <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 60, marginLeft: 25, marginRight:25, marginBottom: 20 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
+      <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'left', marginTop: 60, marginLeft: 25, marginRight:25, marginBottom: 20 }}>Bitte geben Sie das Medikament im Suchfeld ein:</Text>
       <View style= {styles.container}>
         <SearchBar
           containerStyle={{backgroundColor: 'white'}}
@@ -113,14 +113,12 @@ class Search extends Component {
           keyExtractor={(item) => item.name}
         />
       </View>
-
         <View style={styles.buttonsContainer}>
           <TouchableOpacity onPress={this.pressHandlerBack}>
             <ZurueckButton style={styles.button} />
           </TouchableOpacity>
           <View style={styles.hidden} />
         </View>
-
       </View>
 
     );
@@ -135,10 +133,11 @@ const styles = StyleSheet.create({
     padding: 2,
     backgroundColor: 'white',
   },
+
   auflistung: {
     marginTop: 30,
     padding: 2,
-    height: "79%",
+    height: "61%",
   },
   item: {
     flex:1,
@@ -148,24 +147,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   buttonsContainer: {
-    position: 'absolute',
-    bottom: 85,
+    position: 'relative',
+    bottom: 0,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft:33,
+    marginLeft:-40,
   },
-      button: {
-        height: 120,
-        width: 80,
-        borderWidth: 3,
-        borderColor: '#6b93ff',
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#02005c',
-        elevation: 24,
-      },
+
+  button: {
+    height: 120,
+    width: 80,
+    borderWidth: 3,
+    borderColor: '#6b93ff',
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#02005c',
+    elevation: 24,
+  },
 
   hidden: {
     height: 85,
