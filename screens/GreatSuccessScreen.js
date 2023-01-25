@@ -17,7 +17,7 @@ const GreatSuccessScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.WelcomeFont}>Fertig! Gut gemacht!</Text>
-      <Image source={require('../assets/award.jpg')} style={{width: 300, height: 300}} />
+      <Image source={require('../assets/Medikament_gespeichert.png')} style={{width: 220, height: 220, resizeMode: 'contain'}} />
       <TouchableOpacity onPress={pressHandler1}>
         <NeuerTagButton />
       </TouchableOpacity>

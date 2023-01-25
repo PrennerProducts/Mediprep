@@ -15,8 +15,9 @@ const styles = StyleSheet.create({
     width: 310,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7A003E',
+    backgroundColor: '#032E5B',
     marginBottom: 20,
+    borderRadius: 10,
   },
   LogoFont: {
     textAlign: 'center',

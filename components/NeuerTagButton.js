@@ -17,8 +17,9 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0041C8',
+    backgroundColor: '#032E5B',
     marginBottom: 20,
+    borderRadius: 10,
   },
   LogoFont: {
     textAlign: 'center',
