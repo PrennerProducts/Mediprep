@@ -104,8 +104,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#02005c',
   },
   textfont: {
-    marginLeft: 25,
+    marginLeft: 3,
     marginTop: 50,
+    marginBottom: 50  ,
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
