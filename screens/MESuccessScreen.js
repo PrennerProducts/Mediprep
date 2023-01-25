@@ -20,7 +20,7 @@ const MESuccessScreen = ({navigation}) => {
     const[myImage,setMyImage]=useState(images.image1);
     const[ladeBool, setLadeBoll]=useState(false);
     MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed).then(()=>{
-      sleep(2100).then(()=>{
+      sleep(1500).then(()=>{
         setText('Medikament wurde gespeichert.');
         setMyImage(images.image2);
         setLadeBoll(true);
