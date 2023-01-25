@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonNeu: {
-    height: frameHeight*0.14,
+    height: frameHeight*0.15,
     width: frameWidth*0.78,
     borderRadius: 10,
     borderColor: '#6b93ff',
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
 },
 buttonDel: {
-    height: frameHeight*0.14,
+    height: frameHeight*0.15,
     width: frameWidth*0.78,
     borderRadius: 10,
     borderColor: '#6b93ff',
