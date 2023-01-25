@@ -13,7 +13,7 @@ export class Medikament {
 
   //Gibt Infos zum Medikament auf der Console aus
   anzeigen() {
-    console.log(
+   /* console.log(
       'ID: ' +
       this.id +
         '\t' +
@@ -23,6 +23,6 @@ export class Medikament {
         '\tBefuellung: ' +
         this.befuellung +
         ';'
-    );
+    );*/
   }
 }
