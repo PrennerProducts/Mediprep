@@ -8,7 +8,7 @@ import { SpeichervTests } from './Tests/SpeichervTests';
 
 
 export default function App() {
- // DataTests.reset(false);
+   DataTests.reset(false);
  // DataTests.test();
   //DataTests.test2();
  // Speicherverwaltung.createFile('userMeds', ''); 

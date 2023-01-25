@@ -47,7 +47,8 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
     return (
       //Zeige Medikamentvisualisierung an
       <View style={styles.container}>
-        <TouchableOpacity onPress={pressHandler}>
+    
+        <TouchableOpacity  onPress={pressHandler}>
         <Medikamentvisualisierung
           medikamentID={ScreenObserver.medikamente[medikamentIndex]}
           show={showState}
