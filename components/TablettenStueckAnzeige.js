@@ -4,7 +4,7 @@ import pfeil from '../assets/pfeil.png';
 import Pfeil_schwarz from "../assets/Pfeil_schwarz.png";
 import pfeil_blau from "../assets/pfeil_blau.png"
 
-//Hallo
+
 const TablettenStueckAnzeige = (props) => {
   return (
     <View style={styles.tablettenbox}>
@@ -37,7 +37,6 @@ const TablettenStueckAnzeige = (props) => {
 };
 
 const Tablettenfachcontainer = (props) => {
-  //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
       <Tablettenfach
@@ -50,8 +49,6 @@ const Tablettenfachcontainer = (props) => {
 };
 
 const Tablettenfach = (props) => {
-  //console.log(props);
-  // console.log(chechHighlightFach(props.highlightFach, props.fachId));
 
   let mystyle;
 

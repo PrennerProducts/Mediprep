@@ -23,10 +23,10 @@ export class MedikamentenListe {
     let checkForMediListFile = await Speicherverwaltung.checkFile('userMeds');
     if (checkForMediListFile === false) {
         await Speicherverwaltung.createFile('userMeds', '');
-        console.log('Datei userMeds wurde erstellt.');
+        //console.log('Datei userMeds wurde erstellt.');
     }
     let userMeds = await Speicherverwaltung.loadFile('userMeds');
-    console.log(userMeds);
+    //console.log(userMeds);
     this.medikamente = [];
     let medikamente = userMeds.split('\n');                                        
     for (const m of medikamente){
@@ -43,13 +43,13 @@ export class MedikamentenListe {
   }
   //Zeigt die gesamete Liste in der Console an
   anzeigen() {
-    console.log(
-      this.name + ' (Anzahl Medikamente ' + this.medikamente.length + '):'
-    );
+    //console.log(
+     // this.name + ' (Anzahl Medikamente ' + this.medikamente.length + '):'
+    //);
     for (const m of this.medikamente) {
       m.anzeigen();
     }
-    console.log('\n');
+   // console.log('\n');
   }
   //Gibt die gesamete Liste als String
   toString() {

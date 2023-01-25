@@ -77,11 +77,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingTop:30,
     },
+
     hidden: {
         height: 82,
         width: 150,
-
     },
+
     buttonsContainer: {
         position: 'absolute',
         bottom: 25,
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+
     button: {
         height: 120,
         width: 50,
@@ -100,9 +102,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#02005c',
         elevation: 24,
     },
+
     rahmen1: {
         marginTop: 4,
-
     },
 
     textfont: {
@@ -110,9 +112,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'center',
     },
+
     textfontINT: {
         marginLeft: 25,
         marginRight:25,
@@ -122,20 +124,18 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         marginBottom: 30,
-       
     },
-    textfontINT2: {
 
+    textfontINT2: {
         paddingTop:20,
         margin: 5,
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'center',
     },
+
     tagauswahltext: {
         fontSize: 34,
         fontWeight: 'bold',
@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-
     },
+
     tagauswahlrahmen: {
         height:100,
         width: 256,
@@ -153,8 +153,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius:10,
-
-
     },
 
 });

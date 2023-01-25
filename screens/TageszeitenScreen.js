@@ -142,7 +142,6 @@ export const TageszeitenScreen = ({ navigation }) => {
 };
 
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -154,14 +153,12 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
     },
     textfontzeit: {
         marginBottom:5,
         fontSize: 30,
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
         fontWeight: 'bold',
 
@@ -173,7 +170,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
     },
 
@@ -192,7 +188,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         margin: 4,
-        //alignItems: 'center',
         justifyContent: 'center',
         textDecorationLine: 'underline',
 
@@ -202,7 +197,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: '#032E5B',
         justifyContent: 'left',
-        //alignItems: 'center',
         width: 100,
 
     },
@@ -210,7 +204,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: 'lightblue',
         justifyContent: 'left',
-        //alignItems: 'center',
         width: 100,
 
 

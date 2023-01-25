@@ -31,8 +31,6 @@ const TablettenSummeAnzeige = (props) => {
                 containerId={3}
                 containerName=""
             />
-
-
         </View>
     );
 };
@@ -168,7 +166,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 27,
         marginTop: 0,
-
     },
 });
 

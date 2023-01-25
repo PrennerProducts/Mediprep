@@ -1,13 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet, Animated, Image} from 'react-native';
 import pfeil from "../assets/pfeil.png";
-
 import rotes_X from '../assets/rotes_X.png';
 import Durchgestrichen_weiss from '../assets/Durchgestrichen_weiss.png';
 
 export const Tablettenbox = (props) => {
-  //console.log(props.highlightFach);
-
   return (
     <View style={styles.tablettenbox}>
       <Tablettenfachcontainer
@@ -35,7 +32,6 @@ export const Tablettenbox = (props) => {
 };
 
 const Tablettenfachcontainer = (props) => {
-  //console.log(props);
   return (
     <View style={styles.tablettenfachContainer}>
       <Text style={styles.tabblettenfachHeading}>{props.containerName}</Text>
@@ -48,9 +44,6 @@ const Tablettenfachcontainer = (props) => {
 };
 
 const Tablettenfach = (props) => {
-  //console.log(props);
-  // console.log(chechHighlightFach(props.highlightFach, props.fachId));
-
   let mystyle;
 
 

@@ -45,7 +45,6 @@ export const Speicherverwaltung = {
     showFile : async (filename) => {
         let path = FileSystem.documentDirectory + filename;
         let content = await FileSystem.readAsStringAsync(path, { encoding: FileSystem.EncodingType.UTF8 });
-        console.log(content);
     }
 };
 

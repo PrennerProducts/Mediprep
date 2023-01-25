@@ -117,9 +117,7 @@ export const WochenTagAuswahlScreen = ({ navigation }) => {
 };
 const WochenTag = (props) => {
   const pressHandler6 = () => {
-    //console.log('Ausgewählt: ' + datenbankEintrag[props.id]);
     ScreenObserver.wochentag = props.id;
-    //console.log(ScreenObserver);
     props.navigation3.navigate('MedikamentenanzeigeScreen');
   };
   return (
@@ -157,9 +155,6 @@ const styles = StyleSheet.create({
   farblicheauswahl: {
     borderRadius: 10,
     marginTop: 15,
-    //borderWidth: 3,
-    //borderColor: '#6b93ff',
-    //borderRadius: 30,
     backgroundColor: '#032E5B',
     justifyContent: 'center',
     alignItems: 'center',

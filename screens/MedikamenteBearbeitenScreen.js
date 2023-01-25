@@ -19,8 +19,6 @@ const Homescreen = ({ navigation }) => {
   const pressHandler22 = async () => {
     await Speicherverwaltung.deleteFile('userMeds');
     await MedikamentenListe.MLDummy.initialisieren();
-    //await Speicherverwaltung.showFile('userMeds');
-    //MedikamentenListe.MLDummy.anzeigen();
     navigation.replace('MedikamenteBearbeitenScreen');
   };
   const pressHandlerBack = () => {
@@ -169,7 +167,6 @@ buttonBack: {
   textAlign: 'center',
   textAlignVertical: 'center',
 },
-
 });
 
 export default Homescreen;

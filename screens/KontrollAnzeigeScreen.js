@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     flexDirection: 'row',
-    //alignItems: 'center',
     justifyContent: 'center',
   },
   button: {
@@ -103,7 +102,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#02005c',
-    //elevation: 24,
   },
   textfont: {
     marginLeft: 25,

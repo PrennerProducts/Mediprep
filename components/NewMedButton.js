@@ -14,13 +14,9 @@ const styles = StyleSheet.create({
   Startbox: {
     height: 90,
     width: 310,
-    //borderWidth: 5,
-    //borderColor: 'black',
-    //borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0041C8',
-    //elevation: 55,
     marginBottom: 20,
   },
   LogoFont: {
@@ -29,9 +25,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     elevation: 42,
-    //textShadowColor: 'black',
-    //textShadowOffset: { width: 2, height: 2 },
-    //textShadowRadius: 1,
   },
 });
 

@@ -33,13 +33,10 @@ const MedikamentenanzeigeScreen = ({ navigation }) => {
 
   const pressHandler = () => {
     //Weiter-Button gedrueckt
-
     if (!showState) {
       let newIndex = medikamentIndex;
       newIndex++;
       if (newIndex >= ScreenObserver.medikamente.length){
-        //ScreenObserver.oldIndex = medikamentIndex;
-        //setMedikamentIndex(0);
         navigation.replace('KontrollAnzeigeScreen');}
       else setMedikamentIndex(newIndex);
     }

@@ -128,7 +128,6 @@ export class Schachtel {
       }
       index++;
     }
-    //console.log(indexesFach);
     return indexesFach;
   }
 
@@ -145,7 +144,6 @@ export class Schachtel {
       }
       index++;
     }
-    //console.log(+stueckProFachDict);
     return stueckProFachDict;
   }
 

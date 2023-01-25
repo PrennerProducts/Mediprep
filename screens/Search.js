@@ -7,22 +7,6 @@ import { ScreenObserver } from '../models/ScreenObserver';
 import ZurueckButton from "../components/ZurueckButton";
 
 
-/*
-const Item = ({ name }) => {
-  return (
-    <View style={styles.item}>
-      <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{name}</Text>
-    </View>
-  );
-};
-
-const renderItem = ({ item }) => (
-  <TouchableHighlight onPress={() => this.handleSelect(item)} activeOpacity={0.6} underlayColor="#DDDDDD">
-<Item name={item.name} />;
-</TouchableHighlight>
-);
-*/
-
 
 let data = null;
 class Search extends Component {
@@ -46,15 +30,12 @@ class Search extends Component {
   handleSelect = (item) => {
     this.setState({selectedItem: item });
     this.state.selectedItem = item;
-    //console.log('HandleSelect: ', item.name);
-    //console.log('HandleSelect State : ', this.state.selectedItem);
     this.onPressHandler();
   }
 
    
   searchFunction = async (text) => {
-  
-    //getMedikamenteFromApi()
+
     if(data === null){
        data = await getMedikamenteFromApi();
     }

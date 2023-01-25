@@ -9,7 +9,6 @@ import Tablettenbox from "../components/Tablettenbox";
 export const FalscheBefuellung = ({ navigation }) => {
     ScreenObserver.aktuellerScreen = 'FalscheBefuellung';
 
-
     const HandlerZurueck = () => {    //Zurück Button gedrueckt
             navigation.navigate('KontrollAnzeigeScreen');
     };
@@ -74,7 +73,6 @@ const styles = StyleSheet.create({
         fontSize: 27,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'left',
     },
     textfont2: {
@@ -84,7 +82,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color:'#900028',
-        //elevation: 42,
         textAlign: 'left',
     },
 });

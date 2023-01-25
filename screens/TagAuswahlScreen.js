@@ -11,12 +11,10 @@ const {width} = Dimensions.get('window');
 const frameWidth = width;
 
 const finalAuswahl = [0, 0, 0, 0, 0, 0, 0];
-//let finaltaglich = 0; FUER TAEGLICH-AUSWAHL. WIRD AKTUELL NICHT MEHR VERWENDET -> EINNAHMESCREEN
+
 
 
 export const TagAuswahlScreen = ({ navigation }) => {
-    //Array bei jedem Neuladen in die Seite auf 0 setzen
-    //finaltaglich = 0;
     let i = 6;
     while(i >= 0){
         finalAuswahl[i]= 0;
@@ -30,28 +28,7 @@ export const TagAuswahlScreen = ({ navigation }) => {
     };
     const pressHandler = () => {
 
-        //console.log(finalAuswahl)  //Variable finalAuswahl beinhaltet die ausgewählten Tage im ArrayStyle [Mo,Di,Mi,Do,Fr,Sa,So]  Werte: 0 false , 1 = true
-        //alert('Auswahl:  ' + DisplayName + '\n' + 'Täglich: ' + DisplayTaglich);
-
-        /*
-        // Wenn Täglich Falg dayly auf true setzen und alle days auf true setzen (im ScreenObserver)
-        if(finaltaglich === 1){
-            //console.log('Täglich is the Shit'); //Variable finalAusw
-            ScreenObserver.dayly = true;
-            //console.log('checkObserver: ', ScreenObserver.dayly);
-
-            // Alle Tage mit true befüllen
-            for(let i = 0; i <7; i++){
-                ScreenObserver.days.push(1);
-                //console.log(i);
-            }
-        }else{ // Wenn nicht täglich, dann die ausgewählten Tage in den ScreenObserver schreiben
-        */
             ScreenObserver.days = finalAuswahl;
-        //}
-
-
-        //console.log('Tage:' ,ScreenObserver.days,'Dayly: ', ScreenObserver.dayly);
 
         //----------------------------------------------------------------------------------- Navigate
         navigation.navigate('TageszeitenScreen');
@@ -148,7 +125,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        //elevation: 42,
         textAlign: 'center',
         
     },
@@ -169,8 +145,6 @@ const styles = StyleSheet.create({
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        //textDecorationLine: 'underline',
-
     },
 
     tagauswahlrahmen: {
@@ -187,9 +161,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: frameWidth * 0.8,
-
-
-
     },
     rahmen: {
         marginTop:20,
@@ -206,9 +177,6 @@ const styles = StyleSheet.create({
     farblicheauswahl: {
         borderRadius: 10,
         marginTop: 15,
-        //borderWidth: 3,
-        //borderColor: '#6b93ff',
-        //borderRadius: 30,
         backgroundColor: '#032E5B',
         justifyContent: 'center',
         alignItems: 'center',
@@ -218,10 +186,6 @@ const styles = StyleSheet.create({
     farblicheauswahlActive: {
         marginTop: 15,
         borderRadius: 10,
-        //flexDirection: 'row',
-        //borderWidth: 5,
-        //borderColor: '#6b93ff',
-        //borderRadius: 30,
         backgroundColor: 'lightblue',
         justifyContent: 'center',
         alignItems: 'center',
@@ -242,7 +206,6 @@ const styles = StyleSheet.create({
         margin: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        //textDecorationLine: 'underline',
     },
     buttonsContainer: {
         position: 'absolute',

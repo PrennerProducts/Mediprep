@@ -14,7 +14,6 @@ const DaytimesImage = () => {
 }
 
 const MEKontrollScreen = ({ navigation }) => {
-    //console.log(ScreenObserver.tempMed);
     let befuellung = [];
     for (let i = 0; i<28; i++){
            if (ScreenObserver.tempMed.befuellung[i] != 0) befuellung[i] = ScreenObserver.tempMed.befuellung[i];
@@ -34,9 +33,6 @@ const MEKontrollScreen = ({ navigation }) => {
         ]
     }
     const pressHandlerBack = () => {
-        //ScreenObserver.dayly = false;
-        //ScreenObserver.days = [];
-        //ScreenObserver.dosierung = [];
         navigation.navigate('TageszeitenScreen');
     };
     const pressHandler = () => {
@@ -238,7 +234,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         justifyContent:'flex-start',
-        
          borderColor: '#6b93ff',
          borderRadius: 10,
     },
@@ -253,7 +248,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         justifyContent:'flex-start',
-      
          borderColor: '#6b93ff',
          borderRadius: 10,
     },

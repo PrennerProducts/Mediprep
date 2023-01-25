@@ -25,7 +25,6 @@ const MESuccessScreen = ({navigation}) => {
         setMyImage(images.image2);
         setLadeBoll(true);
       });
-      //setText('Medikament wurde gespeichert.');
       ScreenObserver.dayly = false;
       ScreenObserver.days = [];
       ScreenObserver.dosierung = [];

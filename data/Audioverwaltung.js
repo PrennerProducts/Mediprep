@@ -131,7 +131,6 @@ export function Audioverwaltung(props) {
       fontSize: 30,
     },
     audioButton: {
-      //position: 'absolute',
       top: 10,
       height: 80,
       borderColor: 'black',
