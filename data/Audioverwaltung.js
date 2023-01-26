@@ -55,7 +55,7 @@ export function Audioverwaltung(props) {
     const[myImage,setMyImage]= useState(images[0]);
     
     async function playSound() {
-      console.log('Loading Sound: ' + props.index);
+      // console.log('Loading Sound: ' + props.index);
       const { sound, status } = await Audio.Sound.createAsync(
         audioClip,
         null,
@@ -63,7 +63,7 @@ export function Audioverwaltung(props) {
       );
 
       setSound(sound);  
-      console.log('Playing Sound: ' + props.index);
+      // console.log('Playing Sound: ' + props.index);
       setMyImage(images[1]);
 
       if (isPlaying === false){
@@ -82,7 +82,7 @@ export function Audioverwaltung(props) {
     React.useEffect(() => {
       return sound
         ? () => {
-            console.log('Unloading Sound: ' + props.index);
+            // console.log('Unloading Sound: ' + props.index);
             sound.unloadAsync();
           }
         : undefined;
