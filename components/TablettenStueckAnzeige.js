@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import pfeil from '../assets/pfeil.png';
-import Pfeil_schwarz from "../assets/Pfeil_schwarz.png";
-import pfeil_blau from "../assets/pfeil_blau.png"
-
+import pfeilblau from '../assets/pfeilblau.png';
+import Pfeil_schwarz_500x500px from "../assets/Pfeil_schwarz_500x500px.png";
 
 const TablettenStueckAnzeige = (props) => {
   return (
@@ -65,7 +64,7 @@ const Tablettenfach = (props) => {
     return (
       <View style={mystyle}>
         <Image
-          source={pfeil}
+          source={Pfeil_schwarz_500x500px}
           style={{
             resizeMode: 'contain',
             width: 120,
