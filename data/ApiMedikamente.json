@@ -10,15 +10,15 @@
     "img": "https://cdn.shop-apotheke.com/images/D02/754/766/D02754766-p10.jpg"
   },
   {
-    "name": "Bisoprolol 2.5mg",
-    "boxSize": 30,
-    "img": "https://cdn.shop-apotheke.com/images/D05/391/732/D05391732-p10.jpg"
+    "name": "Amlodipin 5mg",
+    "boxSize": 50,
+    "img": "https://www.ratiopharm.de/assets/_processed_/8/9/csm_Amlodipin_rtp_5mg_N_Tabletten_OP50_3D_Web_quer_links_clean_02634105_8d0ebc5f44.png"
   },
 
   {
-    "name": "Glucophage 500mg",
-    "boxSize": 50,
-    "img": "https://www.adlershop.ch/pph/32454/0/1600x1600.jpg"
+    "name": "Temesta 1mg",
+    "boxSize": 20,
+    "img": "https://documedis.hcisolutions.ch/2020-01/api/products/image/PICFRONT3D/productnumber/20228/350"
   },
   {
     "name": "Lamictal 100mg",
@@ -41,7 +41,7 @@
     "img": "https://onlinemedikament.com/wp-content/uploads/2020/11/Ramipril-ratiopharm.jpg"
   },
   {
-    "title": "Pantoloc 40mg",
+    "name": "Pantoloc 40mg",
     "boxSize": 100,
     "img": "https://static.mshosting.at/pharma_images/thumbnail_images/1/1292648_b430h268.jpg"
   }
