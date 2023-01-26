@@ -6,8 +6,8 @@ import { MedikamentenListe } from '../models/MedikamentenListe';
 import DefaultButton from '../components/DefaultButton';
 
 const images = {
-  image1: require('../assets/Ladebalken.gif'),
-  image2: require('../assets/Medikament_gespeichert.png'),
+  image1: require('../assets/Ladebalken_02.gif'),
+  image2: require('../assets/Med_gespeichert.png'),
 };
 
 function sleep(time){
