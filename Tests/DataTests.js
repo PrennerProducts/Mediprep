@@ -27,9 +27,9 @@ export const DataTests = {
         await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
 
         // Zur Kontrolle:
-        console.log('\nInhalt von userMeds:\n');
+        //console.log('\nInhalt von userMeds:\n');
         await Speicherverwaltung.showFile('userMeds');
-        console.log('\nMedikamentenliste:\n')
+        //console.log('\nMedikamentenliste:\n')
         MedikamentenListe.MLDummy.anzeigen();
     },
 
@@ -52,10 +52,10 @@ export const DataTests = {
         await MedikamentenListe.MLDummy.medikamentHinzufuegen(ScreenObserver.tempMed);
 
         // Zur Kontrolle:
-        console.log('\nInhalt von userMeds:\n');
+       // console.log('\nInhalt von userMeds:\n');
         await Speicherverwaltung.showFile('userMeds');
-        console.log('\nMedikamentenliste:\n')
-        MedikamentenListe.MLDummy.anzeigen();
+       // console.log('\nMedikamentenliste:\n')
+       // MedikamentenListe.MLDummy.anzeigen();
     },
 
     //Zum Resetten...
