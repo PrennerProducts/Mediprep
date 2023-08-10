@@ -3,20 +3,19 @@
 Die Medikamentenbox Vorbereitungs-App wurde von Lukas Prenner, Martin Seppi, Robert Goller, Christian Zeller und Johanna Boden entwickelt. Diese App wurde entworfen, um Patienten bei der Vorbereitung ihrer wöchentlichen Medikamentenboxen zu unterstützen und die korrekte Befüllung zu gewährleisten.
 
 ![Screenshot der App](https://lupre.at/Mediprep/homescreen.png)
-![Screenshot der App](https://lupre.at/Mediprep/wochentagauswahl.png)  
+![Screenshot der App](https://lupre.at/Mediprep/wochentagauswahl.png)
 ![Screenshot der App](https://lupre.at/Mediprep/tablette.png)
-![Screenshot der App](https://lupre.at/Mediprep/mo.png)  
+![Screenshot der App](https://lupre.at/Mediprep/mo.png)
 ![Screenshot der App](https://lupre.at/Mediprep/sicherheit.png)
-![Screenshot der App](https://lupre.at/Mediprep/mexalen.png)  
+![Screenshot der App](https://lupre.at/Mediprep/mexalen.png)
 ![Screenshot der App](https://lupre.at/Mediprep/fertig.png)
-![Screenshot der App](https://lupre.at/Mediprep/medbearbeiten.png)  
+![Screenshot der App](https://lupre.at/Mediprep/medbearbeiten.png)
 ![Screenshot der App](https://lupre.at/Mediprep/hinzufügenmed.png)
-![Screenshot der App](https://lupre.at/Mediprep/wieoft.png)  
+![Screenshot der App](https://lupre.at/Mediprep/wieoft.png)
 ![Screenshot der App](https://lupre.at/Mediprep/verordnung.png)
-![Screenshot der App](https://lupre.at/Mediprep/speichern.png)  
+![Screenshot der App](https://lupre.at/Mediprep/speichern.png)
 ![Screenshot der App](https://lupre.at/Mediprep/wurdegespeichert.png)
-![Screenshot der App](https://lupre.at/Mediprep/wieoft.png)  
-![Screenshot der App](https://lupre.at/Mediprep/verordnung.png)
+
 
 ## Funktionen
 
